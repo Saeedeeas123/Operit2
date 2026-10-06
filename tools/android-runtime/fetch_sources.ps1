@@ -31,7 +31,7 @@ $items = @(
     },
     @{
         Name = "bash-5.2.37"
-        Url = "https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz"
+        Url = "https://mirrors.kernel.org/gnu/bash/bash-5.2.37.tar.gz"
         Archive = "bash-5.2.37.tar.gz"
         Sha256 = "9599B22ECD1D5787AD7D3B7BF0C59F312B3396D1E281175DD1F8A4014DA621FF"
         Extracted = "bash-5.2.37"
