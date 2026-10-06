@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $runtimeDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $downloadsDir = Join-Path $runtimeDir "downloads"
@@ -41,7 +41,17 @@ $items = @(
 foreach ($item in $items) {
     $archivePath = Join-Path $downloadsDir $item.Archive
     Write-Host "Downloading $($item.Name)"
-    Invoke-WebRequest -Uri $item.Url -OutFile $archivePath
+    $maxAttempts = 5
+    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+        try {
+            Invoke-WebRequest -Uri $item.Url -OutFile $archivePath
+            break
+        } catch {
+            if ($attempt -eq $maxAttempts) { throw }
+            Write-Host "Download attempt $attempt failed for $($item.Name): $($_.Exception.Message). Retrying in 15s..."
+            Start-Sleep -Seconds 15
+        }
+    }
 
     $actualSha256 = (Get-FileHash -Algorithm SHA256 -Path $archivePath).Hash.ToUpperInvariant()
     if ($actualSha256 -ne $item.Sha256) {
