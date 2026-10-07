@@ -189,8 +189,15 @@ jobs:
           foreach ($dir in $pkgs) {
             Write-Host "pnpm install in $dir"
             Push-Location $dir
-            corepack pnpm install --silent --no-frozen-lockfile
-            if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pnpm install failed in $dir" }
+            corepack pnpm install --no-frozen-lockfile --dangerously-allow-all-builds
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "retry without build approval flag"
+              corepack pnpm install --no-frozen-lockfile
+              if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pnpm install failed in $dir" }
+            }
+            Write-Host "pack:toolpkg in $dir (direct, full output)"
+            corepack pnpm run pack:toolpkg
+            if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pack:toolpkg failed in $dir" }
             Pop-Location
           }
 
