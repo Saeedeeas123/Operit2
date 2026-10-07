@@ -178,6 +178,22 @@ jobs:
           if (-not (Test-Path $tsc)) { throw "tsc.cmd not found at $tsc" }
           Write-Host "tsc OK: $tsc"
 
+      - name: Install ToolPkg dependencies for plugin prebuild
+        shell: pwsh
+        run: |
+          $pkgs = Get-ChildItem plugins/packages -Recurse -Depth 3 -Filter package.json | ForEach-Object {
+            $raw = Get-Content $_.FullName -Raw
+            if ($raw -match 'pack:toolpkg') { $_.DirectoryName }
+          }
+          if (-not $pkgs) { throw "no ToolPkg package.json found under plugins/packages" }
+          foreach ($dir in $pkgs) {
+            Write-Host "pnpm install in $dir"
+            Push-Location $dir
+            corepack pnpm install --silent --no-frozen-lockfile
+            if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pnpm install failed in $dir" }
+            Pop-Location
+          }
+
       - name: Build and package Android app
         shell: pwsh
         run: |
