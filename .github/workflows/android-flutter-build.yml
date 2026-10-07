@@ -181,7 +181,7 @@ jobs:
       - name: Install ToolPkg dependencies for plugin prebuild
         shell: pwsh
         run: |
-          $pkgs = Get-ChildItem plugins/packages -Recurse -Depth 3 -Filter package.json | ForEach-Object {
+          $pkgs = Get-ChildItem plugins/packages/buildin -Recurse -Depth 2 -Filter package.json | ForEach-Object {
             $raw = Get-Content $_.FullName -Raw
             if ($raw -match 'pack:toolpkg') { $_.DirectoryName }
           }
