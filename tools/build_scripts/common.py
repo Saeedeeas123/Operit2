@@ -130,7 +130,9 @@ def prepare_fvm_flutter_sdk() -> None:
     executable = FLUTTER_APP_DIR / ".fvm" / "flutter_sdk" / "bin" / executable_name
     if not executable.is_file():
         raise RuntimeError(f"FVM SDK command not found: {executable}")
-    run([fvm, "flutter", "precache", "--web", "--ohos"], cwd=FLUTTER_APP_DIR)
+    # Android CI build: precache android engine artifacts via the fork SDK.
+    # (upstream precaches web+ohos, whose web-sdk asset is missing upstream -> 404 aborts the whole build)
+    run([fvm, "flutter", "precache", "--android"], cwd=FLUTTER_APP_DIR)
     _fvm_sdk_prepared = True
 
 
