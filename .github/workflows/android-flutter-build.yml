@@ -186,15 +186,16 @@ jobs:
             if ($raw -match 'pack:toolpkg') { $_.DirectoryName }
           }
           if (-not $pkgs) { throw "no ToolPkg package.json found under plugins/packages" }
+          corepack enable pnpm
+          if ($LASTEXITCODE -ne 0) { throw "corepack enable pnpm failed" }
+          $pnpmOnPath = (Get-Command pnpm -ErrorAction SilentlyContinue)
+          if (-not $pnpmOnPath) { throw "pnpm still not on PATH after corepack enable" }
+          Write-Host "pnpm OK: $($pnpmOnPath.Source) ($(pnpm -v))"
           foreach ($dir in $pkgs) {
             Write-Host "pnpm install in $dir"
             Push-Location $dir
-            corepack pnpm install --no-frozen-lockfile --dangerously-allow-all-builds
-            if ($LASTEXITCODE -ne 0) {
-              Write-Host "retry without build approval flag"
-              corepack pnpm install --no-frozen-lockfile
-              if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pnpm install failed in $dir" }
-            }
+            corepack pnpm install --no-frozen-lockfile
+            if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pnpm install failed in $dir" }
             Write-Host "pack:toolpkg in $dir (direct, full output)"
             corepack pnpm run pack:toolpkg
             if ($LASTEXITCODE -ne 0) { Pop-Location; throw "pack:toolpkg failed in $dir" }
