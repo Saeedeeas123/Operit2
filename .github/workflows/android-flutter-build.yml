@@ -154,6 +154,14 @@ jobs:
         shell: pwsh
         run: python tools/build_scripts/check_build_environment.py --products app --github-runner
 
+      - name: Generate Dart proxy artifacts
+        shell: pwsh
+        run: |
+          cargo clean --manifest-path core/crates/proxy/local/Cargo.toml -p operit-proxy-local
+          cargo check --manifest-path core/crates/proxy/local/Cargo.toml --quiet
+          if (-not (Test-Path apps/flutter/app/lib/core/proxy/generated/CoreProxyClients.g.dart)) { throw "CoreProxyClients.g.dart not generated" }
+          if (-not (Test-Path apps/flutter/app/lib/core/proxy/generated/CoreProxyModels.g.dart)) { throw "CoreProxyModels.g.dart not generated" }
+
       - name: Build and package Android app
         shell: pwsh
         run: |
