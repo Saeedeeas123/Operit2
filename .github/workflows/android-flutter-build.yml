@@ -170,6 +170,14 @@ jobs:
           if (-not (Test-Path $py)) { throw ".venv python not found: $py" }
           Write-Host "venv python OK: $py"
 
+      - name: Install repository-managed TypeScript compiler
+        shell: pwsh
+        run: |
+          npm install --prefix .ci-tools/typescript typescript@5.9.3 --no-audit --no-fund
+          $tsc = Join-Path (Get-Location) ".ci-tools\typescript\node_modules\.bin\tsc.cmd"
+          if (-not (Test-Path $tsc)) { throw "tsc.cmd not found at $tsc" }
+          Write-Host "tsc OK: $tsc"
+
       - name: Build and package Android app
         shell: pwsh
         run: |
