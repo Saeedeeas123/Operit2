@@ -162,6 +162,14 @@ jobs:
           if (-not (Test-Path apps/flutter/app/lib/core/proxy/generated/CoreProxyClients.g.dart)) { throw "CoreProxyClients.g.dart not generated" }
           if (-not (Test-Path apps/flutter/app/lib/core/proxy/generated/CoreProxyModels.g.dart)) { throw "CoreProxyModels.g.dart not generated" }
 
+      - name: Create Python venv for Dart build hook
+        shell: pwsh
+        run: |
+          python -m venv .venv
+          $py = Join-Path (Get-Location) ".venv\Scripts\python.exe"
+          if (-not (Test-Path $py)) { throw ".venv python not found: $py" }
+          Write-Host "venv python OK: $py"
+
       - name: Build and package Android app
         shell: pwsh
         run: |
