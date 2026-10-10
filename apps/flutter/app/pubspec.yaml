@@ -142,13 +142,10 @@ dependency_overrides:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # Localizations are committed under lib/l10n/generated and imported directly
-  # (84 files import l10n/generated/app_localizations.dart; nothing uses the
-  # synthetic package:flutter_gen path). Keeping the build-time generator off
-  # stops gen-l10n from rewriting those files while the Dart kernel step is
-  # compiling them, which aborted release builds with
-  # "File modified during build". Regenerate manually with: flutter gen-l10n
-  generate: false
+  # NOTE: must stay true - the Android Gradle build runs the gen_localizations
+  # target and fails with "Attempted to generate localizations code without
+  # having the flutter: generate flag turned on" if it is disabled.
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
