@@ -651,8 +651,8 @@ mod chat_markup_import_tests {
     use operit_host_api::{HostError, HostResult, RuntimeSqliteTransaction};
     use operit_model::MessagePart::MessagePartKind;
 
-    const ASSISTANT_TEXT: &str = "旧回复<tool_NtfY/>继续正文";
-    const USER_TEXT: &str = "用户原文<think>不是思考块</think><tool_NtfY/>";
+    const ASSISTANT_TEXT: &str = "Old reply<tool_NtfY/>continued body";
+    const USER_TEXT: &str = "User original text thinkingnot a thinking block<tool_NtfY/>";
 
     /// Supplies the selected message and revision rows through the real reader contract.
     struct MessageRowsConnection {
@@ -743,7 +743,7 @@ mod chat_markup_import_tests {
             messages: vec![
                 legacy_message("user", USER_TEXT, 10),
                 legacy_message("ai", ASSISTANT_TEXT, 20),
-                legacy_message("user", "后续用户消息", 30),
+                legacy_message("user", "subsequent user message", 30),
             ],
             variants: Vec::new(),
         };
@@ -763,18 +763,18 @@ mod chat_markup_import_tests {
             ASSISTANT_TEXT
         );
         assert_eq!(messages[1].baseMessage.timestamp, 20);
-        assert_eq!(messages[2].baseMessage.parts[0].content, "后续用户消息");
+        assert_eq!(messages[2].baseMessage.parts[0].content, "subsequent user message");
     }
 
     /// Room 20/21 revisions use the same lenient path as base messages.
     #[test]
     fn room_v20_v21_import_preserves_base_messages_and_variants() {
-        let revision = "历史版本<tool_result_NtfY/><status type=\"completion\"/>";
+        let revision = "historical revision<tool_result_NtfY/><status type=\"completion\"/>";
         let mut connection = MessageRowsConnection {
             messages: vec![
                 modern_message("user", USER_TEXT, 10),
                 modern_message("ai", ASSISTANT_TEXT, 20),
-                modern_message("user", "后续用户消息", 30),
+                modern_message("user", "subsequent user message", 30),
             ],
             variants: vec![row(vec![
                 SqliteValue::Integer(1),
@@ -819,7 +819,7 @@ mod chat_markup_import_tests {
         assert_eq!(variant.provider, "variant-provider");
         assert_eq!(variant.inputTokens, 21);
         assert_eq!(variant.completedAt, 27);
-        assert_eq!(messages[2].baseMessage.parts[0].content, "后续用户消息");
+        assert_eq!(messages[2].baseMessage.parts[0].content, "subsequent user message");
     }
 
     /// Preserve known presentation modes and mirror Kotlin's default for unknown ones.

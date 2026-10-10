@@ -92,8 +92,8 @@ class PackageTabContent extends StatelessWidget {
                 sliver: SliverToBoxAdapter(
                   child: EmptyState(
                     icon: Icons.inventory_2_outlined,
-                    title: '没有包',
-                    message: isSearchActive ? '没有匹配的包。' : '当前没有可显示的工具包。',
+                    title: 'No packages',
+                    message: isSearchActive ? 'No matching packages.' : 'There are currently no tool packages to show.',
                     scrollable: false,
                   ),
                 ),
@@ -102,7 +102,7 @@ class PackageTabContent extends StatelessWidget {
               const SliverPadding(
                 padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
                 sliver: SliverToBoxAdapter(
-                  child: _PackageSectionEmpty(message: '当前没有可显示的包。'),
+                  child: _PackageSectionEmpty(message: 'There are currently no packages to show.'),
                 ),
               )
             else
@@ -121,8 +121,8 @@ class PackageTabContent extends StatelessWidget {
                       metadata: <String>[
                         package.name,
                         package.category,
-                        '${package.tools.length} 工具',
-                        package.isBuiltIn ? '内置' : '外部',
+                        '${package.tools.length} tools',
+                        package.isBuiltIn ? 'Built-in' : 'External',
                       ],
                       enabled: enabledPackageNames.contains(package.name),
                       onDetails: () => onPackageTap(package),
@@ -144,8 +144,8 @@ class PackageTabContent extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 sliver: const SliverToBoxAdapter(
                   child: _PackageSectionHeader(
-                    title: '加载失败',
-                    subtitle: '这些包未能完成解析或导入，点击卡片查看完整错误。',
+                    title: 'Failed to load',
+                    subtitle: 'These packages failed to parse or import; tap a card to see the full error.',
                   ),
                 ),
               ),
@@ -185,8 +185,8 @@ class PackageTabContent extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 sliver: const SliverToBoxAdapter(
                   child: _PackageSectionHeader(
-                    title: '更多包',
-                    subtitle: 'App 自带的官方额外包，加载后进入当前包。',
+                    title: 'More packages',
+                    subtitle: 'Official extra packages bundled with the app; they enter the current package once loaded.',
                   ),
                 ),
               ),
@@ -208,10 +208,10 @@ class PackageTabContent extends StatelessWidget {
                         package.category,
                         if (package.version.trim().isNotEmpty)
                           'v${package.version}',
-                        '${package.toolCount} 工具',
+                        '${package.toolCount} tools',
                         if (package.subpackageCount > 0)
-                          '${package.subpackageCount} 子包',
-                        '官方额外',
+                          '${package.subpackageCount} subpackages',
+                        'Official extra',
                       ],
                       enabled: false,
                       onEnabledChanged: (_) {},
@@ -220,7 +220,7 @@ class PackageTabContent extends StatelessWidget {
                         FilledButton.tonalIcon(
                           onPressed: () => onLoadMorePackage(package),
                           icon: const Icon(Icons.add, size: 18),
-                          label: const Text('加载'),
+                          label: const Text('Load'),
                           style: FilledButton.styleFrom(
                             visualDensity: VisualDensity.compact,
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -335,14 +335,14 @@ class _QuickPluginCreatorEntry extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      '快速创作你的插件',
+                      'Create your plugin quickly',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w700,
                         color: colorScheme.onPrimaryContainer,
                       ),
                     ),
                     Text(
-                      '内置和市场都找不到想要的插件？创作你自己想要的！',
+                      'Cannot find the plugin you want in built-ins or the market? Create your own!',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: colorScheme.onPrimaryContainer.withValues(
                           alpha: 0.74,

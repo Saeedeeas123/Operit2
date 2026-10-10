@@ -437,7 +437,7 @@ class TerminalViewState extends State<TerminalView> {
           onTap: _copySelectionToClipboard,
           child: Center(
             child: Text(
-              '复制',
+              'Copy',
               style: theme.textTheme.labelMedium?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,

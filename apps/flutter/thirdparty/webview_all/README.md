@@ -1,6 +1,6 @@
 # WebView All
 
-[Documentation](https://abandoft.github.io/webview_all) | [中文文档](https://abandoft.github.io/webview_all/zh)
+[Documentation](https://abandoft.github.io/webview_all) | [Chinese docs](https://abandoft.github.io/webview_all/zh)
 
 A WebView component that supports all Flutter platforms and implements the
 [webview_flutter platform interface](https://pub.dev/packages/webview_flutter_platform_interface).

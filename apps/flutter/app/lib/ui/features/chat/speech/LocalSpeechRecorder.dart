@@ -188,7 +188,7 @@ class LocalSpeechRecorder {
       throw StateError('The recorded PCM16 stream has an incomplete sample');
     }
     if (pcmBytes.length < _minimumPcmBytes) {
-      throw StateError('录音时间过短，请说完后再停止');
+      throw StateError('Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');Recording is too short; finish speaking before stopping');
     }
     final timestamp = DateTime.now().microsecondsSinceEpoch;
     return RecordedAudio(

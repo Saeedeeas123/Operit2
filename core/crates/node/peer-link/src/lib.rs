@@ -52,7 +52,7 @@ pub trait PeerConnection: Send + Sync {
     fn source(&self) -> &PeerEndpoint;
     fn target(&self) -> &PeerEndpoint;
     fn transport(&self) -> PeerTransport;
-    /// 实际接入来源；不是客户端自报身份/地址。
+    /// The actual inbound origin; it is not a client-reported identity or address.
     fn remoteAddress(&self) -> Option<std::net::SocketAddr> { None }
 
     async fn send(&self, message: PeerMessage) -> Result<(), String>;
@@ -73,7 +73,7 @@ pub trait PeerListener: Send + Sync {
     async fn close(&self);
 }
 
-/// 传输契约；I/O 使用显式传入的 Host。
+/// Transport contract; I/O uses the explicitly passed Host.
 #[async_trait]
 pub trait PeerLink: Send + Sync {
     async fn connect(

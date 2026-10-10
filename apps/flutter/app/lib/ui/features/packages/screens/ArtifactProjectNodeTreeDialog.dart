@@ -57,7 +57,7 @@ class ArtifactVersionListDialog extends StatelessWidget {
         width: double.maxFinite,
         height: 520,
         child: versions.isEmpty
-            ? Center(child: Text('暂无可用版本', style: textTheme.bodyMedium))
+            ? Center(child: Text('No versions available', style: textTheme.bodyMedium))
             : ListView.separated(
                 padding: const EdgeInsets.only(top: 8),
                 itemCount: versions.length,
@@ -98,7 +98,7 @@ class ArtifactVersionListDialog extends StatelessWidget {
                               borderRadius: BorderRadius.circular(999),
                             ),
                             child: Text(
-                              '最新',
+                              'Latest',
                               style: textTheme.labelSmall?.copyWith(
                                 color: colorScheme.onPrimaryContainer,
                                 fontWeight: FontWeight.w600,

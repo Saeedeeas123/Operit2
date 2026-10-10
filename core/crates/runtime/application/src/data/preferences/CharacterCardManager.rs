@@ -427,7 +427,7 @@ impl CharacterCardManager {
             promptTags,
         };
         serde_json::to_string_pretty(&backup)
-            .map_err(|error| format!("导出角色卡备份失败：{error}"))
+            .map_err(|error| format!("Failed to export the character card backup: {error}"))
     }
 
     /// Imports character cards and prompt tags from backup JSON.
@@ -437,10 +437,10 @@ impl CharacterCardManager {
         jsonContent: &str,
     ) -> Result<CharacterCardImportResult, String> {
         if jsonContent.trim().is_empty() {
-            return Err("角色卡备份内容不能为空".to_string());
+            return Err("Character card backup content cannot be empty".to_string());
         }
         let backupInput = serde_json::from_str::<CharacterCardsBackupInput>(jsonContent)
-            .map_err(|error| format!("角色卡备份 JSON 格式错误：{error}"))?;
+            .map_err(|error| format!("Character card backup JSON format error: {error}"))?;
         let backup = match backupInput {
             CharacterCardsBackupInput::BackupFile(backup) => backup,
             CharacterCardsBackupInput::CharacterCards(characterCards) => CharacterCardsBackupFile {
@@ -508,9 +508,9 @@ impl CharacterCardManager {
     #[allow(non_snake_case)]
     pub fn createCharacterCardFromTavernJson(&self, jsonString: &str) -> Result<String, String> {
         let tavernCard = serde_json::from_str::<TavernCharacterCard>(jsonString)
-            .map_err(|error| format!("角色卡 JSON 格式错误：{error}"))?;
+            .map_err(|error| format!("Character card JSON format error: {error}"))?;
         if tavernCard.data.name.trim().is_empty() {
-            return Err("角色卡名称不能为空".to_string());
+            return Err("Character card name cannot be empty".to_string());
         }
 
         let mut worldBookTagId = None;
@@ -674,7 +674,7 @@ impl CharacterCardManager {
                 character_book: None,
             },
         };
-        serde_json::to_string(&tavernCard).map_err(|error| format!("导出角色卡失败：{error}"))
+        serde_json::to_string(&tavernCard).map_err(|error| format!("Failed to export the character card: {error}"))
     }
 
     #[allow(non_snake_case)]
@@ -1521,7 +1521,7 @@ mod tests {
         for id in ["card-a", "card-b"] {
             CharacterCardManager::restoreCharacterCardInPreferences(
                 &mut preferences,
-                &backup_card(id, "空"),
+                &backup_card(id, "empty"),
             );
         }
         assert_eq!(
@@ -1531,7 +1531,7 @@ mod tests {
         for id in ["card-a", "card-b"] {
             assert_eq!(
                 preferences.get(&stringPreferencesKey(&format!("character_card_{id}_name"))),
-                Some(&"空".to_string())
+                Some(&"empty".to_string())
             );
             assert_eq!(
                 preferences.get(&stringPreferencesKey(&format!(
@@ -1555,10 +1555,10 @@ mod tests {
         for id in ["card-a", "card-b"] {
             CharacterCardManager::restoreCharacterCardInPreferences(
                 &mut preferences,
-                &backup_card(id, "空"),
+                &backup_card(id, "empty"),
             );
         }
-        let mut updated = backup_card("card-a", "空");
+        let mut updated = backup_card("card-a", "empty");
         updated.description = "updated".to_string();
         updated.updatedAt = 300;
         CharacterCardManager::restoreCharacterCardInPreferences(&mut preferences, &updated);
@@ -1581,21 +1581,21 @@ mod tests {
     #[test]
     fn duplicate_imported_names_allow_unchanged_edits_but_reject_new_collisions() {
         let mut preferences = Preferences::default();
-        for (id, name) in [("card-a", "空"), ("card-b", "空"), ("card-c", "other")] {
+        for (id, name) in [("card-a", "empty"), ("card-b", "empty"), ("card-c", "other")] {
             CharacterCardManager::restoreCharacterCardInPreferences(
                 &mut preferences,
                 &backup_card(id, name),
             );
         }
         assert!(
-            CharacterCardManager::assertCardNameUnique(&preferences, "空", Some("card-a"),).is_ok()
+            CharacterCardManager::assertCardNameUnique(&preferences, "empty", Some("card-a"),).is_ok()
         );
         assert!(
-            CharacterCardManager::assertCardNameUnique(&preferences, "空", Some("new-card"),)
+            CharacterCardManager::assertCardNameUnique(&preferences, "empty", Some("new-card"),)
                 .is_err()
         );
         assert!(
-            CharacterCardManager::assertCardNameUnique(&preferences, "空", Some("card-c"),)
+            CharacterCardManager::assertCardNameUnique(&preferences, "empty", Some("card-c"),)
                 .is_err()
         );
     }

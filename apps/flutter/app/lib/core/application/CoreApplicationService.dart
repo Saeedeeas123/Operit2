@@ -202,7 +202,7 @@ class CoreApplicationService with WidgetsBindingObserver {
           .updateCurrentDeviceUserName(
             userName: _runtimeManager.activeIdentity.name,
           );
-      // 配置和监听生命周期归 runtime；Dart 只调用生成的类型化 Proxy。
+      // Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.Config and lifecycle management belong to the runtime; Dart only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.only calls the generated typed Proxy.
       final peerService = _coreClients.server.runtimeRemoteLinkService;
       final config = await peerService.localHostConfig();
       if (config == null) {

@@ -1,68 +1,68 @@
-# Operit TypeScript 项目
+# Operit TypeScript Project
 
-这是一个使用 Operit 创建的 TypeScript + pnpm 项目。
+This is a TypeScript + pnpm project created with Operit.
 
-## 快速开始
+## Quick Start
 
-### 1. 安装依赖
+### 1. Install dependencies
 ```bash
-点击 "pnpm install" 按钮
+Click the "pnpm install" button
 ```
 
-### 2. 开发模式（实时编译）
+### 2. Development mode (live compilation)
 ```bash
-点击 "tsc watch" 按钮
-# TypeScript 会自动监听文件变化并编译
+Click the "tsc watch" button
+# TypeScript watches for file changes and compiles automatically
 ```
 
-### 3. 编译项目
+### 3. Build the project
 ```bash
-点击 "pnpm build" 按钮
+Click the "pnpm build" button
 ```
 
-### 4. 运行项目
+### 4. Run the project
 ```bash
-点击 "pnpm start" 按钮
-然后点击 "浏览器预览" 查看效果
+Click the "pnpm start" button
+Then click "Browser Preview" to see the result
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 .
 ├── src/
-│   └── index.ts          # TypeScript 源代码
-├── dist/                 # 编译输出目录
-├── package.json          # 项目配置
-├── tsconfig.json         # TypeScript 配置
-└── .operit/config.json   # Operit 工作区配置
+│   └── index.ts          # TypeScript source code
+├── dist/                 # compiled output directory
+├── package.json          # project configuration
+├── tsconfig.json         # TypeScript configuration
+└── .operit/config.json   # Operit workspace configuration
 ```
 
-## 技术栈
+## Tech Stack
 
-- 🔷 **TypeScript** - 类型安全的 JavaScript 超集
-- 📦 **pnpm** - 快速、节省磁盘空间的包管理器
-- 🟢 **Node.js** - JavaScript 运行时
+- 🔷 **TypeScript** - a type-safe superset of JavaScript
+- 📦 **pnpm** - a fast, disk-space-efficient package manager
+- 🟢 **Node.js** - the JavaScript runtime
 
-## 为什么选择 pnpm？
+## Why pnpm?
 
-- ⚡ 更快的安装速度
-- 💾 节省磁盘空间（硬链接共享依赖）
-- 🔒 严格的依赖管理
-- 🎯 与 npm/yarn 命令兼容
+- ⚡ Faster installs
+- 💾 Saves disk space (dependencies are shared through hard links)
+- 🔒 Strict dependency management
+- 🎯 Compatible with npm/yarn commands
 
-## 常用命令
+## Common Commands
 
-- `pnpm install` - 安装依赖
-- `pnpm build` - 编译 TypeScript
-- `tsc watch` - 监听模式编译
-- `pnpm start` - 运行编译后的代码
+- `pnpm install` - install dependencies
+- `pnpm build` - compile TypeScript
+- `tsc watch` - compile in watch mode
+- `pnpm start` - run the compiled code
 
-## 开发提示
+## Development Tips
 
-- TypeScript 源代码放在 `src/` 目录
-- 编译后的 JavaScript 在 `dist/` 目录
-- 修改代码后需要重新编译
-- 使用 watch 模式可以自动编译
+- TypeScript source code lives in the `src/` directory
+- Compiled JavaScript goes to the `dist/` directory
+- Recompile after changing the code
+- Watch mode compiles automatically
 
 Happy Coding with TypeScript! 🎉

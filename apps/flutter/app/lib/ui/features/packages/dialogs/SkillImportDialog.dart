@@ -49,7 +49,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
     final colorScheme = Theme.of(context).colorScheme;
     return AlertDialog(
       icon: const Icon(Icons.build_outlined),
-      title: const Text('添加技能'),
+      title: const Text('Add skill'),Add skill'),Add skill'),Add skill'),
       content: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 560),
         child: SingleChildScrollView(
@@ -74,7 +74,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                     ButtonSegment<_SkillImportMode>(
                       value: _SkillImportMode.direct,
                       icon: Icon(Icons.edit_note),
-                      label: Text('手写'),
+                      label: Text('Manual entry'),Manual entry'),
                     ),
                   ],
                   selected: <_SkillImportMode>{_mode},
@@ -97,7 +97,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                       controller: _repoUrlController,
                       enabled: !_busy,
                       decoration: const InputDecoration(
-                        labelText: '仓库链接',
+                        labelText: 'Repository link',Repository link',Repository link',Repository link',
                         hintText: 'https://github.com/username/repo',
                         prefixIcon: Icon(Icons.link),
                       ),
@@ -121,7 +121,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                           controller: _skillIdController,
                           enabled: !_busy,
                           decoration: const InputDecoration(
-                            labelText: '技能 ID',
+                            labelText: 'Skill ID',Skill ID',
                             hintText: 'my-skill',
                             prefixIcon: Icon(Icons.tag),
                           ),
@@ -132,7 +132,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                           controller: _descriptionController,
                           enabled: !_busy,
                           decoration: const InputDecoration(
-                            labelText: '描述',
+                            labelText: 'Description',Description',
                             prefixIcon: Icon(Icons.notes),
                           ),
                         ),
@@ -143,8 +143,8 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                           minLines: 7,
                           maxLines: 12,
                           decoration: const InputDecoration(
-                            labelText: '内容',
-                            hintText: '写下这个技能的使用说明',
+                            labelText: 'Content',Content',
+                            hintText: 'Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',Write the usage instructions for this skill',
                             alignLabelWithHint: true,
                           ),
                           validator: _required,
@@ -154,7 +154,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                '附件 ${_attachments.length}',
+                                'Attachments ${_attachments.length}',Attachments ${_attachments.length}',
                                 style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
                                       color: colorScheme.onSurfaceVariant,
@@ -164,7 +164,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
                             TextButton.icon(
                               onPressed: _busy ? null : _pickAttachments,
                               icon: const Icon(Icons.attach_file, size: 18),
-                              label: const Text('添加附件'),
+                              label: const Text('Add attachment'),Add attachment'),Add attachment'),Add attachment'),
                             ),
                           ],
                         ),
@@ -220,11 +220,11 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
       actions: <Widget>[
         TextButton(
           onPressed: _busy ? null : () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),Cancel'),
         ),
         FilledButton(
           onPressed: _busy ? null : _import,
-          child: const Text('导入'),
+          child: const Text('Import'),Import'),
         ),
       ],
     );
@@ -258,7 +258,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
     if (_mode == _SkillImportMode.zip && _zipFile == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('请选择 ZIP 文件'),
+          content: Text('Please select a ZIP file'),Please select a ZIP file'),Please select a ZIP file'),file'),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -297,7 +297,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
       };
       final after = await repository.getAvailableSkillPackages();
       final added = after.keys.toSet().difference(before.keys.toSet());
-      if (added.length != 1) throw StateError('导入未产生唯一技能：$result');
+      if (added.length != 1) throw StateError('Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');Import did not produce a single skill: $result');
       await widget.clients.application.setExtensionScope(
         kind: 'skill',
         id: added.single,
@@ -325,7 +325,7 @@ class _SkillImportDialogState extends State<SkillImportDialog> {
   }
 
   String? _required(String? value) {
-    return value == null || value.trim().isEmpty ? '必填' : null;
+    return value == null || value.trim().isEmpty ? 'Required' : null;Required' : null;
   }
 }
 
@@ -350,7 +350,7 @@ class _ZipPickerRow extends StatelessWidget {
       label: Align(
         alignment: Alignment.centerLeft,
         child: Text(
-          file?.name ?? '选择 ZIP 文件',
+          file?.name ?? 'Select a ZIP file',Select a ZIP file',file',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(

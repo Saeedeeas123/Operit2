@@ -47,12 +47,12 @@ class ChatMultiSelectBar extends StatelessWidget {
                   IconButton(
                     onPressed: onClose,
                     icon: const Icon(Icons.close),
-                    tooltip: '退出多选',
+                    tooltip: 'Exit multi-select',Exit multi-select',Exit multi-select',Exit multi-select',
                     visualDensity: VisualDensity.compact,
                   ),
                   Expanded(
                     child: Text(
-                      selectedCount == 0 ? '多选' : '已选 $selectedCount 条',
+                      selectedCount == 0 ? 'Multi-select' : '$selectedCount selected',
                       style: theme.textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
@@ -61,31 +61,31 @@ class ChatMultiSelectBar extends StatelessWidget {
                   IconButton(
                     onPressed: onToggleSelectAll,
                     icon: Icon(allSelected ? Icons.deselect : Icons.select_all),
-                    tooltip: allSelected ? '清空选择' : '全选',
+                    tooltip: allSelected ? 'Clear selection' : 'Select all',Clear selection' : 'Select all',Clear selection' : 'Select all',Clear selection' : 'Select all',Select all',
                     visualDensity: VisualDensity.compact,
                   ),
                   IconButton(
                     onPressed: onCopy,
                     icon: const Icon(Icons.content_copy),
-                    tooltip: '复制所选',
+                    tooltip: 'Copy selected',Copy selected',Copy selected',Copy selected',
                     visualDensity: VisualDensity.compact,
                   ),
                   IconButton(
                     onPressed: onQueueMemory,
                     icon: const Icon(Icons.psychology_outlined),
-                    tooltip: '将所选用户消息加入记忆队列',
+                    tooltip: 'Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',Add selected user messages to memory queue',
                     visualDensity: VisualDensity.compact,
                   ),
                   IconButton.filledTonal(
                     onPressed: onShareImage,
                     icon: const Icon(Icons.ios_share),
-                    tooltip: '生成长图',
+                    tooltip: 'Generate long screenshot',Generate long screenshot',Generate long screenshot',Generate long screenshot',
                     visualDensity: VisualDensity.compact,
                   ),
                   IconButton.filledTonal(
                     onPressed: onDelete,
                     icon: const Icon(Icons.delete_outline),
-                    tooltip: '删除所选',
+                    tooltip: 'Delete selected',Delete selected',Delete selected',Delete selected',
                     color: colorScheme.onErrorContainer,
                     style: IconButton.styleFrom(
                       backgroundColor: colorScheme.errorContainer,

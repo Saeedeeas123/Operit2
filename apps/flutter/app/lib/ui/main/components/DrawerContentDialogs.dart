@@ -81,7 +81,7 @@ class _RenameGroupDialogState extends State<RenameGroupDialog> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: const Text('重命名分组'),
+      title: const Text('Rename group'),
       content: TextField(
         controller: _controller,
         autofocus: true,
@@ -117,8 +117,8 @@ class DeleteGroupDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: const Text('删除分组'),
-      content: Text('确定要删除分组“$groupName”及其中的 $count 条对话吗？'),
+      title: const Text('Delete group'),
+      content: Text('Delete group "$groupName" and its $count conversation(s)?'),
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
@@ -256,7 +256,7 @@ class ConversationActionDialog extends StatelessWidget {
           if (canOpenInWindow)
             _ConversationActionTile(
               icon: Icons.open_in_new,
-              label: '在新窗口打开',
+              label: 'Open in new window',
               onTap: () =>
                   Navigator.of(context).pop(ConversationAction.openInWindow),
             ),

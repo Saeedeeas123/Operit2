@@ -37,7 +37,7 @@ class AboutOperitScreen extends StatelessWidget {
                   _AboutSection(
                     title: 'Operit2',
                     child: Text(
-                      '面向终端与桌面的 AI 工作台，提供聊天会话、工作区、工具、插件、MCP、远程连接和 Web 访问。',
+                      'AI workbench for terminals and desktops: chat sessions, workspaces, tools, plugins, MCP, remote connections, and web access.',
                     ),
                   ),
                   SizedBox(height: 12),
@@ -115,19 +115,19 @@ class _AboutHeaderState extends State<_AboutHeader> {
             final style = Theme.of(context).textTheme.bodyMedium;
             if (snapshot.hasError) {
               return Text(
-                '版本信息读取失败：${snapshot.error}',
+                'Failed to read version info: ${snapshot.error}',
                 style: style?.copyWith(color: colorScheme.error),
                 textAlign: TextAlign.center,
               );
             }
             if (snapshot.connectionState != ConnectionState.done) {
               return Text(
-                '正在读取版本信息…',
+                'Reading version info…',
                 style: style?.copyWith(color: colorScheme.onSurfaceVariant),
               );
             }
             return Text(
-              '版本 ${snapshot.requireData}',
+              'Version ${snapshot.requireData}',
               style: style?.copyWith(color: colorScheme.onSurfaceVariant),
             );
           },
@@ -144,27 +144,27 @@ class _ProjectLinksSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _AboutSection(
-      title: '项目',
+      title: 'Project',
       child: Column(
         children: <Widget>[
           _AboutActionRow(
             icon: Icons.code_outlined,
-            title: '项目源码',
+            title: 'Project source',
             subtitle: 'github.com/AAswordman/Operit2',
             onTap: () => _launchExternalUri(_projectUri),
           ),
           const Divider(height: 1),
           _AboutActionRow(
             icon: Icons.menu_book_outlined,
-            title: '使用文档',
-            subtitle: 'README 与命令行说明',
+            title: 'Documentation',
+            subtitle: 'README and command-line guide',
             onTap: () => _launchExternalUri(_documentationUri),
           ),
           const Divider(height: 1),
           _AboutActionRow(
             icon: Icons.description_outlined,
-            title: '开源许可证',
-            subtitle: 'Operit2 使用 AGPL-3.0',
+            title: 'Open-source licenses',
+            subtitle: 'Operit2 uses AGPL-3.0',
             onTap: () => _showOpenSourceLicenses(context),
           ),
         ],
@@ -180,10 +180,10 @@ class _SupportSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _AboutSection(
-      title: '联系',
+      title: 'Contact',
       child: _AboutActionRow(
         icon: Icons.alternate_email_outlined,
-        title: '开发者 AAswordman',
+        title: 'Developer AAswordman',
         subtitle: 'aaswordsman@foxmail.com',
         onTap: () => _launchExternalUri(_contactUri),
       ),
@@ -198,7 +198,7 @@ class _CopyrightNotice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '© 2025 - 2026 Operit. 保留所有权利。',
+      '© 2025 - 2026 Operit. All rights reserved.',
       textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.bodySmall?.copyWith(
         color: Theme.of(context).colorScheme.onSurfaceVariant,
@@ -331,7 +331,7 @@ Future<void> _showOpenSourceLicenses(BuildContext context) {
     context: context,
     builder: (dialogContext) {
       return AlertDialog(
-        title: const Text('开源许可证'),
+        title: const Text('Open-source licenses'),
         content: SizedBox(
           width: 520,
           child: ListView.separated(
@@ -358,7 +358,7 @@ Future<void> _showOpenSourceLicenses(BuildContext context) {
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(),
-            child: const Text('关闭'),
+            child: const Text('Close'),
           ),
         ],
       );

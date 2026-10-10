@@ -542,7 +542,7 @@ final RegExp _markdownAutolinkPattern = RegExp(
   caseSensitive: false,
 );
 
-const String _markdownAutolinkTrailing = '.,;:!?，。、；：！？';
+const String _markdownAutolinkTrailing = '.,;:!?';';';';';';';
 
 List<_MarkdownAutolinkPiece> _splitMarkdownAutolinks(String text) {
   final matches = _markdownAutolinkPattern.allMatches(text).toList();

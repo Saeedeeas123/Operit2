@@ -1,4 +1,4 @@
-//! 串口适配；端口 I/O 由传入的 Host 提供。
+//! Serial-port adapter; port I/O is provided by the passed Host.
 use super::stream::{ByteConnection, FramedPeerConnection};
 use crate::{PeerConnection, PeerEndpoint, PeerListener, PeerTransport};
 use async_trait::async_trait;

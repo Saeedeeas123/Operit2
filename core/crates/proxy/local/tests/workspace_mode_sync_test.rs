@@ -94,7 +94,7 @@ fn assert_workspace_state(manager: &RuntimePackageManager, chat_id: &str, bound:
     for package in MODES {
         let toggle = definition(manager, package, chat_id);
         let description = toggle["description"].as_str().unwrap();
-        let missing = description.contains("未绑定")
+        let missing = description.contains("not bound")
             || description.contains("No workspace is bound")
             || description.contains("A workspace is required");
         assert_eq!(!missing, bound, "{package}: {description}");

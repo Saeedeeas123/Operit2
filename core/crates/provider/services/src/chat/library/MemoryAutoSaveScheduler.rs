@@ -49,7 +49,7 @@ impl MemoryAutoSaveScheduler {
                             }
                             if RUNNING.load(Ordering::SeqCst) {
                                 if let Err(error) = Self::runOnce(runtimeContext.clone()).await {
-                                    AppLogger::e(TAG, &format!("记忆自动保存轮询失败: {error}"));
+                                    AppLogger::e(TAG, &format!("Memory auto-save polling failed: {error}"));
                                 }
                             }
                         }

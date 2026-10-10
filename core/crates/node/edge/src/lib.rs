@@ -60,7 +60,7 @@ impl EdgeNode {
         }
     }
 
-    /// Edge 和普通节点注入同一个外层接口，不自行实现配对或鉴权。
+    /// Edge and ordinary nodes are injected through the same outer interface; neither implements pairing or authorization itself.
     pub fn withNodeServices(mut self, services: NodeServices) -> Self {
         self.nodeServices = Some(services);
         self

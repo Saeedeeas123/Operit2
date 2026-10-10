@@ -438,8 +438,8 @@ class _DataSettingsPanelState extends State<DataSettingsPanel> {
       _busy = true;
       _operit1ImportProgress = const Operit1SnapshotImportProgress(
         stage: 'prepare',
-        title: '准备导入',
-        detail: '正在准备 Operit1 快照。',
+        title: 'Preparing import',
+        detail: 'Preparing the Operit1 snapshot.',
         progress: 0.0,
         active: true,
       );
@@ -464,16 +464,16 @@ class _DataSettingsPanelState extends State<DataSettingsPanel> {
           lastUploadPercent = uploadPercent;
           _setOperit1ImportProgress(
             stage: 'upload',
-            title: '上传快照',
-            detail: '正在读取并上传快照文件（$uploadPercent%）。',
+            title: 'Uploading snapshot',
+            detail: 'Reading and uploading the snapshot file ($uploadPercent%).',
             progress: 0.18 * uploadPercent / 100,
           );
         },
       );
       _setOperit1ImportProgress(
         stage: 'inspect',
-        title: '检查快照',
-        detail: '正在检查 Operit1 快照内容，请稍候。',
+        title: 'Checking snapshot',
+        detail: 'Checking the Operit1 snapshot contents, please wait.',
         progress: 0.20,
       );
       ClientLogger.i(
@@ -533,8 +533,8 @@ class _DataSettingsPanelState extends State<DataSettingsPanel> {
       _busy = true;
       _operit1ImportProgress = const Operit1SnapshotImportProgress(
         stage: 'start',
-        title: '开始导入',
-        detail: '正在启动 Operit1 数据迁移。',
+        title: 'Starting import',
+        detail: 'Starting the Operit1 data migration.',
         progress: 0.02,
         active: true,
       );

@@ -108,15 +108,15 @@ String _normalizeVersion(String? value) =>
 
 extension MarketLocalInstallStatePresentation on MarketLocalInstallState {
   String actionLabel(MarketEntrySummary entry) => switch (this) {
-    MarketLocalInstallState.installed => '已安装',
-    MarketLocalInstallState.updateAvailable => '更新',
+    MarketLocalInstallState.installed => 'Installed',Installed',Installed',
+    MarketLocalInstallState.updateAvailable => 'Update',Update',
     MarketLocalInstallState.notInstalled =>
-      entry.type == 'script' || entry.type == 'package' ? '下载' : '安装',
+      entry.type == 'script' || entry.type == 'package' ? 'Download' : 'Install',Download' : 'Install',Install',
   };
 
   String? get badgeLabel => switch (this) {
-    MarketLocalInstallState.installed => '已安装',
-    MarketLocalInstallState.updateAvailable => '可更新',
+    MarketLocalInstallState.installed => 'Installed',Installed',Installed',
+    MarketLocalInstallState.updateAvailable => 'Update available',Update available',Update available',
     MarketLocalInstallState.notInstalled => null,
   };
 

@@ -203,7 +203,7 @@ class _WorkspaceFileBrowserContentState
     if (!_directorySelectionEnabled &&
         !_isWorkspaceRelativePath(_currentPath)) {
       _entriesFuture = Future<List<WorkspaceFileEntry>>.error(
-        StateError('工作区目录路径必须是相对路径'),
+        StateError('Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),Workspace directory path must be a relative path'),
       );
       return;
     }
@@ -217,7 +217,7 @@ class _WorkspaceFileBrowserContentState
     }
     if (!_directorySelectionEnabled && !_isWorkspaceRelativePath(path)) {
       setState(() {
-        _pathError = '工作区目录路径必须是相对路径';
+        _pathError = 'Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';Workspace directory path must be a relative path';
       });
       return;
     }
@@ -267,7 +267,7 @@ class _WorkspaceFileBrowserContentState
     if (normalizedPath == null) {
       setState(() {
         _editingPath = false;
-        _pathError = '路径必须位于当前工作区内';
+        _pathError = 'Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';Path must be inside the current workspace';
       });
       return;
     }

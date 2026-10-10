@@ -1,4 +1,4 @@
-//! WebSocket transport: 客户端与 upgrade socket 都由 Host 拥有。
+//! WebSocket transport: both the client and the upgrade socket are owned by the Host.
 use super::{
     inbox::{hostTask, Inbox},
     stream::{ByteConnection, FramedPeerConnection},

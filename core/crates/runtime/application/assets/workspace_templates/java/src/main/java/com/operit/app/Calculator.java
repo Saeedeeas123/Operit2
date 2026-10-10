@@ -1,44 +1,44 @@
 package com.operit.app;
 
 /**
- * 简单的计算器类
- * 用于演示类结构和单元测试
+ * A simple calculator class
+ * Used to demonstrate class structure and unit tests
  */
 public class Calculator {
     
     /**
-     * 加法运算
+     * Addition operation
      */
     public int add(int a, int b) {
         return a + b;
     }
     
     /**
-     * 减法运算
+     * Subtraction operation
      */
     public int subtract(int a, int b) {
         return a - b;
     }
     
     /**
-     * 乘法运算
+     * Multiplication operation
      */
     public int multiply(int a, int b) {
         return a * b;
     }
     
     /**
-     * 除法运算
+     * Division operation
      */
     public double divide(int a, int b) {
         if (b == 0) {
-            throw new ArithmeticException("除数不能为0");
+            throw new ArithmeticException("The divisor cannot be 0");
         }
         return (double) a / b;
     }
     
     /**
-     * 计算数组总和
+     * Sum an array
      */
     public int sum(int[] numbers) {
         int total = 0;

@@ -220,7 +220,7 @@ class _WorkspaceSuggestionSection extends StatelessWidget {
       return _MentionSuggestionEmptyRow(
         text: _mentionText(
           l10n,
-          zh: '当前对话未绑定工作区',
+          zh: 'The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',The current conversation has no workspace bound',
           en: 'Current chat not bound to workspace',
         ),
       );
@@ -244,12 +244,12 @@ class _WorkspaceSuggestionSection extends StatelessWidget {
             text: searchQuery.trim().isEmpty
                 ? _mentionText(
                     l10n,
-                    zh: '输入名称或路径搜索工作区项目',
+                    zh: 'Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',Type a name or path to search workspace items',
                     en: 'Enter name or path to search workspace items',
                   )
                 : _mentionText(
                     l10n,
-                    zh: '没有匹配的文件或文件夹',
+                    zh: 'No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',No matching files or folders',
                     en: 'No matching files or folders',
                   ),
           );

@@ -1,4 +1,4 @@
-//! 节点通信持久化。沿用原 link_access 路径和 Preferences 格式，不恢复旧握手或 HTTP 接口。
+//! Node communication persistence. It keeps the original link_access path and the Preferences format, and does not revive the legacy handshake or HTTP interface.
 use crate::NodeServices::{PairedPeer, PeerTransport};
 use base64::{engine::general_purpose::STANDARD as BASE64, Engine};
 use operit_host_api::RuntimeStorageHost;
@@ -17,12 +17,12 @@ pub(crate) enum StoredDirection {
     Outbound,
 }
 
-/// 原监听配置；token 只供本地 runtime 使用，不生成 UI DTO，也不实现 Debug。
+/// The original listen configuration; the token is used by the local runtime only, is never projected into a UI DTO, and Debug is not implemented.
 #[derive(Clone, Serialize, Deserialize)]
 pub struct PeerHostConfig {
     pub bindAddress: String,
     pub token: String,
-    /// 显式暴露的传输方式；空列表不启动监听。
+    /// Explicitly exposed transports; an empty list starts no listener.
     #[serde(default)]
     pub transports: Vec<operit_peer_link::PeerTransport>,
     pub discoveryEnabled: bool,
@@ -37,7 +37,7 @@ pub enum PeerHostPortMode {
     Fixed,
 }
 
-/// 配对服务沿用原版本及原入站/出站凭证，不按重构后的传输实现另分版本。
+/// The pairing service keeps the original version and the original inbound/outbound credentials; it is not re-versioned by the refactored transport implementation.
 pub(crate) const PAIRING_SERVICE_VERSION: u32 = 1;
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -187,7 +187,7 @@ impl PeerStateStore {
     }
 
 
-    /// 在原 Preferences 文件中提交一个事务/凭证；不创建平行的存储目录。
+    /// Commits one transaction/credential inside the original Preferences file; no parallel storage directory is created.
     pub(crate) fn putRecord<T: Serialize>(&self, path: &str, id: &str, value: &T) -> Result<(), String> {
         let encoded = serde_json::to_string(value).map_err(|e| e.to_string())?;
         self.store(path).edit(|prefs| prefs.set(&stringPreferencesKey(id), encoded))
@@ -266,7 +266,7 @@ impl PeerStateStore {
             .map_err(|error: PreferencesDataStoreError| error.to_string())
     }
 
-    /// 从原入站/出站文件分别读取授权，只在 UI 投影中按节点归并，不合并凭证或反向授权。
+    /// Reads authorization separately from the original inbound/outbound files and merges them per node in the UI projection only; credentials and reverse authorization are never merged.
     pub fn pairedPeers(&self, localNodeId: &str) -> Result<Vec<PairedPeer>, String> {
         let mut peers = BTreeMap::<String, PairedPeer>::new();
         for (_, record) in
@@ -304,9 +304,9 @@ impl PeerStateStore {
         Ok(peers.into_values().collect())
     }
 
-    /// 设备级撤销的持久化部分：清除两个方向、全部渠道和该设备的待确认事务。
-    /// 调用方 runtime 必须串行化配对/撤销并失效内存凭证、关闭连接；跨文件写失败必须报错，
-    /// 不能将这里当成跨文件原子事务或在失败后继续授予旧连接访问权。重复调用可安全重试。
+    /// The persistent part of device-level revocation: it clears both directions, every channel and the pending transactions of that device.
+    /// The calling runtime must serialize pairing/revocation, invalidate in-memory credentials and close the connection; a cross-file write failure must raise an error,
+    /// Do not treat this as a cross-file atomic transaction, and never keep granting the old connection access after a failure. Repeated calls are safe to retry.
     pub fn removePairedPeer(&self, nodeId: &str) -> Result<(), String> {
         if nodeId.trim().is_empty() {
             return Err("Invalid paired node id".into());
@@ -320,7 +320,7 @@ impl PeerStateStore {
                 "/state/peerNodeId",
             ),
         ];
-        // 先验证四份原记录，避免发现损坏数据前就删除其中一个方向。
+        // Validate all four original records first, so that no direction is deleted before corrupted data is discovered.
         let records = paths
             .iter()
             .map(|(path, pointer)| {
@@ -354,8 +354,8 @@ impl PeerStateStore {
         Ok(())
     }
 
-    /// 原待确认记录保留读取，但旧事务不能绕过新协议 token/配对码校验而直接完成。
-    /// 不向 UI 返回这些原始数据：旧出站状态可能包含临时密钥。
+    /// The original pending records stay readable, but a legacy transaction can never bypass the new token/pairing-code checks and complete directly.
+    /// These raw records are never returned to the UI: the legacy outbound state may contain temporary keys.
     pub(crate) fn pendingRecords(
         &self,
         direction: StoredDirection,

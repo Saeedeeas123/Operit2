@@ -122,7 +122,7 @@ impl MemoryLibrary {
                         )
                         .await;
                         if let Err(error) = result {
-                            AppLogger::e(TAG, &format!("保存记忆失败: {error}"));
+                            AppLogger::e(TAG, &format!("Failed to save memory: {error}"));
                         }
                     })
                 }),
@@ -194,7 +194,7 @@ impl MemoryLibrary {
             let result:Result<String,String>=async {
                 let mut service=aiService.lock().await;let mut output=String::new();
                 let mut stream=service.send_message(SendMessageRequest {
-                    chat_history:toPromptTurns(&[("system".into(),prompt),("user".into(),"请为这些记忆分类。".into())]),
+                    chat_history:toPromptTurns(&[("system".into(),prompt),("user".into(),"Please classify these memories.".into())]),
                     model_parameters:Vec::new(),enable_thinking:false,thinking_quality_level:1,thinking_configurations:"[]".into(),thinking_option_id:String::new(),
                     stream:true,available_tools:Vec::new(),preserve_think_in_history:false,enable_retry:true,on_non_fatal_error:None,on_tool_invocation:None,
                 }).await.map_err(|e|e.to_string())?;
@@ -693,9 +693,9 @@ fn buildAnalysisMessage(
         message.push_str(&solution.chars().take(3000).collect::<String>());
         message.push_str("\n\n");
     } else {
-        message.push_str("问题：\n");
+        message.push_str("Question:\n");
         message.push_str(query);
-        message.push_str("\n\n解决方案：\n");
+        message.push_str("\n\nSolution:\n");
         message.push_str(&solution.chars().take(3000).collect::<String>());
         message.push_str("\n\n");
     }
@@ -712,7 +712,7 @@ fn buildAnalysisMessage(
         message.push_str(if useEnglish {
             "History:\n"
         } else {
-            "历史记录：\n"
+            "History:\n"
         });
         for (index, (role, content)) in recentHistory.iter().enumerate() {
             message.push_str(&format!(
@@ -807,7 +807,7 @@ fn pruneToolResultContent(message: &str) -> String {
             .map(|index| index + 1)
             .unwrap_or(block.raw.len());
         output.push_str(&block.raw[..openEnd]);
-        output.push_str("[工具结果已省略]");
+        output.push_str("[tool result omitted]");
         output.push_str(&format!("</{}>", block.tag_name));
         cursor = block.end;
     }

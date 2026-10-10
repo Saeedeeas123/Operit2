@@ -309,7 +309,7 @@ class ChatScreenContent extends StatelessWidget {
                                       .toList();
                                   if (selected.isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(content: Text('请选择用户消息')),
+                                      const SnackBar(content: Text('Please select user messages')),Please select user messages')),Please select user messages')),Please select user messages')),Please select user messages')),Please select user messages')),Please select user messages')),
                                     );
                                     return;
                                   }
@@ -324,7 +324,7 @@ class ChatScreenContent extends StatelessWidget {
                                         context,
                                       ).showSnackBar(
                                         const SnackBar(
-                                          content: Text('已加入所属记忆库队列'),
+                                          content: Text('Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),Added to the memory library queue'),
                                         ),
                                       );
                                   } catch (error) {
@@ -332,7 +332,7 @@ class ChatScreenContent extends StatelessWidget {
                                       ScaffoldMessenger.of(
                                         context,
                                       ).showSnackBar(
-                                        SnackBar(content: Text('入队失败：$error')),
+                                        SnackBar(content: Text('Failed to enqueue: $error')),Failed to enqueue: $error')),Failed to enqueue: $error')),Failed to enqueue: $error')),Failed to enqueue: $error')),
                                       );
                                   }
                                 },
@@ -548,7 +548,7 @@ class ChatScreenContent extends StatelessWidget {
     try {
       final targetCharacterName = _voiceCharacterName(message);
       if (targetCharacterName == null) {
-        _showTtsSnack(context, '当前消息没有可匹配的角色');
+        _showTtsSnack(context, 'No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');No character matches the current message');
         return;
       }
       final cards = await viewModel.clients.preferencesCharacterCardManager
@@ -562,12 +562,12 @@ class ChatScreenContent extends StatelessWidget {
           })
           .toList(growable: false);
       if (matchingCards.length != 1) {
-        _showTtsSnack(context, '角色卡匹配数量不是 1：$targetCharacterName');
+        _showTtsSnack(context, 'Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');Character card match count is not 1: $targetCharacterName');
         return;
       }
       final text = cleanMessageContent(message.displayText);
       if (text.isEmpty) {
-        _showTtsSnack(context, '消息内容为空，无法生成语音');
+        _showTtsSnack(context, 'Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');Message content is empty; cannot generate speech');
         return;
       }
       await TtsPlaybackController.instance.speakForCharacter(
@@ -580,7 +580,7 @@ class ChatScreenContent extends StatelessWidget {
       if (!context.mounted) {
         return;
       }
-      _showTtsSnack(context, '生成/播放语音失败：$error');
+      _showTtsSnack(context, 'Failed to generate/play speech: $error');Failed to generate/play speech: $error');play speech: $error');play speech: $error');play speech: $error');play speech: $error');play speech: $error');play speech: $error');
     }
   }
 
@@ -632,7 +632,7 @@ class ChatScreenContent extends StatelessWidget {
         return;
       }
       ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-        SnackBar(content: Text('复制失败：${error.message ?? error.code}')),
+        SnackBar(content: Text('Copy failed: ${error.message ?? error.code}')),Copy failed: ${error.message ?? error.code}')),Copy failed: ${error.message ?? error.code}')),Copy failed: ${error.message ?? error.code}')),Copy failed: ${error.message ?? error.code}')),
       );
     }
   }
@@ -643,16 +643,16 @@ class ChatScreenContent extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('确认删除'),
-          content: Text('确定删除已选的 ${selectedMessageTimestamps.length} 条消息？'),
+          title: const Text('Confirm deletion'),Confirm deletion'),Confirm deletion'),Confirm deletion'),
+          content: Text('Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),Delete the ${selectedMessageTimestamps.length} selected message(s)?'),selected message(s)?'),selected message(s)?'),selected message(s)?'),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('取消'),
+              child: const Text('Cancel'),Cancel'),
             ),
             FilledButton(
               onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('删除'),
+              child: const Text('Delete'),Delete'),
             ),
           ],
         );
@@ -678,7 +678,7 @@ class ChatScreenContent extends StatelessWidget {
                 child: CircularProgressIndicator(strokeWidth: 2.5),
               ),
               SizedBox(width: 14),
-              Text('正在生成长图...'),
+              Text('Generating long screenshot...'),Generating long screenshot...'),Generating long screenshot...'),Generating long screenshot...'),Generating long screenshot...'),Generating long screenshot...'),
             ],
           ),
         );
@@ -712,7 +712,7 @@ class ChatScreenContent extends StatelessWidget {
       Navigator.of(context).pop();
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('生成长图失败：$error')));
+      ).showSnackBar(SnackBar(content: Text('Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));Failed to generate long screenshot: $error')));
     }
   }
 }

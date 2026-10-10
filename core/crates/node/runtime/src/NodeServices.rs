@@ -1,10 +1,10 @@
-//! 节点服务的共享注入容器；不重复声明 RuntimePeerService 的业务接口。
+//! Shared injection container for node services; it does not redeclare the RuntimePeerService business interface.
 use super::RuntimePeerService::RuntimePeerService;
 pub use operit_peer_link::{PeerEndpoint, PeerTransport};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 
-/// 可交给 UI 的待确认事务，不包含密钥。
+/// A pending transaction that may be handed to the UI; it contains no secrets.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PendingPairing {
     pub pairingId: String,
@@ -12,7 +12,7 @@ pub struct PendingPairing {
     pub displayName: String,
 }
 
-/// 局域网发现结果只包含寻址和展示信息；token 不进入发现结果或外围 UI。
+/// LAN discovery results contain addressing and display information only; tokens never enter discovery results or peripheral UI.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct DiscoveredPeer {
     pub nodeId: String,
@@ -20,7 +20,7 @@ pub struct DiscoveredPeer {
     pub displayName: String,
 }
 
-/// 已配对身份，不携带底层连接或凭证；传输渠道不改变身份。
+/// A paired identity that carries no underlying connection and no credential; the transport channel never changes the identity.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PairedPeer {
     pub nodeId: String,
@@ -29,7 +29,7 @@ pub struct PairedPeer {
     pub outbound: bool,
 }
 
-/// 只供本地操作界面展示，不通过匿名 Link 请求返回。
+/// For the local operator interface only; it is never returned through an anonymous Link request.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PairingPrompt {
     pub pairingId: String,
@@ -38,20 +38,20 @@ pub struct PairingPrompt {
     pub confirmationCode: String,
 }
 
-/// 一个节点共享一个实例；业务操作由注入的 RuntimePeerService 负责。
-/// 克隆只共享服务，不创建第二套配对记录、监听器或连接。
+/// One instance is shared per node; business operations are handled by the injected RuntimePeerService.
+/// Cloning shares the service only and never creates a second set of pairing records, listeners or connections.
 #[derive(Clone)]
 pub struct NodeServices {
     peers: Arc<dyn RuntimePeerService>,
 }
 
 impl NodeServices {
-    /// 由启动装配注入真正的服务；没有默认成功实现或全局实例。
+    /// The real service is injected during startup assembly; there is no default succeeding implementation and no global instance.
     pub fn new(peers: Arc<dyn RuntimePeerService>) -> Self {
         Self { peers }
     }
 
-    /// Router 使用同一服务转发 call/watch/push，不另建通信实例。
+    /// The Router forwards call/watch/push through the same service and builds no separate communication instance.
     pub fn peers(&self) -> Arc<dyn RuntimePeerService> {
         self.peers.clone()
     }

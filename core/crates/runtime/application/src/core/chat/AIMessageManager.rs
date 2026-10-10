@@ -129,7 +129,7 @@ pub fn logMessageTiming(stage: &str, startTimeMs: MessageTiming, details: Option
         .unwrap_or_default();
     AppLogger::d(
         MESSAGE_PROCESS_TIMING_TAG,
-        &format!("{stage} 耗时={elapsed}ms{suffix}"),
+        &format!("{stage} elapsed={elapsed}ms{suffix}"),
     );
 }
 
@@ -497,7 +497,7 @@ impl AIMessageManager {
 
         let mut summaryWithQuotes = summary.trim().to_string();
         if !conversationReviewEntries.is_empty() {
-            summaryWithQuotes.push_str("\n\n【对话回顾】\n");
+            summaryWithQuotes.push_str("\n\n[Conversation Review]\n");
             for (speaker, content) in conversationReviewEntries {
                 summaryWithQuotes.push_str("- ");
                 summaryWithQuotes.push_str(&speaker);
@@ -509,7 +509,7 @@ impl AIMessageManager {
 
         let finalSummary = if autoContinue {
             format!(
-                "{}\n\n如果任务尚未完成，请基于以上摘要继续。",
+                "{}\n\nIf the task is not finished yet, continue from the summary above.",
                 summaryWithQuotes.trim_end()
             )
         } else {
@@ -1270,7 +1270,7 @@ fn condenseAssistantMessageForReview(message: &ChatMessage) -> String {
                 } else {
                     format!(" {}", params.join("; "))
                 };
-                Some(format!("[工具: {tool_name}]{params_text}"))
+                Some(format!("[Tool: {tool_name}]{params_text}"))
             }
             MessagePartKind::ToolResult => {
                 let tool_name = part
@@ -1281,8 +1281,8 @@ fn condenseAssistantMessageForReview(message: &ChatMessage) -> String {
                     .attributes
                     .get("status")
                     .map(|value| match value.to_ascii_lowercase().as_str() {
-                        "success" => "成功",
-                        "error" => "失败",
+                        "success" => "success",
+                        "error" => "failure",
                         _ => value.as_str(),
                     })
                     .unwrap_or("");
@@ -1297,7 +1297,7 @@ fn condenseAssistantMessageForReview(message: &ChatMessage) -> String {
                 } else {
                     format!(" {result}")
                 };
-                Some(format!("[结果: {tool_name}{status_text}]{result_text}"))
+                Some(format!("[Result: {tool_name}{status_text}]{result_text}"))
             }
         };
         if let Some(segment) = segment {
@@ -1311,7 +1311,7 @@ fn condenseAssistantMessageForReview(message: &ChatMessage) -> String {
     if segments.len() > 25 {
         let omitted = segments.len() - 22;
         let mut bounded = segments[..12].to_vec();
-        bounded.push(format!("[...省略{omitted}段...]"));
+        bounded.push(format!("[...{omitted} sections omitted...]"));
         bounded.extend_from_slice(&segments[segments.len() - 10..]);
         segments = bounded;
     }
@@ -1426,13 +1426,13 @@ mod tests {
     fn attachment_markup_keeps_the_source_node_and_portable_tool_path() {
         let mut attachment = AttachmentInfo::new(
             "/device-b/runtime/temp/clean_on_exit/report.pdf".into(),
-            "报价单\".pdf".into(), "application/pdf".into(), 3,
+            "invoice\".pdf".into(), "application/pdf".into(), 3,
         );
         attachment.nodeId = Some("core-b".into());
         let tag = AIMessageManager::buildAttachmentTag(&attachment, None, false, false, false).unwrap();
         assert!(tag.contains("node_id=\"core-b\""));
         assert!(tag.contains("path=\"/app/data/temp/clean_on_exit/report.pdf\""));
-        assert!(tag.contains("filename=\"报价单&quot;.pdf\""));
+        assert!(tag.contains("filename=\"invoice&quot;.pdf\""));
         assert!(tag.contains("id=\"/device-b/runtime/temp/clean_on_exit/report.pdf\""));
     }
 
@@ -1523,7 +1523,7 @@ mod tests {
         let message = ChatMessage::new_with_parts(
             "ai".to_string(),
             vec![
-                MessagePart::markdown("part-0".to_string(), 0, "已检查设备".to_string()),
+                MessagePart::markdown("part-0".to_string(), 0, "Device checked".to_string()),
                 MessagePart::toolResult(
                     "part-1".to_string(),
                     1,
@@ -1537,7 +1537,7 @@ mod tests {
 
         let review = condenseAssistantMessageForReview(&message);
 
-        assert!(review.contains("[结果: system_info 成功]"));
+        assert!(review.contains("[Result: system_info success]"));
         assert!(review.contains("..."));
         assert!(review.len() < 500);
     }

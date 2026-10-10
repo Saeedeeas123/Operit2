@@ -1,103 +1,103 @@
-# 设备空间 Rust 契约测试
+# Device-space Rust contract tests
 
-本目录集中设备空间、审批、撤回、权限、多跳路由、持久化与同步边界测试。
-**测试文件存在、语法检查通过，不等于行为测试通过，更不代表所有边缘场景已经覆盖。**
+This directory gathers the device-space, approval, cancellation, permission, multi-hop routing, persistence and sync boundary tests.
+**A test file existing and passing a syntax check is not the same as the behaviour test passing, and it certainly does not mean every edge case is covered.**
 
-## 运行
+## Running
 
-在仓库根目录执行（默认只做登记、模块接线、记录路径和 Rust 语法检查，不编译）：
+Run from the repository root (by default this only registers, wires up modules, records paths and checks Rust syntax; it does not compile):
 
 ```powershell
 ./core/crates/node/runtime/tests/device_space/run.ps1
 ```
 
-明确执行 Rust 行为测试（此命令会编译测试目标，忽略 Rust 警告）：
+Explicitly run the Rust behaviour tests (this command compiles the test target and ignores Rust warnings):
 
 ```powershell
 ./core/crates/node/runtime/tests/device_space/run.ps1 -Run
 ./core/crates/node/runtime/tests/device_space/run.ps1 -Run -Repeat 10
 ```
 
-等价 Cargo 过滤器为 `-p operit-node-runtime --lib device_space`。
-必须使用 `--lib`：这些源文件由原模块通过 `include!` 接入，既可测试私有协议边界，
-又不必为了测试扩大生产 API 的公开范围。所有用例名称登记在 `coverage.json`。
+The equivalent Cargo filter is `-p operit-node-runtime --lib device_space`.
+`--lib` is required: these source files are pulled in by the original module through `include!`, which allows testing private protocol boundaries
+without widening the public surface of the production API for tests. All case names are registered in `coverage.json`.
 
-## 覆盖矩阵（50 个测试函数，部分内部遍历多个故障/顺序组合）
+## Coverage matrix (50 test functions; some iterate over several failure/order combinations)
 
-| 文件 | 验证内容 | 层次 |
+| File | What it verifies | Layer |
 | --- | --- | --- |
-| `join_lifecycle.rs` | 独立管理员申请；拒绝；重启 facade；重复批准；退出与重新申请；两申请者隔离；提交响应丢失 | 实际 facade/router + 独立 Host 存储 |
-| `cancellation.rs` | 撤回后两端磁盘记录；B 审批列表消失；旧审批失效；业务/身份/配对文件不变；提交前失败、处理后丢响应；撤回确认丢失；延迟刷新；断线重试；claim 与撤回两种顺序；连续 12 次撤回重申请 | 实际协议 + 可控传输 |
-| `reviewer_assignment.rs` | 最近合法审批人、非审批设备不弹窗、离线宽限与转移、旧 assignment 失效 | 多节点实际路由 |
-| `protocol_boundaries.rs` | 错误身份/空间/revision/profile；第三端撤回；申请端管理员不能自批；过期；目标换空间；相反审批决定冲突 | 身份与授权入口 |
-| `space_merge.rs` | AB 与 C-D-(E,F)-G 整组合并；逐跳迁移；profile/权限/拓扑完整；不完整快照不写成员 | 实际空间投影交换 |
-| `routing_contracts.rs` | 环路多跳；网络分区/重连；撤销中继权限；TTL；目标移除但连接仍存在；Binding 所有者迁移与旧写冲突 | 实际 router + Store |
-| `policy_contracts.rs` | 权限日志倒序、轮转、重复投递；伪造 issuer；最后管理员保护；审批权限变更 | 实际权限重放 |
-| `persistence_contracts.rs` | 二进制文件 A-B-C；删除防旧数据复活；缺块、截断、错误哈希；同时写与所有两事件顺序；路径越界；未加入/撤回端不可读取同步日志 | 实际 Store + 路由拒绝 |
-| `transports.rs` | TCP 配对/回向鉴权；客户端单向 HTTP/WebSocket；监听能力原子校验；发现与配对过滤 | 真实 Host 传输 |
-| `join_state_machine.rs` | 全终态×全响应组合、过期边界、已 claim 不自动过期、定向中继距离 | 纯状态机 |
-| `facade_state.rs` | 加入投影验证、观察订阅释放、连接状态映射 | facade 状态 |
+| `join_lifecycle.rs` | Standalone administrator request; rejection; facade restart; repeated approval; leaving and re-requesting; isolation of two requesters; lost submit response | Real facade/router + separate Host storage |
+| `cancellation.rs` | On-disk records on both sides after cancellation; the approval disappears from B; a stale approval stops working; business/identity/pairing files unchanged; failure before submit and lost response after processing; lost cancellation confirmation; delayed refresh; reconnect retry; both claim-then-cancel and cancel-then-claim orderings; 12 consecutive cancel-and-re-request cycles | Real protocol + controllable transport |
+| `reviewer_assignment.rs` | Most recent legitimate reviewer, no prompt on non-reviewer devices, offline grace and transfer, a stale assignment stops working | Real multi-node routing |
+| `protocol_boundaries.rs` | Wrong identity/Space/revision/profile; cancellation by a third party; the requesting administrator cannot self-approve; expiry; target switches Space; conflicting opposite approval decisions | Identity and authorization entry |
+| `space_merge.rs` | Whole-group merge of AB with C-D-(E,F)-G; hop-by-hop migration; profile/permission/topology integrity; an incomplete snapshot writes no members | Real Space projection exchange |
+| `routing_contracts.rs` | Multi-hop loops; network partition/reconnect; revoking relay permission; TTL; target removed while the connection still exists; Binding owner migration and stale-write conflict | Real router + Store |
+| `policy_contracts.rs` | Permission log in reverse order, rotation, duplicate delivery; forged issuer; last-administrator protection; approval-permission changes | Real permission replay |
+| `persistence_contracts.rs` | Binary files A-B-C; deletion prevents stale data from coming back; missing blocks, truncation, wrong hash; concurrent writes and every two-event ordering; path traversal; a non-joined or cancelled side cannot read the sync log | Real Store + routing rejection |
+| `transports.rs` | TCP pairing/return authentication; client-side one-way HTTP/WebSocket; atomic validation of the listen capability; discovery and pairing filtering | Real Host transport |
+| `join_state_machine.rs` | Every terminal state times every response, expiry boundaries, a claimed request does not expire automatically, directed relay distance | Pure state machine |
+| `facade_state.rs` | Join-projection validation, observation subscription release, connection-state mapping | Facade state |
 
-## 每次撤回必须核对的事实
+## Facts to verify on every cancellation
 
-- A 的 `space_merge_outbound.preferences.json` 和 B 的 `space_merge_inbound.preferences.json` 状态。
-- B 的 `incomingDeviceSpaceJoins()` 不再返回已取消项；持有旧弹窗也不能成功审批。
-- review inbox 是已拉取记录的存档，不把“存档还在”视作仍可审批；权威状态在 inbound。
-- RESULT_RECORDS 不应出现已取消申请的新批准结果。
-- A/B 的 Space id、成员文件、设备资料、用户资产、身份与配对凭证保持原始字节。
-- 取消未到达 B 时不能声称 B 已取消；收到 B 的确认后，旧轮询不能复活 Pending。
-- claim 已先提交时，当前协议禁止撤销已占用的决定；测试明确断言 Approving，而非假装 Cancelled。
+- The state of A `space_merge_outbound.preferences.json` and B `space_merge_inbound.preferences.json`.
+- B `incomingDeviceSpaceJoins()` no longer returns the cancelled item; holding a stale dialog open still cannot approve successfully.
+- The review inbox is an archive of already-fetched records; an existing archive does not mean it can still be approved, because the authoritative state lives in inbound.
+- RESULT_RECORDS must not contain a new approval result for a cancelled request.
+- The Space id, member files, device profile, user assets, identity and pairing credentials of A/B keep their original bytes.
+- While the cancellation has not reached B you cannot claim that B is cancelled; after B confirms, a stale poll must not resurrect Pending.
+- When a claim was submitted first, the current protocol forbids cancelling the already-claimed decision; the test asserts Approving explicitly instead of pretending it is Cancelled.
 
-申请记录路径与生产常量由结构检查核对，避免协议换版本后测试读取旧路径而漏检。
-不读取开发者的真实运行目录；每个节点使用独立测试 Host。替换全局 Host 的用例持有统一锁。
+Request-record paths and production constants are checked structurally, so that a protocol version change cannot make a test read a stale path and miss the change.
+The developer real runtime directory is never read; every node uses its own test Host. Cases that replace the global Host hold a single shared lock.
 
-## 故障模型
+## Failure model
 
-`fixtures.rs` 的链路实际调用目标 router，只在明确的位置注入：
+The link in `fixtures.rs` actually calls the target router and injects only at explicit points:
 
-1. 请求送达前失败；
-2. 目标处理完成、响应丢失；
-3. 目标处理完成、响应由 oneshot 闸门暂停；
-4. 显式移除/恢复某条活动连接。
+1. Failure before the request is delivered;
+2. The target finished processing and the response was lost;
+3. The target finished processing and the response is held by the oneshot gate;
+4. Explicitly remove/restore one active connection.
 
-并发用例用闸门控制交错，不用随机 sleep；超时用于防止死锁使测试无限挂起。
-权限重放遍历多种投递排列，文件冲突固定同一事件时间来检验 origin-id 决胜规则。
+Concurrency cases control interleaving with gates rather than random sleeps; timeouts exist to stop a deadlock from hanging the test forever.
+Permission replay iterates several delivery orderings, and file conflicts pin the same event time to exercise the origin-id tie-break rule.
 
-## 不能混淆的覆盖边界 / 发布前仍需补齐
+## Coverage boundaries not to be confused / still missing before release
 
-- `persistence_contracts.rs` 调用真实 Blob/Operation/Preferences 基础设施，
-  但并未启动完整 `OperitApplication.syncApplyOperations` 或后台 `synchronizeOnce`。
-  **A-B-C Store 的文件传播不等于完整多跳网络文件同步通过。**
-- facade 重建验证磁盘记录再读取，不等于清空进程缓存后的真实进程重启。
-- 尚缺：每一个持久化写点失败/进程被杀、磁盘满、部分 fsync、全部跨文件原子性。
-- 尚缺：双向同时合并两个空间、两个不同目标同时批准同一源空间、合并中源成员增加/退出/移除的完整冲突矩阵。
-- 尚缺：真实应用服务下的大文件分块中断续传、同步批次边界、空间切换时增量时钟与旧文件隔离。
-- 尚缺：跨版本协议、Web/移动后台挂起/弱网、真实设备时钟偏移与多进程重启。
-- UI 另外保留 `apps/flutter/app/test/space_join_dialog_test.dart`：慢轮询可撤回、迟到响应、错误提示。
+- `persistence_contracts.rs` exercises the real Blob/Operation/Preferences infrastructure,
+  but it does not start the full `OperitApplication.syncApplyOperations` or the background `synchronizeOnce`.
+  **File propagation across the A-B-C Store is not the same as full multi-hop network file sync passing.**
+- Rebuilding the facade verifies that on-disk records are read again; it is not a real process restart with a cleared process cache.
+- Still missing: failure of every persistence write point / process kill, a full disk, partial fsync, and full cross-file atomicity.
+- Still missing: merging two Spaces in both directions at once, two different targets approving the same source Space simultaneously, and the full conflict matrix for members joining, leaving or being removed during a merge.
+- Still missing: interrupted-and-resumed chunked transfer of large files under the real application service, sync batch boundaries, and incremental clocks plus stale-file isolation when switching Spaces.
+- Still missing: cross-version protocols, Web/mobile background suspension and weak networks, real device clock skew and multi-process restart.
+- The UI additionally keeps `apps/flutter/app/test/space_join_dialog_test.dart`: cancellation under slow polling, late responses and error messages.
 
-任何上述缺口不能通过跳过错误、伪造 profile、跳过测试或把权限校验移除来“修绿”。
-行为回归失败应保留失败证据、修生产根因，并补对应不变量。
+None of the gaps above may be "fixed green" by skipping errors, forging a profile, skipping tests or removing permission checks.
+A behaviour regression must keep the failure evidence, fix the root cause in production code and add the matching invariant.
 
-## 本轮验证状态（2026-10-06）
+## Verification status for this round (2026-10-06)
 
-已按用户要求实际编译并运行 Rust 行为测试，使用 `-Awarnings` 忽略编译警告。
+The Rust behaviour tests were actually compiled and run as requested, using `-Awarnings` to ignore compiler warnings.
 
-- 结构检查：13 个 Rust 文件、50 个登记测试，通过。
-- `cargo test -p operit-node-runtime --lib device_space -- --test-threads=1`：
-  **50 通过、1 失败、0 忽略**。过滤器额外选中了原有的空间观察测试，因此实际执行 51 个。
-- 失败：`policy_replay_converges_with_duplicate_reversed_and_rotated_delivery`。
-- 对刚编译的测试二进制单独重复执行该用例 3 次，3 次均失败（退出码 101）。
-- 完整日志：`latest-run.log`；单例重复日志：`policy-repro.log`。
+- Structural check: 13 Rust files and 50 registered tests, passed.
+- `cargo test -p operit-node-runtime --lib device_space -- --test-threads=1`:
+  **50 passed, 1 failed, 0 ignored**. The filter also matched the pre-existing Space-observation tests, so 51 tests actually ran.
+- Failed: `policy_replay_converges_with_duplicate_reversed_and_rotated_delivery`.
+- That case was re-run 3 times alone against the freshly compiled test binary and failed all 3 times (exit code 101).
+- Full log: `latest-run.log`; single-case repeat log: `policy-repro.log`.
 
-首次执行暴露的测试自身问题已修正：拓扑 fixture 使用序列化接口而非访问私有字段；
-Binding 测试使用真实 Store；本机 reviewer claim 进入本机审批 dispatcher，不向自己发网络请求。
-没有跳过或放宽业务断言，没有修改生产代码来掩盖剩余失败。
+Test-side problems exposed by the first run were fixed: the topology fixture uses the serialization interface instead of touching private fields;
+the Binding test uses a real Store; a local reviewer claim goes through the local approval dispatcher and no network request is sent to itself.
+No business assertion was skipped or relaxed, and no production code was changed to hide the remaining failure.
 
-剩余失败的代码原因：`NetworkControlStore.applySyncedOperation` 调用
-`SyncOperationStore.appendOperations`；后者在接收较高 sequence 并推进 origin 时钟后，
-会丢弃随后抵达的、日志中尚不存在的较低 sequence 操作。
-本用例的 Bootstrap 因乱序被丢弃，权限重放结果 `initialized=false`。
-这是当前持久化/权限日志对乱序输入的真实不收敛问题；测试证明该输入路径存在问题，
-不代表已确认此前某次真实用户反馈就是由此引发。
+Code cause of the remaining failure: `NetworkControlStore.applySyncedOperation` calls
+`SyncOperationStore.appendOperations`; after that method accepts a higher sequence and advances the origin clock,
+it discards a lower-sequence operation that arrives afterwards and is not yet present in the log.
+The Bootstrap of this case is discarded because of the out-of-order arrival, and the permission replay result is `initialized=false`.
+This is a real non-convergence problem of the current persistence/permission log for out-of-order input; the test proves that this input path is faulty,
+but it does not prove that any earlier real user report was caused by it.
 
-`coverage.json` 是用例清单，不是通过报告，也不是代码覆盖率报告。
+`coverage.json` is a list of cases; it is neither a pass report nor a code-coverage report.

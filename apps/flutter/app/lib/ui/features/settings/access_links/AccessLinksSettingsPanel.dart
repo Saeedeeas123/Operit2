@@ -24,7 +24,7 @@ class AccessLinksSettingsPanel extends StatelessWidget {
     );
   }
 
-  /// 打开在线网页应用，不启动本地 Web Access server，也不携带 token。
+  /// Open the online web app without starting the local Web Access server or attaching a token.
   Widget _buildWebEntry(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return ListTile(
@@ -38,7 +38,7 @@ class AccessLinksSettingsPanel extends StatelessWidget {
             return;
           }
         } catch (_) {
-          // 无可用浏览器时保留可复制的网页地址；不启动本地替代服务。
+          // Keep the copyable web address when no browser is available; do not start a local fallback service.
         }
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(

@@ -634,7 +634,7 @@ mod tests {
     /// Extracts multibyte segments through character-aligned UTF-8 boundaries.
     #[test]
     fn stable_nodes_preserve_multibyte_segment_boundaries() {
-        let content = "a🌙汉e\u{301}**粗**";
+        let content = "a🌙Ωe\u{301}**Δ**";
         let segments = vec![
             Segment {
                 r#type: MarkdownProcessorType::PlainText as i32,
@@ -658,7 +658,7 @@ mod tests {
                 .iter()
                 .map(|node| node.content.as_str())
                 .collect::<Vec<_>>(),
-            vec!["a🌙", "🌙汉", "粗**"]
+            vec!["a🌙", "🌙Ω", "Δ**"]
         );
     }
 }

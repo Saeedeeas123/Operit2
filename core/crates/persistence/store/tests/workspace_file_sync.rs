@@ -69,7 +69,7 @@ impl Drop for Node {
 fn bidirectional_binary_empty_and_no_echo() {
     let a = Node::new();
     let b = Node::new();
-    a.write("workspaces/project/中文.txt", b"hello");
+    a.write("workspaces/project/naïve.txt", b"hello");
     a.write("workspaces/project/image.bin", &[0, 255, 17, 32]);
     a.write("workspaces/project/empty.txt", b"");
     assert_eq!(a.workspace().scan().unwrap(), 3);
@@ -81,11 +81,11 @@ fn bidirectional_binary_empty_and_no_echo() {
     assert_eq!(b.workspace().scan().unwrap(), 0);
     assert_eq!(b.ops().len(), 3);
     std::thread::sleep(std::time::Duration::from_millis(2));
-    b.write("workspaces/project/中文.txt", b"phone");
+    b.write("workspaces/project/naïve.txt", b"phone");
     b.workspace().scan().unwrap();
     b.send(&a);
     assert_eq!(
-        a.host.readBytes("workspaces/project/中文.txt").unwrap(),
+        a.host.readBytes("workspaces/project/naïve.txt").unwrap(),
         b"phone"
     );
     assert_eq!(a.workspace().scan().unwrap(), 0);

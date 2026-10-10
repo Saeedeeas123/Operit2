@@ -457,7 +457,7 @@ mod browser_upload_tests {
     #[test]
     fn upload_paths_preserve_file_identity() {
         let paths = vec![
-            "/tmp/中文 file.txt".to_string(),
+            "/tmp/café file.txt".to_string(),
             r"D:\uploads\second.bin".to_string(),
         ];
         let parameters = serde_json::json!({"paths":serde_json::to_string(&paths).unwrap()});

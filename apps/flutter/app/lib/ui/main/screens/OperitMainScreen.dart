@@ -872,7 +872,7 @@ class _OperitMainScreenState extends State<OperitMainScreen> {
       messenger.hideCurrentSnackBar();
       messenger.showSnackBar(
         const SnackBar(
-          content: Text('再按一次退出应用'),
+          content: Text('Tap back again to exit the app'),
           duration: Duration(milliseconds: _backPressedIntervalMs),
           behavior: SnackBarBehavior.floating,
         ),

@@ -1267,12 +1267,12 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
             .where((item) => item.available)
             .toList(growable: false);
         return AlertDialog(
-          title: const Text('选择终端类型'),
+          title: const Text('Select terminal type'),Select terminal type'),Select terminal type'),Select terminal type'),Select terminal type'),Select terminal type'),
           content: SizedBox(
             width: 460,
             child: availableTypes.isEmpty
                 ? Text(
-                    '当前平台没有可用的终端类型。',
+                    'No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',No terminal type is available on this platform.',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
@@ -1316,7 +1316,7 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('取消'),
+              child: const Text('Cancel'),Cancel'),
             ),
           ],
         );
@@ -1339,16 +1339,16 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
     }
     final workspaceDirectory = widget.workspacePath?.trim();
     if (workspaceDirectory == null || workspaceDirectory.isEmpty) {
-      throw StateError('工作区路径为空');
+      throw StateError('Workspace path is empty');Workspace path is empty');Workspace path is empty');Workspace path is empty');Workspace path is empty');Workspace path is empty');Workspace path is empty');
     }
     return workspaceDirectory;
   }
 
   String _nextManualTerminalSessionName() {
     final manualCount = _terminalSessionEntries
-        .where((session) => session.sessionName.trim().startsWith('手动终端'))
+        .where((session) => session.sessionName.trim().startsWith('Manual terminal'))Manual terminal'))Manual terminal'))Manual terminal'))
         .length;
-    return '手动终端 ${manualCount + 1}';
+    return 'Manual terminal ${manualCount + 1}';Manual terminal ${manualCount + 1}';Manual terminal ${manualCount + 1}';Manual terminal ${manualCount + 1}';
   }
 
   Future<void> _showTerminalSessionPicker() async {
@@ -1385,13 +1385,13 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
             }
 
             return AlertDialog(
-              title: const Text('终端会话'),
+              title: const Text('Terminal sessions'),Terminal sessions'),Terminal sessions'),Terminal sessions'),
               contentPadding: const EdgeInsets.fromLTRB(24, 16, 24, 8),
               content: SizedBox(
                 width: 520,
                 child: dialogSessions.isEmpty
                     ? Text(
-                        '当前没有终端会话',
+                        'No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',No terminal sessions right now',
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
@@ -1421,7 +1421,7 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
                                 ),
                               ),
                               trailing: IconButton(
-                                tooltip: '结束进程',
+                                tooltip: 'Kill process',Kill process',Kill process',Kill process',
                                 onPressed: isClosing
                                     ? null
                                     : () => closeSession(session),
@@ -1446,7 +1446,7 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
               actions: <Widget>[
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('关闭'),
+                  child: const Text('Close'),Close'),
                 ),
               ],
             );
@@ -1480,13 +1480,13 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
             }
 
             return AlertDialog(
-              title: const Text('浏览器会话'),
+              title: const Text('Browser sessions'),Browser sessions'),Browser sessions'),Browser sessions'),Browser sessions'),
               contentPadding: const EdgeInsets.fromLTRB(24, 16, 24, 8),
               content: SizedBox(
                 width: 520,
                 child: dialogSessions.isEmpty
                     ? Text(
-                        '当前没有浏览器会话',
+                        'No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',No browser sessions right now',
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
@@ -1513,7 +1513,7 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
                                 ),
                               ),
                               trailing: IconButton(
-                                tooltip: '关闭会话',
+                                tooltip: 'Close session',Close session',Close session',Close session',
                                 onPressed: () {
                                   unawaited(closeSession(session.sessionId));
                                 },
@@ -1538,7 +1538,7 @@ class _WorkspacePanelState extends State<WorkspacePanel> {
               actions: <Widget>[
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('关闭'),
+                  child: const Text('Close'),Close'),
                 ),
               ],
             );

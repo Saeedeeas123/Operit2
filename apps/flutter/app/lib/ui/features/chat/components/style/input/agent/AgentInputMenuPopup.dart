@@ -113,14 +113,14 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
       if (mounted) {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text('记忆提取完成')));
+        ).showSnackBar(const SnackBar(content: Text('Memory extraction completed')));Memory extraction completed')));Memory extraction completed')));Memory extraction completed')));Memory extraction completed')));Memory extraction completed')));
       }
       await _pollMemory();
     } catch (error) {
       if (mounted) {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(SnackBar(content: Text('记忆提取失败：$error')));
+        ).showSnackBar(SnackBar(content: Text('Memory extraction failed: $error')));Memory extraction failed: $error')));Memory extraction failed: $error')));Memory extraction failed: $error')));Memory extraction failed: $error')));Memory extraction failed: $error')));Memory extraction failed: $error')));
       }
     } finally {
       if (mounted) setState(() => _memoryBusy = false);
@@ -136,7 +136,7 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('关闭'),
+            child: const Text('Close'),Close'),
           ),
         ],
       ),
@@ -163,11 +163,11 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
 
   String get _memoryQueueDescription {
     final queue = _queue;
-    if (queue == null) return '暂无队列状态。自动提取会定期检查当前记忆库。';
-    return '待处理 ${queue.pendingCandidates} 条 · ${queue.pendingChats} 个聊天\n'
-        '处理中 ${queue.processingCandidates} · 失败 ${queue.failedCandidates}\n'
-        '下次检查：约 ${queue.minutesUntilNextRun} 分钟后\n\n'
-        '自动检查需要至少 5 个候选；不足时继续等待。手动更新不受此门槛限制。'
+    if (queue == null) return 'No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';No queue status yet. Auto-extraction periodically checks the current memory library.';
+    return 'Pending ${queue.pendingCandidates} item(s) · ${queue.pendingChats} chat(s)\n'Pending ${queue.pendingCandidates} item(s) · ${queue.pendingChats} chat(s)\n'Pending ${queue.pendingCandidates} item(s) · ${queue.pendingChats} chat(s)\n'chat(s)\n'chat(s)\n'
+        'Processing ${queue.processingCandidates} · Failed ${queue.failedCandidates}\n'Processing ${queue.processingCandidates} · Failed ${queue.failedCandidates}\n'Processing ${queue.processingCandidates} · Failed ${queue.failedCandidates}\n'Failed ${queue.failedCandidates}\n'
+        'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'Next check: in about ${queue.minutesUntilNextRun} minutes\n\n'minutes\n\n'minutes\n\n'
+        'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'Auto-extraction requires at least 5 candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'candidates; if fewer, it keeps waiting. Manual updates are not subject to this threshold.'
         '${queue.lastError.isEmpty ? '' : '\n\n${queue.lastError}'}';
   }
 
@@ -299,10 +299,10 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('菜单加载失败：${snapshot.error}'),
+                      Text('Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),Menu failed to load: ${snapshot.error}'),
                       TextButton(
                         onPressed: _reloadSettings,
-                        child: const Text('重试'),
+                        child: const Text('Retry'),Retry'),
                       ),
                     ],
                   ),
@@ -333,7 +333,7 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                     ...widget.leadingChildren,
                     _MenuSection(
                       icon: Icons.data_object_outlined,
-                      title: '记忆',
+                      title: 'Memory',Memory',
                       value: data.memorySummary,
                       expanded: _memoryExpanded,
                       onTap: () {
@@ -342,14 +342,14 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                         });
                       },
                       onInfoTap: () =>
-                          _showMemoryInfo('记忆状态', _memoryQueueDescription),
+                          _showMemoryInfo('Memory status', _memoryQueueDescription),Memory status', _memoryQueueDescription),Memory status', _memoryQueueDescription),Memory status', _memoryQueueDescription),
                       children: <Widget>[
                         _SwitchRow(
                           icon: Icons.assignment_ind_outlined,
-                          title: '提供用户资料',
+                          title: 'Provide user profile',Provide user profile',Provide user profile',Provide user profile',Provide user profile',Provide user profile',
                           value: data.disableUserPreferenceDescription
-                              ? '关'
-                              : '开',
+                              ? 'Off'
+                              : 'On',
                           checked: !data.disableUserPreferenceDescription,
                           onTap: () => _setUserMarkdownEnabled(
                             data,
@@ -360,20 +360,20 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                           icon: data.enableMemoryAutoUpdate
                               ? Icons.save
                               : Icons.save_outlined,
-                          title: '自动更新记忆库',
-                          value: data.enableMemoryAutoUpdate ? '开' : '关',
+                          title: 'Auto-update memory library',Auto-update memory library',Auto-update memory library',Auto-update memory library',Auto-update memory library',Auto-update memory library',Auto-update memory library',
+                          value: data.enableMemoryAutoUpdate ? 'On' : 'Off',
                           checked: data.enableMemoryAutoUpdate,
                           onTap: () => _toggleMemoryAutoUpdate(data),
                         ),
                         _ActionRow(
                           icon: Icons.save_outlined,
-                          title: _memoryBusy ? '正在更新记忆…' : '手动更新记忆',
+                          title: _memoryBusy ? 'Updating memory…' : 'Update memory manually',Updating memory…' : 'Update memory manually',Updating memory…' : 'Update memory manually',Updating memory…' : 'Update memory manually',Updating memory…' : 'Update memory manually',Updating memory…' : 'Update memory manually',Update memory manually',Update memory manually',Update memory manually',Update memory manually',Update memory manually',
                           enabled: !_memoryBusy && widget.currentChatId != null,
                           onTap: _manualMemory,
                         ),
                         _ActionRow(
                           icon: Icons.tune,
-                          title: '记忆设置',
+                          title: 'Memory settings',Memory settings',Memory settings',Memory settings',
                           enabled: widget.currentChatId != null,
                           onTap: _openMemorySettings,
                         ),
@@ -381,7 +381,7 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                     ),
                     _MenuSection(
                       icon: Icons.security_outlined,
-                      title: '工具',
+                      title: 'Tools',Tools',
                       value: data.toolPermissionMode.label,
                       expanded: _toolsExpanded,
                       onTap: () {
@@ -404,8 +404,8 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                     ),
                     _MenuSection(
                       icon: Icons.bolt_outlined,
-                      title: '行为',
-                      value: data.disableStreamOutput ? '非流式' : '流式',
+                      title: 'Behavior',Behavior',
+                      value: data.disableStreamOutput ? 'Non-streaming' : 'Streaming',Non-streaming' : 'Streaming',Non-streaming' : 'Streaming',Streaming',
                       expanded: _behaviorExpanded,
                       onTap: () {
                         setState(() {
@@ -415,8 +415,8 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                       children: <Widget>[
                         _SwitchRow(
                           icon: Icons.speed_outlined,
-                          title: '流式输出',
-                          value: data.disableStreamOutput ? '关' : '开',
+                          title: 'Streaming output',Streaming output',Streaming output',Streaming output',
+                          value: data.disableStreamOutput ? 'Off' : 'On',
                           checked: !data.disableStreamOutput,
                           onTap: () => _toggleDisableStreamOutput(data),
                         ),
@@ -425,7 +425,7 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                     if (data.pluginToggles.isNotEmpty)
                       _MenuSection(
                         icon: Icons.extension_outlined,
-                        title: '插件',
+                        title: 'Plugins',Plugins',
                         value: data.pluginSummary,
                         expanded: _pluginsExpanded,
                         onTap: () {
@@ -439,7 +439,7 @@ class _AgentInputMenuPopupState extends State<AgentInputMenuPopup> {
                               icon: Icons.hub,
                               materialIconName: toggle.icon,
                               title: toggle.title ?? toggle.id,
-                              value: toggle.isChecked ? '开' : '关',
+                              value: toggle.isChecked ? 'On' : 'Off',
                               checked: toggle.isChecked,
                               enabled: toggle.isEnabled,
                               onTap: () => _togglePlugin(toggle),
@@ -612,13 +612,13 @@ class _ChatSessionSummarySectionState
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             Text(
-                              '当前角色卡',
+                              'Current character card',Current character card',Current character card',Current character card',Current character card',
                               style: textTheme.labelSmall?.copyWith(
                                 color: colorScheme.onSurfaceVariant,
                               ),
                             ),
                             Text(
-                              widget.currentCharacterCardName ?? '未绑定',
+                              widget.currentCharacterCardName ?? 'Not bound',Not bound',Not bound',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: textTheme.bodySmall?.copyWith(
@@ -657,11 +657,11 @@ class _ChatSessionSummarySectionState
                         color: colorScheme.onSurfaceVariant,
                       ),
                       const SizedBox(width: 12),
-                      Text('统计', style: textTheme.bodySmall),
+                      Text('Statistics', style: textTheme.bodySmall),Statistics', style: textTheme.bodySmall),
                       const Spacer(),
                       Text(
                         contextUsagePercentage == null
-                            ? '加载中...'
+                            ? 'Loading...'Loading...'Loading...'
                             : '${contextUsagePercentage.toStringAsFixed(0)}%',
                         style: textTheme.bodySmall?.copyWith(
                           color: colorScheme.primary,
@@ -690,22 +690,22 @@ class _ChatSessionSummarySectionState
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       _ChatStatValueRow(
-                        label: '上下文窗口',
+                        label: 'Context window',Context window',Context window',Context window',Context window',
                         value: _contextWindowLabel(
                           currentWindowSize: _currentWindowSize,
                           maxContextTokens: maxContextTokens,
                         ),
                       ),
                       _ChatStatValueRow(
-                        label: '输入 Token',
+                        label: 'Input tokens',
                         value: _formatTokenCount(_inputTokenCount),
                       ),
                       _ChatStatValueRow(
-                        label: '输出 Token',
+                        label: 'Output tokens',
                         value: _formatTokenCount(_outputTokenCount),
                       ),
                       _ChatStatValueRow(
-                        label: '总 Token',
+                        label: 'Total tokens',
                         value: _formatTokenCount(totalTokenCount),
                         highlighted: true,
                       ),
@@ -734,7 +734,7 @@ class _ChatSessionSummarySectionState
   }) {
     final maxTokens = maxContextTokens;
     if (maxTokens == null) {
-      return '加载中...';
+      return 'Loading...';Loading...';Loading...';
     }
     return '${_formatTokenCount(currentWindowSize)} / ${_formatTokenCount(maxTokens)}';
   }
@@ -883,21 +883,21 @@ class _CharacterCardSelectorDialogState
                     children: <Widget>[
                       Expanded(
                         child: Text(
-                          '切换角色卡',
+                          'Switch character card',Switch character card',Switch character card',Switch character card',Switch character card',
                           style: theme.textTheme.titleSmall?.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
                       Text(
-                        '${cards.length} 个',
+                        '${cards.length} card(s)',
                         style: theme.textTheme.labelSmall?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                         ),
                       ),
                       const SizedBox(width: 2),
                       IconButton(
-                        tooltip: '关闭',
+                        tooltip: 'Close',Close',
                         onPressed: () => Navigator.of(context).pop(),
                         icon: const Icon(Icons.close, size: 18),
                         visualDensity: VisualDensity.compact,
@@ -913,7 +913,7 @@ class _CharacterCardSelectorDialogState
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(16, 18, 16, 20),
                         child: Text(
-                          '暂无角色卡',
+                          'No character cards',No character cards',No character cards',No character cards',No character cards',
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -1103,10 +1103,10 @@ class _AgentInputMenuData {
 
   String get memorySummary {
     return switch ((disableUserPreferenceDescription, enableMemoryAutoUpdate)) {
-      (true, false) => '关',
-      (false, false) => '用户资料',
-      (true, true) => '记忆库更新',
-      (false, true) => '用户资料 · 记忆库更新',
+      (true, false) => 'Off',
+      (false, false) => 'User profile',User profile',User profile',User profile',
+      (true, true) => 'Memory library update',Memory library update',Memory library update',Memory library update',Memory library update',
+      (false, true) => 'User profile · Memory library update',User profile · Memory library update',User profile · Memory library update',User profile · Memory library update',Memory library update',Memory library update',Memory library update',Memory library update',
     };
   }
 
@@ -1128,9 +1128,9 @@ class _AgentInputMenuData {
 }
 
 enum _ToolPermissionMode {
-  readOnly('只读', core_proxy.AiPermissionMode.readOnly),
-  workspaceWrite('读写', core_proxy.AiPermissionMode.workspaceWrite),
-  full('完整', core_proxy.AiPermissionMode.full);
+  readOnly('Read-only', core_proxy.AiPermissionMode.readOnly),Read-only', core_proxy.AiPermissionMode.readOnly),
+  workspaceWrite('Read/write', core_proxy.AiPermissionMode.workspaceWrite),Read/write', core_proxy.AiPermissionMode.workspaceWrite),
+  full('Full access', core_proxy.AiPermissionMode.full);Full access', core_proxy.AiPermissionMode.full);
 
   const _ToolPermissionMode(this.label, this.permissionMode);
 
@@ -1194,7 +1194,7 @@ class _MenuSection extends StatelessWidget {
                     ),
                   ),
                   if (onInfoTap != null)
-                    _MenuInfoButton(title: '记忆状态', onTap: onInfoTap!),
+                    _MenuInfoButton(title: 'Memory status', onTap: onInfoTap!),Memory status', onTap: onInfoTap!),Memory status', onTap: onInfoTap!),Memory status', onTap: onInfoTap!),
                   const SizedBox(width: 6),
                   Icon(
                     expanded
@@ -1317,7 +1317,7 @@ class _MenuInfoButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => IconButton(
-    tooltip: '$title说明',
+    tooltip: 'About $title',
     onPressed: onTap,
     padding: EdgeInsets.zero,
     constraints: const BoxConstraints.tightFor(width: 24, height: 28),

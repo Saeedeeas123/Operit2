@@ -12,7 +12,7 @@ fn buildOperit2PromptTags(parsed: &ParsedOperit1Snapshot) -> Result<Vec<PromptTa
         let name = requiredPreferenceString(
             preferences,
             &format!("prompt_tag_{id}_name"),
-            &format!("Operit1 提示标签缺少名称：{id}"),
+            &format!("Operit1 prompt tag is missing a name: {id}"),
         )?;
         tags.push(PromptTag {
             id: id.clone(),
@@ -64,14 +64,14 @@ fn buildOperit2CharacterCards(
         .archive
         .datastorePreferences
         .get(ENTRY_USER_PREFERENCES)
-        .ok_or_else(|| "Operit1 快照缺少用户偏好，无法读取角色头像绑定".to_string())?;
+        .ok_or_else(|| "The Operit1 snapshot is missing user preferences, so character avatar bindings cannot be read".to_string())?;
     let avatarUris = buildOperit1CharacterCardAvatarUris(userPreferences, &ids, fileImportPlan)?;
     let mut cards = Vec::new();
     for id in ids {
         let name = requiredPreferenceString(
             preferences,
             &format!("character_card_{id}_name"),
-            &format!("Operit1 角色卡缺少名称：{id}"),
+            &format!("Operit1 character card is missing a name: {id}"),
         )?;
         let chatModelBindingMode = optionalPreferenceString(
             preferences,
@@ -138,7 +138,7 @@ fn buildOperit2CharacterCards(
             )?
             .map(|raw| serde_json::from_str::<CharacterCardToolAccessConfig>(&raw))
             .transpose()
-            .map_err(|error| format!("Operit1 角色卡工具权限格式不正确：{id}: {error}"))?
+            .map_err(|error| format!("Operit1 character card tool permission format is invalid: {id}: {error}"))?
             .unwrap_or_default(),
             isDefault: optionalPreferenceBool(
                 preferences,
@@ -345,7 +345,7 @@ fn resolveOperit1CharacterMemoryBinding(
         let profileId = requiredPreferenceString(
             preferences,
             &format!("character_card_{cardId}_memory_profile_id"),
-            &format!("Operit1 角色卡固定记忆库缺少配置 ID：{cardId}"),
+            &format!("Operit1 character card pinned memory library is missing a configuration ID: {cardId}"),
         )?;
         return Ok(Operit1CharacterMemoryBinding {
             memoryBindingMode: CharacterCardMemoryBindingMode::SHARED.to_string(),
@@ -381,7 +381,7 @@ fn collectOperit1CharacterMemoryProfileBindings(
             requiredPreferenceString(
                 preferences,
                 &format!("character_card_{id}_memory_profile_id"),
-                &format!("Operit1 角色卡固定用户偏好缺少配置 ID：{id}"),
+                &format!("Operit1 character card pinned user preference is missing a configuration ID: {id}"),
             )?
             .to_string()
         } else {
@@ -431,7 +431,7 @@ fn validateOperit1ProfileId(profileId: &str) -> Result<(), String> {
         || profileId.contains('\\')
         || profileId.contains(':')
     {
-        Err(format!("Operit1 用户偏好 ID 无效：{profileId}"))
+        Err(format!("Invalid Operit1 user preference ID: {profileId}"))
     } else {
         Ok(())
     }
@@ -452,15 +452,15 @@ fn operit1ActiveProfileId(parsed: &ParsedOperit1Snapshot) -> Result<String, Stri
         .archive
         .datastorePreferences
         .get(ENTRY_USER_PREFERENCES)
-        .ok_or_else(|| format!("快照里没有 Operit1 用户偏好文件：{ENTRY_USER_PREFERENCES}"))?;
+        .ok_or_else(|| format!("The snapshot has no Operit1 user preference file: {ENTRY_USER_PREFERENCES}"))?;
     let value = requiredPreferenceString(
         preferences,
         KEY_ACTIVE_MEMORY_SPACE_ID,
-        "快照缺少当前记忆库 ID，请使用最新版 Operit1 完成升级后重新导出快照",
+        "The snapshot is missing the current memory library ID; upgrade with the latest Operit1 and export the snapshot again",
     )?;
     let trimmed = value.trim();
     if trimmed.is_empty() {
-        Err("Operit1 当前记忆库 ID 为空".to_string())
+        Err("The Operit1 current memory library ID is empty".to_string())
     } else {
         Ok(trimmed.to_string())
     }
@@ -475,11 +475,11 @@ fn buildOperit1MemorySpaces(
         .archive
         .datastorePreferences
         .get(ENTRY_USER_PREFERENCES)
-        .ok_or_else(|| "快照缺少用户偏好，请使用最新版 Operit1 重新导出快照".to_string())?;
+        .ok_or_else(|| "The snapshot is missing user preferences; export the snapshot again with the latest Operit1".to_string())?;
     let profileIds = requiredPreferenceStringList(
         preferences,
         KEY_MEMORY_SPACE_LIST,
-        "快照缺少记忆库列表，请使用最新版 Operit1 完成升级后重新导出快照",
+        "The snapshot is missing the memory library list; upgrade with the latest Operit1 and export the snapshot again",
     )?;
     let mut profiles = BTreeMap::new();
     for profileId in profileIds {
@@ -488,21 +488,21 @@ fn buildOperit1MemorySpaces(
         let raw = requiredPreferenceString(
             preferences,
             &key,
-            &format!("Operit1 用户偏好缺少记忆库配置：{profileId}"),
+            &format!("Operit1 user preference is missing the memory library configuration: {profileId}"),
         )?;
         let profile: Operit1MemorySpace = serde_json::from_str(raw)
-            .map_err(|error| format!("Operit1 记忆库配置格式不正确：{profileId}: {error}"))?;
+            .map_err(|error| format!("Operit1 memory library configuration format is invalid: {profileId}: {error}"))?;
         if profile.id != profileId {
             return Err(format!(
-                "Operit1 记忆库配置 ID 不匹配：{profileId}/{}",
+                "Operit1 memory library configuration ID mismatch: {profileId}/{}",
                 profile.id
             ));
         }
         if profile.name.trim().is_empty() {
-            return Err(format!("Operit1 记忆库名称为空：{profileId}"));
+            return Err(format!("Operit1 memory library name is empty: {profileId}"));
         }
         if profiles.insert(profile.id.clone(), profile).is_some() {
-            return Err(format!("Operit1 记忆库 ID 重复：{profileId}"));
+            return Err(format!("Duplicate Operit1 memory library ID: {profileId}"));
         }
     }
     Ok(profiles)
@@ -519,33 +519,33 @@ fn validateOperit1MemorySpaces(parsed: &ParsedOperit1Snapshot) -> Result<(), Str
     let spaces = buildOperit1MemorySpaces(parsed)?;
     let activeId = operit1ActiveProfileId(parsed)?;
     if !spaces.contains_key(&activeId) {
-        return Err(format!("Operit1 当前记忆库不在记忆库列表中：{activeId}"));
+        return Err(format!("The Operit1 current memory library is not in the memory library list: {activeId}"));
     }
     for profileId in collectOperit1CharacterMemoryProfileBindings(parsed)?.values() {
         if !spaces.contains_key(profileId) {
-            return Err(format!("Operit1 角色卡绑定了不存在的记忆库：{profileId}"));
+            return Err(format!("Operit1 character card is bound to a memory library that does not exist: {profileId}"));
         }
     }
     for profileId in collectOperit1ObjectBoxProfileIds(parsed)? {
         if !spaces.contains_key(&profileId) {
-            return Err(format!("Operit1 记忆数据库不在记忆库列表中：{profileId}"));
+            return Err(format!("The Operit1 memory database is not in the memory library list: {profileId}"));
         }
     }
     for profileId in spaces.keys() {
         let entry = operit1UserMarkdownEntry(profileId);
         let metadata = parsed.archive.entries.get(&entry).ok_or_else(|| {
-            format!("快照缺少记忆库用户文档：{entry}，请使用最新版 Operit1 完成升级后重新导出快照")
+            format!("The snapshot is missing the memory library user document: {entry}; upgrade with the latest Operit1 and export the snapshot again")
         })?;
         // Operit1 limits each document to 12,000 UTF-16 code units.
         if metadata.uncompressedSize > 48_000 {
-            return Err(format!("Operit1 记忆库用户文档超过大小限制：{entry}"));
+            return Err(format!("Operit1 memory library user document exceeds the size limit: {entry}"));
         }
         let mut bytes = Vec::new();
         parsed.copyEntryTo(&entry, &mut bytes)?;
         let markdown = std::str::from_utf8(&bytes)
-            .map_err(|error| format!("Operit1 记忆库用户文档不是 UTF-8：{entry}: {error}"))?;
+            .map_err(|error| format!("Operit1 memory library user document is not UTF-8: {entry}: {error}"))?;
         if markdown.encode_utf16().count() > 12_000 {
-            return Err(format!("Operit1 记忆库用户文档超过字符限制：{entry}"));
+            return Err(format!("Operit1 memory library user document exceeds the character limit: {entry}"));
         }
     }
     Ok(())
@@ -568,10 +568,10 @@ fn buildOperit2CharacterGroups(
         let raw = requiredPreferenceString(
             preferences,
             &format!("character_group_{id}_data"),
-            &format!("Operit1 角色组缺少数据：{id}"),
+            &format!("Operit1 character group is missing data: {id}"),
         )?;
         let group: CharacterGroupCard = serde_json::from_str(raw)
-            .map_err(|error| format!("Operit1 角色组格式不正确：{id}: {error}"))?;
+            .map_err(|error| format!("Operit1 character group format is invalid: {id}: {error}"))?;
         groups.push(CharacterGroupCard {
             id: group.id,
             name: group.name,
@@ -609,7 +609,7 @@ fn buildOperit2TtsConfig(parsed: &ParsedOperit1Snapshot) -> Result<Option<TtsCon
     if serviceType == "SIMPLE_TTS" {
         return Ok(Some(TtsConfig {
             id: String::new(),
-            name: "Operit1 系统 TTS".to_string(),
+            name: "Operit1 system TTS".to_string(),
             providerType: TtsProviderType::SYSTEM_TTS.to_string(),
             endpoint: String::new(),
             apiKey: String::new(),
@@ -629,10 +629,10 @@ fn buildOperit2TtsConfig(parsed: &ParsedOperit1Snapshot) -> Result<Option<TtsCon
     let httpConfigRaw = requiredPreferenceString(
         preferences,
         "tts_http_config",
-        &format!("Operit1 TTS 服务缺少 HTTP 配置：{serviceType}"),
+        &format!("Operit1 TTS service is missing the HTTP configuration: {serviceType}"),
     )?;
     let httpConfig: Operit1TtsHttpConfig = serde_json::from_str(httpConfigRaw)
-        .map_err(|error| format!("Operit1 TTS HTTP 配置格式不正确：{error}"))?;
+        .map_err(|error| format!("Operit1 TTS HTTP configuration format is invalid: {error}"))?;
     Ok(Some(TtsConfig {
         id: String::new(),
         name: format!("Operit1 {serviceType}"),
@@ -673,7 +673,7 @@ fn buildOperit2TtsConfig(parsed: &ParsedOperit1Snapshot) -> Result<Option<TtsCon
 fn importOperit1TtsConfig(manager: &TtsConfigManager, config: TtsConfig) -> Result<(), String> {
     let existing = manager
         .getAllTtsConfigs()
-        .map_err(|error| format!("读取 Operit2 TTS 配置失败：{error}"))?
+        .map_err(|error| format!("Failed to read the Operit2 TTS configuration: {error}"))?
         .into_iter()
         .find(|existing| {
             existing.providerType == config.providerType
@@ -688,10 +688,10 @@ fn importOperit1TtsConfig(manager: &TtsConfigManager, config: TtsConfig) -> Resu
         }),
         None => manager.createTtsConfig(config),
     }
-    .map_err(|error| format!("导入 Operit1 TTS 配置失败：{error}"))?;
+    .map_err(|error| format!("Failed to import the Operit1 TTS configuration: {error}"))?;
     manager
         .setCurrentTtsConfigId(&imported.id)
-        .map_err(|error| format!("设置 Operit1 TTS 配置失败：{error}"))?;
+        .map_err(|error| format!("Failed to set the Operit1 TTS configuration: {error}"))?;
     Ok(())
 }
 
@@ -743,7 +743,7 @@ fn resolveOperit1CharacterChatModelId(
     let configId = requiredPreferenceString(
         preferences,
         &format!("character_card_{cardId}_chat_model_config_id"),
-        &format!("Operit1 角色卡固定模型缺少配置 ID：{cardId}"),
+        &format!("Operit1 character card pinned model is missing a configuration ID: {cardId}"),
     )?;
     let modelIndex = optionalPreferenceI32(
         preferences,
@@ -757,7 +757,7 @@ fn resolveOperit1CharacterChatModelId(
         .get(modelIndex as usize)
         .cloned()
         .map(Some)
-        .ok_or_else(|| format!("Operit1 角色卡模型索引越界：{cardId}/{modelIndex}"))
+        .ok_or_else(|| format!("Operit1 character card model index is out of range: {cardId}/{modelIndex}"))
 }
 
 #[allow(non_snake_case)]
@@ -771,7 +771,7 @@ fn optionalPreferenceString(
             value
                 .asString()
                 .map(ToString::to_string)
-                .ok_or_else(|| format!("Operit1 DataStore 键不是字符串：{key}"))
+                .ok_or_else(|| format!("Operit1 DataStore key is not a string: {key}"))
         })
         .transpose()
 }
@@ -785,7 +785,7 @@ fn optionalPreferenceStringSet(
         Some(value) => value
             .asStringSet()
             .map(|values| values.to_vec())
-            .ok_or_else(|| format!("Operit1 DataStore 键不是字符串集合：{key}")),
+            .ok_or_else(|| format!("Operit1 DataStore key is not a string set: {key}")),
         None => Ok(Vec::new()),
     }
 }
@@ -800,7 +800,7 @@ fn optionalPreferenceStringList(
     };
     serde_json::from_str::<Vec<String>>(&raw)
         .map(Some)
-        .map_err(|error| format!("Operit1 DataStore 键不是字符串列表 JSON：{key}: {error}"))
+        .map_err(|error| format!("Operit1 DataStore key is not a string list JSON: {key}: {error}"))
 }
 
 #[allow(non_snake_case)]
@@ -812,7 +812,7 @@ fn requiredPreferenceStringList(
 ) -> Result<Vec<String>, String> {
     let raw = requiredPreferenceString(preferences, key, missingMessage)?;
     serde_json::from_str::<Vec<String>>(raw)
-        .map_err(|error| format!("Operit1 DataStore 键不是字符串列表 JSON：{key}: {error}"))
+        .map_err(|error| format!("Operit1 DataStore key is not a string list JSON: {key}: {error}"))
 }
 
 #[allow(non_snake_case)]
@@ -822,7 +822,7 @@ fn optionalPreferenceBool(
 ) -> Result<Option<bool>, String> {
     match preferences.get(key) {
         Some(Operit1PreferenceValue::Boolean(value)) => Ok(Some(*value)),
-        Some(value) => Err(format!("Operit1 DataStore 键不是布尔值：{key}={value:?}")),
+        Some(value) => Err(format!("Operit1 DataStore key is not a boolean: {key}={value:?}")),
         None => Ok(None),
     }
 }
@@ -834,7 +834,7 @@ fn optionalPreferenceI32(
 ) -> Result<Option<i32>, String> {
     match preferences.get(key) {
         Some(Operit1PreferenceValue::Int(value)) => Ok(Some(*value)),
-        Some(value) => Err(format!("Operit1 DataStore 键不是 i32：{key}={value:?}")),
+        Some(value) => Err(format!("Operit1 DataStore key is not an i32: {key}={value:?}")),
         None => Ok(None),
     }
 }
@@ -847,7 +847,7 @@ fn optionalPreferenceI64(
     match preferences.get(key) {
         Some(Operit1PreferenceValue::Long(value)) => Ok(Some(*value)),
         Some(Operit1PreferenceValue::Int(value)) => Ok(Some(i64::from(*value))),
-        Some(value) => Err(format!("Operit1 DataStore 键不是整数：{key}={value:?}")),
+        Some(value) => Err(format!("Operit1 DataStore key is not an integer: {key}={value:?}")),
         None => Ok(None),
     }
 }
@@ -860,7 +860,7 @@ fn optionalPreferenceF64(
     match preferences.get(key) {
         Some(Operit1PreferenceValue::Float(value)) => Ok(Some(f64::from(*value))),
         Some(Operit1PreferenceValue::Double(value)) => Ok(Some(*value)),
-        Some(value) => Err(format!("Operit1 DataStore 键不是浮点数：{key}={value:?}")),
+        Some(value) => Err(format!("Operit1 DataStore key is not a float: {key}={value:?}")),
         None => Ok(None),
     }
 }
@@ -895,6 +895,6 @@ fn parseOperit1PromptTagType(value: Option<&str>) -> Result<TagType, String> {
         Some("CHARACTER") => Ok(TagType::CHARACTER),
         Some("FUNCTION") => Ok(TagType::FUNCTION),
         Some("CUSTOM") | None => Ok(TagType::CUSTOM),
-        Some(other) => Err(format!("Operit1 提示标签类型未知：{other}")),
+        Some(other) => Err(format!("Unknown Operit1 prompt tag type: {other}")),
     }
 }

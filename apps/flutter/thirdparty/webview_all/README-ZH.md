@@ -1,10 +1,10 @@
 # WebView All
 
-[Documentation](https://abandoft.github.io/webview_all) | [中文文档](https://abandoft.github.io/webview_all/zh)
+[Documentation](https://abandoft.github.io/webview_all) | [Chinese docs](https://abandoft.github.io/webview_all/zh)
 
-支持所有 Flutter 平台的 WebView 组件，遵守 [webview_flutter 平台接口](https://pub.dev/packages/webview_flutter_platform_interface)。
+A WebView component supporting all Flutter platforms, following the [webview_flutter platform interface](https://pub.dev/packages/webview_flutter_platform_interface).
 
-|     系统     | **支持情况** | **技术实现** |
+|     System     | **Support** | **Implementation** |
 |-------------|--------------|--------------|
 |Android|API 24+|[WebView](https://developer.android.com/reference/android/webkit/WebView)|
 |iOS|13.0+|[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)|
@@ -14,9 +14,9 @@
 |OHOS|API 12+|[ArkWeb](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-basic-components-web-V5)|
 |Web|Any|[js-interop](https://dart.dev/interop/js-interop)|
 
-## 快速入门
+## Quick start
 
-1. 实例化一个 `WebViewController`:
+1. Instantiate a `WebViewController`:
 
 ```dart
 controller = WebViewController()
@@ -24,7 +24,7 @@ controller = WebViewController()
   ..loadRequest(Uri.parse('https://flutter.dev'));
 ```
 
-2. 将 controller 传给 `WebViewWidget`:
+2. Pass the controller to `WebViewWidget`:
 
 ```dart
 @override
@@ -36,4 +36,4 @@ Widget build(BuildContext context) {
 }
 ```
 
-更详细的用法、接口覆盖和平台限制请参考[中文文档](https://abandoft.github.io/webview_all/zh)
+For detailed usage, interface coverage, and platform limitations, see the [Chinese docs](https://abandoft.github.io/webview_all/zh)

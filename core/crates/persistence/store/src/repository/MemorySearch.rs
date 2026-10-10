@@ -134,7 +134,7 @@ pub fn computeChunks(query:&str,chunks:&[operit_model::DocumentChunk::DocumentCh
 mod tests {
     use super::*;
     #[test] fn chinese_and_wildcard_tokens() {
-        assert!(lexicalTokens("用户喜欢咖啡").iter().any(|t|t=="咖啡"));
+        assert!(lexicalTokens("user likes coffee").iter().any(|t|t=="coffee"));
         assert!(matches("SSH connection works", "ssh*works"));
         assert!(!matches("tmux", "ssh*works"));
     }

@@ -38,7 +38,7 @@ impl CoreApplicationConfig {
         }
     }
 
-    /// 注入应用、CLI 和 Router 共用的节点服务，不在外围创建协议实现。
+    /// Inject the node service shared by the app, the CLI and the Router; do not create protocol implementations on the periphery.
     pub fn withNodeServices(mut self, services: NodeServices) -> Self {
         self.nodeServices = Some(services);
         self
@@ -169,20 +169,20 @@ impl CoreApplication {
         })
     }
 
-    /// 在启动装配或宿主注入阶段调用；Router 和外围共享同一个服务实例。
+    /// Called during startup assembly or host injection; the Router and the periphery share one service instance.
     pub fn installNodeServices(&mut self, services: NodeServices) -> Result<(), String> {
         self.nodeRouter.installNodeServices(services)?;
-        // 同步必须在通信服务注入后启动；不能先启动旧连接管理器填补空缺。
+        // Sync must start after the communication service is injected; do not start the legacy connection manager first to fill the gap.
         if self.startSpaceSync { self.accessServices.startSpaceSync()?; }
         Ok(())
     }
 
-    /// 未装配核心时明确报错，不把缺失服务伪装成配对成功。
+    /// Fail loudly when the core is not assembled; never disguise a missing service as a successful pairing.
     pub fn nodeServices(&self) -> Result<NodeServices, String> {
         self.nodeRouter.nodeServices().cloned()
     }
 
-    /// 本机管理入口，不能注册为远端 Link Call，也不能出现在普通状态快照中。
+    /// Local management entry point: it must not be registered as a remote Link Call, nor appear in ordinary state snapshots.
     pub fn localPairingToken(&self) -> Result<String, String> {
         operit_node_runtime::PeerStateStore::PeerStateStore::new(self.nodeRuntime.runtimeStorageHost())
             .localPairingToken()
@@ -203,7 +203,7 @@ impl CoreApplication {
         (*self.nodeRouter).clone()
     }
 
-    /// 设备资料和稳定节点身份不再由旧配对仓库持有。
+    /// Device profile and stable node identity are no longer owned by the legacy pairing repository.
     pub fn deviceInfo(&self) -> &LinkDeviceInfo { &self.deviceInfo }
 
     pub fn localNodeId(&self) -> String { self.nodeRouter.localNodeId() }

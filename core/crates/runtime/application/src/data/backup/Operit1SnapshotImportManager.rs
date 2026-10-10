@@ -177,8 +177,8 @@ impl Operit1SnapshotImportProgress {
     fn idle() -> Self {
         Self {
             stage: "idle".to_string(),
-            title: "等待导入".to_string(),
-            detail: "选择 Operit1 快照后开始迁移。".to_string(),
+            title: "Waiting to import".to_string(),
+            detail: "Choose an Operit1 snapshot to start the migration.".to_string(),
             progress: 0.0,
             active: false,
         }
@@ -197,9 +197,9 @@ impl Operit1SnapshotImportProgress {
     fn completed(result: &Operit1SnapshotImportResult) -> Self {
         Self {
             stage: "completed".to_string(),
-            title: "导入完成".to_string(),
+            title: "Import complete".to_string(),
             detail: format!(
-                "已迁移 {} 个聊天、{} 条消息、{} 条统计记录、{} 条记忆和 {} 个资源文件。",
+                "Migrated {} chats, {} messages, {} statistic records, {} memories and {} resource files.",
                 result.importedChats,
                 result.importedMessages,
                 result.importedTokenUsageRecords,
@@ -421,46 +421,46 @@ impl Operit1SnapshotImportManager {
     ) -> Result<Operit1SnapshotImportResult, String> {
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "parse",
-            "解析快照",
-            "正在读取清单、配置和数据索引。",
+            "Parse snapshot",
+            "Reading the manifest, configuration and data index.",
             0.08,
         ));
         let parsed = ParsedOperit1Snapshot::fromSource(source)?;
         validateOperit1MemorySpaces(&parsed)?;
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "model_config",
-            "迁移模型配置",
-            "正在写入供应商、密钥和默认聊天模型。",
+            "Migrate model configuration",
+            "Writing providers, keys and the default chat model.",
             0.22,
         ));
         let selected = parsed.selectedChatConfig()?;
         let selectedModelId = selected
             .selectedModelId
             .clone()
-            .ok_or_else(|| "Operit1 快照里的聊天模型索引没有对应模型".to_string())?;
+            .ok_or_else(|| "The chat model index in the Operit1 snapshot has no matching model".to_string())?;
         let modelConfig =
             self.importModelConfigFromParsed(&parsed, selected.configId.clone(), selectedModelId)?;
         let fileImportPlan = SnapshotFileImportPlan::new();
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "structured_preferences",
-            "迁移角色和语音",
-            "正在写入角色卡、提示词、角色组和 TTS 配置。",
+            "Migrate characters and voice",
+            "Writing character cards, prompts, character groups and TTS configuration.",
             0.36,
         ));
         self.importStructuredPreferences(&parsed, &fileImportPlan)?;
         self.importUserMarkdownPreferences(&parsed)?;
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "preferences",
-            "迁移偏好设置",
-            "正在写入主题、功能映射和数据存储偏好。",
+            "Migrate preferences",
+            "Writing theme, feature mapping and data store preferences.",
             0.50,
         ));
         let (importedDatastoreFiles, importedDatastoreKeys) =
             self.importDataStorePreferences(&parsed, &fileImportPlan)?;
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "chats",
-            "迁移聊天记录",
-            "正在导入历史会话和消息。",
+            "Migrate chat history",
+            "Importing past conversations and messages.",
             0.64,
         ));
         let (importedChats, importedMessages) =
@@ -469,15 +469,15 @@ impl Operit1SnapshotImportManager {
             self.importTokenStatistics(&parsed)?;
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "memory",
-            "迁移记忆库",
-            "正在转换 Operit1 记忆和关联关系。",
+            "Migrate memory library",
+            "Converting Operit1 memories and their links.",
             0.78,
         ));
         let (importedMemories, importedMemoryLinks) = self.importObjectBoxMemoryStore(&parsed)?;
         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress::stage(
             "files",
-            "迁移资源文件",
-            "正在复制工作区、附件和外部资源。",
+            "Migrate resource files",
+            "Copying workspaces, attachments and external resources.",
             0.90,
         ));
         let fileImportResult = self.importSnapshotFiles(&parsed)?;
@@ -523,7 +523,7 @@ impl Operit1SnapshotImportManager {
                 .importAllCharacterCardsFromBackupContent(
                     &serde_json::to_string(&backup).map_err(|error| error.to_string())?,
                 )
-                .map_err(|error| format!("导入 Operit1 角色卡失败：{error}"))?;
+                .map_err(|error| format!("Failed to import Operit1 character cards: {error}"))?;
         }
 
         let groups = buildOperit2CharacterGroups(parsed)?;
@@ -535,7 +535,7 @@ impl Operit1SnapshotImportManager {
                 .importAllCharacterGroupsFromBackupContent(
                     &serde_json::to_string(&backup).map_err(|error| error.to_string())?,
                 )
-                .map_err(|error| format!("导入 Operit1 角色组失败：{error}"))?;
+                .map_err(|error| format!("Failed to import Operit1 character groups: {error}"))?;
         }
 
         if let Some(config) = buildOperit2TtsConfig(parsed)? {
@@ -555,9 +555,9 @@ impl Operit1SnapshotImportManager {
             manager
                 .createSharedMemoryStoreWithId(
                     storeId.clone(),
-                    format!("Operit1 记忆库 - {}", space.name.trim()),
+                    format!("Operit1 memory library - {}", space.name.trim()),
                 )
-                .map_err(|error| format!("创建 Operit1 共享记忆库失败：{error}"))?;
+                .map_err(|error| format!("Failed to create the Operit1 shared memory library: {error}"))?;
             let path = format!(
                 "{}/{}/USER.md",
                 DATA_MEMORY_SHARED_DIR_PATH.trim_end_matches('/'),
@@ -614,14 +614,14 @@ impl Operit1SnapshotImportManager {
         let modelIds = splitModelIds(&config.modelName);
         if !modelIds.iter().any(|current| current == &modelId) {
             return Err(format!(
-                "模型配置「{}」不包含模型：{}",
+                "Model configuration \"{}\" does not contain model: {}",
                 config.name, modelId
             ));
         }
         let providerBinding = config.providerBinding()?;
         let endpoint = config.apiEndpoint.trim().to_string();
         if endpoint.is_empty() {
-            return Err(format!("模型配置「{}」缺少服务地址", config.name));
+            return Err(format!("Model configuration \"{}\" is missing a service address", config.name));
         }
 
         let mut provider = ProviderProfile::new(
@@ -713,9 +713,9 @@ impl Operit1SnapshotImportManager {
             keyCount += preferences.len() as i32;
             publishOperit1SnapshotCountedProgress(
                 "preferences",
-                "迁移偏好设置",
+                "Migrate preferences",
                 format!(
-                    "已写入 {fileCount}/{mappedFileCount} 个偏好文件，累计 {keyCount} 个配置项。"
+                    "Wrote {fileCount}/{mappedFileCount} preference files with {keyCount} configuration entries in total."
                 ),
                 0.50,
                 0.64,
@@ -726,8 +726,8 @@ impl Operit1SnapshotImportManager {
         if mappedFileCount == 0 {
             publishOperit1SnapshotCountedProgress(
                 "preferences",
-                "迁移偏好设置",
-                "快照没有可迁移的数据存储偏好文件。".to_string(),
+                "Migrate preferences",
+                "The snapshot contains no data store preference files to migrate.".to_string(),
                 0.50,
                 0.64,
                 0,
@@ -755,9 +755,9 @@ impl Operit1SnapshotImportManager {
                 {
                     publishOperit1SnapshotCountedProgress(
                         "chats",
-                        "迁移聊天记录",
+                        "Migrate chat history",
                         format!(
-                            "正在解析聊天：{parsedChatCount}/{totalChatCount} 个会话，{parsedMessageCount}/{totalMessageCount} 条消息。"
+                            "Parsing chats: {parsedChatCount}/{totalChatCount} conversations, {parsedMessageCount}/{totalMessageCount} messages."
                         ),
                         0.64,
                         0.71,
@@ -780,8 +780,8 @@ impl Operit1SnapshotImportManager {
                 .sum();
             publishOperit1SnapshotCountedProgress(
                 "chats",
-                "迁移聊天记录",
-                format!("解析完成，正在写入 {chatCount} 个会话和 {messageCount} 条消息。"),
+                "Migrate chat history",
+                format!("Parsing complete, writing {chatCount} conversations and {messageCount} messages."),
                 0.64,
                 0.71,
                 1,
@@ -795,9 +795,9 @@ impl Operit1SnapshotImportManager {
                     if persistedChatProgressThrottle.shouldPublish(persistedChats, totalChats) {
                         publishOperit1SnapshotCountedProgress(
                             "chats",
-                            "迁移聊天记录",
+                            "Migrate chat history",
                             format!(
-                                "正在写入聊天：{persistedChats}/{totalChats} 个会话，{messageCount} 条消息已解析。"
+                                "Writing chats: {persistedChats}/{totalChats} conversations, {messageCount} messages parsed."
                             ),
                             0.71,
                             0.78,
@@ -810,8 +810,8 @@ impl Operit1SnapshotImportManager {
             if chatCount == 0 {
                 publishOperit1SnapshotCountedProgress(
                     "chats",
-                    "迁移聊天记录",
-                    "快照没有可导入的聊天记录。".to_string(),
+                    "Migrate chat history",
+                    "The snapshot contains no chat history to import.".to_string(),
                     0.71,
                     0.78,
                     0,
@@ -939,9 +939,9 @@ impl Operit1SnapshotImportManager {
                 if fileProgressThrottle.shouldPublish(copiedFileCount, totalFileCount) {
                     publishOperit1SnapshotCountedProgress(
                         "files",
-                        "迁移资源文件",
+                        "Migrate resource files",
                         format!(
-                            "正在复制资源：{copiedFileCount}/{totalFileCount} 个文件（{entryName}）。"
+                            "Copying resources: {copiedFileCount}/{totalFileCount} files ({entryName})."
                         ),
                         0.90,
                         1.0,
@@ -954,8 +954,8 @@ impl Operit1SnapshotImportManager {
         if totalFileCount == 0 {
             publishOperit1SnapshotCountedProgress(
                 "files",
-                "迁移资源文件",
-                "快照没有可迁移的资源文件。".to_string(),
+                "Migrate resource files",
+                "The snapshot contains no resource files to migrate.".to_string(),
                 0.90,
                 1.0,
                 0,
@@ -987,7 +987,7 @@ impl Operit1SnapshotImportManager {
                     .archive
                     .entries
                     .get(&entry)
-                    .ok_or_else(|| format!("Operit1 记忆库条目不存在：{entry}"))?
+                    .ok_or_else(|| format!("The Operit1 memory library entry does not exist: {entry}"))?
                     .uncompressedSize;
                 let exportData = self.withStagedArchiveEntry(
                     parsed,
@@ -1009,12 +1009,12 @@ impl Operit1SnapshotImportManager {
                 let json = serde_json::to_string(&exportData).map_err(|error| error.to_string())?;
                 repository
                     .importMemoriesFromJson(json, ImportStrategy::UPDATE)
-                    .map_err(|error| format!("导入 Operit1 记忆库失败：{error}"))?;
+                    .map_err(|error| format!("Failed to import the Operit1 memory library: {error}"))?;
                 publishOperit1SnapshotCountedProgress(
                     "memory",
-                    "迁移记忆库",
+                    "Migrate memory library",
                     format!(
-                        "已迁移 {}/{profileCount} 个记忆库，累计 {} 条记忆和 {} 条关联。",
+                        "Migrated {}/{profileCount} memory libraries with {} memories and {} links in total.",
                         profileIndex + 1,
                         totalMemoryCount,
                         totalLinkCount,
@@ -1028,8 +1028,8 @@ impl Operit1SnapshotImportManager {
             if profileCount == 0 {
                 publishOperit1SnapshotCountedProgress(
                     "memory",
-                    "迁移记忆库",
-                    "快照没有可迁移的记忆库。".to_string(),
+                    "Migrate memory library",
+                    "The snapshot contains no memory library to migrate.".to_string(),
                     0.78,
                     0.90,
                     0,

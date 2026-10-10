@@ -63,7 +63,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
     final colorScheme = Theme.of(context).colorScheme;
     return AlertDialog(
       icon: const Icon(Icons.cloud_outlined),
-      title: const Text('添加 MCP'),
+      title: const Text('Add MCP'),Add MCP'),
       content: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 520),
         child: SingleChildScrollView(
@@ -86,12 +86,12 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
                   ButtonSegment<_MCPImportMode>(
                     value: _MCPImportMode.config,
                     icon: Icon(Icons.data_object),
-                    label: Text('配置'),
+                    label: Text('Config'),Config'),
                   ),
                   ButtonSegment<_MCPImportMode>(
                     value: _MCPImportMode.form,
                     icon: Icon(Icons.tune_outlined),
-                    label: Text('表单'),
+                    label: Text('Form'),Form'),
                   ),
                 ],
                 selected: <_MCPImportMode>{_mode},
@@ -106,8 +106,8 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
               const SizedBox(height: 16),
               Text(
                 _mode == _MCPImportMode.zip || _mode == _MCPImportMode.github
-                    ? '本地部署 MCP 仅保存在本设备，不参与空间同步。'
-                    : '远程 MCP 可选择设备空间；包含本地命令的配置仅限本设备。',
+                    ? 'Locally deployed MCP is stored on this device only and does not take part in space sync.'Locally deployed MCP is stored on this device only and does not take part in space sync.'Locally deployed MCP is stored on this device only and does not take part in space sync.'Locally deployed MCP is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'is stored on this device only and does not take part in space sync.'
+                    : 'Remote MCP can choose the device space; configurations containing local commands are limited to this device.',Remote MCP can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',can choose the device space; configurations containing local commands are limited to this device.',
               ),
               const SizedBox(height: 12),
               AnimatedSwitcher(
@@ -143,7 +143,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
                                 controller: _repoUrlController,
                                 enabled: !_busy,
                                 decoration: const InputDecoration(
-                                  labelText: 'GitHub 仓库 URL',
+                                  labelText: 'GitHub repository URL',repository URL',
                                   prefixIcon: Icon(Icons.link),
                                 ),
                                 validator: _required,
@@ -163,14 +163,14 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
                               controller: _nameController,
                               enabled: !_busy,
                               decoration: const InputDecoration(
-                                labelText: '名称',
+                                labelText: 'Name',Name',
                                 prefixIcon: Icon(Icons.title),
                               ),
                               validator: _required,
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              '简介会在启动并获取工具后生成。',
+                              'The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',The description is generated after startup and tool discovery.',
                               style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(
                                     color: Theme.of(
@@ -196,12 +196,12 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
       actions: <Widget>[
         TextButton(
           onPressed: _busy ? null : () => Navigator.of(context).pop(),
-          child: const Text('关闭'),
+          child: const Text('Close'),Close'),
         ),
         if (_mode == _MCPImportMode.zip || _mode == _MCPImportMode.github)
           FilledButton(
             onPressed: _busy ? null : _installPlugin,
-            child: const Text('安装'),
+            child: const Text('Install'),Install'),
           )
         else
           FilledButton(
@@ -210,7 +210,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
                 : _mode == _MCPImportMode.config
                 ? _mergeConfig
                 : _mergeFormConfigFromPane,
-            child: const Text('合并'),
+            child: const Text('Merge'),Merge'),
           ),
       ],
     );
@@ -235,19 +235,19 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
     final document = jsonDecode(jsonConfig);
     if (document is! Map<String, dynamic> ||
         document['mcpServers'] is! Map<String, dynamic>) {
-      throw const FormatException('MCP 配置必须包含 mcpServers 对象');
+      throw const FormatException('MCP configuration must contain an mcpServers object');configuration must contain an mcpServers object');configuration must contain an mcpServers object');configuration must contain an mcpServers object');configuration must contain an mcpServers object');configuration must contain an mcpServers object');object');
     }
     final servers = document['mcpServers'] as Map<String, dynamic>;
-    if (servers.isEmpty) throw const FormatException('MCP 配置为空');
+    if (servers.isEmpty) throw const FormatException('MCP configuration is empty');configuration is empty');configuration is empty');configuration is empty');
     for (final definition in servers.values) {
       if (definition is! Map<String, dynamic>)
-        throw const FormatException('MCP 服务必须是对象');
+        throw const FormatException('MCP server must be an object');server must be an object');server must be an object');server must be an object');server must be an object');server must be an object');server must be an object');
       final command = definition['command'];
       final url = definition['url'];
       final local = command is String && command.trim().isNotEmpty;
       final remote = url is String && url.trim().isNotEmpty;
       if (local == remote)
-        throw const FormatException('MCP 服务必须且只能指定 command 或 url');
+        throw const FormatException('MCP server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');server must specify exactly one of command or url');
     }
     final hasLocal = servers.values.any(
       (definition) =>
@@ -264,7 +264,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
     if (jsonConfig.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('请粘贴 MCP 配置'),
+          content: Text('Please paste the MCP configuration'),Please paste the MCP configuration'),Please paste the MCP configuration'),configuration'),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -286,7 +286,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
       final count = await widget.clients.permissionsMcpRuntimeMcpLocalServer
           .mergeConfigFromJsonWithScope(jsonConfig: jsonConfig, scope: scope!);
       await _applyImportedServerLifecycles(lifecycles);
-      return '已导入 $count 个 MCP 服务';
+      return 'Imported $count MCP server(s)';
     });
   }
 
@@ -307,7 +307,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
       final count = await widget.clients.permissionsMcpRuntimeMcpLocalServer
           .mergeConfigFromJsonWithScope(jsonConfig: jsonConfig, scope: scope!);
       await _applyImportedServerLifecycles(lifecycles);
-      return '已导入 $count 个 MCP 服务';
+      return 'Imported $count MCP server(s)';
     });
   }
 
@@ -322,7 +322,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
     if (_mode == _MCPImportMode.zip && _zipFile == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('请选择 ZIP 文件'),
+          content: Text('Please select a ZIP file'),Please select a ZIP file'),Please select a ZIP file'),file'),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -359,7 +359,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
             await startMcpServer(clients: widget.clients, serverId: pluginId);
             return path;
           });
-    }, successMessage: '已安装并启动 MCP');
+    }, successMessage: 'MCP installed and started');
   }
 
   List<_ImportedMcpServerLifecycle> _serverLifecyclesFromConfig(
@@ -367,25 +367,25 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
   ) {
     final decoded = jsonDecode(jsonConfig);
     if (decoded is! Map<Object?, Object?>) {
-      throw const FormatException('MCP 配置必须是 JSON object');
+      throw const FormatException('MCP configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');
     }
     final rawServers = decoded['mcpServers'];
     if (rawServers is! Map<Object?, Object?>) {
-      throw const FormatException('MCP 配置缺少 mcpServers');
+      throw const FormatException('MCP configuration is missing mcpServers');configuration is missing mcpServers');configuration is missing mcpServers');configuration is missing mcpServers');
     }
     final lifecycles = <_ImportedMcpServerLifecycle>[];
     for (final entry in rawServers.entries) {
       final rawServerId = entry.key;
       if (rawServerId is! String || rawServerId.trim().isEmpty) {
-        throw const FormatException('mcpServers 的 key 必须是非空字符串');
+        throw const FormatException('mcpServers keys must be non-empty strings');
       }
       final rawConfig = entry.value;
       if (rawConfig is! Map<Object?, Object?>) {
-        throw FormatException('$rawServerId 配置必须是 JSON object');
+        throw FormatException('$rawServerId configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');configuration must be a JSON object');
       }
       final rawDisabled = rawConfig['disabled'];
       if (rawDisabled != null && rawDisabled is! bool) {
-        throw FormatException('$rawServerId disabled 必须是 bool');
+        throw FormatException('$rawServerId disabled must be a bool');must be a bool');must be a bool');
       }
       lifecycles.add(
         _ImportedMcpServerLifecycle(
@@ -442,7 +442,7 @@ class _MCPImportDialogState extends State<MCPImportDialog> {
   }
 
   String? _required(String? value) {
-    return value == null || value.trim().isEmpty ? '必填' : null;
+    return value == null || value.trim().isEmpty ? 'Required' : null;Required' : null;
   }
 }
 
@@ -466,7 +466,7 @@ class _ZipPickerRow extends StatelessWidget {
       label: Align(
         alignment: Alignment.centerLeft,
         child: Text(
-          file?.name ?? '选择 ZIP 文件',
+          file?.name ?? 'Select a ZIP file',Select a ZIP file',file',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
@@ -629,7 +629,7 @@ class _JsonMergePane extends StatelessWidget {
           minLines: 8,
           maxLines: 14,
           decoration: const InputDecoration(
-            labelText: 'MCP 配置',
+            labelText: 'MCP configuration',configuration',
             hintText: '{\n  "mcpServers": {\n    ...\n  }\n}',
             alignLabelWithHint: true,
           ),
@@ -676,12 +676,12 @@ class _FormConfigPane extends StatelessWidget {
             ButtonSegment<bool>(
               value: false,
               icon: Icon(Icons.terminal_outlined),
-              label: Text('本地'),
+              label: Text('Local'),Local'),
             ),
             ButtonSegment<bool>(
               value: true,
               icon: Icon(Icons.public_outlined),
-              label: Text('远程'),
+              label: Text('Remote'),Remote'),
             ),
           ],
           selected: <bool>{remote},
@@ -694,7 +694,7 @@ class _FormConfigPane extends StatelessWidget {
           controller: serverIdController,
           enabled: enabled,
           decoration: const InputDecoration(
-            labelText: '服务 ID',
+            labelText: 'Server ID',Server ID',
             prefixIcon: Icon(Icons.tag),
           ),
           validator: _required,
@@ -715,7 +715,7 @@ class _FormConfigPane extends StatelessWidget {
             context,
             initialValue: type,
             style: OperitFormStyles.dropdownTextStyle(context),
-            decoration: const InputDecoration(labelText: '传输'),
+            decoration: const InputDecoration(labelText: 'Transport'),Transport'),
             items: const <DropdownMenuItem<String>>[
               DropdownMenuItem<String>(
                 value: 'streamable-http',
@@ -739,7 +739,7 @@ class _FormConfigPane extends StatelessWidget {
             maxLines: 4,
             decoration: const InputDecoration(
               labelText: 'Headers',
-              helperText: '每行一个，格式：Name: Value',
+              helperText: 'One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',
               alignLabelWithHint: true,
             ),
           ),
@@ -748,7 +748,7 @@ class _FormConfigPane extends StatelessWidget {
             controller: commandController,
             enabled: enabled,
             decoration: const InputDecoration(
-              labelText: '命令',
+              labelText: 'Command',Command',
               prefixIcon: Icon(Icons.terminal_outlined),
             ),
             validator: _required,
@@ -760,8 +760,8 @@ class _FormConfigPane extends StatelessWidget {
             minLines: 2,
             maxLines: 4,
             decoration: const InputDecoration(
-              labelText: '参数',
-              helperText: '每行一个参数',
+              labelText: 'Arguments',Arguments',
+              helperText: 'One argument per line',One argument per line',One argument per line',One argument per line',One argument per line',One argument per line',
               alignLabelWithHint: true,
             ),
           ),
@@ -772,8 +772,8 @@ class _FormConfigPane extends StatelessWidget {
             minLines: 2,
             maxLines: 4,
             decoration: const InputDecoration(
-              labelText: '环境变量',
-              helperText: '每行一个，格式：Name: Value',
+              labelText: 'Environment variables',Environment variables',Environment variables',Environment variables',
+              helperText: 'One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',One per line, format: Name: Value',
               alignLabelWithHint: true,
             ),
           ),
@@ -783,6 +783,6 @@ class _FormConfigPane extends StatelessWidget {
   }
 
   String? _required(String? value) {
-    return value == null || value.trim().isEmpty ? '必填' : null;
+    return value == null || value.trim().isEmpty ? 'Required' : null;Required' : null;
   }
 }

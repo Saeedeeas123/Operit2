@@ -18,7 +18,7 @@ import 'selection_manager.dart';
 /// [TextInputConnection] (which will create a HTML `textarea`), then pass
 /// transform and size args to [TextInputConnection] (which will position the
 /// `textarea` accordingly). Finally, to ensure `textarea` selection covers  our
-/// widget，we use an absurdly large font size and keep a select-all state.
+/// widget, we use an absurdly large font size and keep a select-all state.
 ///
 mixin WebSelectionControlsManagerMixin<T extends StatefulWidget>
     on SelectionManagerMixin<T> implements TextInputClient {

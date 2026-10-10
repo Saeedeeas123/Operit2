@@ -1324,9 +1324,9 @@ class _InputBody extends StatelessWidget {
                       canSend: canSendMessage,
                     ),
               tooltip: isSpeechRecording
-                  ? '停止录音'
+                  ? 'Stop recording'Stop recording'Stop recording'Stop recording'
                   : isSpeechTranscribing
-                  ? '正在识别'
+                  ? 'Recognizing'Recognizing'Recognizing'Recognizing'
                   : showCancelAction
                   ? l10n.cancel
                   : showQueueAction

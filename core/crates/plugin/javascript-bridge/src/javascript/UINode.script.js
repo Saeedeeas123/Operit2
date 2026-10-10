@@ -739,7 +739,7 @@ class UINode {
 
         // Node identifier with clickable indicator
         result += indent;
-        result += this.isClickable ? "鈻?" : "鈼?";
+        result += this.isClickable ? "⏺" : "○";
 
         // Class name
         if (this.className) {
@@ -766,7 +766,7 @@ class UINode {
 
         // Bounds
         if (this.bounds) {
-            result += `猱?${this.bounds}`;
+            result += `▭${this.bounds}`;
         }
 
         result += "\n";

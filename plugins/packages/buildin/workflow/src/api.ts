@@ -1,49 +1,49 @@
 /** Self-contained workflow public client. Types retain the v1 workflow contract. */
 export interface WorkflowResultData {
-    /** 工作流 ID */
+    /** Workflow ID */
     id: string;
-    /** 工作流名称 */
+    /** Workflow name */
     name: string;
-    /** 工作流描述 */
+    /** Workflow description */
     description: string;
-    /** 节点数量 */
+    /** Node count */
     nodeCount: number;
-    /** 连接数量 */
+    /** Connection count */
     connectionCount: number;
-    /** 是否启用 */
+    /** Whether enabled */
     enabled: boolean;
-    /** 创建时间戳 */
+    /** Creation timestamp */
     createdAt: number;
-    /** 更新时间戳 */
+    /** Update timestamp */
     updatedAt: number;
-    /** 最后执行时间 */
+    /** Last execution time */
     lastExecutionTime?: number | null;
-    /** 最后执行状态 */
+    /** Last execution status */
     lastExecutionStatus?: string | null;
-    /** 总执行次数 */
+    /** Total execution count */
     totalExecutions: number;
-    /** 成功执行次数 */
+    /** Successful execution count */
     successfulExecutions: number;
-    /** 失败执行次数 */
+    /** Failed execution count */
     failedExecutions: number;
     /** Returns a formatted string representation of the workflow */
     toString(): string;
 }
 
 /**
- * 工作流列表结果数据
+ * Workflow list result data
  */
 export interface WorkflowListResultData {
-    /** 工作流列表 */
+    /** Workflow list */
     workflows: WorkflowResultData[];
-    /** 工作流总数 */
+    /** Total number of workflows */
     totalCount: number;
     /** Returns a formatted string representation of the workflow list */
     toString(): string;
 }
 
 /**
- * 工作流节点位置
+ * Workflow node position
  */
 export interface NodePosition {
     x: number;
@@ -63,7 +63,7 @@ export interface NodeReference {
 export type ParameterValue = string | StaticValue | NodeReference;
 
 /**
- * 触发类型
+ * Trigger type
  */
 export type TriggerType =
     | 'manual'
@@ -74,46 +74,46 @@ export type TriggerType =
     | (string & { __triggerTypeBrand?: never });
 
 /**
- * 触发节点
+ * Trigger node
  */
 export interface TriggerNode {
     __type?: string;
-    /** 节点 ID */
+    /** Node ID */
     id: string;
-    /** 节点类型 */
+    /** Node type */
     type: 'trigger';
-    /** 节点名称 */
+    /** Node name */
     name: string;
-    /** 节点描述 */
+    /** Node description */
     description: string;
-    /** 节点位置 */
+    /** Node position */
     position: NodePosition;
-    /** 触发类型 */
+    /** Trigger type */
     triggerType: TriggerType;
-    /** 触发配置 */
+    /** Trigger configuration */
     triggerConfig: Record<string, string>;
 }
 
 /**
- * 执行节点
+ * Execute node
  */
 export interface ExecuteNode {
     __type?: string;
-    /** 节点 ID */
+    /** Node ID */
     id: string;
-    /** 节点类型 */
+    /** Node type */
     type: 'execute';
-    /** 节点名称 */
+    /** Node name */
     name: string;
-    /** 节点描述 */
+    /** Node description */
     description: string;
-    /** 节点位置 */
+    /** Node position */
     position: NodePosition;
-    /** 动作类型（工具名称） */
+    /** Action type (tool name) */
     actionType: string;
-    /** 动作配置（工具参数） */
+    /** Action configuration (tool parameters) */
     actionConfig: Record<string, string | ParameterValue>;
-    /** JavaScript 代码（可选） */
+    /** JavaScript code (optional) */
     jsCode?: string | null;
 }
 
@@ -179,12 +179,12 @@ export interface ExtractNode {
 }
 
 /**
- * 工作流节点（联合类型）
+ * Workflow node (union type)
  */
 export type WorkflowNode = TriggerNode | ExecuteNode | ConditionNode | LogicNode | ExtractNode;
 
 /**
- * 工作流节点连接条件关键字
+ * Workflow node connection condition keywords
  */
 export type WorkflowConnectionConditionKeyword =
     | 'true'
@@ -197,53 +197,53 @@ export type WorkflowConnectionConditionKeyword =
     | 'failed';
 
 /**
- * 工作流节点连接条件
+ * Workflow node connection condition
  */
 export type WorkflowConnectionCondition = WorkflowConnectionConditionKeyword | (string & { __regexConditionBrand?: never });
 
 /**
- * 工作流节点连接
+ * Workflow node connection
  */
 export interface WorkflowNodeConnection {
-    /** 连接 ID */
+    /** Connection ID */
     id: string;
-    /** 源节点 ID */
+    /** Source node ID */
     sourceNodeId: string;
-    /** 目标节点 ID */
+    /** Target node ID */
     targetNodeId: string;
-    /** 连接条件（可选） */
+    /** Connection condition (optional) */
     condition?: WorkflowConnectionCondition | null;
 }
 
 /**
- * 工作流详细信息结果数据（包含完整的节点和连接信息）
+ * Workflow detail result data (includes the complete node and connection information)
  */
 export interface WorkflowDetailResultData {
-    /** 工作流 ID */
+    /** Workflow ID */
     id: string;
-    /** 工作流名称 */
+    /** Workflow name */
     name: string;
-    /** 工作流描述 */
+    /** Workflow description */
     description: string;
-    /** 节点列表 */
+    /** Node list */
     nodes: WorkflowNode[];
-    /** 连接列表 */
+    /** Connection list */
     connections: WorkflowNodeConnection[];
-    /** 是否启用 */
+    /** Whether enabled */
     enabled: boolean;
-    /** 创建时间戳 */
+    /** Creation timestamp */
     createdAt: number;
-    /** 更新时间戳 */
+    /** Update timestamp */
     updatedAt: number;
-    /** 最后执行时间 */
+    /** Last execution time */
     lastExecutionTime?: number | null;
-    /** 最后执行状态 */
+    /** Last execution status */
     lastExecutionStatus?: string | null;
-    /** 总执行次数 */
+    /** Total execution count */
     totalExecutions: number;
-    /** 成功执行次数 */
+    /** Successful execution count */
     successfulExecutions: number;
-    /** 失败执行次数 */
+    /** Failed execution count */
     failedExecutions: number;
     /** Returns a formatted string representation of the workflow details */
     toString(): string;

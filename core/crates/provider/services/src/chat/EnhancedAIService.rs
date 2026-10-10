@@ -945,7 +945,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "执行上下文已失效: id={}, reason={}",
+                "Execution context invalidated: id={}, reason={}",
                 context.executionId, reason
             ),
         );
@@ -960,7 +960,7 @@ impl EnhancedAIService {
     }
 
     pub fn invalidateAllExecutionContexts(&mut self, reason: String) {
-        AppLogger::d(TAG, &format!("准备失效全部执行上下文: reason={}", reason));
+        AppLogger::d(TAG, &format!("Preparing to invalidate all execution contexts: reason={}", reason));
         let ids = self
             .shared_state()
             .active_execution_contexts
@@ -1235,7 +1235,7 @@ impl EnhancedAIService {
         AppLogger::i(
             TAG,
             &format!(
-                "sendMessage调用开始: 功能类型={}, 提示词类型={}",
+                "sendMessage call started: function type={}, prompt type={}",
                 function_type_name(&functionType),
                 prompt_function_type_name(&promptFunctionType)
             ),
@@ -1306,7 +1306,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "sendMessage本地耗时: prepareConversationHistory={}ms",
+                "sendMessage local elapsed: prepareConversationHistory={}ms",
                 tAfterPrepareHistory
                     .startedAtMs
                     .saturating_sub(startTime.startedAtMs)
@@ -1341,7 +1341,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "sendMessage本地耗时: getModelParametersForFunction={}ms",
+                "sendMessage local elapsed: getModelParametersForFunction={}ms",
                 tAfterModelParams
                     .startedAtMs
                     .saturating_sub(tAfterPrepareHistory.startedAtMs)
@@ -1369,7 +1369,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "sendMessage本地耗时: getAvailableToolsForFunction={}ms",
+                "sendMessage local elapsed: getAvailableToolsForFunction={}ms",
                 tAfterGetTools
                     .startedAtMs
                     .saturating_sub(tAfterModelParams.startedAtMs)
@@ -1386,7 +1386,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "sendMessage本地耗时: getAIServiceForFunction={}ms",
+                "sendMessage local elapsed: getAIServiceForFunction={}ms",
                 tAfterGetService
                     .startedAtMs
                     .saturating_sub(tAfterGetTools.startedAtMs)
@@ -1470,7 +1470,7 @@ impl EnhancedAIService {
         AppLogger::d(
             TAG,
             &format!(
-                "sendMessage请求前准备耗时: {}ms, 流式输出: {}",
+                "sendMessage pre-request preparation elapsed: {}ms, streaming: {}",
                 tBeforeRequest
                     .startedAtMs
                     .saturating_sub(startTime.startedAtMs),
@@ -1537,7 +1537,7 @@ impl EnhancedAIService {
                         &mut execContext,
                         "sendMessage.provider.error".to_string(),
                     );
-                    AppLogger::e(TAG, &format!("发送消息时发生错误: {}", error));
+                    AppLogger::e(TAG, &format!("Error while sending message: {}", error));
                     if !isSubTask {
                         self.stopAiService(characterName.clone(), avatarUri.clone());
                     }
@@ -1602,7 +1602,7 @@ impl EnhancedAIService {
                     if currentTime.saturating_sub(lastLogTime) > 5000 {
                         AppLogger::d(
                             TAG,
-                            &format!("已接收 {} 个内容块，总计 {} 个字符", chunkCount, totalChars),
+                            &format!("Received {} content chunks, {} characters in total", chunkCount, totalChars),
                         );
                         lastLogTime = currentTime;
                     }
@@ -1753,7 +1753,7 @@ impl EnhancedAIService {
                 &mut execContext,
                 "processStreamCompletion.error".to_string(),
             );
-            AppLogger::e(TAG, &format!("处理流完成时发生错误: {}", error));
+            AppLogger::e(TAG, &format!("Error while finishing stream processing: {}", error));
             if !isSubTask {
                 self.stopAiService(characterName.clone(), avatarUri.clone());
             }
@@ -1804,7 +1804,7 @@ impl EnhancedAIService {
                 Ok(())
                 })();
                 if let Err(error) = result {
-                    let message = format!("自动保存长期记忆候选入队失败: {error}");
+                    let message = format!("Failed to enqueue the auto-saved long-term memory candidate: {error}");
                     AppLogger::e(TAG, &message);
                     if let Some(callback) = onNonFatalError { callback(message); }
                 }

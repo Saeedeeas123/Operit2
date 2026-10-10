@@ -50,7 +50,7 @@ class _QuickPluginCreatorDialogState extends State<QuickPluginCreatorDialog> {
     final requirement = _requirementController.text.trim();
     if (requirement.isEmpty) {
       setState(() {
-        _requirementError = '请先输入插件需求';
+        _requirementError = 'Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';Enter the plugin requirements first';
       });
       return;
     }
@@ -78,7 +78,7 @@ class _QuickPluginCreatorDialogState extends State<QuickPluginCreatorDialog> {
     final colorScheme = Theme.of(context).colorScheme;
     final setupResult = _setupResult;
     return AlertDialog(
-      title: const Text('快速创作你的插件'),
+      title: const Text('Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),Quickly create your plugin'),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -86,10 +86,10 @@ class _QuickPluginCreatorDialogState extends State<QuickPluginCreatorDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const _DialogSectionTitle('插件需求'),
+              const _DialogSectionTitle('Plugin requirements'),Plugin requirements'),Plugin requirements'),Plugin requirements'),
               const SizedBox(height: 8),
               Text(
-                '确认后会准备并开放 PackageBuilder Skill、启用 operit_editor 操作手册包，然后跳转聊天并填入需求草稿。发送草稿后才开始开发；本操作不会自动生成、安装或发布插件。',
+                'After confirmation, the PackageBuilder skill is prepared and opened, the operit_editor manual package is enabled, and the chat opens with a requirements draft filled in. Development only starts after you send the draft; this action does not automatically generate, install, or publish a plugin.',
                 style: TextStyle(color: colorScheme.onSurfaceVariant),
               ),
               const SizedBox(height: 10),
@@ -99,7 +99,7 @@ class _QuickPluginCreatorDialogState extends State<QuickPluginCreatorDialog> {
                 maxLines: 8,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
-                  hintText: '例如：做一个可以批量整理下载目录图片并生成索引的工具',
+                  hintText: 'e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',e.g. build a tool that bulk-organizes images in the Download directory and generates an index',
                   errorText: _requirementError,
                 ),
                 onChanged: (_) {
@@ -124,13 +124,13 @@ class _QuickPluginCreatorDialogState extends State<QuickPluginCreatorDialog> {
       actions: <Widget>[
         TextButton(
           onPressed: _confirmRunning ? null : () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),Cancel'),
         ),
         FilledButton(
           onPressed: _confirmRunning ? null : _confirm,
           child: _confirmRunning
               ? const M3LoadingIndicator(size: 16)
-              : const Text('准备并前往聊天'),
+              : const Text('Prepare and go to chat'),Prepare and go to chat'),Prepare and go to chat'),Prepare and go to chat'),Prepare and go to chat'),Prepare and go to chat'),Prepare and go to chat'),
         ),
       ],
     );

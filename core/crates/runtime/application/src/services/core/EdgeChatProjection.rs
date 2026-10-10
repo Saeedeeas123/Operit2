@@ -53,7 +53,7 @@ pub fn visibleEdgeText(source: &str) -> String {
                 .or_else(|| tag.split_once("name='").and_then(|(_, tail)| tail.split_once('\'').map(|(name, _)| name)));
             if let Some(tool) = tool.filter(|value| !value.is_empty()) {
                 if !result.is_empty() { result.push('\n'); }
-                appendBounded(&mut result, "调用工具：", EDGE_TEXT_LIMIT);
+                appendBounded(&mut result, "Calling tool: ", EDGE_TEXT_LIMIT);
                 let end = tool.len().min(96);
                 let end = (0..=end).rev().find(|index| tool.is_char_boundary(*index)).unwrap_or(0);
                 appendBounded(&mut result, &tool[..end], EDGE_TEXT_LIMIT);
@@ -92,7 +92,7 @@ pub fn compactEdgeMessages(messages: Vec<ChatMessage>) -> Vec<ChatMessage> {
                     MessagePart::new(bounded(&part.partId, EDGE_ID_LIMIT), part.sequence, part.kind.clone(), content)
                 }
                 MessagePartKind::ToolCall => {
-                    let name = bounded(part.toolName.as_deref().unwrap_or("未知工具"), EDGE_ID_LIMIT.min(messageRemaining));
+                    let name = bounded(part.toolName.as_deref().unwrap_or("Unknown tool"), EDGE_ID_LIMIT.min(messageRemaining));
                     messageRemaining = messageRemaining.saturating_sub(name.len());
                     remaining = remaining.saturating_sub(name.len());
                     MessagePart::toolCall(bounded(&part.partId, EDGE_ID_LIMIT), part.sequence,
@@ -168,7 +168,7 @@ fn compactStream(stream: CoreStream<MarkdownStreamEvent>) -> Option<CoreStream<M
                         let Some(CoreValue::Map(attrs)) = xml.get("attributes") else { continue; };
                         let Some(CoreValue::String(name)) = attrs.get("name") else { continue; };
                         output.insert("type".into(), CoreValue::String("chunk".into()));
-                        bounded(&format!("\n调用工具：{}\n", bounded(name, EDGE_ID_LIMIT)), remaining)
+                        bounded(&format!("\nCalling tool: {}\n", bounded(name, EDGE_ID_LIMIT)), remaining)
                     } else {
                         if !matches!(kind, "chunk" | "reset" | "savepoint" | "rollback") { continue; }
                         output.insert("type".into(), CoreValue::String(kind.into()));

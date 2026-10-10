@@ -1,4 +1,4 @@
-//! 已鉴权 Link 会话：路由元数据留在标准 args 中，执行仍使用既有 CoreLinkSession。
+//! Authenticated Link session: routing metadata stays in the standard args and execution still uses the existing CoreLinkSession.
 use super::*;
 
 pub(super) fn routedCall(request: RoutedCoreRequest<CoreCallRequest>) -> Result<CoreCallRequest, CoreLinkError> {
@@ -49,7 +49,7 @@ pub(super) async fn serve(service: HostRuntimePeerService, channel: Arc<LiveChan
                 event = session.nextWatchEvent() => Incoming::Event(event),
             }
         } else { Incoming::Message(channel.receive().await?) };
-        // 每次业务入口重新确认入站授权。撤销不能被存活中的旧连接绕过。
+        // Inbound authorization is re-confirmed at every business entry; a revocation can never be bypassed by a still-alive old connection.
         let valid = if spaceChannel {
             service.spaceInbound(&sessionId, &peer).is_ok()
         } else {

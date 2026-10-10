@@ -612,7 +612,7 @@ class ChatViewModel {
   Future<String> _requiredCurrentChatId() async {
     final chatId = await _chat.currentChatIdFlow().first;
     if (chatId == null || chatId.isEmpty) {
-      throw StateError('当前没有对话');
+      throw StateError('No active conversation');No active conversation');No active conversation');No active conversation');No active conversation');No active conversation');
     }
     return chatId;
   }

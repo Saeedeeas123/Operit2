@@ -301,7 +301,7 @@ class _NetworkControlDialogState extends State<_NetworkControlDialog> {
         ? l10n.settingsRuntimeControlNoIdentity
         : _values(
             identity.capabilities,
-          ).map((value) => _capabilityLabel(value, l10n)).join('、');
+          ).map((value) => _capabilityLabel(value, l10n)).join(', ');
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
       child: ListTile(
@@ -442,7 +442,7 @@ class _NetworkControlDialogState extends State<_NetworkControlDialog> {
   ) {
     final capabilities = _values(
       role.capabilities,
-    ).map((value) => _capabilityLabel(value, l10n)).join('、');
+    ).map((value) => _capabilityLabel(value, l10n)).join(', ');
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: ListTile(
@@ -909,7 +909,7 @@ class _DeviceDirectory {
       occurrences[base] = occurrence;
       _labels[device.deviceId] = counts[base] == 1
           ? base
-          : '$base · 设备 $occurrence';
+          : '$base · device $occurrence';
       _ids[device.deviceId] = device.deviceId;
     }
   }

@@ -618,16 +618,16 @@ mod tests {
             MarkdownGroupSession::block(),
             MarkdownGroupSession::inline(),
         ] {
-            for chunk in ["a🌙", "汉", "e\u{301}", "**粗**"] {
+            for chunk in ["a🌙", "Ω", "e\u{301}", "**Δ**"] {
                 let _ = group.push(chunk);
             }
 
             for (start, end, expected) in [
                 (0, 2, "a🌙"),
-                (1, 3, "🌙汉"),
+                (1, 3, "🌙Ω"),
                 (3, 5, "e\u{301}"),
-                (5, 8, "**粗"),
-                (7, 10, "粗**"),
+                (5, 8, "**Δ"),
+                (7, 10, "Δ**"),
             ] {
                 let segment = Segment {
                     r#type: 17,
@@ -643,8 +643,8 @@ mod tests {
     #[test]
     fn malformed_xml_remains_an_incomplete_xml_block() {
         for content in [
-            r#"<tool name="read_file>图片</tool>"#,
-            r#"<tool name="unterminated>图片</tool>"#,
+            r#"<tool name="read_file>image</tool>"#,
+            r#"<tool name="unterminated>image</tool>"#,
         ] {
             let events = MarkdownRenderEventStream::fromContent(content.to_string());
             assert_eq!(events.last().unwrap().eventType, "completed");
@@ -669,7 +669,7 @@ mod tests {
 
     #[test]
     fn unfinished_thinking_keeps_its_panel_and_child_content() {
-        let events = MarkdownRenderEventStream::fromContent("<think>未完成的思考".to_string());
+        let events = MarkdownRenderEventStream::fromContent("<think>unfinished thought".to_string());
         let xml = events
             .iter()
             .filter_map(|event| event.xml.as_ref())
@@ -680,13 +680,13 @@ mod tests {
         assert!(events.iter().any(|event| {
             event.parentBlockId.is_some()
                 && event.eventType == "markdownInlineChunk"
-                && event.value.as_deref() == Some("未完成的思考")
+                && event.value.as_deref() == Some("unfinished thought")
         }));
     }
 
     #[test]
     fn tool_inside_unfinished_thinking_keeps_its_nested_xml_block() {
-        let content = r#"<think>排查中：<tool name="read_file">图片</tool>"#;
+        let content = r#"<think>Investigating: <tool name="read_file">image</tool>"#;
         let events = MarkdownRenderEventStream::fromContent(content.to_string());
         let outer = events
             .iter()
@@ -707,13 +707,13 @@ mod tests {
             })
             .unwrap();
         assert_eq!(tool.xml.as_ref().unwrap().isClosed, Some(true));
-        assert_eq!(tool.xml.as_ref().unwrap().bodyChunk.as_deref(), Some("图片"));
+        assert_eq!(tool.xml.as_ref().unwrap().bodyChunk.as_deref(), Some("image"));
     }
 
     /// Thinking body extraction must not lose partial nested or closing tags.
     #[test]
     fn thinking_preserves_nested_xml_at_every_stream_split() {
-        let body = r#"排查中：<tool name="read_file">图片 😀</tool>继续"#;
+        let body = r#"Investigating: <tool name="read_file">image 😀</tool>continuing"#;
         let content = format!("<think>{body}</think>");
         let boundaries = content
             .char_indices()
@@ -753,7 +753,7 @@ mod tests {
     #[test]
     fn unfinished_nested_tool_retains_both_xml_nodes() {
         let events = MarkdownRenderEventStream::fromContent(
-            r#"<think>排查中：<tool name="read_file">未完成参数"#.to_string(),
+            r#"<think>Investigating: <tool name="read_file">unfinished arguments"#.to_string(),
         );
         for (parent, tag) in [(false, "think"), (true, "tool")] {
             let xml = events
@@ -769,7 +769,7 @@ mod tests {
 
     #[test]
     fn malformed_tool_inside_thinking_does_not_panic() {
-        let content = r#"<think>排查中：<tool name="read_file>图片</tool></think>"#;
+        let content = r#"<think>Investigating: <tool name="read_file>image</tool></think>"#;
         let mut stream = MarkdownRenderEventStream::new("chat".to_string());
         let mut events = Vec::new();
         for ch in content.chars() {
@@ -790,16 +790,16 @@ mod tests {
 
     #[test]
     fn closed_tool_keeps_following_unicode_text_outside_its_block() {
-        let events = MarkdownRenderEventStream::fromContent("<tool>文本</tool> 中文 😀".to_string());
+        let events = MarkdownRenderEventStream::fromContent("<tool>text</tool> sample 😀".to_string());
         let end = events
             .iter()
             .find(|event| event.eventType == "markdownBlockEnd")
             .unwrap();
-        assert_eq!(end.xml.as_ref().unwrap().bodyChunk.as_deref(), Some("文本"));
+        assert_eq!(end.xml.as_ref().unwrap().bodyChunk.as_deref(), Some("text"));
         assert_eq!(end.xml.as_ref().unwrap().isClosed, Some(true));
         assert!(events.iter().any(|event| {
             event.eventType == "markdownInlineChunk"
-                && event.value.as_deref().is_some_and(|value| value.contains("中文 😀"))
+                && event.value.as_deref().is_some_and(|value| value.contains("sample 😀"))
         }));
     }
 

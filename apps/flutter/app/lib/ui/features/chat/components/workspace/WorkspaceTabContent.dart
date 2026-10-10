@@ -147,7 +147,7 @@ class WorkspaceTabContent extends StatelessWidget {
           return _WorkspaceSimplePane(
             icon: Icons.terminal,
             title: l10n.terminal,
-            subtitle: '终端会话未指定。',
+            subtitle: 'Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',Terminal session not specified.',
           );
         }
         return WorkspaceTerminalContent(
@@ -177,7 +177,7 @@ class WorkspaceTabContent extends StatelessWidget {
           return _WorkspaceSimplePane(
             icon: Icons.travel_explore,
             title: 'visit_web',
-            subtitle: 'visit_web 请求未指定。',
+            subtitle: 'visit_web request not specified.',request not specified.',request not specified.',request not specified.',request not specified.',request not specified.',
           );
         }
         return WorkspaceWebVisitContent(

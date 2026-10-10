@@ -3,7 +3,7 @@ use operit_link::{CoreEventKind, CoreValue, encodeLink};
 
 fn value(items: Vec<CoreValue>) -> CoreValue {
     CoreValue::Map(BTreeMap::from([
-        ("unchanged".into(), CoreValue::String("背景内容".repeat(500))),
+        ("unchanged".into(), CoreValue::String("background content".repeat(500))),
         ("items".into(), CoreValue::List(items)),
     ]))
 }

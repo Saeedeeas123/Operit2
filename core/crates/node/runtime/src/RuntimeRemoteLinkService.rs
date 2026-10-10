@@ -24,7 +24,7 @@ use crate::{
     SpacePersistenceSyncService::SpacePersistenceSyncService,
 };
 
-/// Runtime 的 Space 业务对象；仍使用标准 Link Call，不新增握手消息或 HTTP 路径。
+/// The runtime Space business object; it still uses the standard Link Call and adds no handshake message or HTTP path.
 pub(crate) const NODE_SPACE_TARGET: &str = "node.space";
 // Same-Space, authenticated routing only; never available to an unadmitted applicant.
 pub(crate) const NODE_SPACE_APPROVAL_TARGET: &str = "node.space.approval";
@@ -71,7 +71,7 @@ pub struct SpaceJoinRequest {
 #[path = "peer/space_join.rs"]
 mod space_join;
 
-/// 已配对设备的展示投影；不暴露底层会话、端点或传输选择。
+/// Display projection of paired devices; it exposes no underlying session, endpoint or transport choice.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct RuntimePairedDevice {
     pub deviceId: String,
@@ -143,8 +143,8 @@ pub struct RuntimeDeviceSpaceSnapshot {
     pub topology: RuntimeDeviceSpaceTopology,
 }
 
-/// 类型化 Proxy 的本机管理适配入口，以及 Space/network-control 业务服务。
-/// 配对、发现和监听只委托同一个 RuntimePeerService；不在这里实现第二套流程。
+/// The local management adapter entry for the typed Proxy, plus the Space/network-control business service.
+/// Pairing, discovery and listening are delegated to the single RuntimePeerService; no second flow is implemented here.
 /// It does not own sockets, pairing sessions, discovery clients, or transport managers.
 #[derive(Clone)]
 pub struct RuntimeRemoteLinkService {
@@ -207,7 +207,7 @@ impl RuntimeRemoteLinkService {
     pub fn pairingPrompts(&self) -> Result<Vec<crate::NodeServices::PairingPrompt>, String> {
         self.nodeServices()?.peers().pairingPrompts().map_err(|error| error.to_string())
     }
-    /// 仅本机 UI 观察待确认配对；使用共享节点状态通知，不建立第二套事件通道。
+    /// The local UI only observes pending pairings; it uses the shared node-state notifications and builds no second event channel.
     pub fn pairingPromptsFlow(&self) -> Result<StateFlow<Vec<crate::NodeServices::PairingPrompt>>, String> {
         self.observePeerState(Self::pairingPrompts)
     }
@@ -223,14 +223,14 @@ impl RuntimeRemoteLinkService {
     pub async fn stopListening(&self) -> Result<(), String> {
         self.nodeServices()?.peers().stop().await.map_err(|error| error.to_string())
     }
-    /// 本机配置继续读取原路径；不生成另一份 token 或监听配置。
+    /// Local configuration keeps reading the original path; no second token or listen configuration is generated.
     pub fn localHostConfig(&self) -> Result<Option<crate::PeerStateStore::PeerHostConfig>, String> {
         crate::PeerStateStore::PeerStateStore::new(self.localRuntime.runtimeStorageHost()).hostConfig()
     }
     pub fn saveLocalHostConfig(&self, config: crate::PeerStateStore::PeerHostConfig) -> Result<(), String> {
         crate::PeerStateStore::PeerStateStore::new(self.localRuntime.runtimeStorageHost()).saveHostConfig(&config)
     }
-    /// 仅本机用户显式查看/复制，远端路由不允许调用。
+    /// For explicit local viewing/copying by the user only; remote routing may never call it.
     pub fn localPairingToken(&self) -> Result<String, String> {
         crate::PeerStateStore::PeerStateStore::new(self.localRuntime.runtimeStorageHost()).localPairingToken()
     }
@@ -239,7 +239,7 @@ impl RuntimeRemoteLinkService {
         crate::PeerStateStore::PeerStateStore::new(self.localRuntime.runtimeStorageHost())
             .refreshLocalPairingToken()
     }
-    /// 复用原身份文件并刷新 Space 资料；通信会话不参与设备资料初始化。
+    /// Reuses the original identity file and refreshes the Space profile; the communication session takes no part in device-profile initialization.
     pub fn initializeDeviceInfo(&self, supplied: LinkDeviceInfo) -> Result<LinkDeviceInfo, String> {
         let info = crate::PeerStateStore::PeerStateStore::new(self.localRuntime.runtimeStorageHost())
             .deviceInfo(supplied, false)?;
@@ -554,7 +554,7 @@ impl RuntimeRemoteLinkService {
         Ok(space)
     }
 
-    /// 加入直接配对节点的 Space。地址、会话与鉴权由同一个节点通信服务处理。
+    /// Joins the Space of a directly paired node. Address, session and authentication are handled by the same node communication service.
     pub async fn joinPairedDeviceSpace(&self, deviceId: String) -> Result<CoreSpace, String> {
         // Compatibility entry point: never admit a member without local approval.
         let request = self.requestDeviceSpaceJoin(deviceId).await?;
@@ -666,7 +666,7 @@ impl RuntimeRemoteLinkService {
         }
     }
 
-    /// 仅 Router 验证直接入站授权后调用；身份来自已鉴权连接，不从 args 取身份。
+    /// Called by the Router only after it verifies direct inbound authorization; the identity comes from the authenticated connection and never from args.
     pub(crate) fn acceptPeerSpaceCall(
         &self, peerNodeId: &str, request: CoreCallRequest,
     ) -> Result<CoreValue, String> {
@@ -740,7 +740,7 @@ impl RuntimeRemoteLinkService {
         })
     }
 
-    /// 先订阅再取快照；断线、配对和撤销都更新观察值，最后一个订阅释放时退出。
+    /// Subscribe first, then take the snapshot; disconnects, pairings and revocations all update the observed value and the task exits when the last subscription is released.
     fn observePeerState<T>(
         &self,
         snapshot: fn(&Self) -> Result<T, String>,
@@ -1003,7 +1003,7 @@ impl RuntimeRemoteLinkService {
         fromCoreValue::<()>(value).map_err(|error| error.to_string())
     }
 
-    /// 配对状态来自统一节点服务，不再发送旧 sessionInfo 请求。
+    /// Pairing state comes from the unified node service, and the legacy sessionInfo request is no longer sent.
     pub async fn pairedDeviceStatus(
         &self,
         deviceId: String,
@@ -1038,7 +1038,7 @@ impl RuntimeRemoteLinkService {
             .map_err(|error| error.to_string())
     }
 
-    /// 按设备撤销两个方向及全部渠道；不再自行编辑旧 session 文件。
+    /// Revokes both directions and every channel for a device; the legacy session file is no longer edited here.
     pub async fn removePairedDevice(&self, deviceId: String) -> Result<(), String> {
         self.nodeServices()?.peers().removePairedPeer(&deviceId).await
             .map_err(|error| error.to_string())
@@ -1160,7 +1160,7 @@ fn pairedDeviceStatusesFromState(
         .collect()
 }
 
-/// 只允许当前 Space 加上已鉴权的一个节点；保留原有身份、成员与版本校验。
+/// Only the current Space plus one authenticated node is allowed; the existing identity, membership and version checks are preserved.
 fn validateSpaceJoin(current: &CoreSpace, peerNodeId: &str, proposal: &CoreSpace) -> Result<(), String> {
     let mut expected = current.members.iter().cloned().collect::<BTreeSet<_>>();
     let isNewMember = expected.insert(peerNodeId.to_string());

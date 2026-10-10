@@ -1149,7 +1149,7 @@ class _DrawerContentState extends State<DrawerContent> {
     if (_groupingMode == _HistoryGroupingMode.workspace) {
       final workspaceName = history.workspaceName?.trim();
       return workspaceName == null || workspaceName.isEmpty
-          ? '未绑定工作区'
+          ? 'No workspace bound'
           : workspaceName;
     }
     final characterGroupId = history.characterGroupId?.trim();
@@ -1158,7 +1158,7 @@ class _DrawerContentState extends State<DrawerContent> {
           _shortIdentifier(characterGroupId);
     }
     final name = history.characterCardName?.trim();
-    return name == null || name.isEmpty ? '未绑定' : name;
+    return name == null || name.isEmpty ? 'Unbound' : name;
   }
 
   /// Resolves the runtime avatar path for a character-card history section.
@@ -1181,7 +1181,7 @@ class _DrawerContentState extends State<DrawerContent> {
 
   String _groupLabel(core_proxy.ChatHistoryListItem history) {
     final group = history.group?.trim();
-    return group == null || group.isEmpty ? '未分组' : group;
+    return group == null || group.isEmpty ? 'Ungrouped' : group;
   }
 
   void _toggleCharacterSection(String sectionKey) {
@@ -1336,7 +1336,7 @@ class _DrawerContentState extends State<DrawerContent> {
                             icon: _searchExpanded
                                 ? Icons.search_off_rounded
                                 : Icons.search_rounded,
-                            tooltip: _searchExpanded ? '收起搜索' : '搜索对话',
+                            tooltip: _searchExpanded ? 'Collapse search' : 'Search conversations',
                             appearance: widget.appearance,
                             active:
                                 _searchExpanded ||
@@ -1427,7 +1427,7 @@ class _DrawerContentState extends State<DrawerContent> {
                             icon: expanded
                                 ? Icons.expand_less
                                 : Icons.expand_more,
-                            label: expanded ? '收起' : '展开更多 $hiddenCount',
+                            label: expanded ? 'Collapse' : 'Show more $hiddenCount',
                             workspaceStyle:
                                 _groupingMode == _HistoryGroupingMode.workspace,
                             appearance: widget.appearance,
@@ -1500,7 +1500,7 @@ class _DrawerContentState extends State<DrawerContent> {
                           bottom: 2,
                         ),
                         child: Text(
-                          '插件',
+                          'Plugins',
                           style: Theme.of(context).textTheme.titleSmall
                               ?.copyWith(
                                 color: widget.appearance.titleColor.withValues(
@@ -1559,7 +1559,7 @@ class _DrawerContentState extends State<DrawerContent> {
               Expanded(
                 child: BottomSidebarAction(
                   icon: Icons.inventory_2_outlined,
-                  label: '包管理',
+                  label: 'Package manager',
                   appearance: widget.appearance,
                   selected: widget.selectedRouteId == packageManagerRouteId,
                   onClick: _openPackageManager,
@@ -1569,7 +1569,7 @@ class _DrawerContentState extends State<DrawerContent> {
               Expanded(
                 child: BottomSidebarAction(
                   icon: Icons.settings_outlined,
-                  label: '设置',
+                  label: 'Settings',
                   appearance: widget.appearance,
                   selected: widget.selectedRouteId == settingsRouteId,
                   onClick: _openSettings,
@@ -2180,7 +2180,7 @@ class _GroupMoreMenuButton extends StatelessWidget {
       width: side,
       height: side,
       child: PopupMenuButton<_GroupQuickAction>(
-        tooltip: '分组操作',
+        tooltip: 'Group actions',
         padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(6),
         color: Color.alphaBlend(
@@ -2221,21 +2221,21 @@ class _GroupMoreMenuButton extends StatelessWidget {
           _menuItem(
             value: _GroupQuickAction.createChat,
             icon: Icons.add_comment_outlined,
-            label: '新建对话',
+            label: 'New conversation',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
           _menuItem(
             value: _GroupQuickAction.rename,
             icon: Icons.edit_outlined,
-            label: '编辑名称',
+            label: 'Edit name',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
           _menuItem(
             value: _GroupQuickAction.togglePinned,
             icon: pinned ? Icons.push_pin_outlined : Icons.push_pin_rounded,
-            label: pinned ? '取消置顶' : '置顶',
+            label: pinned ? 'Unpin' : 'Pin',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
@@ -2243,7 +2243,7 @@ class _GroupMoreMenuButton extends StatelessWidget {
           _menuItem(
             value: _GroupQuickAction.delete,
             icon: Icons.delete_outline_rounded,
-            label: '删除',
+            label: 'Delete',
             iconColor: dangerColor,
             textColor: dangerColor,
           ),
@@ -2335,7 +2335,7 @@ class _SegmentedModeSwitch extends StatelessWidget {
                         onTap: isWorkspace ? onToggle : null,
                         child: Center(
                           child: Text(
-                            '角色卡',
+                            'Character cards',
                             style: TextStyle(
                               fontSize: 10.5,
                               letterSpacing: -0.2,
@@ -2356,7 +2356,7 @@ class _SegmentedModeSwitch extends StatelessWidget {
                         onTap: !isWorkspace ? onToggle : null,
                         child: Center(
                           child: Text(
-                            '工作区',
+                            'Workspaces',
                             style: TextStyle(
                               fontSize: 10.5,
                               letterSpacing: -0.2,
@@ -2420,7 +2420,7 @@ class _UnifiedCreateBar extends StatelessWidget {
                       Icon(Icons.add_rounded, size: 17, color: contentColor),
                       const SizedBox(width: 6),
                       Text(
-                        '新建对话',
+                        'New conversation',
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
@@ -2439,7 +2439,7 @@ class _UnifiedCreateBar extends StatelessWidget {
               color: contentColor.withValues(alpha: 0.16),
             ),
             Tooltip(
-              message: '新建分组',
+              message: 'New group',
               child: SizedBox(
                 width: 38,
                 height: 34,
@@ -2484,7 +2484,7 @@ class _BottomThemeToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final shape = BorderRadius.circular(8);
     return Tooltip(
-      message: darkThemeActive ? '切换白天模式' : '切换黑夜模式',
+      message: darkThemeActive ? 'Switch to day mode' : 'Switch to night mode',
       child: SizedBox(
         width: 34,
         height: 34,

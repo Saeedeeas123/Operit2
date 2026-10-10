@@ -11,12 +11,12 @@ const THINKING_GUIDANCE_PROMPT_EN = `THINKING PROCESS GUIDELINES:
 - The <think> block must be immediately followed by your final answer or tool call without any newlines.
 - CRITICAL REMINDER: Even if previous messages in the chat history do not show a <think> block, you MUST include one in your current response. This is a mandatory instruction for this conversation mode.`;
 
-const THINKING_GUIDANCE_PROMPT_ZH = `思考过程指南：
-- 在提供最终答案之前，你必须使用 <think> 模块来阐述你的思考过程。这是你的内心独白。
-- 在思考中，你需要拆解用户需求，评估备选方案，预判执行结果，并反思最佳策略，最终形成精确的行动计划。你的计划应当是高效的，工具既可以并行调用，也可以串行调用；具体冲突由工具系统自行决定并处理。
-- 用户能看到你的思考过程，但无法直接回复。此模块不会保存在聊天记录中，因此你的最终答案必须是完整的。
-- <think> 模块必须紧邻你的最终答案或工具调用，中间不要有任何换行。
-- 重要提醒：即使聊天记录中之前的消息没有 <think> 模块，你在本次回复中也必须按要求使用它。这是强制指令。`;
+const THINKING_GUIDANCE_PROMPT_ZH = `THINKING PROCESS GUIDELINES:
+- Before providing your final response, you MUST use a thinking block to outline your thought process. This is for your internal monologue.
+- In your thoughts, deconstruct the request from the user, consider alternatives, anticipate outcomes, and reflect on the best strategy. Formulate a precise action plan. Your plan should be efficient, and you may use tools in parallel or sequentially as appropriate. The tool system will decide and handle execution conflicts automatically.
+- The user will see your thoughts but cannot reply to them directly. This block is NOT saved in the chat history, so your final answer must be self-contained.
+- The <think> block must be immediately followed by your final answer or tool call without any newlines.
+- CRITICAL REMINDER: Even if previous messages in the chat history do not show a <think> block, you MUST include one in your current response. This is a mandatory instruction for this conversation mode.`;
 
 function readEnabled() {
   if (typeof getEnv !== "function") {
@@ -48,11 +48,11 @@ async function onInputMenuToggle(event) {
       toggles: [
         {
           id: TOGGLE_ID,
-          title: preferredLanguage(event) === "en" ? "Thinking Guidance" : "思考引导",
+          title: preferredLanguage(event) === "en" ? "Thinking Guidance" : "Thinking Guidance",
           description:
             preferredLanguage(event) === "en"
               ? "Injects <think> guidance for non-reasoning models. Not recommended for native reasoning models."
-              : "为非思考模型注入 <think> 思考引导；不建议对原生思考模型开启。",
+              : "Injects <think> thinking guidance for non-reasoning models; not recommended for native reasoning models.",
           icon: "psychology",
           isChecked: enabled,
           slot: "thinking" as const,

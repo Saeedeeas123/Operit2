@@ -110,7 +110,7 @@ impl CoreNodeLocalRuntime {
         }
     }
 
-    /// 生成 Proxy 和应用 Router 共享已注入的通信实例；不新建会话仓库。
+    /// The Proxy and the application Router share the injected communication instance; no new session store is created.
     pub fn withPeerServices(mut self, services: Arc<std::sync::OnceLock<NodeServices>>) -> Self {
         self.peerServices = services;
         self
@@ -233,13 +233,13 @@ impl CoreNodeBindingRuntime for CoreNodeBindingStore {
 }
 
 impl CoreNodeRouter {
-    /// 由应用装配一次；所有 Router 克隆与外围共享同一个节点服务。
+    /// Assembled once by the application; every Router clone and the periphery share the same node service.
     pub fn installNodeServices(&self, services: NodeServices) -> Result<(), String> {
         self.peerServices.set(services).map_err(|_| "Node services are already installed".into())
     }
 
 
-    /// 同步和业务服务读取同一节点服务；未装配时明确报错，不退回旧全局连接表。
+    /// Sync and business services read the same node service; when it is not assembled they fail loudly instead of falling back to the legacy global connection table.
     pub fn nodeServices(&self) -> Result<&NodeServices, String> {
         self.peerServices.get().ok_or_else(|| "Node services are not installed".into())
     }
@@ -2019,9 +2019,9 @@ impl CoreLinkClient for CoreNodeRouter {
     }
 }
 
-// 接收入口只接受 runtime 已鉴权的相邻节点；传输层不能直接把自报身份传进来。
+// The inbound entry accepts only neighbouring nodes already authorized by the runtime; the transport layer cannot pass a self-reported identity straight in.
 impl CoreNodeRouter {
-    /// Space 加入前只允许直接配对的业务 Call；出入授权不互相推导。
+    /// Before joining a Space, only directly paired business Calls are allowed; inbound and outbound authorization are never derived from each other.
     fn requireDirectPeer(&self, peerNodeId: &str, inbound: bool) -> Result<(), CoreLinkError> {
         let peers = self.nodeServices().map_err(CoreLinkError::internal)?.peers().pairedPeers()?;
         if peerNodeId == self.localNodeId || !peers.iter().any(|peer|
@@ -2136,7 +2136,7 @@ impl CoreNodeRouter {
         previousNodeId: String,
         request: RoutedCoreRequest<CoreWatchRequest>,
     ) -> Result<CoreEvent, CoreLinkError> {
-        // 节点控制 Service 是本机 Proxy 表面；远端只能进入业务路由。
+        // The node-control Service is the local Proxy surface; remote peers can only enter business routing.
         if request.payload.target.starts_with("core/server.") {
             return Err(CoreLinkError::new("LOCAL_MANAGEMENT_ONLY", "Node management is only available to the local application"));
         }
@@ -2177,7 +2177,7 @@ impl CoreNodeRouter {
         previousNodeId: String,
         request: RoutedCoreRequest<CoreWatchRequest>,
     ) -> Result<CoreEventStream, CoreLinkError> {
-        // 节点控制 Service 是本机 Proxy 表面；远端只能进入业务路由。
+        // The node-control Service is the local Proxy surface; remote peers can only enter business routing.
         if request.payload.target.starts_with("core/server.") {
             return Err(CoreLinkError::new("LOCAL_MANAGEMENT_ONLY", "Node management is only available to the local application"));
         }
@@ -2236,7 +2236,7 @@ impl CoreNodeRouter {
         previousNodeId: String,
         request: RoutedCoreRequest<CorePushRequest>,
     ) -> Result<Box<dyn CoreLinkPushSession>, CoreLinkError> {
-        // 节点控制 Service 是本机 Proxy 表面；远端只能进入业务路由。
+        // The node-control Service is the local Proxy surface; remote peers can only enter business routing.
         if request.payload.target.starts_with("core/server.") {
             return Err(CoreLinkError::new("LOCAL_MANAGEMENT_ONLY", "Node management is only available to the local application"));
         }
@@ -5340,7 +5340,7 @@ mod tests {
             &targetNodeId,
             joinedSpace,
         );
-        // 注入服务与连接上线是两件事：先安装离线服务，再测试同一服务的晚到连接。
+        // Injecting a service and bringing a connection online are two separate things: install the offline service first, then test a late-arriving connection against that same service.
         let endpoint = TestCoreNodeRouterEndpoint::new(targetRouter);
         let peers = TestPeerService::new(localNodeId.clone(), targetNodeId.clone(), endpoint.clone());
         peers.close();

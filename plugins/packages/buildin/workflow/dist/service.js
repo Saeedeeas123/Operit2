@@ -29,7 +29,7 @@ async function initialize() {
         await PluginConfig.flush(db);
     }
     if (db.version !== 2)
-        throw new Error(`不支持的数据版本：${db.version}`);
+        throw new Error(`Unsupported data version: ${db.version}`);
     const runs = (0, model_1.copy)(db.runs);
     let changed = false;
     for (const run of runs) {
@@ -38,11 +38,11 @@ async function initialize() {
         changed = true;
         run.status = "FAILED";
         run.finishedAt = Date.now();
-        run.logs.push({ time: Date.now(), nodeId: "", level: "error", message: "运行时已中断；本次执行未完成。" });
+        run.logs.push({ time: Date.now(), nodeId: "", level: "error", message: "Runtime interrupted; this execution did not finish." });
         for (const node of Object.values(run.nodes))
             if (node.status === "running" || node.status === "pending") {
                 node.status = "failed";
-                node.output = "运行时中断";
+                node.output = "Runtime interrupted";
                 node.finishedAt = Date.now();
             }
         const workflow = db.workflows.find(item => item.id === run.workflowId);
@@ -85,13 +85,13 @@ async function replaceManifestTemplates(sourceToolPkgId, templates) {
 function find(db, workflowId) {
     const workflow = db.workflows.find(item => item.id === workflowId);
     if (!workflow)
-        throw new Error(`工作流不存在：${workflowId}`);
+        throw new Error(`Workflow does not exist: ${workflowId}`);
     return workflow;
 }
 /** Rejects changes to a workflow while its saved snapshot is executing. */
 function editable(workflowId) {
     if (active.has(workflowId))
-        throw new Error("工作流正在执行，结束后才能修改或删除");
+        throw new Error("The workflow is running; it can only be modified or deleted after it finishes");
 }
 /** Formats the actual tool output without hiding execution errors. */
 function output(value) {
@@ -99,7 +99,7 @@ function output(value) {
         return value;
     const text = JSON.stringify(value);
     if (text === undefined)
-        throw new Error("工具或脚本没有返回可序列化的结果");
+        throw new Error("The tool or script did not return a serializable result");
     return text;
 }
 /** Persists node transitions and execution statistics inside the owning runtime. */
@@ -132,7 +132,7 @@ async function runWorkflow(workflowId, triggerId, extras, observer, reserved = f
         editable(workflowId);
     const workflow = (0, model_1.copy)(find(db, workflowId));
     if (!workflow.enabled)
-        throw new Error("工作流已停用");
+        throw new Error("Workflow is disabled");
     const control = { cancelled: false };
     active.set(workflowId, control);
     try {
@@ -161,7 +161,7 @@ async function runWorkflow(workflowId, triggerId, extras, observer, reserved = f
 /** Starts a workflow without holding the caller context open for its full execution. */
 async function startWorkflow(workflowId, triggerId, extras, observer) {
     if (active.has(workflowId) || launching.has(workflowId))
-        throw new Error("工作流正在执行，结束后才能再次触发");
+        throw new Error("The workflow is running; it can only be triggered again after it finishes");
     launching.add(workflowId);
     void runWorkflow(workflowId, triggerId, extras, observer, true)
         .catch(error => console.error(`[workflow] Background execution failed for ${workflowId}: ${(0, engine_1.errorText)(error)}`))
@@ -176,7 +176,7 @@ async function dispatch(request, observer) {
         case "tool_catalog": return toolCatalogSnapshot();
         case "create": {
             if (!request.name.trim())
-                throw new Error("工作流名称不能为空");
+                throw new Error("Workflow name cannot be empty");
             db.workflows = [...db.workflows, (0, model_1.newWorkflow)(request.name.trim(), request.description)];
             break;
         }
@@ -184,7 +184,7 @@ async function dispatch(request, observer) {
             editable(request.workflow.id);
             const stored = find(db, request.workflow.id);
             if (stored.revision !== request.workflow.revision)
-                throw new Error("工作流已被其他入口修改，请重新加载后编辑");
+                throw new Error("The workflow was modified by another entry point; reload before editing");
             const parsed = (0, validation_1.parseWorkflow)(request.workflow);
             const next = { ...stored, name: parsed.name, description: parsed.description, enabled: parsed.enabled, nodes: parsed.nodes,
                 connections: parsed.connections, updatedAt: Date.now(), revision: stored.revision + 1 };
@@ -194,7 +194,7 @@ async function dispatch(request, observer) {
         }
         case "copy": {
             const next = (0, model_1.duplicate)(find(db, request.id));
-            next.name += " 副本";
+            next.name += " copy";
             db.workflows = [...db.workflows, next];
             break;
         }
@@ -218,7 +218,7 @@ async function dispatch(request, observer) {
         case "import_manifest_template": {
             const template = db.manifestTemplates.find(item => item.sourceToolPkgId === request.sourceToolPkgId && item.templateId === request.templateId);
             if (template === undefined)
-                throw new Error(`工作流模板不存在：${request.sourceToolPkgId}/${request.templateId}`);
+                throw new Error(`Workflow template does not exist: ${request.sourceToolPkgId}/${request.templateId}`);
             const next = (0, model_1.duplicate)(template.workflow);
             next.name = template.displayName;
             next.description = template.description;
@@ -233,7 +233,7 @@ async function dispatch(request, observer) {
         case "cancel": {
             const control = active.get(request.id);
             if (!control)
-                throw new Error("该工作流没有正在进行的执行");
+                throw new Error("This workflow has no in-progress execution");
             control.cancelled = true;
             return snapshot();
         }

@@ -562,11 +562,11 @@ mod tests {
     #[test]
     fn import_preserves_self_closing_semantic_tags() {
         for source in [
-            "前文<tool_NtfY/>后文",
+            "before<tool_NtfY/>after",
             "before<tool_NtfY name=\"read_file\" />after",
             "<status type=\"completion\"/>",
             "<tool_result_NtfY name=\"read_file\"/>",
-            "<think/>正文<thinking />",
+            "<think/>body text<thinking />",
         ] {
             let parts = MessagePartCodec::parseAssistantMarkupForImport(source);
             assert!(parts
@@ -605,7 +605,7 @@ mod tests {
     #[test]
     fn import_preserves_malformed_and_incomplete_markup() {
         for source in [
-            "前文<tool name=\"read_file\">unfinished",
+            "before<tool name=\"read_file\">unfinished",
             "text<tool>missing name</tool>end",
             "text<tool_result name=\"read_file\">missing payload</tool_result>end",
             "text<think>unfinished reasoning",

@@ -13,7 +13,7 @@ impl ParsedOperit1Snapshot {
             .iter()
             .map(|config| {
                 serde_json::from_value(config.value.clone())
-                    .map_err(|error| format!("模型配置「{}」格式不正确：{error}", config.id))
+                    .map_err(|error| format!("Model configuration \"{}\" has an invalid format: {error}", config.id))
             })
             .collect::<Result<Vec<_>, _>>()?;
         let chatMapping = decodeChatMapping(archive.chatMappingJson.clone())?;
@@ -136,7 +136,7 @@ impl ParsedOperit1Snapshot {
             .configs
             .into_iter()
             .find(|config| config.configId == self.chatMapping.configId)
-            .ok_or_else(|| format!("快照里没有聊天模型配置：{}", self.chatMapping.configId))
+            .ok_or_else(|| format!("The snapshot has no chat model configuration: {}", self.chatMapping.configId))
     }
 
     #[allow(non_snake_case)]
@@ -145,7 +145,7 @@ impl ParsedOperit1Snapshot {
             .iter()
             .find(|config| config.id == configId)
             .cloned()
-            .ok_or_else(|| format!("快照里没有模型配置：{configId}"))
+            .ok_or_else(|| format!("The snapshot has no model configuration: {configId}"))
     }
 
     #[allow(non_snake_case)]
@@ -350,7 +350,7 @@ impl Operit1ModelConfig {
         let providerType = self.apiProviderType.trim();
         if !providerType.is_empty() {
             return self.knownProviderType(providerType).ok_or_else(|| {
-                format!("无法识别 Operit1 供应商类型：{}", providerType)
+                format!("Unrecognized Operit1 provider type: {}", providerType)
             });
         }
 
@@ -358,7 +358,7 @@ impl Operit1ModelConfig {
             return Ok(ApiProviderType::DEEPSEEK);
         }
 
-        Err(format!("无法识别 Operit1 供应商类型：{}", providerTypeId))
+        Err(format!("Unrecognized Operit1 provider type: {}", providerTypeId))
     }
 
     #[allow(non_snake_case)]
@@ -484,7 +484,7 @@ fn buildModelParameters(config: &Operit1ModelConfig) -> Result<Vec<ModelParamete
     if config.hasCustomParameters && config.customParameters.trim() != "[]" {
         let customParameters: Vec<CustomParameterData> =
             serde_json::from_str(&config.customParameters)
-                .map_err(|error| format!("Operit1 自定义模型参数格式不正确：{error}"))?;
+                .map_err(|error| format!("Operit1 custom model parameter format is invalid: {error}"))?;
         for parameter in customParameters {
             parameters.push(ModelParameter {
                 id: parameter.id,
@@ -521,7 +521,7 @@ fn pushStandardParameter(
     let definition = StandardModelParameters::DEFINITIONS()
         .into_iter()
         .find(|definition| definition.id == id)
-        .ok_or_else(|| format!("标准模型参数不存在：{id}"))?;
+        .ok_or_else(|| format!("Standard model parameter does not exist: {id}"))?;
     parameters.push(ModelParameter {
         id: definition.id.to_string(),
         name: definition.name.to_string(),
@@ -547,7 +547,7 @@ fn decodeChatMapping(value: Value) -> Result<Operit1FunctionConfigMapping, Strin
             modelIndex: 0,
         });
     }
-    serde_json::from_value(value).map_err(|error| format!("CHAT 模型映射格式不正确：{error}"))
+    serde_json::from_value(value).map_err(|error| format!("CHAT model mapping format is invalid: {error}"))
 }
 
 #[allow(non_snake_case)]

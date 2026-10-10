@@ -1,4 +1,4 @@
-//! 字节流传输共用的消息边界处理；不含 socket、配对或路由。
+//! Message-boundary handling shared by byte-stream transports; it contains no socket, pairing or routing.
 use crate::{PeerConnection, PeerEndpoint, PeerMessage, PeerTransport};
 use async_trait::async_trait;
 use operit_link::{decodeLink, encodeLink};

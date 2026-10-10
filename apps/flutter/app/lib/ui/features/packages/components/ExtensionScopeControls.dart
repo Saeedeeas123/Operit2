@@ -5,10 +5,10 @@ import 'PackageGrid.dart';
 
 /// Resolves the display label of an explicit extension location.
 String extensionScopeLabel(String scope) => switch (scope) {
-  'space' => '设备空间',
-  'device' => '仅本设备',
-  'builtin' => '内置',
-  _ => throw StateError('未知扩展位置：$scope'),
+  'space' => 'Device space',Device space',Device space',Device space',
+  'device' => 'This device only',This device only',This device only',This device only',
+  'builtin' => 'Built-in',Built-in',
+  _ => throw StateError('Unknown extension location: $scope'),Unknown extension location: $scope'),Unknown extension location: $scope'),Unknown extension location: $scope'),Unknown extension location: $scope'),Unknown extension location: $scope'),Unknown extension location: $scope'),
 };
 
 /// Asks where a new extension should live and explains shared configuration.
@@ -16,22 +16,22 @@ Future<String?> chooseExtensionScope(BuildContext context) =>
     showDialog<String>(
       context: context,
       builder: (context) => SimpleDialog(
-        title: const Text('选择存放位置'),
+        title: const Text('Choose storage location'),Choose storage location'),Choose storage location'),Choose storage location'),Choose storage location'),Choose storage location'),
         children: [
           SimpleDialogOption(
             onPressed: () => Navigator.pop(context, 'device'),
             child: const ListTile(
               leading: Icon(Icons.devices),
-              title: Text('仅本设备'),
-              subtitle: Text('内容和配置仅保存在本设备，不同步到其他设备。'),
+              title: Text('This device only'),This device only'),This device only'),This device only'),
+              subtitle: Text('Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),Content and configuration are stored on this device only and do not sync to other devices.'),
             ),
           ),
           SimpleDialogOption(
             onPressed: () => Navigator.pop(context, 'space'),
             child: const ListTile(
               leading: Icon(Icons.cloud_outlined),
-              title: Text('设备空间'),
-              subtitle: Text('内容、配置和启用状态同步到空间中的其他设备。配置中的密钥也会共享。'),
+              title: Text('Device space'),Device space'),Device space'),Device space'),
+              subtitle: Text('Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),Content, configuration, and enabled state sync to other devices in the space. Keys in the configuration are shared too.'),
             ),
           ),
         ],
@@ -49,25 +49,25 @@ Future<bool> changeExtensionScope({
   final target = switch (currentScope) {
     'device' => 'space',
     'space' => 'device',
-    _ => throw StateError('此扩展不能切换位置'),
+    _ => throw StateError('This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),This extension cannot switch locations'),
   };
   final confirmed = await showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text('移至${extensionScopeLabel(target)}？'),
+      title: Text('Move to ${extensionScopeLabel(target)}?'),Move to ${extensionScopeLabel(target)}?'),
       content: Text(
         target == 'space'
-            ? '“$id”的内容、配置和启用状态将同步给设备空间中的其他设备。配置中的密钥也会共享。'
-            : '“$id”将只保留在本设备，空间中的其他设备会移除该扩展及其配置。',
+            ? 'The content, configuration, and enabled state of "$id" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'" will sync to other devices in the device space. Keys in the configuration are shared too.'
+            : '"$id" will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.'," will be kept on this device only; other devices in the space will remove the extension and its configuration.',
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, false),
-          child: const Text('取消'),
+          child: const Text('Cancel'),Cancel'),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, true),
-          child: const Text('移动'),
+          child: const Text('Move'),Move'),
         ),
       ],
     ),
@@ -101,14 +101,14 @@ class ExtensionScopeAction extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Text(
-          localMcp ? '仅本设备 · 本地部署' : '内置',
+          localMcp ? 'This device only · Local deployment' : 'Built-in',This device only · Local deployment' : 'Built-in',This device only · Local deployment' : 'Built-in',This device only · Local deployment' : 'Built-in',Local deployment' : 'Built-in',Local deployment' : 'Built-in',Local deployment' : 'Built-in',Built-in',
           style: Theme.of(context).textTheme.labelSmall,
         ),
       );
     }
     return IconButton(
       tooltip:
-          '移至${extensionScopeLabel(scope == 'space' ? 'device' : 'space')}',
+          'Move to ${extensionScopeLabel(scope == 'space' ? 'device' : 'space')}',Move to ${extensionScopeLabel(scope == 'space' ? 'device' : 'space')}',
       onPressed: onMove,
       icon: const Icon(Icons.drive_file_move_outline),
     );
@@ -137,7 +137,7 @@ class ScopedExtensionSliver<T> extends StatelessWidget {
     for (final item in items) {
       final scope = scopes[identity(item)];
       if (!grouped.containsKey(scope))
-        throw StateError('扩展缺少有效的位置：${identity(item)}');
+        throw StateError('Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');Extension is missing a valid location: ${identity(item)}');
       grouped[scope]!.add(item);
     }
     return SliverMainAxisGroup(

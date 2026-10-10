@@ -5,11 +5,11 @@
   "api_version": "2.0.0",
   "main": "dist/main.js",
   "display_name": {
-    "zh": "计划模式",
+    "zh": "Plan Mode",
     "en": "Plan Mode"
   },
   "description": {
-    "zh": "为聊天注入计划模式开关、PLAN.md 计划协作工具，以及 <plantodo> 计划渲染与一键开始实施流程。",
+    "zh": "Injects a plan mode toggle into chats, a PLAN.md collaboration tool, and <plantodo> plan rendering with a one-tap start-implementation flow.",
     "en": "Adds a planning-mode toggle, PLAN.md collaboration tools, and <plantodo> rendering with one-tap implementation handoff."
   },
   "enabled_by_default": true,
@@ -18,11 +18,11 @@
       "id": "plan_mode_tools",
       "entry": "dist/packages/plan_mode_tools.js",
       "display_name": {
-        "zh": "计划模式工具",
+        "zh": "Plan mode tools",
         "en": "Plan Mode Tools"
       },
       "description": {
-        "zh": "读取和完成当前工作区里的 PLAN.md。",
+        "zh": "Read and complete the PLAN.md in the current workspace.",
         "en": "Read and complete the current workspace PLAN.md."
       }
     }

@@ -1,4 +1,4 @@
-//! Runtime 的密钥交换和 AEAD；PeerLink 始终只看到标准 Link Call。
+//! Runtime key exchange and AEAD; PeerLink only ever sees the standard Link Call.
 use operit_link::*;
 use operit_peer_link::{PeerConnection, PeerMessage};
 use ring::{aead, agreement, digest, hkdf, hmac, rand::{SecureRandom, SystemRandom}};
@@ -61,7 +61,7 @@ mod pairing_code_tests {
         }
     }
 }
-/// 整个 transcript 编码绑定版本、双方身份、两份公钥和服务端随机挑战。
+/// The whole transcript encoding binds the version, both identities, both public keys and the server random challenge.
 #[derive(Serialize, Deserialize)]
 pub(super) struct Transcript {
     pub version: u32, pub sessionId: String,
@@ -84,7 +84,7 @@ impl Cipher {
         Ok(aead::Nonce::assume_unique_for_key(nonce))
     }
 }
-/// 两方向独立密钥、单调 nonce。收到明文、乱序、重放或错误 tag 一律断开。
+/// Independent keys per direction and a monotonic nonce. Any plaintext, out-of-order, replayed or wrongly tagged record causes an immediate disconnect.
 pub(super) struct Channel {
     pub raw: Arc<dyn PeerConnection>,
     send: Mutex<Cipher>, receive: Mutex<Cipher>,

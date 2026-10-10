@@ -224,12 +224,12 @@ class _MCPConfigScreenState extends State<MCPConfigScreen> {
     if (error != null && _servers.isEmpty && _metadata.isEmpty) {
       return EmptyState(
         icon: Icons.error_outline,
-        title: '加载失败',
+        title: 'Failed to load',
         message: error,
         action: TextButton.icon(
           onPressed: _loadMcp,
           icon: const Icon(Icons.refresh),
-          label: const Text('刷新'),
+          label: const Text('Refresh'),
         ),
       );
     }
@@ -258,10 +258,10 @@ class _MCPConfigScreenState extends State<MCPConfigScreen> {
                   sliver: SliverToBoxAdapter(
                     child: EmptyState(
                       icon: Icons.extension_outlined,
-                      title: '没有 MCP',
+                      title: 'No MCP servers',
                       message: widget.searchQuery.trim().isEmpty
-                          ? '当前没有可显示的 MCP 服务。'
-                          : '没有匹配的 MCP 服务。',
+                          ? 'There are no MCP servers to show.'
+                          : 'No matching MCP servers.',
                       scrollable: false,
                     ),
                   ),
@@ -294,8 +294,8 @@ class _MCPConfigScreenState extends State<MCPConfigScreen> {
                           serverId,
                           if (metadata?.version.trim().isNotEmpty == true)
                             metadata!.version,
-                          if (toolCount != null) '$toolCount 工具',
-                          if (hasError) '错误',
+                          if (toolCount != null) '$toolCount tools',
+                          if (hasError) 'Error',
                         ],
                         enabled: enabled,
                         onDetails: () => _showDetails(serverId),
@@ -406,7 +406,7 @@ class _MCPHeaderCard extends StatelessWidget {
               ),
             ),
             IconButton(
-              tooltip: '刷新',
+              tooltip: 'Refresh',
               onPressed: onRefresh,
               icon: const Icon(Icons.refresh),
             ),

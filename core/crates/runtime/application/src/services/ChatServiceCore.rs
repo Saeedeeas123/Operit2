@@ -115,17 +115,17 @@ struct TransferredFileAttachmentPayload {
 /// Decodes a selected file without interpreting a client path as a host path.
 fn decodeTransferredFileAttachment(payload_json: &str) -> Result<(String, Vec<u8>), String> {
     let payload: TransferredFileAttachmentPayload = serde_json::from_str(payload_json)
-        .map_err(|error| format!("无法导入附件: {error}"))?;
+        .map_err(|error| format!("Unable to import the attachment: {error}"))?;
     if payload.file_name.trim().is_empty()
         || matches!(payload.file_name.as_str(), "." | "..")
         || payload.file_name.chars().any(|value| matches!(value, '/' | '\\' | '\0'))
     {
-        return Err("无法导入附件: 文件名必须是单个文件名".to_string());
+        return Err("Unable to import the attachment: the file name must be a single file name".to_string());
     }
     let bytes = STANDARD.decode(payload.base64_content.as_bytes())
-        .map_err(|error| format!("无法导入附件: {error}"))?;
+        .map_err(|error| format!("Unable to import the attachment: {error}"))?;
     if payload.file_size < 0 || payload.file_size != bytes.len() as i64 {
-        return Err("无法导入附件: 文件大小不一致".to_string());
+        return Err("Unable to import the attachment: file size mismatch".to_string());
     }
     Ok((payload.file_name, bytes))
 }
@@ -1079,7 +1079,7 @@ impl ChatServiceCore {
             .map_err(|e|e.to_string())?.into_iter()
             .filter(|m|m.sender=="user" && !m.displayText().trim().is_empty() && selected.contains(&m.timestamp))
             .map(|m|m.timestamp).collect::<Vec<_>>();
-        if timestamps.is_empty() { return Err("请选择有效的用户消息加入记忆队列".into()); }
+        if timestamps.is_empty() { return Err("Please select valid user messages to add to the memory queue".into()); }
         MemoryAutoSaveCandidateRepository::new(&ownerKey)
             .enqueueSelectedUserMessages(chatId, timestamps)
     }
@@ -1640,7 +1640,7 @@ impl ChatServiceCore {
         let filePath = _filePath.trim();
         if filePath.is_empty() {
             self.messageProcessingDelegate
-                .showToast("无法添加空附件路径".to_string());
+                .showToast("Unable to add an empty attachment path".to_string());
             return;
         }
 
@@ -1664,7 +1664,7 @@ impl ChatServiceCore {
             match self.attachWorkspaceMentionInternal(relativePath) {
                 Ok(fileName) => {
                     self.messageProcessingDelegate
-                        .showToast(format!("已添加工作区引用: {fileName}"));
+                        .showToast(format!("Added workspace reference: {fileName}"));
                 }
                 Err(message) => {
                     self.messageProcessingDelegate.showToast(message);
@@ -1684,7 +1684,7 @@ impl ChatServiceCore {
                     let fileName = attachmentInfo.fileName.clone();
                     self.attachments.push(attachmentInfo);
                     self.messageProcessingDelegate
-                        .showToast(format!("已添加附件: {fileName}"));
+                        .showToast(format!("Added attachment: {fileName}"));
                 }
             }
             Err(message) => {
@@ -1710,7 +1710,7 @@ impl ChatServiceCore {
         };
         self.attachments.push(attachmentInfo);
         self.messageProcessingDelegate
-            .showToast("已添加粘贴文本附件".to_string());
+            .showToast("Added pasted text attachment".to_string());
     }
 
     /// Adds the supplied pasted image as a clean-on-exit file attachment.
@@ -1720,39 +1720,39 @@ impl ChatServiceCore {
             Ok(value) => value,
             Err(error) => {
                 self.messageProcessingDelegate
-                    .showToast(format!("添加粘贴图片失败: {error}"));
+                    .showToast(format!("Failed to add the pasted image: {error}"));
                 return;
             }
         };
         let fileName = payload.file_name.trim().replace('"', "'");
         if fileName.is_empty() {
             self.messageProcessingDelegate
-                .showToast("添加粘贴图片失败: 文件名为空".to_string());
+                .showToast("Failed to add the pasted image: the file name is empty".to_string());
             return;
         }
         let mimeType = payload.mime_type.trim().to_ascii_lowercase();
         if !mimeType.starts_with("image/") {
             self.messageProcessingDelegate
-                .showToast(format!("添加粘贴图片失败: 不支持的类型 {mimeType}"));
+                .showToast(format!("Failed to add the pasted image: unsupported type {mimeType}"));
             return;
         }
         let decoded = match STANDARD.decode(payload.base64_content.trim().as_bytes()) {
             Ok(bytes) if !bytes.is_empty() => bytes,
             Ok(_) => {
                 self.messageProcessingDelegate
-                    .showToast("添加粘贴图片失败: 图片内容为空".to_string());
+                    .showToast("Failed to add the pasted image: the image content is empty".to_string());
                 return;
             }
             Err(error) => {
                 self.messageProcessingDelegate
-                    .showToast(format!("添加粘贴图片失败: {error}"));
+                    .showToast(format!("Failed to add the pasted image: {error}"));
                 return;
             }
         };
         let fileSize = decoded.len() as i64;
         if payload.file_size > 0 && payload.file_size != fileSize {
             self.messageProcessingDelegate
-                .showToast("添加粘贴图片失败: 图片大小不一致".to_string());
+                .showToast("Failed to add the pasted image: image size mismatch".to_string());
             return;
         }
         let tempFile = match createTempFileFromBytes(
@@ -1777,7 +1777,7 @@ impl ChatServiceCore {
         };
         self.attachments.push(attachmentInfo);
         self.messageProcessingDelegate
-            .showToast("已添加粘贴图片附件".to_string());
+            .showToast("Added pasted image attachment".to_string());
     }
 
     /// Stores transferred file bytes using the runtime's uniform file-system host.
@@ -1786,16 +1786,16 @@ impl ChatServiceCore {
             let (fileName, bytes) = decodeTransferredFileAttachment(payloadJson)?;
             let directory = OperitPaths::cleanOnExitDir()?;
             self.fileSystemHost.makeDirectory(&directory.to_string_lossy(), true)
-                .map_err(|error| format!("无法创建附件目录: {}", error.message))?;
+                .map_err(|error| format!("Unable to create the attachment directory: {}", error.message))?;
             let path = directory.join(format!(
                 "attachment_{}_{}_{}", currentTimeMillis(), self.attachments.len(), fileName
             ));
             self.fileSystemHost.writeFileBytes(&path.to_string_lossy(), &bytes)
-                .map_err(|error| format!("无法保存附件: {}", error.message))?;
+                .map_err(|error| format!("Unable to save the attachment: {}", error.message))?;
             let stored = self.fileSystemHost.fileExists(&path.to_string_lossy())
-                .map_err(|error| format!("无法读取附件: {}", error.message))?;
+                .map_err(|error| format!("Unable to read the attachment: {}", error.message))?;
             if !stored.exists || stored.isDirectory || stored.size != bytes.len() as i64 {
-                return Err("无法导入附件: 存储结果与文件内容不一致".to_string());
+                return Err("Unable to import the attachment: the stored result does not match the file content".to_string());
             }
             Ok(AttachmentInfo {
                 nodeId: localAttachmentNodeId(),
@@ -1808,7 +1808,7 @@ impl ChatServiceCore {
         })();
         match result {
             Ok(attachment) => {
-                let message = format!("已添加附件: {}", attachment.fileName);
+                let message = format!("Added attachment: {}", attachment.fileName);
                 self.attachments.push(attachment);
                 self.messageProcessingDelegate.showToast(message);
             }
@@ -1826,14 +1826,14 @@ impl ChatServiceCore {
         });
         if !result.success {
             self.messageProcessingDelegate
-                .showToast(format!("添加屏幕内容失败: {}", toolFailureMessage(&result)));
+                .showToast(format!("Failed to add the screen content: {}", toolFailureMessage(&result)));
             return;
         }
 
         let screenshotPath = result.result.toString().trim().to_string();
         if screenshotPath.is_empty() {
             self.messageProcessingDelegate
-                .showToast("添加屏幕内容失败: 截图失败".to_string());
+                .showToast("Failed to add the screen content: screenshot failed".to_string());
             return;
         }
 
@@ -1841,7 +1841,7 @@ impl ChatServiceCore {
             Ok(bytes) => bytes,
             Err(error) => {
                 self.messageProcessingDelegate
-                    .showToast(format!("添加屏幕内容失败: {}", error.message));
+                    .showToast(format!("Failed to add the screen content: {}", error.message));
                 return;
             }
         };
@@ -1849,9 +1849,9 @@ impl ChatServiceCore {
             Ok(image) if image.width() > 0 && image.height() > 0 => {
                 let width = image.width();
                 let height = image.height();
-                format!("【位置】full_screen; image_px={}x{}", width, height)
+                format!("[Position] full_screen; image_px={}x{}", width, height)
             }
-            _ => "【位置】full_screen".to_string(),
+            _ => "[Position] full_screen".to_string(),
         };
 
         let ocrText =
@@ -1859,12 +1859,12 @@ impl ChatServiceCore {
         let ocrText = ocrText.trim().to_string();
         if ocrText.is_empty() {
             self.messageProcessingDelegate
-                .showToast("添加屏幕内容失败: 未识别到屏幕文字".to_string());
+                .showToast("Failed to add the screen content: no on-screen text was recognized".to_string());
             return;
         }
 
         let captureId = format!("screen_ocr_{}", currentTimeMillis());
-        let content = format!("屏幕内容{positionInfo}\n\n{ocrText}\n\n{OCR_INLINE_INSTRUCTION}");
+        let content = format!("Screen content{positionInfo}\n\n{ocrText}\n\n{OCR_INLINE_INSTRUCTION}");
         self.attachments.push(AttachmentInfo {
             nodeId: None,
             filePath: captureId,
@@ -1874,7 +1874,7 @@ impl ChatServiceCore {
             content,
         });
         self.messageProcessingDelegate
-            .showToast("已添加屏幕内容".to_string());
+            .showToast("Added screen content".to_string());
 
         if let Err(error) = self.fileSystemHost.deleteFile(&screenshotPath, false) {
             AppLogger::w(
@@ -1902,7 +1902,7 @@ impl ChatServiceCore {
         });
         if !result.success {
             self.messageProcessingDelegate
-                .showToast(format!("添加当前通知失败: {}", toolFailureMessage(&result)));
+                .showToast(format!("Failed to add the current notification: {}", toolFailureMessage(&result)));
             return;
         }
 
@@ -1917,7 +1917,7 @@ impl ChatServiceCore {
         };
         self.attachments.push(attachmentInfo);
         self.messageProcessingDelegate
-            .showToast("已添加当前通知".to_string());
+            .showToast("Added the current notification".to_string());
     }
 
     /// Attaches current coordinates without requesting an implicit reverse-geocoding service.
@@ -1943,7 +1943,7 @@ impl ChatServiceCore {
         });
         if !result.success {
             self.messageProcessingDelegate
-                .showToast(format!("添加当前位置失败: {}", toolFailureMessage(&result)));
+                .showToast(format!("Failed to add the current location: {}", toolFailureMessage(&result)));
             return;
         }
 
@@ -1958,14 +1958,14 @@ impl ChatServiceCore {
         };
         self.attachments.push(attachmentInfo);
         self.messageProcessingDelegate
-            .showToast("已添加当前位置".to_string());
+            .showToast("Added the current location".to_string());
     }
 
     #[allow(non_snake_case)]
     fn attachPackageInternal(&mut self, packageName: &str) {
         if packageName.is_empty() {
             self.messageProcessingDelegate
-                .showToast(format!("添加包失败: {packageName}"));
+                .showToast(format!("Failed to add the package: {packageName}"));
             return;
         }
 
@@ -1993,7 +1993,7 @@ impl ChatServiceCore {
 
         if !isStandardPackage && !isSkillPackage && !isMcpPackage {
             self.messageProcessingDelegate
-                .showToast(format!("添加包失败: {packageName}"));
+                .showToast(format!("Failed to add the package: {packageName}"));
             return;
         }
 
@@ -2007,7 +2007,7 @@ impl ChatServiceCore {
             let packageContent = packageManagerGuard.usePackage(packageName);
             if isPackageAttachmentError(packageName, &packageContent) {
                 self.messageProcessingDelegate
-                    .showToast(format!("添加包失败: {packageName}"));
+                    .showToast(format!("Failed to add the package: {packageName}"));
                 return;
             }
 
@@ -2025,7 +2025,7 @@ impl ChatServiceCore {
         }
 
         self.messageProcessingDelegate
-            .showToast(format!("已添加包: {packageName}"));
+            .showToast(format!("Added package: {packageName}"));
     }
 
     /// Adds a workspace mention as an in-memory plain-text attachment.
@@ -2033,14 +2033,14 @@ impl ChatServiceCore {
     fn attachWorkspaceMentionInternal(&mut self, relativePath: &str) -> Result<String, String> {
         let normalizedRelativePath = PathMapper::normalizeRelativePath(relativePath)?;
         if normalizedRelativePath.is_empty() {
-            return Err("无法添加工作区引用: 路径为空".to_string());
+            return Err("Unable to add the workspace reference: the path is empty".to_string());
         }
         let workspaceRoot = self.currentWorkspaceRoot()?;
         let vfs = self.vfsForWorkspace()?;
         let targetPath = PathMapper::joinVfsPath(&workspaceRoot, &normalizedRelativePath)?;
         let targetInfo = vfs.fileExists(&targetPath)?;
         if !targetInfo.exists {
-            return Err("工作区路径不存在".to_string());
+            return Err("The workspace path does not exist".to_string());
         }
 
         let (mimeType, content) = if targetInfo.isDirectory {
@@ -2075,7 +2075,7 @@ impl ChatServiceCore {
             .chatHistoryDelegate
             .currentChatIdFlow
             .value()
-            .ok_or_else(|| "无法添加工作区引用: 当前聊天不存在".to_string())?;
+            .ok_or_else(|| "Unable to add the workspace reference: the current chat does not exist".to_string())?;
         self.chatHistoryDelegate
             .chatHistoriesFlow()
             .value()
@@ -2083,7 +2083,7 @@ impl ChatServiceCore {
             .find(|chat| chat.id == chatId)
             .and_then(|chat| chat.workspacePrimaryPath.clone())
             .filter(|workspace| !workspace.trim().is_empty())
-            .ok_or_else(|| "当前聊天未绑定工作区".to_string())
+            .ok_or_else(|| "The current chat is not bound to a workspace".to_string())
     }
 
     /// Creates a VFS instance for chat workspace attachment reads.
@@ -2111,24 +2111,24 @@ impl ChatServiceCore {
             .fileExists(&localPathText)
             .map_err(|error| error.message)?;
         if !source.exists {
-            return Err("附件文件不存在".to_string());
+            return Err("The attachment file does not exist".to_string());
         }
         if source.isDirectory {
-            return Err(format!("无法添加附件: {}", localPath.display()));
+            return Err(format!("Unable to add the attachment: {}", localPath.display()));
         }
 
         let fileName = localPath
             .file_name()
             .and_then(|value| value.to_str())
             .filter(|value| !value.trim().is_empty())
-            .ok_or_else(|| format!("无法添加附件: {}", localPath.display()))?
+            .ok_or_else(|| format!("Unable to add the attachment: {}", localPath.display()))?
             .to_string();
         let mimeType = getMimeTypeFromPath(&localPath).to_string();
         let tempFile = createTempFileFromPath(self.fileSystemHost.as_ref(), &localPath, &fileName)?;
         let fileSize = self
             .fileSystemHost
             .fileExists(&tempFile.to_string_lossy())
-            .map_err(|error| format!("无法读取附件大小: {}", error.message))?
+            .map_err(|error| format!("Unable to read the attachment size: {}", error.message))?
             .size;
 
         Ok(AttachmentInfo {
@@ -3057,8 +3057,8 @@ fn localAttachmentNodeId() -> Option<String> {
 #[allow(non_snake_case)]
 fn resolveAttachmentPath(filePath: &str) -> Result<PathBuf, String> {
     if filePath.starts_with("file://") {
-        let url = Url::parse(filePath).map_err(|_| format!("无法添加附件: {filePath}"))?;
-        return fileUrlToPathBuf(&url).map_err(|_| format!("无法添加附件: {filePath}"));
+        let url = Url::parse(filePath).map_err(|_| format!("Unable to add the attachment: {filePath}"))?;
+        return fileUrlToPathBuf(&url).map_err(|_| format!("Unable to add the attachment: {filePath}"));
     }
     Ok(PathBuf::from(filePath))
 }
@@ -3094,11 +3094,11 @@ fn createTempFileFromPath(
     let externalDirText = externalDir.to_string_lossy();
     fileSystemHost
         .makeDirectory(&externalDirText, true)
-        .map_err(|error| format!("无法创建附件临时目录: {}", error.message))?;
+        .map_err(|error| format!("Unable to create the temporary attachment directory: {}", error.message))?;
     let noMediaFile = externalDir.join(".nomedia");
     fileSystemHost
         .writeFile(&noMediaFile.to_string_lossy(), "", false)
-        .map_err(|error| format!("无法创建附件媒体标记: {}", error.message))?;
+        .map_err(|error| format!("Unable to create the attachment media marker: {}", error.message))?;
     let tempFile = externalDir.join(format!("img_{}.{}", currentTimeMillis(), fileExtension));
     fileSystemHost
         .copyFile(
@@ -3106,12 +3106,12 @@ fn createTempFileFromPath(
             &tempFile.to_string_lossy(),
             false,
         )
-        .map_err(|error| format!("无法复制附件: {}", error.message))?;
+        .map_err(|error| format!("Unable to copy the attachment: {}", error.message))?;
     let copied = fileSystemHost
         .fileExists(&tempFile.to_string_lossy())
-        .map_err(|error| format!("无法读取附件临时文件: {}", error.message))?;
+        .map_err(|error| format!("Unable to read the temporary attachment file: {}", error.message))?;
     if !copied.exists || copied.isDirectory || copied.size == 0 {
-        return Err(format!("无法添加附件: {}", sourcePath.display()));
+        return Err(format!("Unable to add the attachment: {}", sourcePath.display()));
     }
     Ok(tempFile)
 }
@@ -3128,16 +3128,16 @@ fn createTempFileFromBytes(
         .rsplit_once('.')
         .map(|(_, extension)| extension)
         .filter(|extension| !extension.trim().is_empty())
-        .ok_or_else(|| format!("无法添加粘贴图片: {fileName}"))?;
+        .ok_or_else(|| format!("Unable to add the pasted image: {fileName}"))?;
     let externalDir = OperitPaths::cleanOnExitDir()?;
     let externalDirText = externalDir.to_string_lossy();
     fileSystemHost
         .makeDirectory(&externalDirText, true)
-        .map_err(|error| format!("无法创建附件临时目录: {}", error.message))?;
+        .map_err(|error| format!("Unable to create the temporary attachment directory: {}", error.message))?;
     let noMediaFile = externalDir.join(".nomedia");
     fileSystemHost
         .writeFile(&noMediaFile.to_string_lossy(), "", false)
-        .map_err(|error| format!("无法创建附件媒体标记: {}", error.message))?;
+        .map_err(|error| format!("Unable to create the attachment media marker: {}", error.message))?;
     let tempFile = externalDir.join(format!(
         "pasted_image_{}_{}.{}",
         currentTimeMillis(),
@@ -3146,12 +3146,12 @@ fn createTempFileFromBytes(
     ));
     fileSystemHost
         .writeFileBytes(&tempFile.to_string_lossy(), bytes)
-        .map_err(|error| format!("无法保存粘贴图片: {}", error.message))?;
+        .map_err(|error| format!("Unable to save the pasted image: {}", error.message))?;
     let saved = fileSystemHost
         .fileExists(&tempFile.to_string_lossy())
-        .map_err(|error| format!("无法读取粘贴图片: {}", error.message))?;
+        .map_err(|error| format!("Unable to read the pasted image: {}", error.message))?;
     if !saved.exists || saved.isDirectory || saved.size == 0 {
-        return Err(format!("无法添加粘贴图片: {fileName}"));
+        return Err(format!("Unable to add the pasted image: {fileName}"));
     }
     Ok(tempFile)
 }
@@ -3199,7 +3199,7 @@ fn packageAttachmentPath(packageName: &str) -> String {
 
 #[allow(non_snake_case)]
 fn packageAttachmentDisplayName(packageName: &str) -> String {
-    format!("包: {packageName}")
+    format!("Package: {packageName}")
 }
 
 /// Builds the stored attachment path for a workspace mention.
@@ -3311,9 +3311,9 @@ mod transferred_file_attachment_tests {
     #[test]
     fn decodes_binary_file_bytes() {
         let (name, bytes) = decodeTransferredFileAttachment(
-            r#"{"fileName":"文档.pdf","fileSize":3,"base64Content":"AAH/"}"#,
+            r#"{"fileName":"document.pdf","fileSize":3,"base64Content":"AAH/"}"#,
         ).expect("valid transferred file");
-        assert_eq!(name, "文档.pdf");
+        assert_eq!(name, "document.pdf");
         assert_eq!(bytes, vec![0, 1, 255]);
     }
 

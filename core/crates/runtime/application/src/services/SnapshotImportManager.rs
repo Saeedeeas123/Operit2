@@ -153,8 +153,8 @@ impl SnapshotImportManager {
                     Box::pin(async move {
                         publishOperit1SnapshotImportProgress(Operit1SnapshotImportProgress {
                             stage: "parse".to_string(),
-                            title: "解析快照".to_string(),
-                            detail: "正在读取 Operit1 快照内容。".to_string(),
+                            title: "Parse snapshot".to_string(),
+                            detail: "Reading the Operit1 snapshot content.".to_string(),
                             progress: 0.04,
                             active: true,
                         });
@@ -162,10 +162,10 @@ impl SnapshotImportManager {
                     })
                 }),
             )
-            .map_err(|error| format!("无法调度 Operit1 快照导入任务：{error}"))?;
+            .map_err(|error| format!("Unable to schedule the Operit1 snapshot import task: {error}"))?;
         resultReceiver
             .await
-            .map_err(|error| format!("Operit1 快照导入任务未返回结果：{error}"))?
+            .map_err(|error| format!("The Operit1 snapshot import task returned no result: {error}"))?
     }
 
     /// Observes the latest Operit1 snapshot import progress state.

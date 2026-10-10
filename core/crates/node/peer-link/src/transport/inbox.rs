@@ -1,4 +1,4 @@
-//! Host 回调到 async receive 的有界缓冲；不包含业务消息或配对状态。
+//! Bounded buffer from Host callbacks into async receive; it holds no business messages and no pairing state.
 use operit_host_api::{HostResult, HostRuntimeTaskSchedulerHost};
 use std::sync::Arc;
 use tokio::sync::{mpsc, oneshot, watch, Mutex};
@@ -28,7 +28,7 @@ impl Inbox {
         });
     }
     pub fn put(&self, bytes: Vec<u8>) {
-        // 回调不能阻塞 Host 的网络线程；超限终止连接，不丢包后继续。
+        // A callback must not block the Host network thread; exceeding the bound terminates the connection instead of dropping packets and continuing.
         if bytes.len() > super::stream::MAX_PEER_MESSAGE_BYTES + 4
             || self.sender.try_send(bytes).is_err()
         {
@@ -63,7 +63,7 @@ impl Inbox {
         }
     }
 }
-/// 同步 Host 能力由 Host 的任务调度执行，不能阻塞 runtime executor。
+/// Synchronous Host capabilities are executed by the Host task scheduler and must not block the runtime executor.
 pub(super) async fn hostTask<T: Send + 'static>(
     scheduler: &Arc<dyn HostRuntimeTaskSchedulerHost>,
     task: impl FnOnce() -> HostResult<T> + Send + 'static,

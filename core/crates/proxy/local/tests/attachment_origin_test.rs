@@ -58,7 +58,7 @@ async fn imported_attachment_keeps_its_actual_node_and_ephemeral_storage() {
             let payload = format!(
                 "transferred_file:{}",
                 json!({
-                    "fileName": "文档.pdf", "fileSize": 3, "base64Content": "AAH/",
+                    "fileName": "document.pdf", "fileSize": 3, "base64Content": "AAH/",
                 })
             );
             CoreLinkSharedClient::call(

@@ -27,7 +27,7 @@ struct Payload {
 #[test]
 fn direct_conversion_matches_wire_model() {
     equivalent(Kind::Unit);
-    equivalent(Kind::Newtype("中文".into()));
+    equivalent(Kind::Newtype("Chinese".into()));
     equivalent(Kind::Tuple(u64::MAX, true));
     equivalent(Kind::Struct { name:"n".into(), data:vec![0,127,255] });
     equivalent(Tagged::Empty);
@@ -35,7 +35,7 @@ fn direct_conversion_matches_wire_model() {
     equivalent(Unit);
     equivalent(Newtype(vec![Kind::Unit]));
     equivalent(Payload { bytes: vec![0, 128, 255], signed:i64::MIN, unsigned:u64::MAX,
-        huge:i128::MIN, float:1.25, character:'中', map:BTreeMap::from([("x".into(),Some(vec![Kind::Tuple(2,false)])),("y".into(),None)]) });
+        huge:i128::MIN, float:1.25, character:'Ω', map:BTreeMap::from([("x".into(),Some(vec![Kind::Tuple(2,false)])),("y".into(),None)]) });
     equivalent(Some(42_i64));
     equivalent(None::<String>);
     equivalent(u128::MAX);

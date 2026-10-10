@@ -99,7 +99,7 @@ class _WorkspaceBrowserMenuSheetState extends State<WorkspaceBrowserMenuSheet> {
               if (snapshot.hasError) {
                 return ListTile(
                   leading: const Icon(Icons.error_outline),
-                  title: const Text('加载脚本菜单失败'),
+                  title: const Text('Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),Failed to load the script menu'),
                   subtitle: Text('${snapshot.error}'),
                   textColor: Theme.of(context).colorScheme.error,
                   iconColor: Theme.of(context).colorScheme.error,

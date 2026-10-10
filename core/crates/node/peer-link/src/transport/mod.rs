@@ -1,4 +1,4 @@
-//! 只按 transport 选择 Host 适配，不处理鉴权或配对。
+//! Selects the Host adapter by transport only; it handles neither authorization nor pairing.
 mod bluetooth;
 mod http;
 mod inbox;

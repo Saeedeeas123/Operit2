@@ -23,17 +23,17 @@ class WorkspaceChangeConfirmDialog extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final title = switch (mode) {
-      WorkspaceChangeConfirmMode.rollback => '确认回滚工作区',
-      WorkspaceChangeConfirmMode.editAndResend => '确认编辑并重发',
+      WorkspaceChangeConfirmMode.rollback => 'Confirm workspace rollback',Confirm workspace rollback',Confirm workspace rollback',Confirm workspace rollback',Confirm workspace rollback',Confirm workspace rollback',Confirm workspace rollback',
+      WorkspaceChangeConfirmMode.editAndResend => 'Confirm edit and resend',Confirm edit and resend',Confirm edit and resend',Confirm edit and resend',Confirm edit and resend',Confirm edit and resend',Confirm edit and resend',
     };
     final message = switch (mode) {
-      WorkspaceChangeConfirmMode.rollback => '这会把工作区恢复到该消息之前的状态，并删除该消息及之后的对话。',
+      WorkspaceChangeConfirmMode.rollback => 'This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',This restores the workspace to the state before this message and deletes this message and the conversation after it.',
       WorkspaceChangeConfirmMode.editAndResend =>
-        '这会把工作区恢复到该消息之前的状态，并用编辑后的内容重新发送。',
+        'This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',This restores the workspace to the state before this message and resends it with the edited content.',
     };
     final confirmText = switch (mode) {
-      WorkspaceChangeConfirmMode.rollback => '确认回滚',
-      WorkspaceChangeConfirmMode.editAndResend => '保存并重发',
+      WorkspaceChangeConfirmMode.rollback => 'Confirm rollback',Confirm rollback',Confirm rollback',Confirm rollback',
+      WorkspaceChangeConfirmMode.editAndResend => 'Save and resend',Save and resend',Save and resend',Save and resend',Save and resend',
     };
 
     return AlertDialog(
@@ -48,7 +48,7 @@ class WorkspaceChangeConfirmDialog extends StatelessWidget {
             const SizedBox(height: 12),
             if (changes.isEmpty)
               Text(
-                '没有检测到工作区文件变化。',
+                'No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',No workspace file changes detected.',
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -76,7 +76,7 @@ class WorkspaceChangeConfirmDialog extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       subtitle: Text(
-                        '${change.changeType} · ${change.changedLines} 行',
+                        '${change.changeType} · ${change.changedLines} line(s)',
                       ),
                     );
                   },
@@ -88,7 +88,7 @@ class WorkspaceChangeConfirmDialog extends StatelessWidget {
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),Cancel'),
         ),
         FilledButton(
           onPressed: () async {

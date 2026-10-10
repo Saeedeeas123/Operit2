@@ -1,5 +1,5 @@
-//! HTTP 全双工承载：一个持续响应体接收消息，POST 发送消息；不是 WS 回退。
-//! 连接标识仅用于关联 HTTP 请求，不作为节点身份或配对授权。
+//! HTTP full-duplex carrier: a single long-lived response body receives messages and POST sends them; it is not a WebSocket fallback.
+//! The connection identifier only correlates HTTP requests; it is not a node identity or a pairing authorization.
 use super::{
     inbox::{hostTask, Inbox},
     stream::{ByteConnection, FramedPeerConnection, MAX_PEER_MESSAGE_BYTES},

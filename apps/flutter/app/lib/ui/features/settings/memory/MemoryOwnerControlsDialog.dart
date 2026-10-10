@@ -168,7 +168,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
     if (mounted) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('记忆设置已保存')));
+      ).showSnackBar(const SnackBar(content: Text('Memory settings saved')));
     }
   });
 
@@ -213,7 +213,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
     return DefaultTabController(
       length: 3,
       child: AlertDialog(
-        title: const Text('记忆设置'),
+        title: const Text('Memory settings'),
         titleTextStyle: Theme.of(context).textTheme.titleMedium,
         insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         contentPadding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
@@ -234,9 +234,9 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                       labelStyle: Theme.of(context).textTheme.labelLarge
                           ?.copyWith(fontSize: 13, fontWeight: FontWeight.w600),
                       tabs: const [
-                        Tab(text: '自动提取'),
-                        Tab(text: '检索'),
-                        Tab(text: '历史重建'),
+                        Tab(text: 'Auto-extract'),
+                        Tab(text: 'Retrieval'),
+                        Tab(text: 'History rebuild'),
                       ],
                     ),
                     Expanded(
@@ -244,17 +244,17 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                         children: [
                           _settingsPage([
                             Text(
-                              '所属记忆库：${q?.ownerKey ?? widget.ownerKey}',
+                              'Memory library: ${q?.ownerKey ?? widget.ownerKey}',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                             const SizedBox(height: 12),
                             if (q != null) ...[
                               Text(
-                                '待处理 ${q.pendingCandidates} 条 / ${q.pendingChats} 个聊天 · 处理中 ${q.processingCandidates} · 失败 ${q.failedCandidates}',
+                                'Pending ${q.pendingCandidates} item(s) / ${q.pendingChats} chat(s) · Processing ${q.processingCandidates} · Failed ${q.failedCandidates}',
                                 style: Theme.of(context).textTheme.bodySmall,
                               ),
                               Text(
-                                '下次检查：约 ${q.minutesUntilNextRun} 分钟后',
+                                'Next check in about ${q.minutesUntilNextRun} min',
                                 style: Theme.of(context).textTheme.bodySmall,
                               ),
                               if (q.lastError.isNotEmpty)
@@ -267,7 +267,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                             ],
                             const SizedBox(height: 8),
                             Text(
-                              '至少积累 5 个候选后自动提取；手动更新不受此限制。',
+                              'Auto-extract starts after 5 candidates accumulate; manual updates are not limited by this.',
                               style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(
                                     color: Theme.of(
@@ -276,7 +276,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                   ),
                             ),
                             const SizedBox(height: 16),
-                            Text('自动检查间隔：$interval 分钟'),
+                            Text('Auto-check interval: $interval min'),
                             Slider(
                               value: interval.toDouble(),
                               min: 1,
@@ -289,7 +289,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                             SwitchListTile(
                               contentPadding: EdgeInsets.zero,
                               dense: true,
-                              title: const Text('自动更新 USER.md'),
+                              title: const Text('Auto-update USER.md'),
                               value: autoProfile,
                               onChanged: busy
                                   ? null
@@ -298,8 +298,8 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                             SwitchListTile(
                               contentPadding: EdgeInsets.zero,
                               dense: true,
-                              title: const Text('锁定 USER.md'),
-                              subtitle: const Text('禁止模型覆盖用户资料'),
+                              title: const Text('Lock USER.md'),
+                              subtitle: const Text('Prevent the model from overwriting the user profile'),
                               value: locked,
                               onChanged: busy
                                   ? null
@@ -310,13 +310,13 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                               minLines: 3,
                               maxLines: 8,
                               decoration: const InputDecoration(
-                                labelText: '记忆提取附加规则',
-                                hintText: '细化记忆领域、入库重点、分类、标签及写法',
+                                labelText: 'Extra memory-extraction rules',
+                                hintText: 'Refine memory domains, storage focus, categories, tags, and writing style',
                               ),
                             ),
                           ]),
                           _settingsPage([
-                            const Text('检索评分'),
+                            const Text('Retrieval scores'),
                             DropdownButton<core.MemoryScoreMode>(
                               value: search!.scoreMode,
                               isExpanded: true,
@@ -345,10 +345,10 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                     },
                             ),
                             for (final (i, name, value) in [
-                              (0, '关键词', search!.keywordWeight),
-                              (1, '标签', search!.tagWeight),
-                              (2, '语义向量', search!.vectorWeight),
-                              (3, '图谱关联', search!.edgeWeight),
+                              (0, 'Keywords', search!.keywordWeight),
+                              (1, 'Tags', search!.tagWeight),
+                              (2, 'Semantic vectors', search!.vectorWeight),
+                              (3, 'Graph links', search!.edgeWeight),
                             ])
                               Row(
                                 children: [
@@ -373,8 +373,8 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                               ),
                             SwitchListTile(
                               contentPadding: EdgeInsets.zero,
-                              title: const Text('云端 Embedding'),
-                              subtitle: const Text('启用后，搜索文本和记忆文本会发送至指定服务'),
+                              title: const Text('Cloud embedding'),
+                              subtitle: const Text('When enabled, search text and memory text are sent to the specified service'),
                               value: cloud,
                               onChanged: busy
                                   ? null
@@ -384,7 +384,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                               TextField(
                                 controller: endpoint,
                                 decoration: const InputDecoration(
-                                  labelText: 'Embedding 完整请求地址',
+                                  labelText: 'Embedding full request URL',
                                 ),
                               ),
                               TextField(
@@ -397,7 +397,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                               TextField(
                                 controller: model,
                                 decoration: const InputDecoration(
-                                  labelText: 'Embedding 模型',
+                                  labelText: 'Embedding model',
                                 ),
                               ),
                               OutlinedButton(
@@ -406,13 +406,13 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                     : () => run(() async {
                                         await service.rebuildEmbeddings();
                                       }),
-                                child: const Text('重建向量缓存（使用已保存设置）'),
+                                child: const Text('Rebuild vector cache (using saved settings)'),
                               ),
                             ],
                             TextField(
                               controller: query,
                               decoration: const InputDecoration(
-                                labelText: '检索模拟查询',
+                                labelText: 'Retrieval test query',
                               ),
                             ),
                             OutlinedButton(
@@ -432,13 +432,13 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                         );
                                       }
                                     }),
-                              child: const Text('模拟当前权重'),
+                              child: const Text('Simulate with current weights'),
                             ),
                             if (simulation != null) SelectableText(simulation!),
                           ]),
                           _settingsPage([
-                            const Text('从聊天历史重建记忆（追加／更新，不删除现有记忆）'),
-                            Text('每窗口 $windowSize 条消息'),
+                            const Text('Rebuild memory from chat history (append/update; does not delete existing memories)'),
+                            Text('$windowSize messages per window'),
                             Slider(
                               value: windowSize.toDouble(),
                               min: 8,
@@ -458,8 +458,8 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                       : () => pickDate(true),
                                   child: Text(
                                     from == null
-                                        ? '起始日期：不限'
-                                        : '起始：${from!.toIso8601String().split('T').first}',
+                                        ? 'Start date: unlimited'
+                                        : 'Start: ${from!.toIso8601String().split('T').first}',
                                   ),
                                 ),
                                 OutlinedButton(
@@ -468,8 +468,8 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                       : () => pickDate(false),
                                   child: Text(
                                     to == null
-                                        ? '结束日期：不限'
-                                        : '结束：${to!.toIso8601String().split('T').first}',
+                                        ? 'End date: unlimited'
+                                        : 'End: ${to!.toIso8601String().split('T').first}',
                                   ),
                                 ),
                                 TextButton(
@@ -479,11 +479,11 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                           from = null;
                                           to = null;
                                         }),
-                                  child: const Text('全部时间'),
+                                  child: const Text('All time'),
                                 ),
                               ],
                             ),
-                            if (chats.isEmpty) const Text('此记忆库暂无绑定聊天'),
+                            if (chats.isEmpty) const Text('No chats bound to this memory library yet'),
                             for (final chat in chats)
                               CheckboxListTile(
                                 contentPadding: EdgeInsets.zero,
@@ -524,22 +524,22 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                                       1,
                                           ),
                                         ),
-                                  child: const Text('开始重建'),
+                                  child: const Text('Start rebuild'),
                                 ),
                                 if (rebuilding)
                                   OutlinedButton(
                                     onPressed: () =>
                                         run(() => service.cancelRebuild()),
-                                    child: const Text('取消重建'),
+                                    child: const Text('Cancel rebuild'),
                                   ),
                               ],
                             ),
                             if (p != null && p.status != 'idle') ...[
                               Text(
-                                '${p.status} · 聊天 ${p.completedChats}/${p.totalChats} · 窗口 ${p.completedWindows}/${p.totalWindows} · 失败 ${p.failedWindows}',
+                                '${p.status} · Chats ${p.completedChats}/${p.totalChats} · Windows ${p.completedWindows}/${p.totalWindows} · Failed ${p.failedWindows}',
                               ),
                               Text(
-                                '已处理源消息 ${p.processedSourceMessages}/${p.totalSourceMessages} · ${p.currentChatTitle}',
+                                'Processed source messages ${p.processedSourceMessages}/${p.totalSourceMessages} · ${p.currentChatTitle}',
                               ),
                               if (rebuilding)
                                 LinearProgressIndicator(
@@ -549,7 +549,7 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
                                 ),
                               if (p.lastError.isNotEmpty) Text(p.lastError),
                               if (rebuilding)
-                                const Text('关闭此窗口不会终止后台重建；取消会在当前窗口结束后生效。'),
+                                const Text('Closing this window does not stop the background rebuild; canceling takes effect after the current window finishes.'),
                             ],
                           ]),
                         ],
@@ -568,11 +568,11 @@ class _MemoryOwnerControlsDialogState extends State<MemoryOwnerControlsDialog> {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('关闭'),
+            child: const Text('Close'),
           ),
           FilledButton(
             onPressed: settings == null || busy ? null : save,
-            child: const Text('保存设置'),
+            child: const Text('Save settings'),
           ),
         ],
       ),

@@ -263,7 +263,7 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       return;
     }
     if (sourceMemory == null || targetMemory == null) {
-      _showSnack('无法定位记忆节点');
+      _showSnack('Cannot locate memory node');
       return;
     }
     final edited = await _MemoryLinkEditorDialog.show(
@@ -289,14 +289,14 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       if (!mounted) {
         return;
       }
-      _showSnack('记忆关系已创建');
+      _showSnack('Memory link created');
       setState(() {
         _linkSourceNodeId = null;
         _future = _loadData();
       });
     } catch (error) {
       if (mounted) {
-        _showSnack('创建关系失败：$error');
+        _showSnack('Failed to create link: $error');
       }
     } finally {
       if (mounted) {
@@ -332,11 +332,11 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       if (!mounted) {
         return;
       }
-      _showSnack('记忆已创建');
+      _showSnack('Memory created');
       _reload();
     } catch (error) {
       if (mounted) {
-        _showSnack('创建记忆失败：$error');
+        _showSnack('Failed to create memory: $error');
       }
     } finally {
       if (mounted) {
@@ -375,11 +375,11 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       if (!mounted) {
         return;
       }
-      _showSnack('记忆已保存');
+      _showSnack('Memory saved');
       _reload();
     } catch (error) {
       if (mounted) {
-        _showSnack('保存记忆失败：$error');
+        _showSnack('Failed to save memory: $error');
       }
     } finally {
       if (mounted) {
@@ -391,9 +391,9 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
   /// Deletes a memory after user confirmation.
   Future<void> _deleteMemory(core_proxy.Memory memory) async {
     final confirmed = await _confirm(
-      title: '删除记忆',
-      message: '确定删除「${memory.title}」吗？关联关系也会被移除。',
-      confirmLabel: '删除',
+      title: 'Delete memory',
+      message: 'Delete "${memory.title}"? Related links will also be removed.',
+      confirmLabel: 'Delete',
     );
     if (!confirmed) {
       return;
@@ -404,11 +404,11 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       if (!mounted) {
         return;
       }
-      _showSnack('记忆已删除');
+      _showSnack('Memory deleted');
       _reload();
     } catch (error) {
       if (mounted) {
-        _showSnack('删除记忆失败：$error');
+        _showSnack('Failed to delete memory: $error');
       }
     } finally {
       if (mounted) {
@@ -420,9 +420,9 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
   /// Deletes a memory link after user confirmation.
   Future<void> _deleteEdge(core_proxy.MemoryGraphEdge edge) async {
     final confirmed = await _confirm(
-      title: '删除关系',
-      message: '确定删除这条记忆关系吗？',
-      confirmLabel: '删除',
+      title: 'Delete link',
+      message: 'Delete this memory link?',
+      confirmLabel: 'Delete',
     );
     if (!confirmed) {
       return;
@@ -433,11 +433,11 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
       if (!mounted) {
         return;
       }
-      _showSnack('记忆关系已删除');
+      _showSnack('Memory link deleted');
       _reload();
     } catch (error) {
       if (mounted) {
-        _showSnack('删除关系失败：$error');
+        _showSnack('Failed to delete link: $error');
       }
     } finally {
       if (mounted) {
@@ -463,11 +463,11 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         return;
       }
       if (mounted) {
-        _showSnack('已导出到 $savedPath');
+        _showSnack('Exported to $savedPath');
       }
     } catch (error) {
       if (mounted) {
-        _showSnack('导出失败：$error');
+        _showSnack('Export failed: $error');
       }
     } finally {
       if (mounted) {
@@ -502,12 +502,12 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         return;
       }
       _showSnack(
-        '导入完成：新增 ${result.newMemories}，更新 ${result.updatedMemories}，跳过 ${result.skippedMemories}，关系 ${result.newLinks}',
+        'Import finished: ${result.newMemories} added, ${result.updatedMemories} updated, ${result.skippedMemories} skipped, ${result.newLinks} links',
       );
       _reload();
     } catch (error) {
       if (mounted) {
-        _showSnack('导入失败：$error');
+        _showSnack('Import failed: $error');
       }
     } finally {
       if (mounted) {
@@ -538,18 +538,18 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         showCloseButton: true,
         actions: <Widget>[
           IconButton(
-            tooltip: '导入文本／Markdown 文档',
+            tooltip: 'Import text/Markdown document',
             onPressed: _busy ? null : _importDocument,
             icon: const Icon(Icons.article_outlined),
           ),
           IconButton(
-            tooltip: 'AI 分类未归类记忆',
+            tooltip: 'AI-categorize unclassified memories',
             onPressed: _busy ? null : _autoCategorize,
             icon: const Icon(Icons.auto_awesome),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: const Text('取消'),
+            child: const Text('Cancel'),
           ),
           FilledButton(
             onPressed: () => Navigator.of(context).pop(true),
@@ -574,14 +574,14 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
     final selected = await showDialog<String>(
       context: context,
       builder: (context) => OperitDialogScaffold(
-        title: '选择记忆文件夹',
+        title: 'Select memory folder',
         maxWidth: 420,
         maxHeight: 520,
         showCloseButton: true,
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('取消'),
+            child: const Text('Cancel'),
           ),
         ],
         child: SizedBox(
@@ -622,13 +622,13 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         _refresh();
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text('文档已分块入库')));
+        ).showSnackBar(const SnackBar(content: Text('Document chunked and stored')));
       }
     } catch (error) {
       if (mounted) {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(SnackBar(content: Text('文档导入失败：$error')));
+        ).showSnackBar(SnackBar(content: Text('Document import failed: $error')));
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -645,13 +645,13 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         _refresh();
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(SnackBar(content: Text('已分类 $count 条记忆')));
+        ).showSnackBar(SnackBar(content: Text('Categorized $count memories')));
       }
     } catch (error) {
       if (mounted) {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(SnackBar(content: Text('自动分类：$error')));
+        ).showSnackBar(SnackBar(content: Text('Auto-categorization: $error')));
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -674,7 +674,7 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
         ),
         actions: <Widget>[
           IconButton(
-            tooltip: '记忆设置',
+            tooltip: 'Memory settings',
             icon: const Icon(Icons.tune),
             onPressed: _busy
                 ? null
@@ -688,12 +688,12 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
                   },
           ),
           IconButton(
-            tooltip: '导入 JSON',
+            tooltip: 'Import JSON',
             onPressed: _busy ? null : _importJson,
             icon: const Icon(Icons.upload_file_outlined),
           ),
           IconButton(
-            tooltip: '导出 JSON',
+            tooltip: 'Export JSON',
             onPressed: _busy ? null : _exportJson,
             icon: const Icon(Icons.download_outlined),
           ),
@@ -782,7 +782,7 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
           left: 16,
           top: 12,
           child: _MemoryGraphCounter(
-            text: '${graph.nodes.length} 节点 · ${graph.edges.length} 关系',
+            text: '${graph.nodes.length} nodes · ${graph.edges.length} links',
           ),
         ),
         if (_linkMode)
@@ -790,7 +790,7 @@ class _MemoryGraphScreenState extends State<MemoryGraphScreen> {
             right: 16,
             top: 12,
             child: _MemoryGraphCounter(
-              text: _linkSourceNodeId == null ? '关系模式：选择起点' : '关系模式：选择终点',
+              text: _linkSourceNodeId == null ? 'Link mode: pick the source' : 'Link mode: pick the target',
             ),
           ),
         if (selectedNode != null || selectedEdge != null)
@@ -868,7 +868,7 @@ class _MemoryToolbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final folderLabel = folderPath.isEmpty ? '全部文件夹' : folderPath;
+    final folderLabel = folderPath.isEmpty ? 'All folders' : folderPath;
     final actionStyle = IconButton.styleFrom(
       minimumSize: const Size(40, 40),
       maximumSize: const Size(40, 40),
@@ -890,7 +890,7 @@ class _MemoryToolbar extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Tooltip(
-                message: '搜索标题、正文、来源或标签',
+                message: 'Search titles, content, sources, or tags',
                 child: SizedBox(
                   height: 40,
                   child: TextField(
@@ -911,13 +911,13 @@ class _MemoryToolbar extends StatelessWidget {
                       suffixIcon: controller.text.isEmpty
                           ? null
                           : IconButton(
-                              tooltip: '清空',
+                              tooltip: 'Clear',
                               padding: EdgeInsets.zero,
                               iconSize: 16,
                               onPressed: busy ? null : onClearSearch,
                               icon: const Icon(Icons.clear),
                             ),
-                      hintText: '搜索记忆',
+                      hintText: 'Search memories',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide(
@@ -953,7 +953,7 @@ class _MemoryToolbar extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             IconButton.filledTonal(
-              tooltip: '关系模式',
+              tooltip: 'Link mode',
               onPressed: busy ? null : onToggleLinkMode,
               isSelected: linkMode,
               style: actionStyle,
@@ -961,7 +961,7 @@ class _MemoryToolbar extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             IconButton.filled(
-              tooltip: '新建记忆',
+              tooltip: 'New memory',
               onPressed: busy ? null : onCreateMemory,
               style: actionStyle,
               icon: const Icon(Icons.add, size: 18),
@@ -1001,7 +1001,7 @@ class _MemoryFolderPanel extends StatelessWidget {
               children: <Widget>[
                 Icon(Icons.folder_outlined, color: colorScheme.primary),
                 const SizedBox(width: 8),
-                Text('记忆文件夹', style: Theme.of(context).textTheme.titleSmall),
+                Text('Memory folders', style: Theme.of(context).textTheme.titleSmall),
               ],
             ),
           ),
@@ -1011,7 +1011,7 @@ class _MemoryFolderPanel extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 6),
               children: <Widget>[
                 _FolderTile(
-                  title: '全部',
+                  title: 'All',
                   selected: selectedFolderPath.isEmpty,
                   depth: 0,
                   onTap: () => onSelected(''),
@@ -1050,7 +1050,7 @@ class _FolderTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final displayTitle = title.isEmpty ? '未分类' : title.split('/').last;
+    final displayTitle = title.isEmpty ? 'Uncategorized' : title.split('/').last;
     return Padding(
       padding: EdgeInsets.only(left: 8.0 + depth * 14.0, right: 8, top: 2),
       child: ListTile(
@@ -1113,7 +1113,7 @@ class _MemoryEmptyState extends StatelessWidget {
     final hasFilter = query.isNotEmpty || folderPath.isNotEmpty;
     return Center(
       child: Text(
-        hasFilter ? '当前筛选没有记忆节点' : '当前记忆库还没有节点',
+        hasFilter ? 'No memory nodes match the current filter' : 'The memory library has no nodes yet',
         style: textTheme.bodyMedium?.copyWith(
           color: colorScheme.onSurfaceVariant,
         ),
@@ -1226,7 +1226,7 @@ class _MemoryGraphSelectionCard extends StatelessWidget {
                   if (memory == null) {
                     return const Padding(
                       padding: EdgeInsets.only(top: 8),
-                      child: Text('未读取到完整记忆内容'),
+                      child: Text('Full memory content not available'),
                     );
                   }
                   return _MemoryDetailsBlock(
@@ -1243,7 +1243,7 @@ class _MemoryGraphSelectionCard extends StatelessWidget {
                 child: TextButton.icon(
                   onPressed: () => onDeleteEdge(edge!),
                   icon: const Icon(Icons.delete_outline),
-                  label: const Text('删除关系'),
+                  label: const Text('Delete link'),
                 ),
               ),
           ],
@@ -1290,19 +1290,19 @@ class _MemoryDetailsBlock extends StatelessWidget {
             runSpacing: 6,
             children: <Widget>[
               _InfoChip(
-                label: '文件夹',
+                label: 'Folder',
                 value: _folderLabel(memory.folderPath ?? ''),
               ),
-              _InfoChip(label: '来源', value: memory.source),
+              _InfoChip(label: 'Source', value: memory.source),
               _InfoChip(
-                label: '可信度',
+                label: 'Trust',
                 value: memory.credibility.toStringAsFixed(2),
               ),
               _InfoChip(
-                label: '重要性',
+                label: 'Importance',
                 value: memory.importance.toStringAsFixed(2),
               ),
-              _InfoChip(label: '更新', value: _formatMillis(memory.updatedAt)),
+              _InfoChip(label: 'Updated', value: _formatMillis(memory.updatedAt)),
             ],
           ),
           if (memory.tags.isNotEmpty) ...<Widget>[
@@ -1342,13 +1342,13 @@ class _MemoryDetailsBlock extends StatelessWidget {
               TextButton.icon(
                 onPressed: () => onEditMemory(memory, folders),
                 icon: const Icon(Icons.edit_outlined),
-                label: const Text('编辑'),
+                label: const Text('Edit'),
               ),
               const SizedBox(width: 6),
               TextButton.icon(
                 onPressed: () => onDeleteMemory(memory),
                 icon: const Icon(Icons.delete_outline),
-                label: const Text('删除'),
+                label: const Text('Delete'),
               ),
             ],
           ),
@@ -1377,7 +1377,7 @@ class _InfoChip extends StatelessWidget {
         border: Border.all(color: colorScheme.outlineVariant),
       ),
       child: Text(
-        '$label：$value',
+        '$label: $value',
         style: Theme.of(context).textTheme.labelSmall,
       ),
     );
@@ -1518,16 +1518,16 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
       _folderController.text,
     }.map((folder) => folder.trim()).toSet().toList(growable: false)..sort();
     return OperitDialogScaffold(
-      title: widget.memory == null ? '新建记忆' : '编辑记忆',
+      title: widget.memory == null ? 'New memory' : 'Edit memory',
       maxWidth: 720,
       maxHeight: 680,
       showCloseButton: true,
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),
         ),
-        FilledButton(onPressed: _save, child: const Text('保存')),
+        FilledButton(onPressed: _save, child: const Text('Save')),
       ],
       child: Form(
         key: _formKey,
@@ -1537,9 +1537,9 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
             children: <Widget>[
               TextFormField(
                 controller: _titleController,
-                decoration: const InputDecoration(labelText: '标题'),
+                decoration: const InputDecoration(labelText: 'Title'),
                 validator: (value) =>
-                    value == null || value.trim().isEmpty ? '请输入标题' : null,
+                    value == null || value.trim().isEmpty ? 'Please enter a title' : null,
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -1547,7 +1547,7 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
                 minLines: 8,
                 maxLines: 14,
                 decoration: const InputDecoration(
-                  labelText: '内容',
+                  labelText: 'Content',
                   alignLabelWithHint: true,
                   border: OutlineInputBorder(),
                 ),
@@ -1558,14 +1558,14 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
                   Expanded(
                     child: TextFormField(
                       controller: _contentTypeController,
-                      decoration: const InputDecoration(labelText: '内容类型'),
+                      decoration: const InputDecoration(labelText: 'Content type'),
                     ),
                   ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: TextFormField(
                       controller: _sourceController,
-                      decoration: const InputDecoration(labelText: '来源'),
+                      decoration: const InputDecoration(labelText: 'Source'),
                     ),
                   ),
                 ],
@@ -1584,7 +1584,7 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
                       child: Text(_folderLabel(folder)),
                     ),
                 ],
-                decoration: const InputDecoration(labelText: '文件夹'),
+                decoration: const InputDecoration(labelText: 'Folder'),
                 onChanged: (value) {
                   if (value == null) {
                     return;
@@ -1598,19 +1598,19 @@ class _MemoryEditorDialogState extends State<_MemoryEditorDialog> {
               TextFormField(
                 controller: _tagsController,
                 decoration: const InputDecoration(
-                  labelText: '标签',
-                  helperText: '多个标签请用逗号分隔',
+                  labelText: 'Tags',
+                  helperText: 'Separate multiple tags with commas',
                 ),
               ),
               const SizedBox(height: 10),
               _SliderEditor(
-                label: '可信度',
+                label: 'Trust',
                 value: _credibility,
                 onChanged: (value) => setState(() => _credibility = value),
               ),
               const SizedBox(height: 10),
               _SliderEditor(
-                label: '重要度',
+                label: 'Importance',
                 value: _importance,
                 onChanged: (value) => setState(() => _importance = value),
               ),
@@ -1733,15 +1733,15 @@ class _MemoryLinkEditorDialogState extends State<_MemoryLinkEditorDialog> {
   @override
   Widget build(BuildContext context) {
     return OperitDialogScaffold(
-      title: '创建记忆关系',
+      title: 'Create memory link',
       maxWidth: 520,
       showCloseButton: true,
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),
         ),
-        FilledButton(onPressed: _save, child: const Text('创建')),
+        FilledButton(onPressed: _save, child: const Text('Create')),
       ],
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1756,11 +1756,11 @@ class _MemoryLinkEditorDialogState extends State<_MemoryLinkEditorDialog> {
           const SizedBox(height: 12),
           TextField(
             controller: _typeController,
-            decoration: const InputDecoration(labelText: '关系类型'),
+            decoration: const InputDecoration(labelText: 'Link type'),
           ),
           const SizedBox(height: 10),
           _SliderEditor(
-            label: '权重',
+            label: 'Weight',
             value: _weight,
             onChanged: (value) => setState(() => _weight = value),
           ),
@@ -1770,7 +1770,7 @@ class _MemoryLinkEditorDialogState extends State<_MemoryLinkEditorDialog> {
             minLines: 2,
             maxLines: 4,
             decoration: const InputDecoration(
-              labelText: '描述',
+              labelText: 'Description',
               border: OutlineInputBorder(),
             ),
           ),
@@ -1798,33 +1798,33 @@ class _ImportStrategyDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OperitDialogScaffold(
-      title: '导入记忆 JSON',
+      title: 'Import memory JSON',
       maxWidth: 440,
       showCloseButton: true,
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),
         ),
         TextButton(
           onPressed: () =>
               Navigator.of(context).pop(core_proxy.ImportStrategy.skip),
-          child: const Text('跳过'),
+          child: const Text('Skip'),
         ),
         TextButton(
           onPressed: () =>
               Navigator.of(context).pop(core_proxy.ImportStrategy.update),
-          child: const Text('更新'),
+          child: const Text('Update'),
         ),
         FilledButton(
           onPressed: () =>
               Navigator.of(context).pop(core_proxy.ImportStrategy.createNew),
-          child: const Text('创建新记忆'),
+          child: const Text('Create new memory'),
         ),
       ],
       child: const Padding(
         padding: EdgeInsets.symmetric(vertical: 8),
-        child: Text('请选择同名记忆的处理方式。'),
+        child: Text('Choose how to handle the duplicate-name memory.'),
       ),
     );
   }
@@ -1885,7 +1885,7 @@ bool _matchesFolderTree(String memoryFolderPath, String folderPath) {
 /// Returns the display label for a folder path.
 String _folderLabel(String folderPath) {
   final trimmed = folderPath.trim();
-  return trimmed.isEmpty ? '全部' : trimmed;
+  return trimmed.isEmpty ? 'All' : trimmed;
 }
 
 /// Returns the visible tree depth of a folder path.

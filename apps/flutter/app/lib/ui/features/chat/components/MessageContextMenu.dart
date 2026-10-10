@@ -220,7 +220,7 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
       _menuItem(
         value: _MessageMenuAction.copy,
         icon: Icons.content_copy,
-        label: '复制消息',
+        label: 'Copy message',Copy message',Copy message',Copy message',
       ),
     ];
     if (message.sender == 'user') {
@@ -228,19 +228,19 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
         _menuItem(
           value: _MessageMenuAction.queueMemory,
           icon: Icons.psychology_outlined,
-          label: '加入记忆队列',
+          label: 'Add to memory queue',Add to memory queue',Add to memory queue',Add to memory queue',Add to memory queue',Add to memory queue',
         ),
       );
       items.addAll(<PopupMenuEntry<_MessageMenuSelection>>[
         _menuItem(
           value: _MessageMenuAction.editAndResend,
           icon: Icons.edit,
-          label: '编辑并重发',
+          label: 'Edit and resend',Edit and resend',Edit and resend',Edit and resend',Edit and resend',
         ),
         _menuItem(
           value: _MessageMenuAction.rollback,
           icon: Icons.delete_sweep,
-          label: '回滚到此处',
+          label: 'Roll back to here',Roll back to here',Roll back to here',Roll back to here',Roll back to here',
         ),
       ]);
     }
@@ -249,17 +249,17 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
         _menuItem(
           value: _MessageMenuAction.regenerate,
           icon: Icons.refresh,
-          label: '重新生成',
+          label: 'Regenerate',Regenerate',Regenerate',Regenerate',
         ),
         _menuItem(
           value: _MessageMenuAction.modifyMemory,
           icon: Icons.auto_fix_high,
-          label: '修改记忆',
+          label: 'Edit memory',Edit memory',Edit memory',Edit memory',
         ),
         _menuItem(
           value: _MessageMenuAction.playVoice,
           icon: Icons.volume_up,
-          label: '生成/播放语音',
+          label: 'Generate/play speech',Generate/play speech',play speech',play speech',play speech',
         ),
       ]);
       if (message.variantCount > 1) {
@@ -267,7 +267,7 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
           _menuItem(
             value: _MessageMenuAction.deleteVariant,
             icon: Icons.delete,
-            label: '删除当前变体',
+            label: 'Delete current variant',Delete current variant',Delete current variant',Delete current variant',Delete current variant',Delete current variant',
           ),
         );
       }
@@ -276,7 +276,7 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
       _menuItem(
         value: _MessageMenuAction.delete,
         icon: Icons.delete,
-        label: '删除',
+        label: 'Delete',Delete',
       ),
     ]);
     if (message.sender == 'ai') {
@@ -284,7 +284,7 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
         _menuItem(
           value: _MessageMenuAction.reply,
           icon: Icons.reply,
-          label: '回复',
+          label: 'Reply',Reply',
         ),
       );
     }
@@ -292,18 +292,18 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
       _menuItem(
         value: _MessageMenuAction.insertSummary,
         icon: Icons.summarize,
-        label: '插入总结',
+        label: 'Insert summary',Insert summary',Insert summary',Insert summary',
       ),
       _menuItem(
         value: _MessageMenuAction.createBranch,
         icon: Icons.account_tree,
-        label: '创建分支',
+        label: 'Create branch',Create branch',Create branch',Create branch',
       ),
-      _menuItem(value: _MessageMenuAction.info, icon: Icons.info, label: '信息'),
+      _menuItem(value: _MessageMenuAction.info, icon: Icons.info, label: 'Info'),Info'),
       _menuItem(
         value: _MessageMenuAction.multiSelect,
         icon: Icons.check_circle,
-        label: '多选',
+        label: 'Multi-select',Multi-select',
       ),
     ]);
     if (toolPkgItems.isNotEmpty) {
@@ -385,12 +385,12 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
           if (mounted)
             ScaffoldMessenger.of(
               context,
-            ).showSnackBar(const SnackBar(content: Text('已加入所属记忆库队列')));
+            ).showSnackBar(const SnackBar(content: Text('Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));Added to the memory library queue')));
         } catch (error) {
           if (mounted)
             ScaffoldMessenger.of(
               context,
-            ).showSnackBar(SnackBar(content: Text('入队失败：$error')));
+            ).showSnackBar(SnackBar(content: Text('Failed to enqueue: $error')));Failed to enqueue: $error')));Failed to enqueue: $error')));Failed to enqueue: $error')));Failed to enqueue: $error')));
         }
         break;
       case _MessageMenuAction.modifyMemory:
@@ -533,8 +533,8 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
   Future<void> _confirmDelete() async {
     final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
-      l10n?.chatMessageDeleteConfirmTitle ?? '确认删除',
-      l10n?.chatMessageDeleteConfirmMessage ?? '确定删除这条消息？',
+      l10n?.chatMessageDeleteConfirmTitle ?? 'Confirm deletion',Confirm deletion',Confirm deletion',Confirm deletion',
+      l10n?.chatMessageDeleteConfirmMessage ?? 'Delete this message?',Delete this message?',Delete this message?',Delete this message?',Delete this message?',Delete this message?',Delete this message?',Delete this message?',Delete this message?',
     );
     if (!confirmed) {
       return;
@@ -560,11 +560,11 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: Text(l10n?.cancel ?? '取消'),
+                child: Text(l10n?.cancel ?? 'Cancel'),Cancel'),
               ),
               TextButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: Text(l10n?.delete ?? '删除'),
+                child: Text(l10n?.delete ?? 'Delete'),Delete'),
               ),
             ],
           ),
@@ -587,79 +587,79 @@ class _MessageContextMenuState extends State<MessageContextMenu> {
             insetPadding: anchor == null
                 ? const EdgeInsets.symmetric(horizontal: 40, vertical: 24)
                 : EdgeInsets.zero,
-            title: Text(l10n?.chatMessageInfoDialogTitle ?? '消息信息'),
+            title: Text(l10n?.chatMessageInfoDialogTitle ?? 'Message info'),Message info'),Message info'),Message info'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   l10n?.chatMessageSender(message.sender) ??
-                      '发送者: ${message.sender}',
+                      'Sender: ${message.sender}',Sender: ${message.sender}',Sender: ${message.sender}',
                 ),
                 Text(
                   l10n?.chatMessageTimestamp(message.timestamp.toString()) ??
-                      '时间戳: ${message.timestamp}',
+                      'Timestamp: ${message.timestamp}',Timestamp: ${message.timestamp}',Timestamp: ${message.timestamp}',
                 ),
                 if (message.roleName.isNotEmpty)
                   Text(
                     l10n?.chatMessageRole(message.roleName) ??
-                        '角色: ${message.roleName}',
+                        'Role: ${message.roleName}',Role: ${message.roleName}',
                   ),
                 if (message.modelName.isNotEmpty)
                   Text(
                     l10n?.chatMessageModel(message.modelName) ??
-                        '模型: ${message.modelName}',
+                        'Model: ${message.modelName}',Model: ${message.modelName}',
                   ),
                 if (message.provider.isNotEmpty)
                   Text(
                     l10n?.chatMessageProvider(message.provider) ??
-                        '提供商: ${message.provider}',
+                        'Provider: ${message.provider}',Provider: ${message.provider}',Provider: ${message.provider}',
                   ),
                 Text(
                   l10n?.chatMessageTokensInput(
                         message.inputTokens.toString(),
                       ) ??
-                      '输入 token: ${message.inputTokens}',
+                      'Input tokens: ${message.inputTokens}',
                 ),
                 Text(
                   l10n?.chatMessageTokensCached(
                         message.cachedInputTokens.toString(),
                       ) ??
-                      '缓存输入 token: ${message.cachedInputTokens}',
+                      'Cached input tokens: ${message.cachedInputTokens}',
                 ),
                 Text(
                   l10n?.chatMessageCacheHitRate(formatCacheHitRate(message)) ??
-                      '缓存命中率: ${formatCacheHitRate(message)}',
+                      'Cache hit rate: ${formatCacheHitRate(message)}',Cache hit rate: ${formatCacheHitRate(message)}',Cache hit rate: ${formatCacheHitRate(message)}',Cache hit rate: ${formatCacheHitRate(message)}',Cache hit rate: ${formatCacheHitRate(message)}',
                 ),
                 Text(
                   l10n?.chatMessageTokensOutput(
                         message.outputTokens.toString(),
                       ) ??
-                      '输出 token: ${message.outputTokens}',
+                      'Output tokens: ${message.outputTokens}',
                 ),
                 if (formatTokenSpeed(message).isNotEmpty)
                   Text(
                     l10n?.chatMessageTokenSpeed(formatTokenSpeed(message)) ??
-                        'Token 速率: ${formatTokenSpeed(message)}',
+                        'Token rate: ${formatTokenSpeed(message)}',rate: ${formatTokenSpeed(message)}',
                   ),
                 Text(
                   l10n?.chatMessageWaitDuration(
                         '${message.waitDurationMs}ms',
                       ) ??
-                      '等待耗时: ${message.waitDurationMs}ms',
+                      'Wait time: ${message.waitDurationMs}ms',Wait time: ${message.waitDurationMs}ms',Wait time: ${message.waitDurationMs}ms',Wait time: ${message.waitDurationMs}ms',
                 ),
                 Text(
                   l10n?.chatMessageOutputDuration(
                         '${message.outputDurationMs}ms',
                       ) ??
-                      '输出耗时: ${message.outputDurationMs}ms',
+                      'Output time: ${message.outputDurationMs}ms',Output time: ${message.outputDurationMs}ms',Output time: ${message.outputDurationMs}ms',Output time: ${message.outputDurationMs}ms',
                 ),
               ],
             ),
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: Text(l10n?.ok ?? '确定'),
+                child: Text(l10n?.ok ?? 'OK'),OK'),
               ),
             ],
           ),

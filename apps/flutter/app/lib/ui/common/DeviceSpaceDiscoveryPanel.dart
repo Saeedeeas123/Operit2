@@ -247,7 +247,7 @@ class _AddDeviceDialogState extends State<_AddDeviceDialog> {
       if (peer == null) {
         result = await _RemotePairDialog.show(context, clients: widget.clients);
       } else {
-        // LAN 候选不携带 token；免 token 准入由 runtime/Host 实际来源判断。
+        // LAN candidates do not carry a token; token-free access is granted by the runtime/Host based on actual origin.
         final pending = await widget.clients.server.runtimeRemoteLinkService
             .startPairing(
               address: peer.address,

@@ -1,5 +1,5 @@
-//! 生产节点通信：唯一的配对/鉴权入口，所有 I/O 委托 PeerLink 和 Host。
-//! 未鉴权只接受 hello/authorize；已鉴权 Call/Watch/Push 交给 Router。
+//! Production node communication: the single pairing/authorization entry point; all I/O is delegated to PeerLink and the Host.
+//! Unauthenticated peers may only send hello/authorize; authenticated Call/Watch/Push are handed to the Router.
 use crate::{CoreNodeRouter::CoreNodeRouter, NodeServices::*, PeerStateStore::{PeerStateStore, StoredInbound, StoredOutbound, PAIRING_SERVICE_VERSION},
     RuntimePeerService::RuntimePeerService};
 use async_trait::async_trait;
@@ -56,7 +56,7 @@ struct State {
     active: Mutex<BTreeSet<String>>, changes: broadcast::Sender<()>,
     availability: Mutex<Option<availability::AvailabilityWorker>>,
     lifecycle: AsyncMutex<()>,
-    /// 本节点的配对/撤销持久化操作串行化，不持锁执行网络 I/O。
+    /// Pairing and revocation persistence for this node is serialized, and network I/O is never performed while holding the lock.
     mutation: Mutex<()>,
 }
 #[derive(Clone)]
@@ -117,7 +117,7 @@ impl HostRuntimePeerService {
     async fn raw(&self, target: PeerEndpoint, transport: PeerTransport) -> Result<Arc<dyn PeerConnection>, CoreLinkError> {
         self.state.link.connect(self.state.host.clone(), PeerEndpoint { nodeId: self.state.nodeId.clone(), address: String::new() }, target, transport).await.map_err(error)
     }
-    /// 主动端与接收端共用握手，无论 HTTP/WS/TCP/串口/蓝牙。
+    /// The initiating and receiving sides share one handshake, over HTTP/WS/TCP/serial/Bluetooth alike.
     async fn handshake(&self, raw: Arc<dyn PeerConnection>, purpose: &str, sessionId: &str,
         saved: Option<&[u8]>, token: Option<&str>,
     ) -> Result<(Arc<Channel>, String, LinkDeviceInfo, Vec<u8>, String), CoreLinkError> {
@@ -265,7 +265,7 @@ impl HostRuntimePeerService {
         if matches!(hello.purpose.as_str(), "session" | "space") {
             self.requirePeerConnectionAllowed(&hello.nodeId)?;
         }
-        // 沿用持久化的 sessionId/sessionSecret；配对事务仍受过期时间和尝试上限保护。
+        // Reuses the persisted sessionId/sessionSecret; pairing transactions stay protected by the expiry time and the attempt limit.
         let saved = match hello.purpose.as_str() {
             "start" => None,
             "finish" => { let p = self.pending(true, &hello.sessionId)?;
@@ -281,7 +281,7 @@ impl HostRuntimePeerService {
             },
         };
         let config = self.state.store.hostConfig().map_err(error)?.ok_or_else(|| error("Listener not configured"))?;
-        // 免 token 必须同时开启本地发现，且来源是 Host 实际接入地址；未知来源 fail closed。
+        // Token-free mode requires local discovery to be enabled and the origin to be the Host actual inbound address; unknown origins fail closed.
         let lan = config.discoveryEnabled && raw.remoteAddress().is_some_and(|a| isLocalAddress(a.ip()));
         let tokenRequired = hello.purpose == "start" && !lan;
         let (private, public) = crypto::ephemeral()?;
@@ -458,7 +458,7 @@ impl RuntimePeerService for HostRuntimePeerService {
         raw.close().await; result?;
         {
             let _guard = self.state.mutation.lock().unwrap();
-            self.pending(false, id)?; // 撤销/取消不能被正在完成的网络事务重新授予权限。
+            self.pending(false, id)?; // A revocation or cancellation must not be re-authorized by an in-flight network transaction.
             self.ensureDeviceUnpaired(&pending.peerNodeId)?;
             self.state.store.putRecord(RUNTIME_LINK_ACCESS_OUTBOUND_SESSIONS_PATH, id, &StoredOutbound {
                 endpoint: pending.endpoint, sessionId: id.into(), deviceId: self.state.nodeId.clone(), peerNodeId: pending.peerNodeId.clone(),

@@ -134,7 +134,7 @@ class _ToolSettingsPanelState extends State<ToolSettingsPanel> {
               ],
             ),
             _SectionCard(
-              title: '系统授权',
+              title: 'System permissions',
               children: <Widget>[
                 _HostAuthorizationList(
                   requirements: data.hostRequirements,
@@ -143,7 +143,7 @@ class _ToolSettingsPanelState extends State<ToolSettingsPanel> {
               ],
             ),
             _SectionCard(
-              title: '高级设置',
+              title: 'Advanced settings',
               initiallyExpanded: false,
               children: <Widget>[
                 _PermissionChain(data: data),
@@ -218,9 +218,9 @@ enum _PermissionMode {
 
   String get label {
     return switch (this) {
-      _PermissionMode.readOnly => '只读',
-      _PermissionMode.workspaceWrite => '读写',
-      _PermissionMode.full => '完整权限',
+      _PermissionMode.readOnly => 'Read-only',
+      _PermissionMode.workspaceWrite => 'Read/write',
+      _PermissionMode.full => 'Full permission',
     };
   }
 }
@@ -284,7 +284,7 @@ class _HostAuthorizationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (requirements.isEmpty) {
-      return const Text('当前设备没有需要用户处理的授权项。');
+      return const Text('This device has no authorization items requiring user action.');
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -338,7 +338,7 @@ class _HostAuthorizationTile extends StatelessWidget {
                     if (!requirement.isRequired) ...<Widget>[
                       const SizedBox(width: 8),
                       Text(
-                        '可选',
+                        'Optional',
                         style: textTheme.labelMedium?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                         ),
@@ -437,23 +437,23 @@ class _PermissionChain extends StatelessWidget {
       children: <Widget>[
         _ChainStep(
           index: '0',
-          title: '应用运行隔离',
+          title: 'App run isolation',
           value: '${data.host.isolation}',
         ),
         _ChainStep(
           index: '1',
-          title: '系统授权',
+          title: 'System permissions',
           value: '${data.host.displayName} / ${data.host.platform}',
         ),
         _ChainStep(
           index: '2',
-          title: 'AI 能力限制',
-          value: '${mode.label}：${mode.description}',
+          title: 'AI capability limits',
+          value: '${mode.label}: ${mode.description}',
         ),
         const _ChainStep(
           index: '3',
-          title: '工具调用确认',
-          value: '按 AI 直接调用的工具执行审批。',
+          title: 'Tool call confirmation',
+          value: 'Approve tool calls as directly invoked by the AI.',
         ),
       ],
     );
@@ -470,18 +470,18 @@ class _AdvancedHostSummary extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        _InfoRow(label: '当前运行环境', value: host.displayName),
-        _InfoRow(label: '平台', value: '${host.platform}'),
-        _InfoRow(label: '外层隔离', value: '${host.isolation}'),
-        _InfoRow(label: '文件能力', value: host.fileSystemHost ? '已注册' : '未注册'),
-        _InfoRow(label: '终端能力', value: host.terminalHost ? '已注册' : '未注册'),
+        _InfoRow(label: 'Current runtime', value: host.displayName),
+        _InfoRow(label: 'Platform', value: '${host.platform}'),
+        _InfoRow(label: 'Outer isolation', value: '${host.isolation}'),
+        _InfoRow(label: 'File capability', value: host.fileSystemHost ? 'Registered' : 'Not registered'),
+        _InfoRow(label: 'Terminal capability', value: host.terminalHost ? 'Registered' : 'Not registered'),
         _InfoRow(
-          label: '授权项',
-          value: '${host.onboardingRequirements.length} 项',
+          label: 'Authorization items',
+          value: '${host.onboardingRequirements.length} item(s)',
         ),
         _InfoRow(
-          label: '结构化能力',
-          value: '${host.structuredCapabilities.length} 项',
+          label: 'Structured capabilities',
+          value: '${host.structuredCapabilities.length} item(s)',
         ),
       ],
     );
@@ -613,9 +613,9 @@ class _HostAuthorizationBridge {
 
 String _statusLabel(String status) {
   return switch (status) {
-    'Satisfied' => '已授予',
-    'Missing' => '未授予',
-    'Unavailable' => '需要由系统处理',
+    'Satisfied' => 'Granted',
+    'Missing' => 'Not granted',
+    'Unavailable' => 'Must be handled by the system',
     _ => status,
   };
 }
@@ -640,14 +640,14 @@ Color _statusColor(String status, ColorScheme colorScheme) {
 
 String _actionLabel(_HostRequirement requirement) {
   if (requirement.status == 'Satisfied') {
-    return '已授予';
+    return 'Granted';
   }
   return switch (requirement.action) {
-    'RuntimePermission' => '授予',
-    'OpenSystemSettings' => '打开设置',
-    'HostManaged' => '授予',
-    'None' => '不可操作',
-    _ => '处理',
+    'RuntimePermission' => 'Grant',
+    'OpenSystemSettings' => 'Open settings',
+    'HostManaged' => 'Grant',
+    'None' => 'Not actionable',
+    _ => 'Handle',
   };
 }
 
@@ -661,16 +661,16 @@ class _ModeSummary {
 _ModeSummary _modeFor(core_proxy.AiPermissionMode mode) {
   return switch (mode) {
     core_proxy.AiPermissionMode.readOnly => const _ModeSummary(
-      label: '只读',
-      description: 'AI 可以读取当前工作区，不能启动写入工具。',
+      label: 'Read-only',
+      description: 'The AI can read the current workspace but cannot launch write tools.',
     ),
     core_proxy.AiPermissionMode.workspaceWrite => const _ModeSummary(
-      label: '读写',
-      description: 'AI 可以读写当前工作区，应用内沙盒保持开启。',
+      label: 'Read/write',
+      description: 'The AI can read and write the current workspace while the in-app sandbox stays on.',
     ),
     core_proxy.AiPermissionMode.full => const _ModeSummary(
-      label: '完整权限',
-      description: 'AI 可以读写当前工作区，并关闭应用内沙盒。',
+      label: 'Full permission',
+      description: 'The AI can read and write the current workspace and turns off the in-app sandbox.',
     ),
   };
 }

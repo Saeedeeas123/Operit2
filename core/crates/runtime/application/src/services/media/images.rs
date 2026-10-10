@@ -68,10 +68,10 @@ pub fn preview_chunk(
         return Err("Invalid preview chunk range".into());
     }
     // Check the source even on a cache hit: expired images must not stay readable.
-    let source = ImagePoolManager::get_image(id).ok_or("原图已过期，请重新发送图片")?;
+    let source = ImagePoolManager::get_image(id).ok_or("The original image has expired, please send the image again")?;
     let cache = CACHE.get_or_init(|| Mutex::new(VecDeque::new()));
     let cached = {
-        let cache = cache.lock().map_err(|_| "图片预览缓存不可用")?;
+        let cache = cache.lock().map_err(|_| "The image preview cache is unavailable")?;
         cache
             .iter()
             .find(|image| image.id == id && image.options == options)
@@ -81,11 +81,11 @@ pub fn preview_chunk(
         image
     } else {
         if source.base64.len() > MAX_SOURCE_BYTES.div_ceil(3) * 4 {
-            return Err("原图超过 8 MiB 预览限制".into());
+            return Err("The original image exceeds the 8 MiB preview limit".into());
         }
         let bytes = STANDARD
             .decode(&source.base64)
-            .map_err(|_| "图片数据无效")?;
+            .map_err(|_| "Invalid image data")?;
         let (width, height, pixels) = prepare(&bytes, options)?;
         let image = Arc::new(PreparedImage {
             id: id.into(),
@@ -94,7 +94,7 @@ pub fn preview_chunk(
             height,
             pixels,
         });
-        let mut cache = cache.lock().map_err(|_| "图片预览缓存不可用")?;
+        let mut cache = cache.lock().map_err(|_| "The image preview cache is unavailable")?;
         // Concurrent requests may prepare the same image; keep only one cache entry.
         cache.retain(|entry| entry.id != id || entry.options != options);
         while cache.len() >= CACHE_ENTRIES {
@@ -104,7 +104,7 @@ pub fn preview_chunk(
         image
     };
     if offset >= image.pixels.len() {
-        return Err("图片分块越界".into());
+        return Err("Image chunk is out of range".into());
     }
     let end = (offset + chunk_size).min(image.pixels.len());
     Ok(PreviewChunk {
@@ -118,11 +118,11 @@ pub fn preview_chunk(
 /// Validate an upload and return its opaque pool ID, not chat markup.
 pub fn register(bytes: &[u8], mime: &str) -> Result<String, String> {
     if !matches!(mime, "image/png" | "image/jpeg") || bytes.is_empty() || bytes.len() > 512 * 1024 {
-        return Err("只支持小于 512 KiB 的 PNG/JPEG 图片".into());
+        return Err("Only PNG/JPEG images smaller than 512 KiB are supported".into());
     }
     let mut reader = ImageReader::new(Cursor::new(bytes))
         .with_guessed_format()
-        .map_err(|_| "图片格式无效")?;
+        .map_err(|_| "Invalid image format")?;
     if reader.format()
         != Some(if mime == "image/png" {
             image::ImageFormat::Png
@@ -130,27 +130,27 @@ pub fn register(bytes: &[u8], mime: &str) -> Result<String, String> {
             image::ImageFormat::Jpeg
         })
     {
-        return Err("图片类型和实际内容不符".into());
+        return Err("The image type does not match the actual content".into());
     }
     let mut limits = image::Limits::default();
     limits.max_image_width = Some(8192);
     limits.max_image_height = Some(8192);
     limits.max_alloc = Some(64 * 1024 * 1024);
     reader.limits(limits);
-    let image = reader.decode().map_err(|_| "图片损坏，无法读取")?;
+    let image = reader.decode().map_err(|_| "The image is corrupted and cannot be read")?;
     if image.width() > 8192 || image.height() > 8192 {
-        return Err("图片尺寸超过 8192 × 8192".into());
+        return Err("Image dimensions exceed 8192 × 8192".into());
     }
     let id = ImagePoolManager::add_image_bytes(bytes, Some(mime), None);
     if id == "error" {
-        return Err("图片注册失败".into());
+        return Err("Image registration failed".into());
     }
     Ok(id)
 }
 
 fn prepare(bytes: &[u8], options: PreviewOptions) -> Result<(usize, usize, Vec<u8>), String> {
     if bytes.is_empty() || bytes.len() > MAX_SOURCE_BYTES {
-        return Err("图片为空或超过预览限制".into());
+        return Err("The image is empty or exceeds the preview limit".into());
     }
     let mut reader = ImageReader::new(Cursor::new(bytes))
         .with_guessed_format()
@@ -162,7 +162,7 @@ fn prepare(bytes: &[u8], options: PreviewOptions) -> Result<(usize, usize, Vec<u
     reader.limits(limits);
     let image = reader
         .decode()
-        .map_err(|_| "图片损坏或格式不受支持（支持 PNG/JPEG）")?
+        .map_err(|_| "The image is corrupted or the format is unsupported (PNG/JPEG are supported)")?
         .thumbnail(options.width, options.height)
         .to_rgba8();
     let mut pixels = Vec::with_capacity(image.width() as usize * image.height() as usize * 2);

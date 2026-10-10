@@ -130,7 +130,7 @@ class _WorkspaceTerminalContentState extends State<WorkspaceTerminalContent>
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    '终端启动失败',
+                    'Terminal failed to start',Terminal failed to start',Terminal failed to start',Terminal failed to start',Terminal failed to start',Terminal failed to start',
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
@@ -147,7 +147,7 @@ class _WorkspaceTerminalContentState extends State<WorkspaceTerminalContent>
                   FilledButton.icon(
                     onPressed: _restartSession,
                     icon: const Icon(Icons.refresh),
-                    label: const Text('重试'),
+                    label: const Text('Retry'),Retry'),
                   ),
                 ],
               ),
@@ -262,7 +262,7 @@ class _WorkspaceTerminalContentState extends State<WorkspaceTerminalContent>
             _queueTerminalWrite,
             onError: (Object error, StackTrace stackTrace) {
               if (!mounted) return;
-              _queueTerminalWrite('\r\n[终端连接已结束：$error]\r\n');
+              _queueTerminalWrite('\r\n[Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');Terminal connection ended: $error]\r\n');
               _exited = true;
             },
           );

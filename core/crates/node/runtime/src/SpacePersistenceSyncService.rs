@@ -44,7 +44,7 @@ struct SpacePersistenceSyncState {
     workspaceScanStop: Mutex<Option<tokio::sync::oneshot::Sender<()>>>,
 }
 
-/// 通过 Router 与可达的 Space 成员同步持久化数据，不拥有配对、发现或传输。
+/// Synchronizes persisted data with reachable Space members through the Router; it owns neither pairing, discovery nor transport.
 #[derive(Clone)]
 pub struct SpacePersistenceSyncService {
     state: Arc<SpacePersistenceSyncState>,
@@ -215,7 +215,7 @@ impl SpacePersistenceSyncService {
         WorkspaceFileSyncStore::new(self.state.localRuntime.runtimeStorageHost(), RUNTIME_SYNC_DIR_PATH)
     }
 
-    /// 只消费 runtime 的连接变化；不订阅发现端点，不读取或修改配对记录。
+    /// Consumes runtime connection changes only; it subscribes to no discovery endpoint and never reads or modifies pairing records.
     fn startPeerChangeWatcher(&self) -> Result<(), String> {
         let mut stop = self.state.peerChangesStop.lock()
             .map_err(|error| format!("peer change subscription lock poisoned: {error}"))?;

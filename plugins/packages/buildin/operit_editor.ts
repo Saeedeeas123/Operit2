@@ -2,11 +2,11 @@
 {
     "name": "operit_editor",
     "display_name": {
-        "zh": "Operit 平台编辑器",
+        "zh": "Operit platform editor",
         "en": "Operit Platform Editor"
     },
     "description": {
-        "zh": "Operit2 平台编辑与排查手册。使用当前版本 core command 管理包与配置，并核验真实状态。",
+        "zh": "Operit2 platform editing and troubleshooting manual. Use the current-version core command to manage packages and configuration, and verify real state.",
         "en": "Operit2 platform editing and troubleshooting guide for the current core command surface."
     },
     "enabledByDefault": false,
@@ -15,14 +15,14 @@
         {
             "name": "operit_editor",
             "description": {
-                "zh": "读取 Operit2 平台编辑手册。真正的配置、包、Skill、MCP、模型、聊天、工作区操作请直接调用系统工具 execute_cli_command。",
+                "zh": "Read the Operit2 platform editing manual. For actual configuration, package, Skill, MCP, model, chat, and workspace operations, call the system tool execute_cli_command directly.",
                 "en": "Read the Operit2 platform editing guide. Use the system execute_cli_command tool for package, skill, MCP, model, chat, and workspace operations."
             },
             "parameters": [
                 {
                     "name": "query",
                     "description": {
-                        "zh": "可选，说明本次要编辑或排查的目标。",
+                        "zh": "Optional: describes what to edit or troubleshoot this time.",
                         "en": "Optional editing or troubleshooting target."
                     },
                     "type": "string",
@@ -38,52 +38,52 @@ type OperitEditorParams = {
 };
 
 const OPERIT_EDITOR_GUIDE = `
-# Operit2 平台编辑器
+# Operit2 platform editor
 
-这个包只提供当前 Operit2 平台编辑手册。执行动作使用系统工具 execute_cli_command，参数是 CLI 字符串数组，不含 operit2 可执行文件名。脚本内对应 Tools.SoftwareSettings.exec(args)。Core command 不等于终端 shell 命令，本包不提供脚本片段执行工具。
+This package only provides the current Operit2 platform editing manual. For execution actions, use the system tool execute_cli_command; the parameter is an array of CLI strings, without the operit2 executable name. In script terms this corresponds to Tools.SoftwareSettings.exec(args). A core command is not a terminal shell command, and this package provides no script-snippet execution tool.
 
-ToolPkg API 版本与跨平台要求：
+ToolPkg API versions and cross-platform requirements:
 
-- Operit2 新建 ToolPkg 显式声明 api_version 为 2.0.0；其对 1.0.0 和 1.0.1 的加载支持并不完整。Operit1 完整支持 1.0.0 和 1.0.1，这两个版本主要面向 Android，是旧版 API 形式。
-- 2.0.0 作者须注重跨平台兼容性。基本所有公共接口都兼容多平台，常规功能使用统一接口即可；遇到平台特异接口时，明确适用范围，并考虑、验证其他平台的安装、界面和核心功能。
-- schema_version 是清单格式版本，api_version 是 API 契约版本，version 是插件自身发布版本。旧包迁移必须检查实际接口、路径与平台行为，不能仅修改版本号或凭导入成功宣称完整兼容。
+- New Operit2 ToolPkgs must explicitly declare api_version as 2.0.0; its loading support for 1.0.0 and 1.0.1 is incomplete. Operit1 fully supports 1.0.0 and 1.0.1, which mainly target Android and are legacy API forms.
+- 2.0.0 authors must prioritize cross-platform compatibility. Nearly all public interfaces are multi-platform compatible; use unified interfaces for common functionality. When encountering platform-specific interfaces, state the applicable scope clearly, and consider and verify installation, UI, and core functionality on other platforms.
+- schema_version is the manifest format version, api_version is the API contract version, and version is the release version of the plugin itself. When migrating old packages, check actual interfaces, paths, and platform behavior; never just change version numbers or claim full compatibility merely because the import succeeds.
 
-常用入口：
+Common entry points:
 
-- 查看帮助：空数组查看总入口；["package", "help"] 查看包命令；["skill"]、["tool"]、["workspace"] 查看对应命令用法。
-- 包管理：["package", "dir"]、["package", "import", "<artifact-host-path>"]、["package", "delete", "<name>"]、["package", "list"]、["package", "more"]、["package", "load", "<name>"]、["package", "show", "<name>"]、["package", "enable", "<name>"]、["package", "disable", "<name>"]、["package", "use", "<name>"]、["package", "exec", "<package:tool>", "<params-json>"]。
-- Skill：["skill", "dir"]、["skill", "list"]、["skill", "show", "<name>"]、["skill", "visible", "<name>", "true"]、["skill", "visible", "<name>", "false"]、["skill", "errors"]。
-- MCP：["mcp", "dir"]、["mcp", "list"]、["mcp", "show", "<name>"]、["mcp", "enable", "<name>"]、["mcp", "disable", "<name>"]、["mcp", "start", "<name>"]、["mcp", "tools", "<name>"]。
-- 模型：["model", "list"]、["model", "show", "<id>"]、["model", "function-list"]、["model", "function-show", "<type>"]、["model", "function-set", "<type>", "<provider-id>", "<model-id>"]。
-- 偏好设置：["prefs", "show"]、["prefs", "thinking", "on"]、["prefs", "stream", "on"]、["prefs", "media-history", "<image-user-turns>", "<media-user-turns>"]、["prefs", "mcp-timeout", "<seconds>"]。
-- 日志：["log", "show"]、["log", "package"]、["log", "path"]、["log", "clear"]。
-- 工具：["tool", "list", "public"]、["tool", "show", "<name>"]、["tool", "exec", "<name>", "<params-json>"]。
-- 工作区：["workspace", "list"]、["workspace", "commands", "<chat-id>"]、["workspace", "run", "<chat-id>", "<command-id>"]、["workspace", "bind-default", "<chat-id>"]。
+- Help: an empty array shows the main entry; ["package", "help"] shows package commands; ["skill"], ["tool"], ["workspace"] show usage of the corresponding commands.
+- Package management: ["package", "dir"], ["package", "import", "<artifact-host-path>"], ["package", "delete", "<name>"], ["package", "list"], ["package", "more"], ["package", "load", "<name>"], ["package", "show", "<name>"], ["package", "enable", "<name>"], ["package", "disable", "<name>"], ["package", "use", "<name>"], ["package", "exec", "<package:tool>", "<params-json>"].
+- Skill: ["skill", "dir"], ["skill", "list"], ["skill", "show", "<name>"], ["skill", "visible", "<name>", "true"], ["skill", "visible", "<name>", "false"], ["skill", "errors"].
+- MCP: ["mcp", "dir"], ["mcp", "list"], ["mcp", "show", "<name>"], ["mcp", "enable", "<name>"], ["mcp", "disable", "<name>"], ["mcp", "start", "<name>"], ["mcp", "tools", "<name>"].
+- Models: ["model", "list"], ["model", "show", "<id>"], ["model", "function-list"], ["model", "function-show", "<type>"], ["model", "function-set", "<type>", "<provider-id>", "<model-id>"].
+- Preferences: ["prefs", "show"], ["prefs", "thinking", "on"], ["prefs", "stream", "on"], ["prefs", "media-history", "<image-user-turns>", "<media-user-turns>"], ["prefs", "mcp-timeout", "<seconds>"].
+- Logs: ["log", "show"], ["log", "package"], ["log", "path"], ["log", "clear"].
+- Tools: ["tool", "list", "public"], ["tool", "show", "<name>"], ["tool", "exec", "<name>", "<params-json>"].
+- Workspaces: ["workspace", "list"], ["workspace", "commands", "<chat-id>"], ["workspace", "run", "<chat-id>", "<command-id>"], ["workspace", "bind-default", "<chat-id>"].
 
-插件创作约定：
+Plugin authoring conventions:
 
-- 使用 PackageBuilder skill 中随包携带的当前版本类型定义。
-- 先阅读 PackageBuilder/references/PLUGIN_CREATION_WORKFLOW.md，用 ["skill", "show", "PackageBuilder"] 确认真实 Skill 目录，读取终端 host 信息并核验实际可写开发目录。不要写死平台路径。
-- 区分 Tools.Files 的 VFS 路径、终端路径与 package import 的 FileSystemHost 路径，核对它们指向的真实文件。package dir 是安装存储目录，不是源码目录。
-- 已安装的 PackageBuilder 不会自动更新附件。更新资料前备份用户修改并取得确认，再用 skill delete/load/visible/show 明确重新安装与核验。
-- 包 id 在首次确定后保持不变。
-- 使用终端完成源码开发与构建；使用当前 runtime 的 core command 完成安装、配置核验与工具测试。
-- 首次安装走 package import，随后启用并重新读取 package list 核验 enabled 状态；通过 package show 获取实际工具名，再用 package exec 测试。UI、hook 和 provider 在对应应用场景验证，日志用 log package 查看。
-- package import 拒绝重复包名。同 ID 更新需先完成构建，记录启用配置，并取得用户对删除、重新导入和恢复配置的确认；任一步失败即停止。
-- 小片段调试写成有 METADATA 和导出函数的测试包，通过上述安装与执行流程验证。
+- Use the current-version type definitions bundled with the PackageBuilder skill.
+- First read PackageBuilder/references/PLUGIN_CREATION_WORKFLOW.md, confirm the real Skill directory with ["skill", "show", "PackageBuilder"], read the terminal host information, and verify the actual writable development directory. Do not hard-code platform paths.
+- Distinguish between Tools.Files VFS paths, terminal paths, and the FileSystemHost paths used by package import, and check which real files they point to. package dir is the installation storage directory, not the source directory.
+- An installed PackageBuilder does not auto-update its attachments. Before updating materials, back up user modifications and obtain confirmation, then use skill delete/load/visible/show to reinstall and verify explicitly.
+- The package id stays unchanged once it has been decided for the first time.
+- Use the terminal for source development and builds; use the core command of the current runtime for installation, configuration verification, and tool testing.
+- First installation goes through package import; afterwards enable it and re-read package list to verify the enabled state; use package show to get the actual tool names, then test with package exec. Verify UI, hooks, and providers in their application scenarios, and view logs with log package.
+- package import rejects duplicate package names. Updating the same ID requires completing the build first, recording the enabled configuration, and obtaining user confirmation for deletion, re-import, and configuration restore; stop at any failed step.
+- Debug small snippets as a test package with METADATA and an exported function, verified through the installation and execution flow above.
 
-包系统说明：
+Package system notes:
 
-- 内置包来自应用内置资源。
-- 准内置包来自应用内资源中的 external 候选，查看用 ["package", "more"]，加入加载列表用 ["package", "load", "<name>"]。
-- 当前会话调用某个包前，用 ["package", "use", "<name>"] 让 runtime 激活它。
-- ToolPkg 子包由包系统解析和展示，不手写另一套识别逻辑。
+- Built-in packages come from the built-in resources of the app.
+- Quasi-builtin packages come from external candidates among app resources; view them with ["package", "more"] and add them to the load list with ["package", "load", "<name>"].
+- Before calling a package in the current session, use ["package", "use", "<name>"] to let the runtime activate it.
+- ToolPkg sub-packages are resolved and displayed by the package system; do not hand-write another recognition layer.
 
-执行原则：
+Execution principles:
 
-- 先用对应 core command 查看真实状态，再执行修改命令；不能把调用完成或命令回显当作实际操作成功。
-- 需要变更用户配置、启停包、启停 MCP、删除资源时，先向用户确认。
-- 不从云端拉取 PackageBuilder 类型；使用当前软件随包携带的类型。
+- First use the corresponding core command to check real state before running modification commands; never treat a completed call or a command echo as an actually successful operation.
+- When changing user configuration, enabling/disabling packages or MCP, or deleting resources, confirm with the user first.
+- Do not pull PackageBuilder types from the cloud; use the types bundled with the current software.
 `.trim();
 
 /** Returns the current platform-editing guide without executing mutations. */
@@ -92,7 +92,7 @@ async function operit_editor(params: OperitEditorParams = {}) {
     if (!query) {
         return OPERIT_EDITOR_GUIDE;
     }
-    return `目标：${query}\n\n${OPERIT_EDITOR_GUIDE}`;
+    return `Target: ${query}\n\n${OPERIT_EDITOR_GUIDE}`;
 }
 
 exports.operit_editor = operit_editor;

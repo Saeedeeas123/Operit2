@@ -284,7 +284,7 @@ class ConversationSearchField extends StatelessWidget {
       ).textTheme.bodyMedium?.copyWith(color: appearance.titleColor),
       decoration: InputDecoration(
         isDense: true,
-        hintText: '搜索对话',
+        hintText: 'Search conversations',
         hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
           color: appearance.itemColor.withValues(alpha: 0.62),
         ),
@@ -546,13 +546,13 @@ class _ConversationDrawerItemState extends State<ConversationDrawerItem>
                             alignment: AlignmentDirectional.centerStart,
                             color: Theme.of(context).colorScheme.primary,
                             icon: Icons.edit,
-                            label: '重命名',
+                            label: 'Rename',
                           ),
                           secondaryBackground: _SwipeActionBackground(
                             alignment: AlignmentDirectional.centerEnd,
                             color: Theme.of(context).colorScheme.error,
                             icon: Icons.delete,
-                            label: '删除',
+                            label: 'Delete',
                           ),
                           child: Material(
                             color: containerColor,
@@ -1038,7 +1038,7 @@ class _ConversationMoreMenuButton extends StatelessWidget {
       width: side,
       height: side,
       child: PopupMenuButton<_ConversationQuickAction>(
-        tooltip: '更多操作',
+        tooltip: 'More actions',
         padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(6),
         color: Color.alphaBlend(
@@ -1079,7 +1079,7 @@ class _ConversationMoreMenuButton extends StatelessWidget {
           _menuItem(
             value: _ConversationQuickAction.rename,
             icon: Icons.edit_outlined,
-            label: '编辑标题',
+            label: 'Edit title',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
@@ -1088,7 +1088,7 @@ class _ConversationMoreMenuButton extends StatelessWidget {
             icon: history.pinned
                 ? Icons.push_pin_outlined
                 : Icons.push_pin_rounded,
-            label: history.pinned ? '取消置顶' : '置顶',
+            label: history.pinned ? 'Unpin' : 'Pin',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
@@ -1097,7 +1097,7 @@ class _ConversationMoreMenuButton extends StatelessWidget {
             icon: history.locked
                 ? Icons.lock_open_rounded
                 : Icons.lock_rounded,
-            label: history.locked ? '解锁' : '锁定',
+            label: history.locked ? 'Unlock' : 'Lock',
             iconColor: itemIconColor,
             textColor: itemTextColor,
           ),
@@ -1105,7 +1105,7 @@ class _ConversationMoreMenuButton extends StatelessWidget {
           _menuItem(
             value: _ConversationQuickAction.delete,
             icon: Icons.delete_outline_rounded,
-            label: '删除',
+            label: 'Delete',
             iconColor: dangerColor,
             textColor: dangerColor,
           ),
@@ -1143,7 +1143,7 @@ class _ConversationStatusHandle extends StatelessWidget {
     final activeColor = appearance.statusAvailableColor;
 
     return Tooltip(
-      message: isRunning ? '正在运行' : '拖动对话',
+      message: isRunning ? 'Running' : 'Drag conversation',
       child: SizedBox(
         key: isRunning
             ? const ValueKey<String>('conversation-running-indicator')

@@ -1,5 +1,5 @@
-//! Bluetooth Classic 字节流适配；连接、收发和关闭全部调用 Host。
-//! BLE GATT 不是 Classic 字节流，不在这里假装成同一种传输。
+//! Bluetooth Classic byte-stream adapter; connect, send, receive and close all call the Host.
+//! BLE GATT is not a Classic byte stream, so it is not pretended to be the same transport here.
 use super::{
     inbox::{hostTask, Inbox},
     stream::{ByteConnection, FramedPeerConnection},

@@ -19,7 +19,7 @@ pub type DiscoveryCallback = Arc<dyn Fn(DiscoveredService) + Send + Sync>;
 
 /// Keeps one announcement listener registered until its owner releases it.
 pub trait DiscoverySubscription: Send + Sync {}
-/// 删除/停止监听时释放广播，与浏览器订阅分开拥有资源。
+/// Release the broadcast when the listener is removed or stopped; it owns its resources separately from browser subscriptions.
 pub trait DiscoveryAdvertisement: Send + Sync {}
 #[derive(Clone, Debug)]
 pub struct ServiceAdvertisement {

@@ -166,7 +166,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
   Widget build(BuildContext context) {
     final localModel = _isLocalSttProviderType(_providerType);
     return AlertDialog(
-      title: Text(widget.config == null ? '新建 STT 供应商' : '编辑 STT 供应商'),
+      title: Text(widget.config == null ? 'New STT provider' : 'Edit STT provider'),
       content: SizedBox(
         width: 560,
         child: SingleChildScrollView(
@@ -179,7 +179,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
                   context,
                   key: ValueKey<String>(_providerType),
                   initialValue: _providerType,
-                  decoration: const InputDecoration(labelText: '供应商类型'),
+                  decoration: const InputDecoration(labelText: 'Provider type'),
                   items: _sttProviderCatalogItems(
                     widget.providerCatalogEntries,
                   ),
@@ -190,7 +190,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
                   },
                 ),
                 const SizedBox(height: 10),
-                _field(_nameController, '供应商名称', requiredField: true),
+                _field(_nameController, 'Provider name', requiredField: true),
                 if (!localModel) ...<Widget>[
                   _field(_endpointController, 'Endpoint', requiredField: true),
                   _field(_apiKeyController, 'API Key', obscureText: true),
@@ -201,24 +201,24 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
                     tilePadding: EdgeInsets.zero,
                     childrenPadding: EdgeInsets.zero,
                     title: Text(
-                      'Multipart 请求配置',
+                      'Multipart request configuration',
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                     children: <Widget>[
                       _field(
                         _fileFieldController,
-                        '音频字段名',
+                        'Audio field name',
                         requiredField: true,
                       ),
                       _field(
                         _modelFieldController,
-                        '模型字段名',
+                        'Model field name',
                         requiredField: true,
                       ),
-                      _field(_languageFieldController, '语言字段名'),
+                      _field(_languageFieldController, 'Language field name'),
                       _field(
                         _responsePathController,
-                        '识别文本 JSONPath',
+                        'Transcript JSONPath',
                         requiredField: true,
                       ),
                       _field(_headersController, 'Headers JSON', minLines: 3),
@@ -232,11 +232,11 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('取消'),
+          child: const Text('Cancel'),
         ),
         FilledButton(
           onPressed: _loadingModels || _modelLoadError != null ? null : _submit,
-          child: const Text('保存'),
+          child: const Text('Save'),
         ),
       ],
     );
@@ -261,14 +261,14 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
           children: <Widget>[
             Expanded(
               child: Text(
-                '模型列表加载失败：$loadError',
+                'Failed to load model list: $loadError',
                 style: TextStyle(color: Theme.of(context).colorScheme.error),
               ),
             ),
             IconButton(
               onPressed: _loadAvailableModels,
               icon: const Icon(Icons.refresh),
-              tooltip: '重新加载模型',
+              tooltip: 'Reload models',
             ),
           ],
         ),
@@ -277,13 +277,13 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
     if (!localModel) {
       return _field(
         _modelController,
-        '模型',
+        'Model',
         requiredField: true,
-        helperText: '填写供应商支持的模型 ID，也可从预设中选择',
+        helperText: 'Enter a model ID supported by the provider, or pick from presets',
         suffixIcon: _availableModels.isEmpty
             ? null
             : PopupMenuButton<String>(
-                tooltip: '选择预设模型',
+                tooltip: 'Pick preset model',
                 icon: const Icon(Icons.arrow_drop_down),
                 onSelected: (model) => _modelController.text = model,
                 itemBuilder: (context) => _availableModels
@@ -301,8 +301,8 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
       return const Padding(
         padding: EdgeInsets.only(bottom: 10),
         child: InputDecorator(
-          decoration: InputDecoration(labelText: '模型'),
-          child: Text('没有已安装的 STT 本地模型'),
+          decoration: InputDecoration(labelText: 'Model'),
+          child: Text('No installed local STT models'),
         ),
       );
     }
@@ -319,7 +319,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
         key: ValueKey<String?>(selectedModel),
         initialValue: selectedModel,
         isExpanded: true,
-        decoration: const InputDecoration(labelText: '模型'),
+        decoration: const InputDecoration(labelText: 'Model'),
         items: _availableModels
             .map(
               (model) => DropdownMenuItem<String>(
@@ -337,7 +337,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
             _modelController.text = value;
           }
         },
-        validator: (value) => value == null ? '请选择模型' : null,
+        validator: (value) => value == null ? 'Please select a model' : null,
       ),
     );
   }
@@ -366,7 +366,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
         maxLines: obscureText ? 1 : (minLines == 1 ? 1 : 8),
         validator: (value) {
           if (requiredField && (value?.trim().isEmpty ?? true)) {
-            return '$label不能为空';
+            return '$label cannot be empty';
           }
           return null;
         },
@@ -382,7 +382,7 @@ class _SttConfigDialogState extends State<_SttConfigDialog> {
     if (_modelController.text.trim().isEmpty) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('请选择 STT 模型')));
+      ).showSnackBar(const SnackBar(content: Text('Please select an STT model')));
       return;
     }
     final localModel = _isLocalSttProviderType(_providerType);

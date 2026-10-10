@@ -33,7 +33,7 @@ Future<QuickPluginCreatorSetupResult> runQuickPluginCreatorSetup(
         .packageManager()
         .isPackageEnabled(packageName: 'operit_editor');
     if (!editorEnabled) {
-      throw StateError('operit_editor 未启用，插件创作准备未完成。$packageResult');
+      throw StateError('operit_editor is not enabled; plugin creation setup incomplete. $packageResult');
     }
     ToolPkgCatalogChangeBus.notifyCatalogChanged();
     return QuickPluginCreatorSetupResult(

@@ -273,7 +273,7 @@ class _MemoryGraphCanvasState extends State<MemoryGraphCanvas> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        tooltip: '缩小',
+                        tooltip: 'Zoom out',
                         icon: const Icon(Icons.remove),
                         onPressed: () => _controller.zoomAt(
                           size.center(Offset.zero),
@@ -292,13 +292,13 @@ class _MemoryGraphCanvasState extends State<MemoryGraphCanvas> {
                         ),
                       ),
                       IconButton(
-                        tooltip: '放大',
+                        tooltip: 'Zoom in',
                         icon: const Icon(Icons.add),
                         onPressed: () =>
                             _controller.zoomAt(size.center(Offset.zero), 1.25),
                       ),
                       IconButton(
-                        tooltip: '适应窗口',
+                        tooltip: 'Fit to view',
                         icon: const Icon(Icons.center_focus_strong),
                         onPressed: () => _controller.fit(scene.bounds, size),
                       ),

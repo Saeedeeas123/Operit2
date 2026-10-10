@@ -1,4 +1,4 @@
-//! TCP 连接和监听适配；socket I/O 由传入的 Host 提供。
+//! TCP connect and listen adapter; socket I/O is provided by the passed Host.
 use super::stream::{ByteConnection, FramedPeerConnection};
 use crate::{PeerConnection, PeerEndpoint, PeerListener, PeerTransport};
 use async_trait::async_trait;

@@ -68,12 +68,12 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Text('脚本', style: Theme.of(context).textTheme.titleMedium),
+                Text('Scripts', style: Theme.of(context).textTheme.titleMedium),Scripts', style: Theme.of(context).textTheme.titleMedium),
                 const Spacer(),
                 TextButton.icon(
                   onPressed: () => setState(() => _showInstall = !_showInstall),
                   icon: const Icon(Icons.add),
-                  label: const Text('安装'),
+                  label: const Text('Install'),Install'),
                 ),
               ],
             ),
@@ -85,7 +85,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                   hintText: 'https://example.com/script.user.js',
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    tooltip: '从 URL 安装',
+                    tooltip: 'Install from URL',
                     onPressed: _installingFromUrl ? null : _installFromUrl,
                     icon: _installingFromUrl
                         ? const SizedBox(
@@ -104,7 +104,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                   hintText: 'scripts/example.user.js',
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    tooltip: '从工作区文件安装',
+                    tooltip: 'Install from a workspace file',Install from a workspace file',Install from a workspace file',Install from a workspace file',Install from a workspace file',Install from a workspace file',Install from a workspace file',Install from a workspace file',
                     onPressed: _installingFromWorkspace
                         ? null
                         : _installFromWorkspaceFile,
@@ -124,7 +124,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                 minLines: 4,
                 maxLines: 8,
                 decoration: const InputDecoration(
-                  hintText: '粘贴 .user.js 内容',
+                  hintText: 'Paste .user.js content',Paste .user.js content',content',
                   border: OutlineInputBorder(),
                 ),
               ),
@@ -133,7 +133,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                 alignment: Alignment.centerRight,
                 child: FilledButton(
                   onPressed: _installFromSource,
-                  child: const Text('安装脚本'),
+                  child: const Text('Install script'),Install script'),Install script'),Install script'),
                 ),
               ),
             ],
@@ -154,7 +154,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                   if (scripts.isEmpty)
                     const Padding(
                       padding: EdgeInsets.all(18),
-                      child: Text('还没有安装脚本'),
+                      child: Text('No scripts installed yet'),No scripts installed yet'),No scripts installed yet'),No scripts installed yet'),No scripts installed yet'),No scripts installed yet'),No scripts installed yet'),
                     )
                   else
                     for (final script in scripts)
@@ -175,7 +175,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                             if (script.knownGrants.isNotEmpty)
                               script.knownGrants.join(', '),
                             if (script.unknownGrants.isNotEmpty)
-                              '未知：${script.unknownGrants.join(', ')}',
+                              'Unknown: ${script.unknownGrants.join(', ')}',Unknown: ${script.unknownGrants.join(', ')}',Unknown: ${script.unknownGrants.join(', ')}',
                           ].join(' | '),
                         ),
                         secondary: _UserscriptItemActions(
@@ -196,7 +196,7 @@ class _WorkspaceUserscriptSheetState extends State<WorkspaceUserscriptSheet> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
-                        '日志',
+                        'Logs',Logs',
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ),
@@ -332,7 +332,7 @@ class _UserscriptItemActions extends StatelessWidget {
       child: Row(
         children: <Widget>[
           IconButton(
-            tooltip: '检查更新',
+            tooltip: 'Check for updates',Check for updates',Check for updates',Check for updates',
             onPressed: canCheckUpdate && !checkingUpdate ? onCheckUpdate : null,
             icon: checkingUpdate
                 ? const SizedBox(
@@ -346,7 +346,7 @@ class _UserscriptItemActions extends StatelessWidget {
             padding: EdgeInsets.zero,
           ),
           IconButton(
-            tooltip: '删除',
+            tooltip: 'Delete',Delete',
             onPressed: onRemove,
             icon: const Icon(Icons.delete_outline, size: 18),
             visualDensity: VisualDensity.compact,
@@ -379,11 +379,11 @@ class _UserscriptPageRunSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('页面运行状态', style: theme.textTheme.labelLarge),
+              Text('Page run status', style: theme.textTheme.labelLarge),Page run status', style: theme.textTheme.labelLarge),Page run status', style: theme.textTheme.labelLarge),Page run status', style: theme.textTheme.labelLarge),Page run status', style: theme.textTheme.labelLarge),Page run status', style: theme.textTheme.labelLarge),
               const SizedBox(height: 6),
               if (pageRuns.isEmpty)
                 Text(
-                  '当前还没有页面运行记录',
+                  'No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',No page run records yet',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -443,10 +443,10 @@ class _UserscriptMenuCommandSection extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text('当前页面菜单', style: theme.textTheme.labelLarge),
+                  Text('Current page menu', style: theme.textTheme.labelLarge),Current page menu', style: theme.textTheme.labelLarge),Current page menu', style: theme.textTheme.labelLarge),Current page menu', style: theme.textTheme.labelLarge),Current page menu', style: theme.textTheme.labelLarge),Current page menu', style: theme.textTheme.labelLarge),
                   const Spacer(),
                   IconButton(
-                    tooltip: '刷新菜单',
+                    tooltip: 'Refresh menu',Refresh menu',Refresh menu',Refresh menu',
                     onPressed: onRefresh,
                     icon: const Icon(Icons.refresh, size: 18),
                     visualDensity: VisualDensity.compact,
@@ -470,7 +470,7 @@ class _UserscriptMenuCommandSection extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 6),
                       child: Text(
-                        '加载脚本菜单失败：${snapshot.error}',
+                        'Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',Failed to load the script menu: ${snapshot.error}',
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.error,
                         ),
@@ -482,7 +482,7 @@ class _UserscriptMenuCommandSection extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 6),
                       child: Text(
-                        '当前页面没有脚本菜单',
+                        'No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',No script menu on the current page',
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
@@ -525,7 +525,7 @@ class _UserscriptInstallPreviewDialog extends StatelessWidget {
     final theme = Theme.of(context);
     final metadata = preview.metadata;
     return AlertDialog(
-      title: const Text('安装脚本'),
+      title: const Text('Install script'),Install script'),Install script'),Install script'),
       content: SizedBox(
         width: 420,
         child: SingleChildScrollView(
@@ -544,19 +544,19 @@ class _UserscriptInstallPreviewDialog extends StatelessWidget {
                 Text(metadata.description),
               ],
               const SizedBox(height: 12),
-              _PreviewLine(label: '版本', value: metadata.version),
-              _PreviewLine(label: '命名空间', value: metadata.namespace),
+              _PreviewLine(label: 'Version', value: metadata.version),Version', value: metadata.version),
+              _PreviewLine(label: 'Namespace', value: metadata.namespace),Namespace', value: metadata.namespace),Namespace', value: metadata.namespace),Namespace', value: metadata.namespace),
               if (metadata.author.isNotEmpty)
-                _PreviewLine(label: '作者', value: metadata.author),
+                _PreviewLine(label: 'Author', value: metadata.author),Author', value: metadata.author),
               if (preview.sourceUrl != null)
-                _PreviewLine(label: '来源', value: preview.sourceUrl!),
+                _PreviewLine(label: 'Source', value: preview.sourceUrl!),Source', value: preview.sourceUrl!),
               const SizedBox(height: 12),
-              _PreviewChips(label: '匹配', values: metadata.matches),
-              _PreviewChips(label: '包含', values: metadata.includes),
-              _PreviewChips(label: '排除', values: metadata.excludes),
-              _PreviewChips(label: '连接', values: metadata.connects),
-              _PreviewChips(label: '能力', values: preview.knownGrants),
-              _PreviewChips(label: '未知能力', values: preview.unknownGrants),
+              _PreviewChips(label: 'Match', values: metadata.matches),Match', values: metadata.matches),
+              _PreviewChips(label: 'Include', values: metadata.includes),Include', values: metadata.includes),
+              _PreviewChips(label: 'Exclude', values: metadata.excludes),Exclude', values: metadata.excludes),
+              _PreviewChips(label: 'Connect', values: metadata.connects),Connect', values: metadata.connects),
+              _PreviewChips(label: 'Capabilities', values: preview.knownGrants),Capabilities', values: preview.knownGrants),
+              _PreviewChips(label: 'Unknown capabilities', values: preview.unknownGrants),Unknown capabilities', values: preview.unknownGrants),Unknown capabilities', values: preview.unknownGrants),Unknown capabilities', values: preview.unknownGrants),
               if (preview.blockedReasons.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 10),
                 DecoratedBox(
@@ -570,7 +570,7 @@ class _UserscriptInstallPreviewDialog extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '需要注意',
+                          'Needs attention',Needs attention',Needs attention',Needs attention',
                           style: theme.textTheme.labelLarge?.copyWith(
                             color: theme.colorScheme.onErrorContainer,
                           ),
@@ -595,11 +595,11 @@ class _UserscriptInstallPreviewDialog extends StatelessWidget {
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
-          child: const Text('取消'),
+          child: const Text('Cancel'),Cancel'),
         ),
         FilledButton(
           onPressed: () => Navigator.of(context).pop(true),
-          child: const Text('安装'),
+          child: const Text('Install'),Install'),
         ),
       ],
     );
@@ -620,7 +620,7 @@ class _PreviewLine extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
-      child: Text('$label：$value', style: theme.textTheme.bodySmall),
+      child: Text('$label: $value', style: theme.textTheme.bodySmall),
     );
   }
 }

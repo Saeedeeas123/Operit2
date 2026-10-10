@@ -332,7 +332,7 @@ class _AIChatSurfaceState extends State<_AIChatSurface> {
     } catch (error, stackTrace) {
       ClientLogger.e('Unable to read attachment host capabilities',
         tag: 'AIChatScreen', error: error, stackTrace: stackTrace);
-      if (mounted) _showLocalToast('无法读取附件 Host 能力：$error');
+      if (mounted) _showLocalToast('Unable to read the attachment Host capability: $error');Unable to read the attachment Host capability: $error');Unable to read the attachment Host capability: $error');Unable to read the attachment Host capability: $error');Unable to read the attachment Host capability: $error');Unable to read the attachment Host capability: $error');capability: $error');capability: $error');
     }
   }
 
@@ -347,7 +347,7 @@ class _AIChatSurfaceState extends State<_AIChatSurface> {
     } catch (error, stackTrace) {
       ClientLogger.e('Attachment action failed', tag: 'AIChatScreen',
         error: error, stackTrace: stackTrace);
-      if (mounted) _showLocalToast('添加附件失败：$error');
+      if (mounted) _showLocalToast('Failed to add attachment: $error');Failed to add attachment: $error');Failed to add attachment: $error');Failed to add attachment: $error');Failed to add attachment: $error');Failed to add attachment: $error');Failed to add attachment: $error');
     }
   }
 
