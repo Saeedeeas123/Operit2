@@ -209,7 +209,19 @@ jobs:
           if ($version.Count -ne 1) {
             throw "apps/flutter/app/pubspec.yaml must contain exactly one release version line"
           }
+          $snapBefore = Get-ChildItem -Path apps/flutter/app -Recurse -File -Include *.dart | ForEach-Object { "$($_.FullName) $((Get-FileHash $_.FullName -Algorithm MD5).Hash)" }
+          $start = Get-Date
           python tools/build_scripts/build_flutter_android.py --build-name $version[0].Groups[1].Value --build-number $version[0].Groups[2].Value
+          $code = $LASTEXITCODE
+          if ($code -ne 0) {
+            Write-Host "=== DIAG dart content changed during the build ==="
+            $snapAfter = Get-ChildItem -Path apps/flutter/app -Recurse -File -Include *.dart | ForEach-Object { "$($_.FullName) $((Get-FileHash $_.FullName -Algorithm MD5).Hash)" }
+            Compare-Object $snapBefore $snapAfter | ForEach-Object { Write-Host $_.SideIndicator $_.InputObject }
+            Write-Host "=== DIAG dart files written after the build started ==="
+            Get-ChildItem -Path apps/flutter/app -Recurse -File -Include *.dart | Where-Object { $_.LastWriteTime -gt $start } | ForEach-Object { Write-Host $_.LastWriteTime $_.FullName }
+            Write-Host "=== DIAG end ==="
+          }
+          exit $code
 
       - name: Upload Android artifacts
         uses: actions/upload-artifact@v4
