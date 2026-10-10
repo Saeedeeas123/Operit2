@@ -5,11 +5,11 @@
   "author": ["Operit"],
   "main": "main.js",
   "display_name": {
-    "zh": "WASM 质数算法示例",
+    "zh": "WASM Prime Demo",
     "en": "WASM Prime Demo"
   },
   "description": {
-    "zh": "演示 ToolPkg TypeScript 入口调用 AssemblyScript WASM 质数算法。",
+    "zh": "Demonstrates a ToolPkg TypeScript entry calling AssemblyScript WASM prime logic.",
     "en": "Demonstrates a ToolPkg TypeScript entry calling AssemblyScript WASM prime logic."
   },
   "wasm_modules": [

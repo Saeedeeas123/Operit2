@@ -2,18 +2,18 @@
 {
   "name": "zhipu_draw",
   "display_name": {
-    "zh": "智谱生图",
+    "zh": "Zhipu Draw",
     "en": "Zhipu Draw"
   },
   "description": {
-    "zh": "使用智谱AI图像生成API根据提示词画图，将图片保存到本地 /sdcard/Download/Operit/plugins/draw/zhipu_draw/draws/ 目录，并返回 Markdown 图片提示。",
+    "zh": "Generate images via Zhipu AI image generation API from a prompt, save to /sdcard/Download/Operit/plugins/draw/zhipu_draw/draws/, and return a Markdown image reference.",
     "en": "Generate images via Zhipu AI image generation API from a prompt, save to /sdcard/Download/Operit/plugins/draw/zhipu_draw/draws/, and return a Markdown image reference."
   },
   "env": [
     {
       "name": "ZHIPU_API_KEY",
       "description": {
-        "zh": "智谱API Key（必填）",
+        "zh": "Zhipu API key (required)",
         "en": "Zhipu API key (required)"
       },
       "required": true
@@ -21,7 +21,7 @@
     {
       "name": "ZHIPU_IMAGE_MODEL",
       "description": {
-        "zh": "默认绘图模型（可选；当 draw_image 未传 model 时使用）",
+        "zh": "Default image model (optional; used when draw_image doesn't pass model)",
         "en": "Default image model (optional; used when draw_image doesn't pass model)"
       },
       "required": false
@@ -32,7 +32,7 @@
     {
       "name": "draw_image",
       "description": {
-        "zh": "根据提示词调用智谱AI图像生成接口生成图片，保存到本地并返回 Markdown 图片提示。",
+        "zh": "Generate an image via Zhipu AI image generation API using a prompt, save it locally, and return a Markdown image reference.",
         "en": "Generate an image via Zhipu AI image generation API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [

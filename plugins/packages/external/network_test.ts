@@ -4,7 +4,7 @@ METADATA
     "name": "network_test",
 
     "display_name": {
-        "zh": "网络测试",
+        "zh": "Network Test",
         "en": "Network Test"
     },
     "category": "Network",

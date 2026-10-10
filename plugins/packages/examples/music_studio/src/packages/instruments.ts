@@ -2,11 +2,11 @@
 {
   "name": "music_instruments",
   "display_name": {
-    "zh": "合成器与音色",
+    "zh": "music_instruments",
     "en": "music_instruments"
   },
   "description": {
-    "zh": "Operit音乐工作台：合成器与音色。先 music_project.get/catalog 获取当前模型与限制。修改必须带 projectId 和 revision，默认仅作用于当前工程；播放命令不在后台创建音频设备。",
+    "zh": "AI-first synthesis studio. Query project and catalog before editing. Writes require projectId and revision.",
     "en": "AI-first synthesis studio. Query project and catalog before editing. Writes require projectId and revision."
   },
   "tools": [

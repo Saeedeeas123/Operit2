@@ -3,11 +3,11 @@
 {
     "name": "ctx_limiter",
     "display_name": {
-        "zh": "楼层限制器",
+        "zh": "Context Limiter",
         "en": "Context Limiter"
     },
     "description": {
-        "zh": "截取最近N层上下文，保留SYSTEM消息和最近N层USER/ASSISTANT，主要用于无缓存 API，效果不错。",
+        "zh": "Keep SYSTEM messages and only the latest N USER/ASSISTANT turns. Works especially well with non-cached APIs.",
         "en": "Keep SYSTEM messages and only the latest N USER/ASSISTANT turns. Works especially well with non-cached APIs."
     },
     "enabledByDefault": true,
@@ -15,7 +15,7 @@
         {
             "name": "CTX_LIMITER_FLOOR_LIMIT",
             "description": {
-                "zh": "保留最近多少层对话，默认 5",
+                "zh": "How many recent turns to keep, default 5",
                 "en": "How many recent turns to keep, default 5"
             },
             "required": false
@@ -23,7 +23,7 @@
         {
             "name": "CTX_LIMITER_ENABLED",
             "description": {
-                "zh": "是否启用上下文限制器，true/false，默认 true",
+                "zh": "Whether the limiter is enabled, true/false, default true",
                 "en": "Whether the limiter is enabled, true/false, default true"
             },
             "required": false
@@ -33,14 +33,14 @@
         {
             "name": "set_floor_limit",
             "description": {
-                "zh": "设置保留的最近楼层数",
+                "zh": "Set how many recent turns to keep",
                 "en": "Set how many recent turns to keep"
             },
             "parameters": [
                 {
                     "name": "n",
                     "description": {
-                        "zh": "保留最近N个楼层（默认5）",
+                        "zh": "Keep the latest N turns (default 5)",
                         "en": "Keep the latest N turns (default 5)"
                     },
                     "type": "number",
@@ -51,7 +51,7 @@
         {
             "name": "get_floor_limit",
             "description": {
-                "zh": "查看当前楼层数限制",
+                "zh": "Get the current turn limit",
                 "en": "Get the current turn limit"
             },
             "parameters": []

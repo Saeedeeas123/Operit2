@@ -5,11 +5,11 @@
   "api_version": "2.0.0",
   "main": "dist/main.js",
   "display_name": {
-    "zh": "侧边栏 Bing Action 示例",
+    "zh": "Sidebar Bing Action Example",
     "en": "Sidebar Bing Action Example"
   },
   "description": {
-    "zh": "演示 ToolPkg 侧边栏插件项通过 action 函数直接执行逻辑，而不是跳转路由。",
+    "zh": "Demonstrates a ToolPkg sidebar plugin entry that runs an action function directly instead of navigating to a route.",
     "en": "Demonstrates a ToolPkg sidebar plugin entry that runs an action function directly instead of navigating to a route."
   },
   "enabled_by_default": false,

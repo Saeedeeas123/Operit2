@@ -2,11 +2,11 @@
 {
   "name": "worldbook_tools",
   "display_name": {
-    "zh": "世界书工具",
+    "zh": "World Book Tools",
     "en": "World Book Tools"
   },
   "description": {
-    "zh": "世界书条目的增删改查工具，支持关键词匹配、正则表达式和常驻激活。",
+    "zh": "CRUD tools for world book entries with keyword matching, regex support, and always-active mode.",
     "en": "CRUD tools for world book entries with keyword matching, regex support, and always-active mode."
   },
   "category": "Utility",
@@ -14,7 +14,7 @@
     {
       "name": "list_entries",
       "description": {
-        "zh": "列出所有世界书条目摘要。",
+        "zh": "List summaries for all world book entries.",
         "en": "List summaries for all world book entries."
       },
       "parameters": []
@@ -22,14 +22,14 @@
     {
       "name": "get_entry",
       "description": {
-        "zh": "获取指定世界书条目的完整详情。",
+        "zh": "Get the full details of a world book entry.",
         "en": "Get the full details of a world book entry."
       },
       "parameters": [
         {
           "name": "id",
           "description": {
-            "zh": "条目 ID",
+            "zh": "Entry ID",
             "en": "Entry ID"
           },
           "type": "string",
@@ -40,14 +40,14 @@
     {
       "name": "create_entry",
       "description": {
-        "zh": "创建新的世界书条目。",
+        "zh": "Create a new world book entry.",
         "en": "Create a new world book entry."
       },
       "parameters": [
         {
           "name": "name",
           "description": {
-            "zh": "条目名称",
+            "zh": "Entry name",
             "en": "Entry name"
           },
           "type": "string",
@@ -56,7 +56,7 @@
         {
           "name": "content",
           "description": {
-            "zh": "注入内容",
+            "zh": "Injected content",
             "en": "Injected content"
           },
           "type": "string",
@@ -65,7 +65,7 @@
         {
           "name": "keywords",
           "description": {
-            "zh": "关键词列表，逗号分隔",
+            "zh": "Comma-separated keywords",
             "en": "Comma-separated keywords"
           },
           "type": "string",
@@ -74,7 +74,7 @@
         {
           "name": "is_regex",
           "description": {
-            "zh": "关键词是否为正则表达式",
+            "zh": "Whether keywords are regular expressions",
             "en": "Whether keywords are regular expressions"
           },
           "type": "boolean",
@@ -83,7 +83,7 @@
         {
           "name": "case_sensitive",
           "description": {
-            "zh": "关键词匹配是否大小写敏感",
+            "zh": "Whether keyword matching is case sensitive",
             "en": "Whether keyword matching is case sensitive"
           },
           "type": "boolean",
@@ -92,7 +92,7 @@
         {
           "name": "always_active",
           "description": {
-            "zh": "是否常驻激活",
+            "zh": "Whether the entry is always active",
             "en": "Whether the entry is always active"
           },
           "type": "boolean",
@@ -101,7 +101,7 @@
         {
           "name": "enabled",
           "description": {
-            "zh": "是否启用",
+            "zh": "Whether the entry is enabled",
             "en": "Whether the entry is enabled"
           },
           "type": "boolean",
@@ -110,7 +110,7 @@
         {
           "name": "priority",
           "description": {
-            "zh": "优先级",
+            "zh": "Priority",
             "en": "Priority"
           },
           "type": "number",
@@ -119,7 +119,7 @@
         {
           "name": "scan_depth",
           "description": {
-            "zh": "扫描深度",
+            "zh": "Scan depth",
             "en": "Scan depth"
           },
           "type": "number",
@@ -128,7 +128,7 @@
         {
           "name": "inject_target",
           "description": {
-            "zh": "注入目标，可选 system 或 user，默认 system",
+            "zh": "Injection target: system or user (default system)",
             "en": "Injection target: system or user (default system)"
           },
           "type": "string",
@@ -137,7 +137,7 @@
         {
           "name": "character_card_id",
           "description": {
-            "zh": "绑定角色卡 ID；填写后仅在对应角色卡会话中生效",
+            "zh": "Bound character card ID; when set, the entry only works for that character card",
             "en": "Bound character card ID; when set, the entry only works for that character card"
           },
           "type": "string",
@@ -148,14 +148,14 @@
     {
       "name": "update_entry",
       "description": {
-        "zh": "更新已有世界书条目。",
+        "zh": "Update an existing world book entry.",
         "en": "Update an existing world book entry."
       },
       "parameters": [
         {
           "name": "id",
           "description": {
-            "zh": "条目 ID",
+            "zh": "Entry ID",
             "en": "Entry ID"
           },
           "type": "string",
@@ -164,7 +164,7 @@
         {
           "name": "name",
           "description": {
-            "zh": "新名称",
+            "zh": "New name",
             "en": "New name"
           },
           "type": "string",
@@ -173,7 +173,7 @@
         {
           "name": "content",
           "description": {
-            "zh": "新注入内容",
+            "zh": "New injected content",
             "en": "New injected content"
           },
           "type": "string",
@@ -182,7 +182,7 @@
         {
           "name": "keywords",
           "description": {
-            "zh": "新关键词列表，逗号分隔",
+            "zh": "New comma-separated keywords",
             "en": "New comma-separated keywords"
           },
           "type": "string",
@@ -191,7 +191,7 @@
         {
           "name": "is_regex",
           "description": {
-            "zh": "关键词是否为正则表达式",
+            "zh": "Whether keywords are regular expressions",
             "en": "Whether keywords are regular expressions"
           },
           "type": "boolean",
@@ -200,7 +200,7 @@
         {
           "name": "case_sensitive",
           "description": {
-            "zh": "关键词匹配是否大小写敏感",
+            "zh": "Whether keyword matching is case sensitive",
             "en": "Whether keyword matching is case sensitive"
           },
           "type": "boolean",
@@ -209,7 +209,7 @@
         {
           "name": "always_active",
           "description": {
-            "zh": "是否常驻激活",
+            "zh": "Whether the entry is always active",
             "en": "Whether the entry is always active"
           },
           "type": "boolean",
@@ -218,7 +218,7 @@
         {
           "name": "enabled",
           "description": {
-            "zh": "是否启用",
+            "zh": "Whether the entry is enabled",
             "en": "Whether the entry is enabled"
           },
           "type": "boolean",
@@ -227,7 +227,7 @@
         {
           "name": "priority",
           "description": {
-            "zh": "优先级",
+            "zh": "Priority",
             "en": "Priority"
           },
           "type": "number",
@@ -236,7 +236,7 @@
         {
           "name": "scan_depth",
           "description": {
-            "zh": "扫描深度",
+            "zh": "Scan depth",
             "en": "Scan depth"
           },
           "type": "number",
@@ -245,7 +245,7 @@
         {
           "name": "inject_target",
           "description": {
-            "zh": "注入目标，可选 system 或 user",
+            "zh": "Injection target: system or user",
             "en": "Injection target: system or user"
           },
           "type": "string",
@@ -254,7 +254,7 @@
         {
           "name": "character_card_id",
           "description": {
-            "zh": "绑定角色卡 ID；填写后仅在对应角色卡会话中生效",
+            "zh": "Bound character card ID; when set, the entry only works for that character card",
             "en": "Bound character card ID; when set, the entry only works for that character card"
           },
           "type": "string",
@@ -265,14 +265,14 @@
     {
       "name": "delete_entry",
       "description": {
-        "zh": "删除世界书条目。",
+        "zh": "Delete a world book entry.",
         "en": "Delete a world book entry."
       },
       "parameters": [
         {
           "name": "id",
           "description": {
-            "zh": "条目 ID",
+            "zh": "Entry ID",
             "en": "Entry ID"
           },
           "type": "string",
@@ -283,14 +283,14 @@
     {
       "name": "toggle_entry",
       "description": {
-        "zh": "切换世界书条目的启用状态。",
+        "zh": "Toggle a world book entry's enabled state.",
         "en": "Toggle a world book entry's enabled state."
       },
       "parameters": [
         {
           "name": "id",
           "description": {
-            "zh": "条目 ID",
+            "zh": "Entry ID",
             "en": "Entry ID"
           },
           "type": "string",
@@ -301,14 +301,14 @@
     {
       "name": "import_entries",
       "description": {
-        "zh": "从世界书 JSON 文件或 JSON 内容导入条目。兼容 Operit、SillyTavern lorebook，以及角色卡内嵌 character_book。",
+        "zh": "Import entries from a world book JSON file or JSON content. Supports Operit, SillyTavern lorebooks, and embedded character_book formats.",
         "en": "Import entries from a world book JSON file or JSON content. Supports Operit, SillyTavern lorebooks, and embedded character_book formats."
       },
       "parameters": [
         {
           "name": "path",
           "description": {
-            "zh": "导入文件路径，支持普通文件路径或 content:// URI；与 content 二选一。",
+            "zh": "Import file path, supports normal file paths or content:// URIs; mutually exclusive with content.",
             "en": "Import file path, supports normal file paths or content:// URIs; mutually exclusive with content."
           },
           "type": "string",
@@ -317,7 +317,7 @@
         {
           "name": "content",
           "description": {
-            "zh": "原始 JSON 文本；与 path 二选一。",
+            "zh": "Raw JSON text; mutually exclusive with path.",
             "en": "Raw JSON text; mutually exclusive with path."
           },
           "type": "string",
@@ -326,7 +326,7 @@
         {
           "name": "character_card_id",
           "description": {
-            "zh": "可选，导入后统一绑定到指定角色卡。",
+            "zh": "Optional; bind all imported entries to the specified character card.",
             "en": "Optional; bind all imported entries to the specified character card."
           },
           "type": "string",
@@ -337,7 +337,7 @@
     {
       "name": "list_character_cards_proxy",
       "description": {
-        "zh": "通过代理列出所有角色卡，用于世界书 UI 选择角色卡。",
+        "zh": "List all character cards through a proxy for world book UI selection.",
         "en": "List all character cards through a proxy for world book UI selection."
       },
       "parameters": []

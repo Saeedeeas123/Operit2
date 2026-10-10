@@ -93,11 +93,11 @@ windows_control.toolpkg (ZIP 压缩包)
   "author": ["Operit Team", "Alice"],
   "main": "main.js",
   "display_name": {
-    "zh": "Windows 工具包",
+    "zh": "Windows Bundle",
     "en": "Windows Bundle"
   },
   "description": {
-    "zh": "Windows 一键配置与控制工具包",
+    "zh": "Windows one-click setup and control bundle",
     "en": "Windows one-click setup and control bundle"
   },
   "subpackages": [
@@ -106,11 +106,11 @@ windows_control.toolpkg (ZIP 压缩包)
       "entry": "packages/windows_control.js",
       "enabled_by_default": false,
       "display_name": {
-        "zh": "Windows 控制",
+        "zh": "Windows Control",
         "en": "Windows Control"
       },
       "description": {
-        "zh": "通过 Operit PC Agent 控制 Windows",
+        "zh": "Control Windows via Operit PC Agent",
         "en": "Control Windows via Operit PC Agent"
       }
     }
@@ -135,11 +135,11 @@ windows_control.toolpkg (ZIP 压缩包)
     {
       "id": "quick_chat_workflow",
       "display_name": {
-        "zh": "快速对话工作流",
+        "zh": "Quick Chat Workflow",
         "en": "Quick Chat Workflow"
       },
       "description": {
-        "zh": "手动触发后自动启动聊天并发送一条引导消息。",
+        "zh": "Starts a chat and sends a guidance message after a manual trigger.",
         "en": "Starts a chat and sends a guidance message after a manual trigger."
       },
       "resource_key": "demo_workflow_template"
@@ -149,11 +149,11 @@ windows_control.toolpkg (ZIP 压缩包)
     {
       "id": "quick_start_workspace",
       "display_name": {
-        "zh": "快速开始工作区",
+        "zh": "Quick Start Workspace",
         "en": "Quick Start Workspace"
       },
       "description": {
-        "zh": "包含 .operit/config.json 的最小工作区模板。",
+        "zh": "A minimal workspace template containing .operit/config.json.",
         "en": "A minimal workspace template containing .operit/config.json."
       },
       "resource_key": "demo_workspace_template",
@@ -219,11 +219,11 @@ windows_control.toolpkg (ZIP 压缩包)
   "entry": "packages/windows_control.js",
   "enabled_by_default": false,
   "display_name": {
-    "zh": "Windows 控制",
+    "zh": "Windows Control",
     "en": "Windows Control"
   },
   "description": {
-    "zh": "通过 Operit PC Agent 控制 Windows",
+    "zh": "Control Windows via Operit PC Agent",
     "en": "Control Windows via Operit PC Agent"
   }
 }
@@ -679,11 +679,11 @@ ToolPkg 现在可以通过 `manifest` 直接注册工作流模板。注册后，
     {
       "id": "quick_chat_workflow",
       "display_name": {
-        "zh": "快速对话工作流",
+        "zh": "Quick Chat Workflow",
         "en": "Quick Chat Workflow"
       },
       "description": {
-        "zh": "手动触发后自动启动聊天并发送一条引导消息。",
+        "zh": "Starts a chat and sends a guidance message after a manual trigger.",
         "en": "Starts a chat and sends a guidance message after a manual trigger."
       },
       "resource_key": "demo_workflow_template"
@@ -730,11 +730,11 @@ ToolPkg 也可以通过 `manifest` 注册工作区模板。注册后，模板会
     {
       "id": "quick_start_workspace",
       "display_name": {
-        "zh": "快速开始工作区",
+        "zh": "Quick Start Workspace",
         "en": "Quick Start Workspace"
       },
       "description": {
-        "zh": "包含 .operit/config.json 的最小工作区模板。",
+        "zh": "A minimal workspace template containing .operit/config.json.",
         "en": "A minimal workspace template containing .operit/config.json."
       },
       "resource_key": "demo_workspace_template",
@@ -840,7 +840,7 @@ python plugins/tools/sync_plugin_packages.py --source runtime --no-hot-reload
 {
     "name": "windows_control",
     "description": {
-        "zh": "通过 HTTP 调用 Operit PC Agent 控制 Windows 电脑",
+        "zh": "Control a Windows PC through Operit PC Agent over HTTP",
         "en": "Control a Windows PC through Operit PC Agent over HTTP"
     },
     "enabledByDefault": false,
@@ -848,7 +848,7 @@ python plugins/tools/sync_plugin_packages.py --source runtime --no-hot-reload
         {
             "name": "WINDOWS_AGENT_BASE_URL",
             "description": {
-                "zh": "Operit PC Agent 地址",
+                "zh": "Operit PC Agent URL",
                 "en": "Operit PC Agent URL"
             },
             "required": true
@@ -858,14 +858,14 @@ python plugins/tools/sync_plugin_packages.py --source runtime --no-hot-reload
         {
             "name": "windows_exec",
             "description": {
-                "zh": "在 Windows 上执行命令",
+                "zh": "Execute commands on Windows",
                 "en": "Execute commands on Windows"
             },
             "parameters": [
                 {
                     "name": "command",
                     "description": {
-                        "zh": "要执行的命令",
+                        "zh": "Command to execute",
                         "en": "Command to execute"
                     },
                     "type": "string",

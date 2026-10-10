@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "main": "dist/main.js",
   "display_name": {
-    "zh": "小恐龙快跑",
+    "zh": "Dino Runner",
     "en": "Dino Runner",
     "default": "Dino Runner"
   },
   "description": {
-    "zh": "一个以 Chrome 小恐龙为主题的 WebView 示例：页面本体是全屏小游戏，宿主只保留最少的 DSL 控件，并用 bridge 同步分数。",
+    "zh": "A Dino Runner WebView sample with a fullscreen mini-game, minimal host DSL controls, and score sync through the page-host bridge.",
     "en": "A Dino Runner WebView sample with a fullscreen mini-game, minimal host DSL controls, and score sync through the page-host bridge.",
     "default": "A Dino Runner WebView sample with a fullscreen mini-game and score sync through the page-host bridge."
   },

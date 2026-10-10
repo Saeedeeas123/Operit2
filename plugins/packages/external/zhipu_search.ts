@@ -2,11 +2,11 @@
 {
   "name": "zhipu_search",
   "display_name": {
-    "zh": "智谱搜索",
+    "zh": "Zhipu Search",
     "en": "Zhipu Search"
   },
   "description": {
-    "zh": "智谱 AI 独立网络搜索 API，返回结构化搜索结果。",
+    "zh": "Zhipu AI standalone web search API with structured results.",
     "en": "Zhipu AI standalone web search API with structured results."
   },
   "author": "浮生一梦",
@@ -14,7 +14,7 @@
     {
       "name": "ZHIPU_SEARCH_API_KEY",
       "description": {
-        "zh": "智谱搜索专用 API Key（与生图 Key 独立）",
+        "zh": "Zhipu Search API Key (independent from draw Key)",
         "en": "Zhipu Search API Key (independent from draw Key)"
       },
       "required": false
@@ -25,7 +25,7 @@
     {
       "name": "search",
       "description": {
-        "zh": "使用智谱 Web Search API 进行搜索",
+        "zh": "Search using Zhipu Web Search API",
         "en": "Search using Zhipu Web Search API"
       },
       "parameters": [
@@ -40,7 +40,7 @@
     {
       "name": "test",
       "description": {
-        "zh": "测试 API 连接",
+        "zh": "Test API connection",
         "en": "Test API connection"
       },
       "parameters": []

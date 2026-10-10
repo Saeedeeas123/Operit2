@@ -2,11 +2,11 @@
 {
   "name": "music_tracks",
   "display_name": {
-    "zh": "轨道与混音",
+    "zh": "music_tracks",
     "en": "music_tracks"
   },
   "description": {
-    "zh": "Operit音乐工作台：轨道与混音。先 music_project.get/catalog 获取当前模型与限制。修改必须带 projectId 和 revision，默认仅作用于当前工程；播放命令不在后台创建音频设备。",
+    "zh": "AI-first synthesis studio. Query project and catalog before editing. Writes require projectId and revision.",
     "en": "AI-first synthesis studio. Query project and catalog before editing. Writes require projectId and revision."
   },
   "tools": [

@@ -4,7 +4,7 @@ METADATA
     "name": "duckduckgo",
 
     "display_name": {
-        "zh": "DuckDuckGo 搜索",
+        "zh": "DuckDuckGo Search",
         "en": "DuckDuckGo Search"
     },
     "description": { "zh": "Use DuckDuckGo for web search and content extraction.", "en": "Use DuckDuckGo for web search and content extraction." },

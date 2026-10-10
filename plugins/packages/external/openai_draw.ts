@@ -3,11 +3,11 @@
   "name": "openai_draw",
 
   "display_name": {
-      "zh": "OpenAI 绘图",
+      "zh": "OpenAI Draw",
       "en": "OpenAI Draw"
   },
   "description": {
-    "zh": "使用 OpenAI 格式的图像生成 API (/v1/images/generations) 根据提示词画图，将图片保存到本地 /sdcard/Download/Operit/plugins/draw/openai_draw/draws/ 目录，并返回 Markdown 图片提示。",
+    "zh": "Generate images via an OpenAI-compatible image generation API (/v1/images/generations) from a prompt, save to /sdcard/Download/Operit/plugins/draw/openai_draw/draws/, and return a Markdown image reference.",
     "en": "Generate images via an OpenAI-compatible image generation API (/v1/images/generations) from a prompt, save to /sdcard/Download/Operit/plugins/draw/openai_draw/draws/, and return a Markdown image reference."
   },
   "category": "Draw",
@@ -15,7 +15,7 @@
     {
       "name": "OPENAI_API_KEY",
       "description": {
-        "zh": "OpenAI API Key（必填）",
+        "zh": "OpenAI API key (required)",
         "en": "OpenAI API key (required)"
       },
       "required": true
@@ -23,7 +23,7 @@
     {
       "name": "OPENAI_API_BASE_URL",
       "description": {
-        "zh": "OpenAI API Base URL（可选，不填则默认 https://api.openai.com ）",
+        "zh": "OpenAI API base URL (optional; defaults to https://api.openai.com)",
         "en": "OpenAI API base URL (optional; defaults to https://api.openai.com)"
       },
       "required": false
@@ -31,7 +31,7 @@
     {
       "name": "OPENAI_IMAGE_MODEL",
       "description": {
-        "zh": "默认绘图模型（可选；当 draw_image 未传 model 时使用）",
+        "zh": "Default image model (optional; used when draw_image doesn't pass model)",
         "en": "Default image model (optional; used when draw_image doesn't pass model)"
       },
       "required": false
@@ -41,7 +41,7 @@
     {
       "name": "draw_image",
       "description": {
-        "zh": "根据提示词调用 OpenAI 格式图像生成接口生成图片，保存到本地并返回 Markdown 图片提示。",
+        "zh": "Generate an image via an OpenAI-compatible image generation endpoint using a prompt, save it locally, and return a Markdown image reference.",
         "en": "Generate an image via an OpenAI-compatible image generation endpoint using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [

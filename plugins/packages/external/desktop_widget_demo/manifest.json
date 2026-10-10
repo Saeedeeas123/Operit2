@@ -5,12 +5,12 @@
   "api_version": "2.0.0",
   "main": "dist/main.js",
   "display_name": {
-    "zh": "桌面小组件示例",
+    "zh": "Desktop Widget Demo",
     "en": "Desktop Widget Demo",
     "default": "Desktop Widget Demo"
   },
   "description": {
-    "zh": "演示如何通过 ToolPkg 注册一个可配置的桌面小组件，并点击打开对应的 compose_dsl 页面。",
+    "zh": "Demonstrates how to register a configurable ToolPkg desktop widget that opens a compose_dsl page.",
     "en": "Demonstrates how to register a configurable ToolPkg desktop widget that opens a compose_dsl page.",
     "default": "Demonstrates ToolPkg desktop widget registration."
   },

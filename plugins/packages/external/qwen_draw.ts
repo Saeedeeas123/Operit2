@@ -3,18 +3,18 @@
   "name": "qwen_draw",
 
   "display_name": {
-      "zh": "Qwen 绘图",
+      "zh": "Qwen Draw",
       "en": "Qwen Draw"
   },
   "description": {
-    "zh": "使用阿里云百炼/DashScope 文生图接口（通义万相/通义千问图像）根据提示词画图（异步任务轮询），将图片保存到本地 /sdcard/Download/Operit/plugins/draw/qwen_draw/draws/ 目录，并返回 Markdown 图片提示。",
+    "zh": "Generate images via Alibaba Cloud Model Studio (DashScope) text-to-image API (async task polling), save to /sdcard/Download/Operit/plugins/draw/qwen_draw/draws/, and return a Markdown image reference.",
     "en": "Generate images via Alibaba Cloud Model Studio (DashScope) text-to-image API (async task polling), save to /sdcard/Download/Operit/plugins/draw/qwen_draw/draws/, and return a Markdown image reference."
   },
   "env": [
     {
       "name": "DASHSCOPE_API_KEY",
       "description": {
-        "zh": "DashScope API Key（必填）",
+        "zh": "DashScope API key (required)",
         "en": "DashScope API key (required)"
       },
       "required": true
@@ -22,7 +22,7 @@
     {
       "name": "DASHSCOPE_API_BASE_URL",
       "description": {
-        "zh": "DashScope API Base URL（可选，不填则默认 https://dashscope.aliyuncs.com；国际站可用 https://dashscope-intl.aliyuncs.com）",
+        "zh": "DashScope API base URL (optional; defaults to https://dashscope.aliyuncs.com; intl: https://dashscope-intl.aliyuncs.com)",
         "en": "DashScope API base URL (optional; defaults to https://dashscope.aliyuncs.com; intl: https://dashscope-intl.aliyuncs.com)"
       },
       "required": false
@@ -30,7 +30,7 @@
     {
       "name": "QWEN_IMAGE_MODEL",
       "description": {
-        "zh": "默认文生图模型（可选；当 draw_image 未传 model 时使用，例如 qwen-image-plus 或 wan2.2-t2i-flash）",
+        "zh": "Default image model (optional; used when draw_image doesn't pass model), e.g. qwen-image-plus or wan2.2-t2i-flash",
         "en": "Default image model (optional; used when draw_image doesn't pass model), e.g. qwen-image-plus or wan2.2-t2i-flash"
       },
       "required": false
@@ -41,7 +41,7 @@
     {
       "name": "draw_image",
       "description": {
-        "zh": "根据提示词调用 DashScope 文生图接口生成图片，保存到本地并返回 Markdown 图片提示。",
+        "zh": "Generate an image via DashScope text-to-image API using a prompt, save it locally, and return a Markdown image reference.",
         "en": "Generate an image via DashScope text-to-image API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [

@@ -3,11 +3,11 @@
     "name": "beeimg_image_uploader_v2",
 
     "display_name": {
-        "zh": "Beeimg 图片上传器 V2",
+        "zh": "Beeimg Image Uploader V2",
         "en": "Beeimg Image Uploader V2"
     },
     "description": {
-        "zh": "BeeIMG（https://beeimg.com/）工具将本地图片上传到图床并返回图片url，配合图片生成工具实现图生图（图生图务必开启）。",
+        "zh": "Upload a local image to BeeIMG (https://beeimg.com/) and return a public image URL. Useful for image-to-image workflows (make sure img2img is enabled).",
         "en": "Upload a local image to BeeIMG (https://beeimg.com/) and return a public image URL. Useful for image-to-image workflows (make sure img2img is enabled)."
     },
     "env": [
@@ -18,7 +18,7 @@
         {
             "name": "upload_image",
             "description": {
-                "zh": "使用 multipart 上传将本地图片上传到 BeeIMG 图床并返回图片 url。",
+                "zh": "Upload a local image to BeeIMG via multipart upload and return the image URL.",
                 "en": "Upload a local image to BeeIMG via multipart upload and return the image URL."
             },
             "parameters": [

@@ -3,11 +3,11 @@
     "name": "extended_http_tools",
 
     "display_name": {
-        "zh": "增强 HTTP 工具",
+        "zh": "Extended HTTP Tools",
         "en": "Extended HTTP Tools"
     },
     "description": {
-        "zh": "允许文件上传，以及 GET/POST 等网络直接访问操作。",
+        "zh": "Allows file uploads and direct network access operations such as GET/POST.",
         "en": "Allows file uploads and direct network access operations such as GET/POST."
     },
     "enabledByDefault": true,

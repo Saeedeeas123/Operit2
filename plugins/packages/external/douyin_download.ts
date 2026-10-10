@@ -4,7 +4,7 @@ METADATA
     "name": "douyin_download",
 
     "display_name": {
-        "zh": "抖音下载工具",
+        "zh": "Douyin Download Tool",
         "en": "Douyin Download Tool"
     },
     "description": { "zh": "Douyin toolkit for extracting and downloading watermark-free videos from share links or share codes.", "en": "Douyin toolkit for extracting and downloading watermark-free videos from share links or share codes." },

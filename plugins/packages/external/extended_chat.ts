@@ -3,11 +3,11 @@
     "name": "extended_chat",
 
     "display_name": {
-        "zh": "增强对话",
+        "zh": "Extended Chat",
         "en": "Extended Chat"
     },
     "description": {
-        "zh": "对话工具包：列出/查找/重命名/删除对话、跨话题读取消息、绑定角色卡对话并发送消息。",
+        "zh": "Chat toolkit: list/find/rename/delete chats, read messages across chats, bind character cards and send messages.",
         "en": "Chat toolkit: list/find/rename/delete chats, read messages across chats, bind character cards and send messages."
     },
     "enabledByDefault": true,
@@ -16,7 +16,7 @@
         {
             "name": "list_chats",
             "description": {
-                "zh": "列出并筛选对话（用于获取 chat_id）。",
+                "zh": "List and filter chats (to discover chat_id).",
                 "en": "List and filter chats (to discover chat_id)."
             },
             "parameters": [
@@ -30,7 +30,7 @@
         {
             "name": "find_chat",
             "description": {
-                "zh": "按标题查找一个对话并返回 chat_id。",
+                "zh": "Find a single chat by title and return chat_id.",
                 "en": "Find a single chat by title and return chat_id."
             },
             "parameters": [
@@ -42,7 +42,7 @@
         {
             "name": "read_messages",
             "description": {
-                "zh": "读取指定对话的消息（可按 chat_id 或 chat_title 指定）。",
+                "zh": "Read messages from a chat (by chat_id or chat_title).",
                 "en": "Read messages from a chat (by chat_id or chat_title)."
             },
             "parameters": [
@@ -58,7 +58,7 @@
         {
             "name": "rename_chat",
             "description": {
-                "zh": "重命名指定对话（可按 chat_id 或 chat_title 指定）。",
+                "zh": "Rename a chat (by chat_id or chat_title).",
                 "en": "Rename a chat (by chat_id or chat_title)."
             },
             "parameters": [
@@ -73,7 +73,7 @@
         {
             "name": "delete_chat",
             "description": {
-                "zh": "删除指定对话（可按 chat_id 或 chat_title 指定）。",
+                "zh": "Delete a chat (by chat_id or chat_title).",
                 "en": "Delete a chat (by chat_id or chat_title)."
             },
             "parameters": [
@@ -87,7 +87,7 @@
         {
             "name": "chat_with_agent",
             "description": {
-                "zh": "与对应角色的 agent 对话：传入角色卡名称；chat_id 为空时自动创建新对话并返回新 ID。严格执行一角色一会话，不能多个角色共用同一会话。该工具可用于将任务分担给其他 agent 或与其他角色交流，但通常只有在用户明确表达此意图时使用；多数情况下，能自行完成的任务应优先直接完成。",
+                "zh": "Chat with the agent for the specified character card name; if chat_id is empty, create a new chat and return its ID. Enforces one role per chat (no sharing between roles). Use this tool to delegate tasks to other agents or communicate with other roles when the user explicitly intends it; otherwise, prefer completing tasks directly without using this tool.",
                 "en": "Chat with the agent for the specified character card name; if chat_id is empty, create a new chat and return its ID. Enforces one role per chat (no sharing between roles). Use this tool to delegate tasks to other agents or communicate with other roles when the user explicitly intends it; otherwise, prefer completing tasks directly without using this tool."
             },
             "parameters": [
@@ -104,7 +104,7 @@
         {
             "name": "agent_status",
             "description": {
-                "zh": "查询对话的输入处理状态。",
+                "zh": "Check a chat's input processing status.",
                 "en": "Check a chat's input processing status."
             },
             "parameters": [
@@ -114,7 +114,7 @@
         {
             "name": "list_character_cards",
             "description": {
-                "zh": "列出所有角色卡（用于获取 character_card_id）。",
+                "zh": "List all character cards (to discover character_card_id).",
                 "en": "List all character cards (to discover character_card_id)."
             },
             "parameters": []

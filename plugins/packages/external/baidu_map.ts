@@ -3,7 +3,7 @@ METADATA
 {
     "name": "baidu_map",
     "display_name": {
-        "zh": "百度地图工具",
+        "zh": "Baidu Map Tools",
         "en": "Baidu Map Tools"
     },
     "description": { "zh": "A Baidu Maps toolkit that provides AOI (Area of Interest) data access. It supports querying AOI boundary coordinates by geographic range and location-based route planning, useful for GIS development and spatial data analysis.", "en": "A Baidu Maps toolkit that provides AOI (Area of Interest) data access. It supports querying AOI boundary coordinates by geographic range and location-based route planning, useful for GIS development and spatial data analysis." },

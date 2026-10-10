@@ -125,7 +125,7 @@ METADATA
 {
     "name": "Automatic_bilibili_assistant",
     "display_name": {
-        "zh": "B站智能助手",
+        "zh": "Bilibili Assistant",
         "en": "Bilibili Assistant"
     },
     "description": "高级B站智能助手，通过UI自动化技术实现B站应用交互...",
@@ -244,7 +244,7 @@ METADATA
 
 ```json
 "description": {
-  "zh": "中文描述",
+  "zh": "English description",
   "en": "English description",
   "default": "Fallback description"
 }
@@ -268,12 +268,12 @@ METADATA
   "name": "MyBilingualPackage",
   "category": "Utility",
   "display_name": {
-    "zh": "双语示例包",
+    "zh": "Bilingual Demo Package",
     "en": "Bilingual Demo Package",
     "default": "Bilingual Demo Package"
   },
   "description": {
-    "zh": "演示双语元数据",
+    "zh": "Bilingual metadata demo",
     "en": "Bilingual metadata demo",
     "default": "Bilingual metadata demo"
   },
@@ -281,7 +281,7 @@ METADATA
     {
       "name": "MY_API_KEY",
       "description": {
-        "zh": "用于访问某 API 的密钥",
+        "zh": "API key for accessing a service",
         "en": "API key for accessing a service",
         "default": "API key"
       },
@@ -292,7 +292,7 @@ METADATA
     {
       "name": "hello",
       "description": {
-        "zh": "向指定的人问好",
+        "zh": "Say hello to someone",
         "en": "Say hello to someone",
         "default": "Say hello"
       },
@@ -300,7 +300,7 @@ METADATA
         {
           "name": "name",
           "description": {
-            "zh": "要问好的人名",
+            "zh": "Name to greet",
             "en": "Name to greet",
             "default": "Name"
           },

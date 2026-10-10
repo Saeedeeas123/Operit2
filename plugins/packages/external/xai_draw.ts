@@ -2,18 +2,18 @@
 {
   "name": "xai_draw",
   "display_name": {
-    "zh": "xAI 图片与视频",
+    "zh": "xAI Images and Video",
     "en": "xAI Images and Video"
   },
   "description": {
-    "zh": "使用 xAI 官方接口生成图片和视频，并保存到本地。",
+    "zh": "Generate images and videos with the official xAI APIs and save them locally.",
     "en": "Generate images and videos with the official xAI APIs and save them locally."
   },
   "env": [
     {
       "name": "XAI_API_KEY",
       "description": {
-        "zh": "xAI API Key（必填）",
+        "zh": "xAI API key (required)",
         "en": "xAI API key (required)"
       },
       "required": true
@@ -21,7 +21,7 @@
     {
       "name": "XAI_IMAGE_MODEL",
       "description": {
-        "zh": "默认图片模型（可选；未传 model 时使用，默认 grok-2-image-1212）",
+        "zh": "Default image model (optional; used when model is omitted, default grok-2-image-1212)",
         "en": "Default image model (optional; used when model is omitted, default grok-2-image-1212)"
       },
       "required": false
@@ -29,7 +29,7 @@
     {
       "name": "XAI_VIDEO_MODEL",
       "description": {
-        "zh": "默认视频模型（可选；未传 model 时使用，默认 grok-imagine-video）",
+        "zh": "Default video model (optional; used when model is omitted, default grok-imagine-video)",
         "en": "Default video model (optional; used when model is omitted, default grok-imagine-video)"
       },
       "required": false
@@ -40,7 +40,7 @@
     {
       "name": "draw_image",
       "description": {
-        "zh": "根据提示词调用 xAI 图像生成 API 生成图片，保存到本地并返回 Markdown 图片提示。",
+        "zh": "Generate an image via the xAI image generation API using a prompt, save it locally, and return a Markdown image reference.",
         "en": "Generate an image via the xAI image generation API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [
@@ -53,7 +53,7 @@
     {
       "name": "draw_video",
       "description": {
-        "zh": "根据提示词调用 xAI 官方视频生成 API 生成视频，支持文生视频、图生视频和视频编辑，轮询完成后下载到本地并返回本地视频链接提示。",
+        "zh": "Generate a video with the official xAI video API. Supports text-to-video, image-to-video, and video editing. Polls until completion, downloads locally, and returns local video link hints.",
         "en": "Generate a video with the official xAI video API. Supports text-to-video, image-to-video, and video editing. Polls until completion, downloads locally, and returns local video link hints."
       },
       "parameters": [

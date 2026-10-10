@@ -3,7 +3,7 @@
     "name": "12306_ticket",
 
     "display_name": {
-        "zh": "12306 extension",
+        "zh": "12306 Extension",
         "en": "12306 Extension"
     },
     "description": { "zh": "Query China Railway 12306 train ticket information, including availability, transfer routes, and stop stations.", "en": "Query China Railway 12306 train ticket information, including availability, transfer routes, and stop stations." },

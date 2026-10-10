@@ -2,11 +2,11 @@
 {
   "name": "minimax_draw",
   "display_name": {
-    "zh": "MiniMax 绘图",
+    "zh": "MiniMax Draw",
     "en": "MiniMax Draw"
   },
   "description": {
-    "zh": "使用 MiniMax 官方图像生成接口 (/v1/image_generation) 生成图片，支持文生图和带参考图的生图；结果保存到本地 /sdcard/Download/Operit/plugins/draw/minimax_draw/draws/ 目录，并返回 Markdown 图片提示。",
+    "zh": "Generate images with the official MiniMax image generation API (/v1/image_generation). Supports text-to-image and reference-image generation. Saves results to /sdcard/Download/Operit/plugins/draw/minimax_draw/draws/ and returns Markdown image hints.",
     "en": "Generate images with the official MiniMax image generation API (/v1/image_generation). Supports text-to-image and reference-image generation. Saves results to /sdcard/Download/Operit/plugins/draw/minimax_draw/draws/ and returns Markdown image hints."
   },
   "category": "Draw",
@@ -14,7 +14,7 @@
     {
       "name": "MINIMAX_API_KEY",
       "description": {
-        "zh": "MiniMax API Key（必填）",
+        "zh": "MiniMax API key (required)",
         "en": "MiniMax API key (required)"
       },
       "required": true
@@ -22,7 +22,7 @@
     {
       "name": "MINIMAX_API_BASE_URL",
       "description": {
-        "zh": "MiniMax API Base URL（可选；默认 https://api.minimaxi.com，国际站可改为 https://api.minimax.io）",
+        "zh": "MiniMax API base URL (optional; defaults to https://api.minimaxi.com, international users can use https://api.minimax.io)",
         "en": "MiniMax API base URL (optional; defaults to https://api.minimaxi.com, international users can use https://api.minimax.io)"
       },
       "required": false
@@ -30,7 +30,7 @@
     {
       "name": "MINIMAX_IMAGE_MODEL",
       "description": {
-        "zh": "默认图片模型（可选；未传 model 时使用，默认 image-01）",
+        "zh": "Default image model (optional; used when model is omitted, default image-01)",
         "en": "Default image model (optional; used when model is omitted, default image-01)"
       },
       "required": false
@@ -38,7 +38,7 @@
     {
       "name": "BEEIMG_API_KEY",
       "description": {
-        "zh": "BeeIMG API Key（可选；仅当 image_paths 传本地参考图路径时需要，用于先上传到公网图床）",
+        "zh": "BeeIMG API key (optional; only needed when image_paths is used so local reference images can be uploaded first)",
         "en": "BeeIMG API key (optional; only needed when image_paths is used so local reference images can be uploaded first)"
       },
       "required": false
@@ -48,7 +48,7 @@
     {
       "name": "draw_image",
       "description": {
-        "zh": "根据提示词调用 MiniMax 官方绘图接口生成图片，支持文生图和参考图生图，保存到本地并返回 Markdown 图片提示。",
+        "zh": "Generate images with the official MiniMax image API using a prompt. Supports text-to-image and reference-image generation, saves locally, and returns Markdown image hints.",
         "en": "Generate images with the official MiniMax image API using a prompt. Supports text-to-image and reference-image generation, saves locally, and returns Markdown image hints."
       },
       "parameters": [
