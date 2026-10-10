@@ -202,6 +202,11 @@ jobs:
             Pop-Location
           }
 
+      - name: Sync plugin packages (prebuild)
+        shell: pwsh
+        run: |
+          python plugins/tools/sync_plugin_packages.py --source buildin --no-hot-reload
+          if ($LASTEXITCODE -ne 0) { throw "plugin package sync failed" }
       - name: Build and package Android app
         shell: pwsh
         run: |
