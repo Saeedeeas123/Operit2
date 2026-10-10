@@ -1,36 +1,36 @@
 {
   "@@locale": "zh",
-  "workspaceUnsavedChangesTitle": "Unsaved changes",
-  "workspaceUnsavedChangesMessage": "Save your changes before closing this file?",
-  "workspaceDiscardChanges": "Discard changes",
-  "askOperitHint": "Ask Operit",
-  "aiChat": "AI Chat",
-  "fullscreenInput": "Fullscreen input",
-  "expandInput": "Expand input",
-  "collapseInput": "Collapse input",
-  "settings": "Settings",
-  "packageManager": "Package manager",
-  "market": "Market",
-  "addAttachment": "Add attachment",
-  "attachmentPhoto": "Photo",
-  "attachmentCamera": "Camera",
-  "attachmentMemory": "Memory",
-  "attachmentFile": "File",
-  "attachmentScreenContent": "Screen content",
-  "attachmentNotifications": "Current notifications",
-  "attachmentLocation": "Current location",
-  "attachmentPackage": "Package",
-  "attachmentPackageSelectTitle": "Select package",
-  "attachmentPackageEmpty": "No available packages",
-  "attachmentPackageSearchPlaceholder": "Search package name or description",
-  "attachmentPackageSearchEmpty": "No matching packages",
-  "attachmentPackageKindPackage": "Package",
-  "attachmentPackageKindSkill": "Skill",
+  "workspaceUnsavedChangesTitle": "有未保存的修改",
+  "workspaceUnsavedChangesMessage": "关闭此文件前，要保存你的修改吗？",
+  "workspaceDiscardChanges": "放弃修改",
+  "askOperitHint": "向 Operit 提问",
+  "aiChat": "AI聊天",
+  "fullscreenInput": "全屏输入",
+  "expandInput": "展开输入框",
+  "collapseInput": "收起输入框",
+  "settings": "设置",
+  "packageManager": "包管理",
+  "market": "市场",
+  "addAttachment": "添加附件",
+  "attachmentPhoto": "照片",
+  "attachmentCamera": "拍照",
+  "attachmentMemory": "记忆",
+  "attachmentFile": "文件",
+  "attachmentScreenContent": "屏幕内容",
+  "attachmentNotifications": "当前通知",
+  "attachmentLocation": "当前位置",
+  "attachmentPackage": "包",
+  "attachmentPackageSelectTitle": "选择包",
+  "attachmentPackageEmpty": "暂无可用包",
+  "attachmentPackageSearchPlaceholder": "搜索包名、描述",
+  "attachmentPackageSearchEmpty": "没有匹配的包",
+  "attachmentPackageKindPackage": "包",
+  "attachmentPackageKindSkill": "技能",
   "attachmentPackageKindMcp": "MCP",
-  "attachmentCameraUnavailable": "Camera capture is not available in the Flutter client",
-  "attachmentMemoryUnavailable": "Memory folder selection is not available in the Flutter client",
-  "clearSearch": "Clear search",
-  "chatPendingQueueTitle": "Queued messages ({count})",
+  "attachmentCameraUnavailable": "当前 Flutter 端没有相机采集能力",
+  "attachmentMemoryUnavailable": "当前 Flutter 端没有记忆文件夹选择器",
+  "clearSearch": "清空搜索",
+  "chatPendingQueueTitle": "待发送消息（{count}）",
   "@chatPendingQueueTitle": {
     "placeholders": {
       "count": {
@@ -38,19 +38,19 @@
       }
     }
   },
-  "chatQueueAddMessage": "Queue message",
-  "chatQueueAdded": "Added to queue",
-  "chatPleaseCreateNewChat": "Please create a chat",
-  "cancel": "Cancel",
-  "send": "Send",
-  "model": "Model",
-  "processingInput": "Processing input...",
-  "processingMessage": "Processing message...",
-  "connectingAiService": "Connecting to AI service...",
-  "receivingAiResponse": "Receiving AI response...",
-  "receivingToolResultAiResponse": "Receiving AI response after tool execution...",
-  "roleResponsePlannerPlanning": "Planning group speaking order...",
-  "roleResponsePlannerMemberReplying": "Generating a reply from \"{memberName}\"...",
+  "chatQueueAddMessage": "加入队列",
+  "chatQueueAdded": "已加入发送队列",
+  "chatPleaseCreateNewChat": "请新建对话",
+  "cancel": "取消",
+  "send": "发送",
+  "model": "模型",
+  "processingInput": "正在处理输入...",
+  "processingMessage": "正在处理消息...",
+  "connectingAiService": "正在连接 AI 服务...",
+  "receivingAiResponse": "正在接收 AI 响应...",
+  "receivingToolResultAiResponse": "正在接收工具执行后的 AI 响应...",
+  "roleResponsePlannerPlanning": "正在规划群组发言顺序...",
+  "roleResponsePlannerMemberReplying": "正在生成「{memberName}」的回复...",
   "@roleResponsePlannerMemberReplying": {
     "placeholders": {
       "memberName": {
@@ -58,12 +58,12 @@
       }
     }
   },
-  "roleResponsePlannerFailed": "Group planning failed",
-  "summarizingMemories": "Summarizing memories...",
-  "summaryGenerating": "Generating summary...",
-  "chatCompressingHistory": "Compressing history records...",
-  "executingPlan": "Executing plan...",
-  "executingTool": "Executing tool: {toolName}",
+  "roleResponsePlannerFailed": "群组规划失败",
+  "summarizingMemories": "正在总结记忆...",
+  "summaryGenerating": "正在生成总结...",
+  "chatCompressingHistory": "正在压缩历史记录...",
+  "executingPlan": "正在执行计划...",
+  "executingTool": "正在执行工具: {toolName}",
   "@executingTool": {
     "placeholders": {
       "toolName": {
@@ -71,7 +71,7 @@
       }
     }
   },
-  "processingToolResult": "Processing tool result: {toolName}",
+  "processingToolResult": "正在处理工具结果: {toolName}",
   "@processingToolResult": {
     "placeholders": {
       "toolName": {
@@ -79,10 +79,10 @@
       }
     }
   },
-  "statusWarningAiErrorSummary": "The AI made an error",
-  "statusWarningAiErrorDetailTitle": "AI Error Reason",
-  "toolRunning": "Tool running...",
-  "toolRunningWithName": "{toolName}: Tool running...",
+  "statusWarningAiErrorSummary": "AI犯了一个错误",
+  "statusWarningAiErrorDetailTitle": "AI错误原因",
+  "toolRunning": "工具执行中...",
+  "toolRunningWithName": "{toolName}: 工具执行中...",
   "@toolRunningWithName": {
     "placeholders": {
       "toolName": {
@@ -101,26 +101,26 @@
       }
     }
   },
-  "close": "Close",
-  "commonExpand": "Expand",
-  "commonCollapse": "Collapse",
-  "create": "Create",
-  "save": "Save",
-  "delete": "Delete",
-  "search": "Search",
-  "loading": "Loading",
-  "toolApprovalTitle": "Tool permission request",
-  "toolApprovalToolLabel": "Tool",
-  "toolApprovalActionLabel": "Action",
-  "toolApprovalDeny": "Deny",
-  "toolApprovalAllowOnce": "Allow once",
-  "toolApprovalAlwaysAllow": "Always allow in this session",
-  "createGroupTitle": "New group",
-  "groupNameLabel": "Group name",
-  "renameConversationTitle": "Edit title",
-  "newTitleLabel": "New title",
-  "deleteConversationTitle": "Delete conversation?",
-  "deleteConversationMessage": "Delete \"{title}\"?",
+  "close": "关闭",
+  "commonExpand": "展开",
+  "commonCollapse": "收起",
+  "create": "创建",
+  "save": "保存",
+  "delete": "删除",
+  "search": "搜索",
+  "loading": "加载中",
+  "toolApprovalTitle": "工具权限申请",
+  "toolApprovalToolLabel": "工具",
+  "toolApprovalActionLabel": "操作",
+  "toolApprovalDeny": "拒绝",
+  "toolApprovalAllowOnce": "允许本次",
+  "toolApprovalAlwaysAllow": "本次会话中始终允许",
+  "createGroupTitle": "新建分组",
+  "groupNameLabel": "群组名称",
+  "renameConversationTitle": "编辑标题",
+  "newTitleLabel": "新标题",
+  "deleteConversationTitle": "确认删除对话",
+  "deleteConversationMessage": "删除 “{title}”？",
   "@deleteConversationMessage": {
     "placeholders": {
       "title": {
@@ -128,17 +128,17 @@
       }
     }
   },
-  "chatHistory": "Chat history",
-  "editTitle": "Edit title",
-  "moveUp": "Move up",
-  "moveDown": "Move down",
-  "pin": "Pin",
-  "unpin": "Unpin",
-  "lock": "Lock",
-  "unlock": "Unlock",
-  "chatLockedCannotDelete": "This chat is locked and cannot be deleted",
-  "messageLocatorTitle": "Message locator",
-  "messageLocatorCurrent": "Current {current} / {total}",
+  "chatHistory": "聊天记录",
+  "editTitle": "编辑标题",
+  "moveUp": "上移",
+  "moveDown": "下移",
+  "pin": "置顶",
+  "unpin": "取消置顶",
+  "lock": "锁定",
+  "unlock": "解锁",
+  "chatLockedCannotDelete": "该聊天已锁定，无法删除",
+  "messageLocatorTitle": "消息定位",
+  "messageLocatorCurrent": "当前 {current} / {total}",
   "@messageLocatorCurrent": {
     "placeholders": {
       "current": {
@@ -149,9 +149,9 @@
       }
     }
   },
-  "messageLocatorSearchHint": "Search message content",
-  "messageLocatorInstruction": "Scroll the list or search to jump to a message",
-  "messageLocatorResultCount": "{count} results",
+  "messageLocatorSearchHint": "搜索消息内容",
+  "messageLocatorInstruction": "滚动列表或搜索后跳转到指定消息",
+  "messageLocatorResultCount": "{count} 条结果",
   "@messageLocatorResultCount": {
     "placeholders": {
       "count": {
@@ -159,16 +159,16 @@
       }
     }
   },
-  "messageLocatorNoMatches": "No matching messages",
-  "messageSenderUser": "User",
-  "messageSenderSummary": "Summary",
-  "historyDialogSummary": "History Dialog Summary",
-  "confirmDeleteSummary": "Delete Summary",
-  "confirmDeleteSummaryMessage": "Are you sure you want to delete this summary?",
-  "messageSenderSystem": "System",
-  "messageSenderThinking": "Thinking",
-  "thinkingProcess": "Thinking Process",
-  "thinkingToolsGroupTitleWithCount": "Thinking & Tool Calls ({count})",
+  "messageLocatorNoMatches": "没有匹配的消息",
+  "messageSenderUser": "用户",
+  "messageSenderSummary": "总结",
+  "historyDialogSummary": "历史对话摘要",
+  "confirmDeleteSummary": "删除摘要",
+  "confirmDeleteSummaryMessage": "确定要删除这条摘要吗？",
+  "messageSenderSystem": "系统",
+  "messageSenderThinking": "思考",
+  "thinkingProcess": "思考过程",
+  "thinkingToolsGroupTitleWithCount": "思考与工具调用（{count}）",
   "@thinkingToolsGroupTitleWithCount": {
     "placeholders": {
       "count": {
@@ -176,7 +176,7 @@
       }
     }
   },
-  "toolsGroupTitleWithCount": "Tool Calls ({count})",
+  "toolsGroupTitleWithCount": "工具调用（{count}）",
   "@toolsGroupTitleWithCount": {
     "placeholders": {
       "count": {
@@ -184,10 +184,10 @@
       }
     }
   },
-  "searchGroupTitle": "Search",
-  "searchSources": "Search Sources",
-  "thinkingSearchGroupTitle": "Thinking and searching",
-  "thinkingSearchToolsGroupTitleWithCount": "Thinking, searching, and calling tools ({count})",
+  "searchGroupTitle": "搜索",
+  "searchSources": "搜索来源",
+  "thinkingSearchGroupTitle": "思考并搜索",
+  "thinkingSearchToolsGroupTitleWithCount": "思考、搜索并调用工具（{count}）",
   "@thinkingSearchToolsGroupTitleWithCount": {
     "placeholders": {
       "count": {
@@ -195,64 +195,64 @@
       }
     }
   },
-  "messageSenderOther": "Other",
-  "hiddenUserMessage": "Hidden user message",
-  "workspaceSetupTitle": "Set up workspace",
-  "workspaceSetupSubtitle": "Provide a dedicated file environment for your AI projects",
-  "workspaceCreateTitle": "Create workspace",
-  "workspaceCreateDescription": "Create a named workspace",
-  "workspaceNameLabel": "Workspace name",
-  "workspaceNameHint": "Enter a workspace name",
-  "workspaceBindExistingTitle": "Choose workspace",
-  "workspacePickLocalFolder": "Choose a folder on this device",
-  "workspaceBindExistingDescription": "Bind an existing workspace",
-  "workspaceAddFolderTitle": "Add folder",
-  "workspaceAddFolderDescription": "Mount another folder into the current workspace",
-  "workspaceProjectTypeDialogTitle": "Choose project type",
-  "workspaceProjectTypeDialogDescription": "Choose the default workspace type to create",
-  "workspaceUnbindTitle": "Unbind workspace",
-  "workspaceUnbindDescription": "Detach this chat without deleting workspace files",
-  "workspaceUnbindConfirmation": "Unbind the workspace from this chat? The workspace and its files will be kept, and other chats will not be affected. You can bind a workspace again later.",
-  "workspaceUnbindFailed": "Failed to unbind workspace. Please try again.",
-  "workspaceUnbindChanged": "The current chat or workspace has changed. Cancel and try again.",
-  "workspaceBindDialogTitle": "Choose existing workspace",
-  "workspacePathLabel": "Selected workspace",
-  "workspaceEnvLabel": "Workspace environment",
-  "optionalHint": "Optional",
-  "workspacePathRequired": "Select a workspace folder",
-  "bind": "Bind",
-  "workspaceProjectBlankTitle": "Blank workspace",
-  "workspaceProjectBlankDescription": "Create an empty workspace directory without template files",
-  "workspaceProjectOfficeTitle": "Office documents",
-  "workspaceProjectOfficeDescription": "For document editing, file processing, and general office tasks",
-  "workspaceProjectWebTitle": "Web project",
-  "workspaceProjectWebDescription": "For web development with HTML/CSS/JavaScript and an automatic local server",
-  "workspaceProjectAndroidTitle": "Android project",
-  "workspaceProjectAndroidDescription": "For Android engineering with common Gradle task shortcuts",
-  "workspaceProjectFlutterTitle": "Flutter project",
-  "workspaceProjectFlutterDescription": "For Flutter cross-platform development with a stable app template and common commands",
-  "workspaceProjectNodeTitle": "Node.js project",
-  "workspaceProjectNodeDescription": "For Node.js backend development with npm command shortcuts",
-  "workspaceProjectTypeScriptTitle": "TypeScript project",
-  "workspaceProjectTypeScriptDescription": "TypeScript + pnpm with type-safe development and tsc watch",
-  "workspaceProjectPythonTitle": "Python project",
-  "workspaceProjectPythonDescription": "For Python development with pip and an HTTP server",
-  "workspaceProjectJavaTitle": "Java project",
-  "workspaceProjectJavaDescription": "For Java development with Gradle and Maven builds",
-  "workspaceProjectGoTitle": "Go project",
-  "workspaceProjectGoDescription": "For Go development with go mod and build commands",
-  "version": "Version",
-  "author": "Author",
-  "entry": "Entry",
-  "source": "Source",
-  "category": "Category",
-  "defaultStatus": "Default status",
-  "builtIn": "Built-in",
-  "external": "External",
-  "enabledByDefault": "Enabled by default",
-  "disabledByDefault": "Disabled by default",
-  "toolPkgResources": "ToolPkg resources",
-  "resourcesCount": "Resources {count}",
+  "messageSenderOther": "其他",
+  "hiddenUserMessage": "隐藏的用户消息",
+  "workspaceSetupTitle": "设置工作区",
+  "workspaceSetupSubtitle": "为您的AI项目提供一个专属的文件环境",
+  "workspaceCreateTitle": "创建工作区",
+  "workspaceCreateDescription": "创建一个指定名字的工作区",
+  "workspaceNameLabel": "工作区名称",
+  "workspaceNameHint": "请输入工作区名称",
+  "workspaceBindExistingTitle": "选择工作区",
+  "workspacePickLocalFolder": "选择本机文件夹",
+  "workspaceBindExistingDescription": "绑定已有工作区",
+  "workspaceAddFolderTitle": "添加文件夹",
+  "workspaceAddFolderDescription": "把另一个文件夹挂进当前工作区",
+  "workspaceProjectTypeDialogTitle": "选择语言类型",
+  "workspaceProjectTypeDialogDescription": "请选择要创建的默认工作区类型",
+  "workspaceUnbindTitle": "解除绑定",
+  "workspaceUnbindDescription": "解除当前会话的关联，保留工作区文件",
+  "workspaceUnbindConfirmation": "确定解除当前会话与工作区的绑定吗？工作区和文件都会保留，不影响其他会话，之后可以重新绑定工作区。",
+  "workspaceUnbindFailed": "解除绑定失败，请重试。",
+  "workspaceUnbindChanged": "当前会话或工作区已切换，请取消后重试。",
+  "workspaceBindDialogTitle": "选择已有工作区",
+  "workspacePathLabel": "已选工作区",
+  "workspaceEnvLabel": "工作区环境",
+  "optionalHint": "可留空",
+  "workspacePathRequired": "请选择工作区文件夹",
+  "bind": "绑定",
+  "workspaceProjectBlankTitle": "空白工作区",
+  "workspaceProjectBlankDescription": "仅创建一个空的工作区目录，不包含任何模板文件",
+  "workspaceProjectOfficeTitle": "办公文档",
+  "workspaceProjectOfficeDescription": "用于文档编辑、文件处理和通用办公任务",
+  "workspaceProjectWebTitle": "Web 项目",
+  "workspaceProjectWebDescription": "适用于网页开发，支持 HTML/CSS/JavaScript，自动启动本地服务器",
+  "workspaceProjectAndroidTitle": "Android 项目",
+  "workspaceProjectAndroidDescription": "适用于 Android 工程开发，包含 Gradle 常用任务快捷按钮",
+  "workspaceProjectFlutterTitle": "Flutter 项目",
+  "workspaceProjectFlutterDescription": "适用于 Flutter 跨平台开发，内置当前稳定版应用模板和常用命令",
+  "workspaceProjectNodeTitle": "Node.js 项目",
+  "workspaceProjectNodeDescription": "适用于 Node.js 后端开发，提供 npm 命令快捷按钮",
+  "workspaceProjectTypeScriptTitle": "TypeScript 项目",
+  "workspaceProjectTypeScriptDescription": "TypeScript + pnpm，支持类型安全开发和 tsc watch 实时编译",
+  "workspaceProjectPythonTitle": "Python 项目",
+  "workspaceProjectPythonDescription": "适用于 Python 开发，支持 pip 和 HTTP 服务器",
+  "workspaceProjectJavaTitle": "Java 项目",
+  "workspaceProjectJavaDescription": "适用于 Java 开发，支持 Gradle 和 Maven 构建",
+  "workspaceProjectGoTitle": "Go 项目",
+  "workspaceProjectGoDescription": "适用于 Go 开发，提供 go mod 和 build 命令",
+  "version": "版本",
+  "author": "作者",
+  "entry": "入口",
+  "source": "来源",
+  "category": "分类",
+  "defaultStatus": "默认状态",
+  "builtIn": "内置",
+  "external": "外部",
+  "enabledByDefault": "默认启用",
+  "disabledByDefault": "默认停用",
+  "toolPkgResources": "ToolPkg 资源",
+  "resourcesCount": "资源 {count}",
   "@resourcesCount": {
     "placeholders": {
       "count": {
@@ -260,7 +260,7 @@
       }
     }
   },
-  "uiModulesCount": "UI modules {count}",
+  "uiModulesCount": "UI 模块 {count}",
   "@uiModulesCount": {
     "placeholders": {
       "count": {
@@ -268,7 +268,7 @@
       }
     }
   },
-  "navigationEntriesCount": "Navigation entries {count}",
+  "navigationEntriesCount": "导航入口 {count}",
   "@navigationEntriesCount": {
     "placeholders": {
       "count": {
@@ -276,7 +276,7 @@
       }
     }
   },
-  "desktopWidgetsCount": "Desktop widgets {count}",
+  "desktopWidgetsCount": "桌面组件 {count}",
   "@desktopWidgetsCount": {
     "placeholders": {
       "count": {
@@ -284,7 +284,7 @@
       }
     }
   },
-  "workflowTemplatesCount": "Workflow templates {count}",
+  "workflowTemplatesCount": "Workflow 模板 {count}",
   "@workflowTemplatesCount": {
     "placeholders": {
       "count": {
@@ -292,7 +292,7 @@
       }
     }
   },
-  "workspaceTemplatesCount": "Workspace templates {count}",
+  "workspaceTemplatesCount": "Workspace 模板 {count}",
   "@workspaceTemplatesCount": {
     "placeholders": {
       "count": {
@@ -300,10 +300,10 @@
       }
     }
   },
-  "pluginConfiguration": "Plugin configuration",
-  "subpackages": "Subpackages",
-  "toolPkgNoSubpackages": "This ToolPkg declares no subpackages",
-  "subpackageToolCount": "{packageName} · {count} tools",
+  "pluginConfiguration": "插件配置",
+  "subpackages": "子包",
+  "toolPkgNoSubpackages": "此 ToolPkg 未声明子包",
+  "subpackageToolCount": "{packageName} · {count} 工具",
   "@subpackageToolCount": {
     "placeholders": {
       "packageName": {
@@ -314,17 +314,17 @@
       }
     }
   },
-  "workflowTemplates": "Workflow templates",
-  "workspaceTemplates": "Workspace templates",
-  "disable": "Disable",
-  "enable": "Enable",
-  "environmentVariables": "Environment variables",
-  "packageConfigureEnvironmentVariables": "Configure Environment Variables",
-  "packageNoEnvironmentVariables": "The currently enabled tool packages have not declared any environment variables.",
-  "packageEnvironmentOptional": "Optional",
-  "packageEnvironmentInputRequired": "Input value (required)",
-  "packageEnvironmentInputOptional": "Input value (optional)",
-  "packageEnvironmentDefault": "Default: {value}",
+  "workflowTemplates": "Workflow 模板",
+  "workspaceTemplates": "Workspace 模板",
+  "disable": "停用",
+  "enable": "启用",
+  "environmentVariables": "环境变量",
+  "packageConfigureEnvironmentVariables": "配置环境变量",
+  "packageNoEnvironmentVariables": "当前已启用的工具包没有声明需要的环境变量。",
+  "packageEnvironmentOptional": "可选",
+  "packageEnvironmentInputRequired": "输入值（必需）",
+  "packageEnvironmentInputOptional": "输入值（可选）",
+  "packageEnvironmentDefault": "默认: {value}",
   "@packageEnvironmentDefault": {
     "placeholders": {
       "value": {
@@ -332,9 +332,9 @@
       }
     }
   },
-  "required": "Required",
-  "states": "States",
-  "stateToolSummary": "{condition} · {toolCount} tools · excludes {excludeCount}",
+  "required": "必填",
+  "states": "状态",
+  "stateToolSummary": "{condition} · {toolCount} 工具 · 排除 {excludeCount}",
   "@stateToolSummary": {
     "placeholders": {
       "condition": {
@@ -348,72 +348,72 @@
       }
     }
   },
-  "inherit": "Inherit",
-  "tools": "Tools",
-  "packageNoTools": "This package declares no tools",
-  "permissionsTitle": "Permissions",
-  "clear": "Clear",
-  "noPermissionRecords": "No permission records yet",
-  "allow": "Allow",
-  "deny": "Deny",
-  "camera": "Camera",
-  "microphone": "Microphone",
-  "protectedMedia": "Protected media",
-  "midiDevice": "MIDI device",
-  "browserPermissionRequestTitle": "Website permission request",
-  "chatSpeechInputFailed": "Speech input failed: {error}",
+  "inherit": "继承",
+  "tools": "工具",
+  "packageNoTools": "此包未声明工具",
+  "permissionsTitle": "权限",
+  "clear": "清空",
+  "noPermissionRecords": "还没有权限记录",
+  "allow": "允许",
+  "deny": "拒绝",
+  "camera": "摄像头",
+  "microphone": "麦克风",
+  "protectedMedia": "受保护媒体",
+  "midiDevice": "MIDI 设备",
+  "browserPermissionRequestTitle": "网页权限请求",
+  "chatSpeechInputFailed": "语音输入失败：{error}",
   "@chatSpeechInputFailed": {
     "placeholders": {
       "error": {}
     }
   },
-  "chatSpeechInputConfigurationRequired": "Select a speech recognition configuration in Settings > Models & AI before using speech input.",
-  "chatSpeechNoTextRecognized": "No speech recognized.",
-  "history": "History",
-  "bookmarks": "Bookmarks",
-  "downloads": "Downloads",
-  "scripts": "Scripts",
-  "zoom": "Zoom",
-  "zoomIn": "Zoom in",
-  "zoomOut": "Zoom out",
-  "desktopMode": "Desktop mode",
-  "clearLocalStorage": "Clear local storage",
-  "searchHistory": "Search history",
-  "noDownloadTasks": "No download tasks yet",
-  "openFile": "Open file",
-  "openLocation": "Open location",
-  "retry": "Retry",
-  "removeRecord": "Remove record",
-  "pending": "Pending",
-  "completed": "Completed",
-  "failed": "Failed",
-  "back": "Back",
-  "forward": "Forward",
-  "stop": "Stop",
-  "refresh": "Refresh",
-  "home": "Home",
-  "newTab": "New tab",
-  "openExternalApplication": "Open external application",
-  "open": "Open",
-  "ok": "OK",
-  "webPage": "Web page",
-  "tabs": "Tabs",
-  "noBookmarks": "No bookmarks yet",
-  "removeBookmark": "Remove bookmark",
-  "addBookmark": "Add bookmark",
-  "menu": "Menu",
-  "siteData": "Site data",
-  "clearAllWebViewCookies": "Clear all WebView cookies",
-  "clearCookies": "Clear cookies",
-  "noData": "No data",
-  "local": "Local",
-  "pageLoadFailed": "Page load failed",
-  "pause": "Pause",
-  "resume": "Resume",
-  "paused": "Paused",
-  "cancelled": "Cancelled",
-  "downloading": "Downloading",
-  "savedTo": "Saved to {path}",
+  "chatSpeechInputConfigurationRequired": "请先在设置 > 模型与 AI 中添加并选中一个语音识别配置。",
+  "chatSpeechNoTextRecognized": "未识别到文本",
+  "history": "历史记录",
+  "bookmarks": "收藏夹",
+  "downloads": "下载",
+  "scripts": "脚本",
+  "zoom": "缩放",
+  "zoomIn": "放大",
+  "zoomOut": "缩小",
+  "desktopMode": "桌面模式",
+  "clearLocalStorage": "清理本地存储",
+  "searchHistory": "搜索历史",
+  "noDownloadTasks": "还没有下载任务",
+  "openFile": "打开文件",
+  "openLocation": "打开位置",
+  "retry": "重试",
+  "removeRecord": "移除记录",
+  "pending": "等待",
+  "completed": "完成",
+  "failed": "失败",
+  "back": "后退",
+  "forward": "前进",
+  "stop": "停止",
+  "refresh": "刷新",
+  "home": "主页",
+  "newTab": "新建标签页",
+  "openExternalApplication": "打开外部应用",
+  "open": "打开",
+  "ok": "确定",
+  "webPage": "网页",
+  "tabs": "标签页",
+  "noBookmarks": "还没有收藏",
+  "removeBookmark": "取消收藏",
+  "addBookmark": "收藏",
+  "menu": "菜单",
+  "siteData": "站点数据",
+  "clearAllWebViewCookies": "清除所有 WebView Cookie",
+  "clearCookies": "清除 Cookie",
+  "noData": "没有数据",
+  "local": "本地",
+  "pageLoadFailed": "页面加载失败",
+  "pause": "暂停",
+  "resume": "恢复",
+  "paused": "暂停",
+  "cancelled": "取消",
+  "downloading": "正在下载",
+  "savedTo": "已保存到 {path}",
   "@savedTo": {
     "placeholders": {
       "path": {
@@ -421,76 +421,76 @@
       }
     }
   },
-  "sslCertificateError": "SSL certificate error",
-  "edit": "Edit",
-  "files": "Files",
-  "terminal": "Terminal",
-  "browser": "Browser",
-  "filePreview": "File preview",
-  "workspaceBoundTitle": "Bound workspace",
-  "selectFile": "Select file",
-  "selectFileDescription": "Select a file from the workspace to view, edit, or send to AI",
-  "openTerminal": "Open terminal",
-  "openTerminalDescription": "Enter the command line for the current workspace",
-  "openBrowser": "Open browser",
-  "openBrowserDescription": "Open a full browser session, project preview, and web automation",
-  "noWorkspaceBound": "This conversation has no bound workspace.",
-  "terminalSessionPlaceholder": "The current workspace terminal session will appear here.",
-  "emptyFolder": "This folder is empty",
-  "imagePreview": "Image preview",
-  "audioPreview": "Audio preview",
-  "videoPreview": "Video preview",
-  "pdfPreview": "PDF preview",
-  "wordPreview": "Word preview",
-  "spreadsheetPreview": "Spreadsheet preview",
-  "presentationPreview": "Presentation preview",
-  "webPagePreview": "Web page preview",
-  "markdownPreview": "Markdown preview",
-  "textPreview": "Text preview",
-  "file": "File",
-  "unsupportedReadOnlyPreview": "This file is not a built-in read-only preview type.",
-  "cannotPreview": "Cannot preview",
-  "openProjectInFullBrowser": "Open project in full browser",
-  "openInBrowser": "Open in browser",
-  "emptySpreadsheet": "Spreadsheet is empty",
-  "settingsCategoryModelTitle": "Models & AI",
-  "settingsCategoryModelSubtitle": "Models, keys, context",
-  "settingsCategoryModelDescription": "Configure model connections, choose the chat model, and manage thinking, context, and multimodal abilities.",
-  "settingsCategoryLocalModelsTitle": "Local Models",
-  "settingsCategoryLocalModelsSubtitle": "Downloads, engines, STT / TTS",
-  "settingsCategoryLocalModelsDescription": "Manage local models and inference engines installed on demand.",
-  "settingsCategoryCharactersTitle": "Characters",
-  "settingsCategoryCharactersSubtitle": "Cards, groups, bindings",
-  "settingsCategoryCharactersDescription": "Manage character cards, groups, active roles, and role-level model, memory, and tool bindings.",
-  "settingsCategoryMemoryTitle": "Memory",
-  "settingsCategoryMemorySubtitle": "Memory graph, shared stores, user profile",
-  "settingsCategoryMemoryDescription": "Manage character and shared memory stores, memory graph visualization, user profiles, and auto-update behavior.",
-  "settingsCategoryToolsTitle": "Tools & Permissions",
-  "settingsCategoryToolsSubtitle": "AI capability, system authorization, extensions",
-  "settingsCategoryToolsDescription": "Set AI read-only, read-write, or full access, and review the current device system authorization status.",
-  "settingsCategoryWorkspaceTitle": "Workspace & Browser",
-  "settingsCategoryWorkspaceSubtitle": "Files, terminal, browser",
-  "settingsCategoryWorkspaceDescription": "Manage default workspaces, terminal sessions, browser mode, scripts, and web automation.",
-  "settingsCategoryGlobalBehaviorTitle": "Global Behavior Settings",
-  "settingsCategoryGlobalBehaviorSubtitle": "Input processing and interaction",
-  "settingsCategoryGlobalBehaviorDescription": "Configure input and interaction behavior that does not vary by character card.",
-  "settingsCategoryAppearanceTitle": "Appearance & Interaction",
-  "settingsCategoryAppearanceSubtitle": "Theme, bubbles, and interaction",
-  "settingsCategoryAppearanceDescription": "Customize global theme, background media, message bubbles, and chat interaction.",
-  "settingsCategoryDataTitle": "Data & Backup",
-  "settingsCategoryDataSubtitle": "Backup, restore, stats",
-  "settingsCategoryDataDescription": "Back up chats, characters, and model settings, restore backup content, and view data statistics.",
-  "settingsCategoryAccessLinksTitle": "Device Space",
-  "settingsCategoryAccessLinksSubtitle": "Connect, sync, collaborate",
-  "settingsCategoryAccessLinksDescription": "Manage this device space, connect devices, and share data and routes.",
-  "settingsCategoryGroupAssistant": "AI & Creation",
-  "settingsCategoryGroupWorkspace": "Workspace & Automation",
-  "settingsCategoryGroupExperience": "Display & Interaction",
-  "settingsCategoryGroupSystem": "Data & System",
-  "settingsGlobalBehaviorChatInputSection": "Chat input",
-  "settingsGlobalBehaviorLongPastedTextAsAttachment": "Convert long pasted text to a file",
-  "settingsGlobalBehaviorLongPastedTextThreshold": "Conversion threshold",
-  "settingsGlobalBehaviorLongPastedTextThresholdValue": "{count} characters",
+  "sslCertificateError": "SSL 证书错误",
+  "edit": "编辑",
+  "files": "文件",
+  "terminal": "终端",
+  "browser": "浏览器",
+  "filePreview": "文件预览",
+  "workspaceBoundTitle": "已绑定工作区",
+  "selectFile": "选择文件",
+  "selectFileDescription": "从工作区里选择要查看、编辑或交给 AI 的文件",
+  "openTerminal": "打开终端",
+  "openTerminalDescription": "进入当前工作区的命令行",
+  "openBrowser": "打开浏览器",
+  "openBrowserDescription": "打开完整浏览器会话、项目预览和网页自动化",
+  "noWorkspaceBound": "当前对话还没有绑定工作区。",
+  "terminalSessionPlaceholder": "这里会显示当前工作区的终端会话。",
+  "emptyFolder": "这个文件夹是空的",
+  "imagePreview": "图片预览",
+  "audioPreview": "音频预览",
+  "videoPreview": "视频预览",
+  "pdfPreview": "PDF 预览",
+  "wordPreview": "Word 预览",
+  "spreadsheetPreview": "表格预览",
+  "presentationPreview": "演示文稿预览",
+  "webPagePreview": "网页预览",
+  "markdownPreview": "Markdown 预览",
+  "textPreview": "文本预览",
+  "file": "文件",
+  "unsupportedReadOnlyPreview": "此文件不属于内置只读预览类型。",
+  "cannotPreview": "无法预览",
+  "openProjectInFullBrowser": "用完整浏览器打开项目",
+  "openInBrowser": "在浏览器打开",
+  "emptySpreadsheet": "表格为空",
+  "settingsCategoryModelTitle": "模型与 AI",
+  "settingsCategoryModelSubtitle": "模型、Key、上下文",
+  "settingsCategoryModelDescription": "配置模型连接，选择聊天模型，并管理思考、上下文和多模态能力。",
+  "settingsCategoryLocalModelsTitle": "本地模型",
+  "settingsCategoryLocalModelsSubtitle": "下载、引擎、STT / TTS",
+  "settingsCategoryLocalModelsDescription": "管理按需安装的本地模型和推理引擎。",
+  "settingsCategoryCharactersTitle": "角色",
+  "settingsCategoryCharactersSubtitle": "角色卡、群组、绑定",
+  "settingsCategoryCharactersDescription": "管理角色卡、群组、当前激活角色和角色级模型/记忆/工具绑定。",
+  "settingsCategoryMemoryTitle": "记忆",
+  "settingsCategoryMemorySubtitle": "记忆图谱、共享记忆库、用户资料",
+  "settingsCategoryMemoryDescription": "管理角色与共享记忆库、记忆图谱可视化、用户资料与自动更新策略。",
+  "settingsCategoryToolsTitle": "工具与权限",
+  "settingsCategoryToolsSubtitle": "AI 能力、系统授权、扩展",
+  "settingsCategoryToolsDescription": "设置 AI 的只读、读写或完整权限，并查看当前设备的系统授权状态。",
+  "settingsCategoryWorkspaceTitle": "工作区与浏览器",
+  "settingsCategoryWorkspaceSubtitle": "文件、终端、浏览器",
+  "settingsCategoryWorkspaceDescription": "管理默认工作区、终端会话、浏览器模式、脚本和网页自动化。",
+  "settingsCategoryGlobalBehaviorTitle": "全局行为设置",
+  "settingsCategoryGlobalBehaviorSubtitle": "输入处理与交互",
+  "settingsCategoryGlobalBehaviorDescription": "设置不随角色卡变化的输入与交互行为。",
+  "settingsCategoryAppearanceTitle": "外观与交互",
+  "settingsCategoryAppearanceSubtitle": "主题、气泡与交互",
+  "settingsCategoryAppearanceDescription": "调整全局主题、背景壁纸、聊天气泡样式与信息流交互。",
+  "settingsCategoryDataTitle": "数据与备份",
+  "settingsCategoryDataSubtitle": "备份、恢复、统计",
+  "settingsCategoryDataDescription": "备份聊天、角色和模型配置，恢复备份内容，并查看数据统计。",
+  "settingsCategoryAccessLinksTitle": "设备空间",
+  "settingsCategoryAccessLinksSubtitle": "连接、同步、协同",
+  "settingsCategoryAccessLinksDescription": "管理当前设备空间，连接设备并同步数据和路由。",
+  "settingsCategoryGroupAssistant": "AI 与创作",
+  "settingsCategoryGroupWorkspace": "工作与自动化",
+  "settingsCategoryGroupExperience": "显示与交互",
+  "settingsCategoryGroupSystem": "数据与系统",
+  "settingsGlobalBehaviorChatInputSection": "聊天输入",
+  "settingsGlobalBehaviorLongPastedTextAsAttachment": "将超长粘贴文本转为文件",
+  "settingsGlobalBehaviorLongPastedTextThreshold": "转换阈值",
+  "settingsGlobalBehaviorLongPastedTextThresholdValue": "{count} 个字符",
   "@settingsGlobalBehaviorLongPastedTextThresholdValue": {
     "placeholders": {
       "count": {
@@ -498,33 +498,33 @@
       }
     }
   },
-  "settingsComingSoon": "This area will continue connecting existing runtime capabilities. Models, characters, and tools are being completed first.",
-  "settingsAdvanced": "Advanced settings",
-  "settingsActive": "Active",
-  "settingsActivate": "Activate",
-  "settingsModelCurrentSection": "Current chat model",
-  "settingsModelCurrentChatModel": "Chat uses",
-  "settingsModelCurrentActive": "Active",
-  "settingsModelMultimodalBadge": "Multimodal",
-  "settingsModelNoModels": "No models yet",
-  "settingsModelProviderModelCount": "{count} models",
-  "settingsModelSetCurrentActive": "Set active",
-  "settingsChatThinkingMode": "Thinking mode",
-  "settingsChatThinkingModeDescription": "Let supported models produce steadier reasoning.",
-  "settingsChatStreamOutput": "Stream output",
-  "settingsChatStreamOutputDescription": "Show generated replies progressively.",
-  "settingsModelProfilesSection": "Model profiles",
-  "settingsModelFunctionFollowChat": "Follow chat",
-  "settingsModelFunctionFollowChatAll": "Follow all",
-  "settingsModelFunctionFollowChatHint": "Automatically uses the current chat model",
-  "settingsModelFunctionGroupBackground": "Background helpers",
-  "settingsModelFunctionGroupMain": "Main chat model",
-  "settingsModelFunctionGroupMultimodal": "Multimodal recognition",
-  "settingsModelFunctionMappingsSection": "Function model assignment",
-  "settingsModelFunctionMappingsDescription": "Choose the model profile and concrete model used by chat, summary, memory, image recognition, and other functions.",
-  "settingsModelFunctionMappingsReset": "Reset all",
-  "settingsModelFunctionMappingsChange": "Change",
-  "settingsModelFunctionMappingsSelect": "Select {name} model",
+  "settingsComingSoon": "这个区域会继续接入现有 runtime 能力。当前优先完成模型、角色和工具设置。",
+  "settingsAdvanced": "高级设置",
+  "settingsActive": "当前",
+  "settingsActivate": "设为当前",
+  "settingsModelCurrentSection": "当前聊天模型",
+  "settingsModelCurrentChatModel": "聊天使用",
+  "settingsModelCurrentActive": "当前激活",
+  "settingsModelMultimodalBadge": "多模态",
+  "settingsModelNoModels": "暂无模型",
+  "settingsModelProviderModelCount": "{count} 个模型",
+  "settingsModelSetCurrentActive": "设为当前",
+  "settingsChatThinkingMode": "思考模式",
+  "settingsChatThinkingModeDescription": "让支持的模型输出更稳的推理过程。",
+  "settingsChatStreamOutput": "流式输出",
+  "settingsChatStreamOutputDescription": "回复生成时逐步显示内容。",
+  "settingsModelProfilesSection": "模型档案",
+  "settingsModelFunctionFollowChat": "跟随聊天",
+  "settingsModelFunctionFollowChatAll": "全部跟随",
+  "settingsModelFunctionFollowChatHint": "自动使用当前聊天模型",
+  "settingsModelFunctionGroupBackground": "后台辅助",
+  "settingsModelFunctionGroupMain": "主聊天模型",
+  "settingsModelFunctionGroupMultimodal": "多模态识别",
+  "settingsModelFunctionMappingsSection": "功能模型分配",
+  "settingsModelFunctionMappingsDescription": "为聊天、总结、记忆、识图等功能指定使用的模型配置和具体模型。",
+  "settingsModelFunctionMappingsReset": "全部重置",
+  "settingsModelFunctionMappingsChange": "更改",
+  "settingsModelFunctionMappingsSelect": "选择{name}模型",
   "@settingsModelFunctionMappingsSelect": {
     "placeholders": {
       "name": {
@@ -543,7 +543,7 @@
       }
     }
   },
-  "settingsModelFunctionMappingsMissing": "Bound model does not exist: {providerId} · {modelId}",
+  "settingsModelFunctionMappingsMissing": "绑定的模型不存在：{providerId} · {modelId}",
   "@settingsModelFunctionMappingsMissing": {
     "placeholders": {
       "providerId": {
@@ -554,7 +554,7 @@
       }
     }
   },
-  "settingsModelDeleteBlocked": "This model is used by these functions. Change their model assignments first: {functions}",
+  "settingsModelDeleteBlocked": "该模型正在被这些功能使用，请先更改功能模型分配：{functions}",
   "@settingsModelDeleteBlocked": {
     "placeholders": {
       "functions": {
@@ -562,7 +562,7 @@
       }
     }
   },
-  "settingsModelDeleteProviderBlocked": "Models under this provider are used by these functions. Change their model assignments first: {functions}",
+  "settingsModelDeleteProviderBlocked": "该供应商下的模型正在被这些功能使用，请先更改功能模型分配：{functions}",
   "@settingsModelDeleteProviderBlocked": {
     "placeholders": {
       "functions": {
@@ -570,7 +570,7 @@
       }
     }
   },
-  "settingsModelDeleteProviderConfirm": "Delete provider “{name}”? This will also delete its {count} models.",
+  "settingsModelDeleteProviderConfirm": "确定删除供应商“{name}”吗？这会同时删除其中的 {count} 个模型。",
   "@settingsModelDeleteProviderConfirm": {
     "placeholders": {
       "name": {
@@ -581,9 +581,9 @@
       }
     }
   },
-  "settingsModelDeleteProviderConfirmAction": "Delete provider",
-  "settingsTtsDeleteProvider": "Delete TTS provider",
-  "settingsTtsDeleteProviderConfirm": "Delete TTS provider “{name}” and its {count} voice configurations?",
+  "settingsModelDeleteProviderConfirmAction": "删除供应商",
+  "settingsTtsDeleteProvider": "删除 TTS 供应商",
+  "settingsTtsDeleteProviderConfirm": "删除 TTS 供应商“{name}”及其 {count} 个音色配置？",
   "@settingsTtsDeleteProviderConfirm": {
     "placeholders": {
       "name": {
@@ -594,7 +594,7 @@
       }
     }
   },
-  "settingsTtsDeleteProviderFailed": "Failed to delete TTS provider: {error}",
+  "settingsTtsDeleteProviderFailed": "删除 TTS 供应商失败：{error}",
   "@settingsTtsDeleteProviderFailed": {
     "placeholders": {
       "error": {
@@ -602,44 +602,44 @@
       }
     }
   },
-  "settingsTtsCurrentConfigCannotDelete": "The TTS configuration currently in use cannot be deleted.",
-  "settingsTtsConfigUsedByCharacter": "This TTS configuration is used by a character card and cannot be deleted.",
-  "settingsModelChatAutoGlmWarning": "AutoGLM cannot be used as the main chat model. Chat and UI control use separate model assignments; choose another large model.",
-  "settingsModelFunctionChat": "Chat",
-  "settingsModelFunctionChatDescription": "Model used for main conversation replies.",
-  "settingsModelFunctionSummary": "Summary",
-  "settingsModelFunctionSummaryDescription": "Model used for long-context automatic summaries.",
-  "settingsModelFunctionTitleGeneration": "Conversation title",
-  "settingsModelFunctionTitleGenerationDescription": "Model used to summarize the first message and attachments into a conversation title.",
-  "settingsModelFunctionMemory": "Memory",
-  "settingsModelFunctionMemoryDescription": "Model used to extract, organize, and update memories.",
-  "settingsModelFunctionUiController": "UI control",
-  "settingsModelFunctionUiControllerDescription": "Model used for interface control and lightweight action planning.",
-  "settingsModelFunctionTranslation": "Translation",
-  "settingsModelFunctionTranslationDescription": "Model used to translate text and localized content.",
-  "settingsModelFunctionGrep": "Text search",
-  "settingsModelFunctionGrepDescription": "Model used to filter search results and judge text matches.",
-  "settingsModelFunctionRoleResponsePlanner": "Group reply planner",
-  "settingsModelFunctionRoleResponsePlannerDescription": "Model used to plan speaking roles and order in group conversations.",
-  "settingsModelFunctionImageRecognition": "Image recognition",
-  "settingsModelFunctionImageRecognitionDescription": "Model used to understand images and extract image content.",
-  "settingsModelFunctionAudioRecognition": "Audio recognition",
-  "settingsModelFunctionAudioRecognitionDescription": "Model used to understand audio and extract audio content.",
-  "settingsModelFunctionVideoRecognition": "Video recognition",
-  "settingsModelFunctionVideoRecognitionDescription": "Model used to understand video and extract video content.",
-  "settingsModelFunctionImageUnsupported": "The selected model profile has direct image input disabled.",
-  "settingsModelFunctionAudioUnsupported": "The selected model profile has direct audio input disabled.",
-  "settingsModelFunctionVideoUnsupported": "The selected model profile has direct video input disabled.",
-  "settingsModelCreateProfile": "New model profile",
-  "settingsModelEditProfile": "Edit model profile",
-  "settingsModelProfileName": "Profile name",
-  "settingsModelApiEndpoint": "API endpoint",
-  "settingsModelModelNames": "Model names",
-  "settingsModelApiKey": "API key",
-  "settingsModelCodexLogin": "ChatGPT login",
-  "settingsModelCodexLoginTitle": "Sign in to ChatGPT Codex",
-  "settingsModelCodexLoginDescription": "OpenAI Codex uses a ChatGPT subscription sign-in instead of an API key.",
-  "settingsModelCodexSignedIn": "Signed in as {account}",
+  "settingsTtsCurrentConfigCannotDelete": "当前正在使用的 TTS 配置不能删除",
+  "settingsTtsConfigUsedByCharacter": "该 TTS 配置正在被角色卡使用，不能删除",
+  "settingsModelChatAutoGlmWarning": "禁止使用 AutoGLM 作为对话主模型。对话模型和 UI 控制模型是分离的，请选择其他大模型。",
+  "settingsModelFunctionChat": "聊天",
+  "settingsModelFunctionChatDescription": "主对话回复使用的模型。",
+  "settingsModelFunctionSummary": "总结",
+  "settingsModelFunctionSummaryDescription": "长上下文自动总结使用的模型。",
+  "settingsModelFunctionTitleGeneration": "对话标题",
+  "settingsModelFunctionTitleGenerationDescription": "根据首条消息和附件生成对话标题使用的模型。",
+  "settingsModelFunctionMemory": "记忆",
+  "settingsModelFunctionMemoryDescription": "记忆提取、整理和更新使用的模型。",
+  "settingsModelFunctionUiController": "UI 控制",
+  "settingsModelFunctionUiControllerDescription": "界面控制和轻量操作规划使用的模型。",
+  "settingsModelFunctionTranslation": "翻译",
+  "settingsModelFunctionTranslationDescription": "翻译文本和本地化内容使用的模型。",
+  "settingsModelFunctionGrep": "文本检索",
+  "settingsModelFunctionGrepDescription": "搜索结果筛选和文本匹配判断使用的模型。",
+  "settingsModelFunctionRoleResponsePlanner": "群聊发言规划",
+  "settingsModelFunctionRoleResponsePlannerDescription": "群组对话中规划发言角色和顺序使用的模型。",
+  "settingsModelFunctionImageRecognition": "图片识别",
+  "settingsModelFunctionImageRecognitionDescription": "图片理解和图片内容提取使用的模型。",
+  "settingsModelFunctionAudioRecognition": "音频识别",
+  "settingsModelFunctionAudioRecognitionDescription": "音频理解和音频内容提取使用的模型。",
+  "settingsModelFunctionVideoRecognition": "视频识别",
+  "settingsModelFunctionVideoRecognitionDescription": "视频理解和视频内容提取使用的模型。",
+  "settingsModelFunctionImageUnsupported": "当前模型配置未开启图片直传。",
+  "settingsModelFunctionAudioUnsupported": "当前模型配置未开启音频直传。",
+  "settingsModelFunctionVideoUnsupported": "当前模型配置未开启视频直传。",
+  "settingsModelCreateProfile": "新建模型档案",
+  "settingsModelEditProfile": "编辑模型档案",
+  "settingsModelProfileName": "档案名称",
+  "settingsModelApiEndpoint": "API 地址",
+  "settingsModelModelNames": "模型名称",
+  "settingsModelApiKey": "API Key",
+  "settingsModelCodexLogin": "ChatGPT 登录",
+  "settingsModelCodexLoginTitle": "登录 ChatGPT Codex",
+  "settingsModelCodexLoginDescription": "OpenAI Codex 使用 ChatGPT 订阅登录，不使用 API Key。",
+  "settingsModelCodexSignedIn": "已登录 {account}",
   "@settingsModelCodexSignedIn": {
     "placeholders": {
       "account": {
@@ -647,14 +647,14 @@
       }
     }
   },
-  "settingsModelCodexSignedOut": "Not signed in to ChatGPT",
-  "settingsModelCodexBrowser": "Browser sign-in",
-  "settingsModelCodexDevice": "Device code",
-  "settingsModelCodexWaiting": "Waiting for ChatGPT authorization…",
-  "settingsModelCodexDeviceInstructions": "Enter this code on the opened page, then return to Operit.",
-  "settingsModelCodexOpenPage": "Open verification page",
-  "settingsModelCodexLogout": "Sign out",
-  "settingsModelCodexLoginFailed": "ChatGPT sign-in failed: {error}",
+  "settingsModelCodexSignedOut": "尚未登录 ChatGPT",
+  "settingsModelCodexBrowser": "浏览器登录",
+  "settingsModelCodexDevice": "设备码登录",
+  "settingsModelCodexWaiting": "正在等待 ChatGPT 授权…",
+  "settingsModelCodexDeviceInstructions": "在打开的页面输入这个验证码，然后回到 Operit。",
+  "settingsModelCodexOpenPage": "打开验证页面",
+  "settingsModelCodexLogout": "退出登录",
+  "settingsModelCodexLoginFailed": "ChatGPT 登录失败：{error}",
   "@settingsModelCodexLoginFailed": {
     "placeholders": {
       "error": {
@@ -662,9 +662,9 @@
       }
     }
   },
-  "settingsModelApiKeyPool": "API key pool",
-  "settingsModelApiKeyPoolDescription": "Prepare multiple keys for one model profile so runtime can rotate between them.",
-  "settingsModelApiKeyPoolCount": "{count} keys",
+  "settingsModelApiKeyPool": "API Key 池",
+  "settingsModelApiKeyPoolDescription": "给同一个模型配置准备多个 Key，用于多 Key 轮换。",
+  "settingsModelApiKeyPoolCount": "{count} 个 Key",
   "@settingsModelApiKeyPoolCount": {
     "placeholders": {
       "count": {
@@ -672,15 +672,15 @@
       }
     }
   },
-  "settingsModelApiKeyPoolEmpty": "No keys yet. Add keys and this profile will use the key pool.",
-  "settingsModelAddApiKey": "Add key",
-  "settingsModelEditApiKey": "Edit key",
-  "settingsModelApiKeyName": "Key name",
-  "settingsModelApiKeyEnabled": "Enable this key",
-  "settingsModelProviderId": "Provider ID",
-  "settingsModelProvidersSection": "LLM providers",
-  "settingsModelProviderType": "Provider type",
-  "settingsModelProviderTypeOption": "{name} ({original})",
+  "settingsModelApiKeyPoolEmpty": "还没有 Key。添加后，运行时会按当前配置使用 Key 池。",
+  "settingsModelAddApiKey": "添加 Key",
+  "settingsModelEditApiKey": "编辑 Key",
+  "settingsModelApiKeyName": "Key 名称",
+  "settingsModelApiKeyEnabled": "启用这个 Key",
+  "settingsModelProviderId": "供应商 ID",
+  "settingsModelProvidersSection": "LLM 供应商",
+  "settingsModelProviderType": "供应商类型",
+  "settingsModelProviderTypeOption": "{name}（{original}）",
   "@settingsModelProviderTypeOption": {
     "placeholders": {
       "name": {
@@ -695,201 +695,201 @@
   "settingsModelProviderTypeXai": "xAI",
   "settingsModelProviderTypeOpenaiResponses": "OpenAI Responses",
   "settingsModelProviderTypeOpenaiCodex": "OpenAI Codex",
-  "settingsModelProviderTypeOpenaiResponsesGeneric": "OpenAI Responses compatible",
-  "settingsModelProviderTypeOpenaiGeneric": "OpenAI compatible",
+  "settingsModelProviderTypeOpenaiResponsesGeneric": "OpenAI Responses 兼容",
+  "settingsModelProviderTypeOpenaiGeneric": "OpenAI 兼容",
   "settingsModelProviderTypeAnthropic": "Anthropic",
-  "settingsModelProviderTypeAnthropicGeneric": "Anthropic compatible",
+  "settingsModelProviderTypeAnthropicGeneric": "Anthropic 兼容",
   "settingsModelProviderTypeGoogle": "Google Gemini",
-  "settingsModelProviderTypeGeminiGeneric": "Gemini compatible",
-  "settingsModelProviderTypeBaidu": "Baidu",
-  "settingsModelProviderTypeAliyun": "Aliyun",
-  "settingsModelProviderTypeXunfei": "Xunfei",
-  "settingsModelProviderTypeZhipu": "Zhipu AI",
-  "settingsModelProviderTypeBaichuan": "Baichuan",
-  "settingsModelProviderTypeMoonshot": "Moonshot",
-  "settingsModelProviderTypeMimo": "MiMo",
+  "settingsModelProviderTypeGeminiGeneric": "Gemini 兼容",
+  "settingsModelProviderTypeBaidu": "百度",
+  "settingsModelProviderTypeAliyun": "阿里云",
+  "settingsModelProviderTypeXunfei": "讯飞",
+  "settingsModelProviderTypeZhipu": "智谱",
+  "settingsModelProviderTypeBaichuan": "百川",
+  "settingsModelProviderTypeMoonshot": "月之暗面",
+  "settingsModelProviderTypeMimo": "小米 MiMo",
   "settingsModelProviderTypeDeepseek": "DeepSeek",
   "settingsModelProviderTypeMistral": "Mistral",
-  "settingsModelProviderTypeSiliconflow": "SiliconFlow",
-  "settingsModelProviderTypeIflow": "iFlow",
+  "settingsModelProviderTypeSiliconflow": "硅基流动",
+  "settingsModelProviderTypeIflow": "心流",
   "settingsModelProviderTypeOpenrouter": "OpenRouter",
   "settingsModelProviderTypeOpencode": "OpenCode",
   "settingsModelProviderTypeFourRouter": "4Router",
   "settingsModelProviderTypeNousPortal": "Nous Portal",
-  "settingsModelProviderTypeInfiniai": "InfiniAI",
-  "settingsModelProviderTypeAlipayBailing": "Alipay Bailing",
-  "settingsModelProviderTypeDoubao": "Doubao",
+  "settingsModelProviderTypeInfiniai": "无问芯穹",
+  "settingsModelProviderTypeAlipayBailing": "支付宝百灵",
+  "settingsModelProviderTypeDoubao": "豆包",
   "settingsModelProviderTypeNvidia": "NVIDIA",
   "settingsModelProviderTypeLmstudio": "LM Studio",
   "settingsModelProviderTypeOllama": "Ollama",
-  "settingsModelProviderTypeOpenaiLocal": "OpenAI Local",
-  "settingsModelProviderTypeLocalModel": "Local model",
-  "localModelsLoadFailed": "Failed to load local model status: {error}",
+  "settingsModelProviderTypeOpenaiLocal": "OpenAI 本地",
+  "settingsModelProviderTypeLocalModel": "本地模型",
+  "localModelsLoadFailed": "本地模型状态加载失败：{error}",
   "@localModelsLoadFailed": {
     "placeholders": {
       "error": {}
     }
   },
-  "localModelsOperationFailed": "Local model operation failed: {error}",
+  "localModelsOperationFailed": "本地模型操作失败：{error}",
   "@localModelsOperationFailed": {
     "placeholders": {
       "error": {}
     }
   },
-  "localModelsCatalog": "Model catalog",
-  "localModelsCategorySpeechToText": "Speech-to-text models",
-  "localModelsCategoryTextToSpeech": "Text-to-speech models",
-  "localModelsCategoryChat": "LLM models",
-  "localModelsCategoryEmbedding": "Embedding models",
-  "localModelsInstalledEngines": "Installed engines",
-  "localModelsNoInstalledEngines": "No local inference engine is installed on this platform.",
-  "localModelsDeleteModelTitle": "Delete local model",
-  "localModelsDeleteModelMessage": "Delete model files for {modelName}?",
+  "localModelsCatalog": "模型目录",
+  "localModelsCategorySpeechToText": "语音识别（STT）模型",
+  "localModelsCategoryTextToSpeech": "语音合成（TTS）模型",
+  "localModelsCategoryChat": "大语言（LLM）模型",
+  "localModelsCategoryEmbedding": "嵌入模型",
+  "localModelsInstalledEngines": "已安装引擎",
+  "localModelsNoInstalledEngines": "当前平台尚未安装本地推理引擎。",
+  "localModelsDeleteModelTitle": "删除本地模型",
+  "localModelsDeleteModelMessage": "删除 {modelName} 的模型文件？",
   "@localModelsDeleteModelMessage": {
     "placeholders": {
       "modelName": {}
     }
   },
-  "localModelsDeleteEngineTitle": "Delete local engine",
-  "localModelsDeleteEngineMessage": "Delete {engineName} {version}?",
+  "localModelsDeleteEngineTitle": "删除本地引擎",
+  "localModelsDeleteEngineMessage": "删除 {engineName} {version}？",
   "@localModelsDeleteEngineMessage": {
     "placeholders": {
       "engineName": {},
       "version": {}
     }
   },
-  "localModelsCancelling": "Pausing",
-  "localModelsDownloadPaused": "Paused: {downloaded} / {total}",
+  "localModelsCancelling": "正在暂停",
+  "localModelsDownloadPaused": "已暂停 · {downloaded} / {total}",
   "@localModelsDownloadPaused": {
     "placeholders": {
       "downloaded": {},
       "total": {}
     }
   },
-  "localModelsDownloadInstalling": "Download complete, installing",
-  "localModelsDownloading": "Downloading: {downloaded} / {total}",
+  "localModelsDownloadInstalling": "下载完成，正在安装",
+  "localModelsDownloading": "下载 {downloaded} / {total}",
   "@localModelsDownloading": {
     "placeholders": {
       "downloaded": {},
       "total": {}
     }
   },
-  "localModelsLicense": "License: {license}",
+  "localModelsLicense": "许可证：{license}",
   "@localModelsLicense": {
     "placeholders": {
       "license": {}
     }
   },
-  "localModelsPlatformCompatible": "Platform compatible",
-  "localModelsPlatformIncompatible": "Platform incompatible",
-  "localModelsModelInstalled": "Model installed",
-  "localModelsModelNotInstalled": "Model not installed",
-  "localModelsEngineInstalled": "Engine installed",
-  "localModelsEngineNotInstalled": "Engine not installed",
-  "localModelsVerifyModelAndEngine": "Verify model and engine",
-  "localModelsDeleteModel": "Delete model",
-  "localModelsPauseDownload": "Pause download",
-  "localModelsDeleteDownload": "Delete download",
-  "localModelsResumeDownload": "Resume",
-  "localModelsInstalling": "Installing",
-  "localModelsInstall": "Install",
-  "localModelsDeleteEngine": "Delete engine",
-  "localModelsDownloadSource": "Download source",
+  "localModelsPlatformCompatible": "平台兼容",
+  "localModelsPlatformIncompatible": "平台不兼容",
+  "localModelsModelInstalled": "模型已安装",
+  "localModelsModelNotInstalled": "模型未安装",
+  "localModelsEngineInstalled": "引擎已安装",
+  "localModelsEngineNotInstalled": "引擎未安装",
+  "localModelsVerifyModelAndEngine": "校验模型和引擎",
+  "localModelsDeleteModel": "删除模型",
+  "localModelsPauseDownload": "暂停下载",
+  "localModelsDeleteDownload": "删除下载",
+  "localModelsResumeDownload": "继续",
+  "localModelsInstalling": "下载中",
+  "localModelsInstall": "安装",
+  "localModelsDeleteEngine": "删除引擎",
+  "localModelsDownloadSource": "下载源",
   "localModelsSourceHuggingFace": "Hugging Face",
-  "localModelsSourceModelScope": "ModelScope",
-  "localModelsSourceHfMirror": "HF-Mirror",
-  "localModelsSourceDirectHttp": "Direct HTTP",
-  "localModelsExploreHub": "Explore / Import Models",
-  "localModelsHubSearchHint": "Search models or enter owner/repo...",
-  "localModelsHubImport": "Import",
-  "localModelsHubImporting": "Analyzing and importing model...",
-  "localModelsHubImportSuccess": "Model successfully imported into catalog",
-  "localModelsRemoveFromCatalog": "Remove from catalog",
-  "localModelsCustomBadge": "Custom",
-  "localModelsHubSearching": "Searching...",
-  "localModelsHubNoResults": "No matching model repositories found",
-  "localModelsHubDirectImportTitle": "Import by Repository",
-  "localModelsHubDirectImportPrompt": "Enter a Hugging Face or ModelScope repository (owner/repo) or URL:",
-  "localModelDescriptionSherpaOnnxStreamingStt": "Streaming bilingual Chinese and English speech recognition.",
-  "localModelDescriptionSherpaOnnxVitsAishell3": "Local Chinese multi-speaker speech synthesis.",
-  "localModelDescriptionSherpaOnnxVitsZhLl": "Local Chinese five-speaker speech synthesis.",
-  "localModelDescriptionSherpaOnnxMatchaBaker": "Local Chinese single-speaker Matcha speech synthesis.",
-  "localModelDescriptionSherpaOnnxKittenNano": "Local English eight-speaker KittenTTS speech synthesis.",
-  "localModelDescriptionSherpaOnnxWebParaformer": "Browser packaged Chinese and English Paraformer speech recognition.",
-  "localModelDescriptionSherpaOnnxWebVitsPiper": "Browser packaged English multi-speaker VITS speech synthesis.",
+  "localModelsSourceModelScope": "ModelScope (魔搭)",
+  "localModelsSourceHfMirror": "HF-Mirror (镜像)",
+  "localModelsSourceDirectHttp": "直链下载",
+  "localModelsExploreHub": "探索 / 导入模型",
+  "localModelsHubSearchHint": "搜索模型或输入 owner/repo...",
+  "localModelsHubImport": "导入",
+  "localModelsHubImporting": "正在解析并导入模型...",
+  "localModelsHubImportSuccess": "模型已成功导入模型目录",
+  "localModelsRemoveFromCatalog": "从目录移除",
+  "localModelsCustomBadge": "自定义导入",
+  "localModelsHubSearching": "正在搜索...",
+  "localModelsHubNoResults": "未找到匹配的模型仓库",
+  "localModelsHubDirectImportTitle": "按仓库地址导入",
+  "localModelsHubDirectImportPrompt": "输入 Hugging Face 或 ModelScope 的仓库路径（如 owner/repo）或完整 URL：",
+  "localModelDescriptionSherpaOnnxStreamingStt": "流式中英双语语音识别。",
+  "localModelDescriptionSherpaOnnxVitsAishell3": "本地中文多说话人语音合成。",
+  "localModelDescriptionSherpaOnnxVitsZhLl": "本地中文五说话人语音合成。",
+  "localModelDescriptionSherpaOnnxMatchaBaker": "本地中文单说话人 Matcha 语音合成。",
+  "localModelDescriptionSherpaOnnxKittenNano": "本地英文八说话人 KittenTTS 语音合成。",
+  "localModelDescriptionSherpaOnnxWebParaformer": "浏览器内置的中英 Paraformer 语音识别。",
+  "localModelDescriptionSherpaOnnxWebVitsPiper": "浏览器内置的英文多说话人 VITS 语音合成。",
   "settingsModelProviderTypeMnn": "MNN",
   "settingsModelProviderTypeLlamaCpp": "llama.cpp",
   "settingsModelProviderTypePpinfra": "PPInfra",
   "settingsModelProviderTypeNovita": "Novita AI",
   "settingsModelProviderTypeMinimax": "MiniMax",
-  "settingsModelProviderTypeOther": "Other",
-  "settingsModelEditModelSettings": "Model settings",
-  "settingsModelCreateProvider": "Create provider",
-  "settingsModelEditProvider": "Edit provider",
-  "settingsModelAddModel": "Add model",
-  "settingsModelAddModelShort": "Add",
-  "settingsModelAvailableFetchedOnly": "Fetched only",
-  "settingsModelAvailableIncludeHistory": "Include history",
-  "settingsModelAvailableSourceFetched": "Fetched",
-  "settingsModelAvailableSourceHistory": "History",
-  "settingsModelAvailableEmptyFetched": "No fetched models. Choose Include history to see catalog IDs.",
-  "settingsModelCustomModel": "Custom model",
-  "settingsModelModelId": "Model ID",
-  "settingsModelDuplicateModelId": "This model has already been added to this provider.",
-  "settingsModelDuplicateProviderName": "A provider with this name already exists.",
+  "settingsModelProviderTypeOther": "其他",
+  "settingsModelEditModelSettings": "模型设置",
+  "settingsModelCreateProvider": "创建供应商",
+  "settingsModelEditProvider": "编辑供应商",
+  "settingsModelAddModel": "添加模型",
+  "settingsModelAddModelShort": "添加",
+  "settingsModelAvailableFetchedOnly": "仅拉取到的",
+  "settingsModelAvailableIncludeHistory": "包含历史",
+  "settingsModelAvailableSourceFetched": "已拉取",
+  "settingsModelAvailableSourceHistory": "历史",
+  "settingsModelAvailableEmptyFetched": "没有拉取到的模型。可选择「包含历史」查看目录中的模型 ID。",
+  "settingsModelCustomModel": "自定义模型",
+  "settingsModelModelId": "模型 ID",
+  "settingsModelDuplicateModelId": "该模型已添加到当前供应商。",
+  "settingsModelDuplicateProviderName": "已存在同名供应商。",
   "settingsModelMaxTokens": "Max tokens",
-  "settingsModelMaxTokensDescription": "Limit how many tokens one response may generate.",
+  "settingsModelMaxTokensDescription": "限制一次回复最多生成多少 Token。",
   "settingsModelTemperature": "Temperature",
-  "settingsModelTemperatureDescription": "Controls randomness. Lower is steadier, higher is more varied.",
+  "settingsModelTemperatureDescription": "控制随机性，越低越稳定，越高越发散。",
   "settingsModelTopP": "Top-p",
-  "settingsModelTopPDescription": "Sample only from the cumulative Top-p probability range.",
+  "settingsModelTopPDescription": "只从累计概率 Top-p 范围内采样。",
   "settingsModelTopK": "Top-k",
-  "settingsModelTopKDescription": "Sample from the K most likely candidate tokens. 0 disables it.",
+  "settingsModelTopKDescription": "只从概率最高的 K 个候选 Token 中采样，0 表示关闭。",
   "settingsModelPresencePenalty": "Presence penalty",
-  "settingsModelPresencePenaltyDescription": "Encourages new topics and reduces reuse of existing content.",
+  "settingsModelPresencePenaltyDescription": "鼓励引入新话题，减少重复已有内容。",
   "settingsModelFrequencyPenalty": "Frequency penalty",
-  "settingsModelFrequencyPenaltyDescription": "Penalizes repeated tokens by frequency.",
+  "settingsModelFrequencyPenaltyDescription": "按出现频率惩罚重复 Token。",
   "settingsModelRepetitionPenalty": "Repetition penalty",
-  "settingsModelRepetitionPenaltyDescription": "Further reduces repeated output. 1.0 means no penalty.",
-  "settingsModelRequestLimit": "Requests per minute",
-  "settingsModelMaxConcurrent": "Max concurrent requests",
-  "settingsModelContextLength": "Context length",
-  "settingsModelMaxContextLength": "Max context length",
-  "settingsModelMaxContextLengthInvalid": "Enter a max context length greater than 0",
-  "settingsModelSummaryThreshold": "Summary token threshold",
-  "settingsModelSummaryByMessageCount": "Summarize by message count",
-  "settingsModelSummaryMessageCount": "Summary message threshold",
-  "settingsModelCustomHeaders": "Custom headers",
-  "settingsModelCustomParameters": "Custom parameters JSON",
-  "settingsModelToolCall": "Tool calling",
-  "settingsModelToolCallDescription": "Allow the model to use structured tool calls.",
-  "settingsModelDirectImage": "Direct image input",
-  "settingsModelDirectImageDescription": "Send images directly to models that support image input.",
-  "settingsModelDirectAudio": "Direct audio input",
-  "settingsModelDirectAudioDescription": "Send audio directly to models that support audio input.",
-  "settingsModelDirectVideo": "Direct video input",
-  "settingsModelDirectVideoDescription": "Send video directly to models that support video input.",
-  "settingsModelGoogleSearch": "Google Search",
-  "settingsModelGoogleSearchDescription": "Enable provider-side search capability.",
-  "settingsModelContext": "Context window",
-  "settingsModelSummary": "Auto summary",
-  "settingsModelThinking": "Thinking",
-  "settingsModelThinkingOption": "Thinking option",
-  "settingsModelThinkingRules": "Thinking rules JSON",
-  "settingsModelMediaHistory": "Media history",
-  "settingsModelCapabilities": "Capabilities",
-  "settingsModelBuiltinTools": "Built-in tools",
-  "settingsModelBuiltinToolExclusive": "Turns off external tool calling when enabled",
-  "settingsModelConnectionTestSection": "Connection test",
-  "settingsModelRunConnectionTest": "Test current model",
-  "settingsModelTestModel": "Test model",
-  "settingsModelTestingConnection": "Testing current model connection…",
-  "settingsModelTestedModel": "Tested model",
-  "settingsModelConnectionTestPassed": "All checks passed",
-  "settingsModelConnectionTestFailed": "Some checks failed",
-  "settingsModelCapabilitiesApplied": "Model capability switches were updated from the test result.",
-  "settingsModelCapabilitiesNeedChat": "Chat test did not pass, so model capability switches were not updated.",
-  "settingsModelConnectionTestError": "Connection test failed: {error}",
+  "settingsModelRepetitionPenaltyDescription": "进一步降低重复，1.0 表示不惩罚。",
+  "settingsModelRequestLimit": "每分钟请求数",
+  "settingsModelMaxConcurrent": "最大并发请求",
+  "settingsModelContextLength": "上下文长度",
+  "settingsModelMaxContextLength": "最大上下文长度",
+  "settingsModelMaxContextLengthInvalid": "请输入大于 0 的最大上下文长度",
+  "settingsModelSummaryThreshold": "总结 Token 阈值",
+  "settingsModelSummaryByMessageCount": "按消息数总结",
+  "settingsModelSummaryMessageCount": "总结消息数阈值",
+  "settingsModelCustomHeaders": "自定义 Headers",
+  "settingsModelCustomParameters": "自定义参数 JSON",
+  "settingsModelToolCall": "工具调用",
+  "settingsModelToolCallDescription": "允许模型使用结构化工具调用能力。",
+  "settingsModelDirectImage": "图片直传",
+  "settingsModelDirectImageDescription": "支持图片能力的模型可直接接收图片。",
+  "settingsModelDirectAudio": "音频直传",
+  "settingsModelDirectAudioDescription": "支持音频能力的模型可直接接收音频。",
+  "settingsModelDirectVideo": "视频直传",
+  "settingsModelDirectVideoDescription": "支持视频能力的模型可直接接收视频。",
+  "settingsModelGoogleSearch": "Google 搜索",
+  "settingsModelGoogleSearchDescription": "启用供应商侧搜索能力。",
+  "settingsModelContext": "上下文窗口",
+  "settingsModelSummary": "自动总结",
+  "settingsModelThinking": "思考",
+  "settingsModelThinkingOption": "思考档位",
+  "settingsModelThinkingRules": "思考规则 JSON",
+  "settingsModelMediaHistory": "媒体历史",
+  "settingsModelCapabilities": "能力",
+  "settingsModelBuiltinTools": "内置工具",
+  "settingsModelBuiltinToolExclusive": "开启后会关闭外部工具调用",
+  "settingsModelConnectionTestSection": "连接测试",
+  "settingsModelRunConnectionTest": "测试当前模型",
+  "settingsModelTestModel": "测试模型",
+  "settingsModelTestingConnection": "正在测试当前模型连接…",
+  "settingsModelTestedModel": "测试模型",
+  "settingsModelConnectionTestPassed": "全部通过",
+  "settingsModelConnectionTestFailed": "存在失败项",
+  "settingsModelCapabilitiesApplied": "已按测试结果更新模型能力开关。",
+  "settingsModelCapabilitiesNeedChat": "聊天测试未通过，模型能力开关未更新。",
+  "settingsModelConnectionTestError": "连接测试失败：{error}",
   "@settingsModelConnectionTestError": {
     "placeholders": {
       "error": {
@@ -897,39 +897,39 @@
       }
     }
   },
-  "settingsModelTestItemChat": "Chat",
-  "settingsModelTestItemToolCall": "Tool call",
-  "settingsModelTestItemImage": "Image",
-  "settingsModelTestItemAudio": "Audio",
-  "settingsModelTestItemVideo": "Video",
-  "settingsModelTestItemUnknown": "Unknown item",
-  "settingsCharactersCreateCard": "New character card",
-  "settingsCharactersEditCard": "Edit character card",
-  "settingsCharactersCardName": "Character name",
-  "settingsCharactersCreateGroup": "New group",
-  "settingsCharactersEditGroup": "Edit group",
-  "settingsCharactersGroupName": "Group name",
-  "settingsCharactersDescription": "Description",
-  "settingsCharactersCharacterSetting": "Character setting",
-  "settingsCharactersOpeningStatement": "Opening statement",
-  "settingsCharactersOtherContentChat": "Extra chat content",
-  "settingsCharactersOtherContentVoice": "Extra voice content",
-  "settingsCharactersAdvancedPrompt": "Advanced custom prompt",
-  "settingsCharactersMarks": "Notes",
-  "settingsCharactersTags": "Tags",
-  "settingsCharactersNoTags": "No tags available. Create one in tag management, then bind it to this character card.",
-  "settingsCharactersImport": "Import",
-  "settingsCharactersExport": "Export",
-  "settingsCharactersImportJson": "Import JSON",
-  "settingsCharactersExportJson": "Export JSON",
-  "settingsCharactersImportTavernJson": "Import Tavern JSON",
-  "settingsCharactersExportTavernJson": "Export Tavern JSON",
-  "settingsCharactersImportCardJson": "Import character card JSON",
-  "settingsCharactersImportCardJsonDone": "Character card imported.",
-  "settingsCharactersImportTavernJsonDone": "Tavern character card imported.",
-  "settingsCharactersImportGroupJson": "Import group JSON",
-  "settingsCharactersImportGroupJsonDone": "Group imported.",
-  "settingsCharactersImportJsonError": "JSON import failed: {error}",
+  "settingsModelTestItemChat": "聊天",
+  "settingsModelTestItemToolCall": "工具调用",
+  "settingsModelTestItemImage": "图片",
+  "settingsModelTestItemAudio": "音频",
+  "settingsModelTestItemVideo": "视频",
+  "settingsModelTestItemUnknown": "未知项",
+  "settingsCharactersCreateCard": "新建角色卡",
+  "settingsCharactersEditCard": "编辑角色卡",
+  "settingsCharactersCardName": "角色名称",
+  "settingsCharactersCreateGroup": "新建群组",
+  "settingsCharactersEditGroup": "编辑群组",
+  "settingsCharactersGroupName": "群组名称",
+  "settingsCharactersDescription": "描述",
+  "settingsCharactersCharacterSetting": "角色设定",
+  "settingsCharactersOpeningStatement": "开场白",
+  "settingsCharactersOtherContentChat": "聊天附加内容",
+  "settingsCharactersOtherContentVoice": "语音附加内容",
+  "settingsCharactersAdvancedPrompt": "高级自定义 Prompt",
+  "settingsCharactersMarks": "备注",
+  "settingsCharactersTags": "标签",
+  "settingsCharactersNoTags": "当前没有可选标签。可在标签管理中创建后绑定到角色卡。",
+  "settingsCharactersImport": "导入",
+  "settingsCharactersExport": "导出",
+  "settingsCharactersImportJson": "导入 JSON",
+  "settingsCharactersExportJson": "导出 JSON",
+  "settingsCharactersImportTavernJson": "导入 Tavern JSON",
+  "settingsCharactersExportTavernJson": "导出 Tavern JSON",
+  "settingsCharactersImportCardJson": "导入角色卡 JSON",
+  "settingsCharactersImportCardJsonDone": "已导入角色卡。",
+  "settingsCharactersImportTavernJsonDone": "已导入 Tavern 角色卡。",
+  "settingsCharactersImportGroupJson": "导入群组 JSON",
+  "settingsCharactersImportGroupJsonDone": "已导入群组。",
+  "settingsCharactersImportJsonError": "导入 JSON 失败：{error}",
   "@settingsCharactersImportJsonError": {
     "placeholders": {
       "error": {
@@ -937,7 +937,7 @@
       }
     }
   },
-  "settingsCharactersImportTavernJsonError": "Tavern JSON import failed: {error}",
+  "settingsCharactersImportTavernJsonError": "导入 Tavern JSON 失败：{error}",
   "@settingsCharactersImportTavernJsonError": {
     "placeholders": {
       "error": {
@@ -945,7 +945,7 @@
       }
     }
   },
-  "settingsCharactersExportJsonError": "JSON export failed: {error}",
+  "settingsCharactersExportJsonError": "导出 JSON 失败：{error}",
   "@settingsCharactersExportJsonError": {
     "placeholders": {
       "error": {
@@ -953,7 +953,7 @@
       }
     }
   },
-  "settingsCharactersExportTavernJsonError": "Tavern JSON export failed: {error}",
+  "settingsCharactersExportTavernJsonError": "导出 Tavern JSON 失败：{error}",
   "@settingsCharactersExportTavernJsonError": {
     "placeholders": {
       "error": {
@@ -961,12 +961,12 @@
       }
     }
   },
-  "settingsCharactersTagsSection": "Tags",
-  "settingsCharactersManageTags": "Manage tags",
-  "settingsCharactersCreateTag": "New tag",
-  "settingsCharactersEditTag": "Edit tag",
-  "settingsCharactersDeleteTag": "Delete tag",
-  "settingsCharactersDeleteTagMessage": "Delete “{name}”?",
+  "settingsCharactersTagsSection": "标签",
+  "settingsCharactersManageTags": "管理标签",
+  "settingsCharactersCreateTag": "新建标签",
+  "settingsCharactersEditTag": "编辑标签",
+  "settingsCharactersDeleteTag": "删除标签",
+  "settingsCharactersDeleteTagMessage": "确定删除“{name}”吗？",
   "@settingsCharactersDeleteTagMessage": {
     "placeholders": {
       "name": {
@@ -974,20 +974,20 @@
       }
     }
   },
-  "settingsCharactersTagName": "Tag name",
-  "settingsCharactersTagDescription": "Tag description",
-  "settingsCharactersTagPromptContent": "Prompt content",
-  "settingsCharactersChatModelBindingMode": "Chat model binding mode",
-  "settingsCharactersChatModelConfigId": "Chat model config ID",
-  "settingsCharactersChatModelIndex": "Chat model index",
-  "settingsCharactersToolAccess": "Tool permission mode",
-  "settingsCharactersChatModelFollowGlobal": "Follow global model",
-  "settingsCharactersChatModelFixedConfig": "Use fixed model config",
-  "settingsCharactersChatModelConfig": "Model config",
-  "settingsCharactersToolAccessFollowGlobal": "Follow global tool permissions",
-  "settingsCharactersToolAccessCustom": "Custom character tool permissions",
-  "settingsCharactersToolAccessEmpty": "Enabled with no selected tools",
-  "settingsCharactersToolAccessSummaryCounts": "Built-in {builtinCount} · packages {packageCount} · skills {skillCount} · MCP {mcpCount}",
+  "settingsCharactersTagName": "标签名称",
+  "settingsCharactersTagDescription": "标签描述",
+  "settingsCharactersTagPromptContent": "Prompt 内容",
+  "settingsCharactersChatModelBindingMode": "聊天模型绑定模式",
+  "settingsCharactersChatModelConfigId": "聊天模型配置 ID",
+  "settingsCharactersChatModelIndex": "聊天模型序号",
+  "settingsCharactersToolAccess": "工具权限模式",
+  "settingsCharactersChatModelFollowGlobal": "跟随全局模型",
+  "settingsCharactersChatModelFixedConfig": "固定模型配置",
+  "settingsCharactersChatModelConfig": "模型配置",
+  "settingsCharactersToolAccessFollowGlobal": "跟随全局工具权限",
+  "settingsCharactersToolAccessCustom": "自定义角色工具权限",
+  "settingsCharactersToolAccessEmpty": "已启用，但未选择任何工具",
+  "settingsCharactersToolAccessSummaryCounts": "内置 {builtinCount} · 工具包 {packageCount} · 技能 {skillCount} · MCP {mcpCount}",
   "@settingsCharactersToolAccessSummaryCounts": {
     "placeholders": {
       "builtinCount": {
@@ -1004,48 +1004,48 @@
       }
     }
   },
-  "settingsCharactersToolAccessConfigure": "Configure tool allowlist",
-  "settingsCharactersToolAccessTitle": "Custom Allowed Tools",
-  "settingsCharactersToolAccessTabBuiltin": "Built-ins",
-  "settingsCharactersToolAccessTabPackage": "Packages",
+  "settingsCharactersToolAccessConfigure": "配置工具白名单",
+  "settingsCharactersToolAccessTitle": "自定义允许使用的工具",
+  "settingsCharactersToolAccessTabBuiltin": "内建工具",
+  "settingsCharactersToolAccessTabPackage": "包",
   "settingsCharactersToolAccessTabSkill": "Skill",
   "settingsCharactersToolAccessTabMcp": "MCP",
-  "settingsCharactersToolAccessSearchPlaceholder": "Search name, description, or ID",
-  "settingsCharactersToolAccessEmptySearch": "No matching tools found",
-  "settingsCharactersToolAccessRequiresUsePackage": "Selecting packages, skills, or MCP also requires allowing the built-in use_package tool.",
-  "settingsCharactersToolAccessEmptyBuiltin": "No built-in tools are available for configuration",
-  "settingsCharactersToolAccessEmptyPackages": "No globally available packages right now",
-  "settingsCharactersToolAccessEmptySkills": "No AI-visible skills are available right now",
-  "settingsCharactersToolAccessEmptyMcp": "No enabled MCP servers are available right now",
-  "settingsCharactersBuiltinTools": "Allowed built-in tools",
-  "settingsCharactersAllowedPackages": "Allowed packages",
-  "settingsCharactersAllowedSkills": "Allowed skills",
-  "settingsCharactersAllowedMcpServers": "Allowed MCP servers",
-  "settingsCharactersGroupMembersTitle": "Group characters",
-  "settingsCharactersOpenMemoryGraph": "View memory graph",
-  "settingsCharactersMemoryGraphTitle": "{profileName}'s memory graph",
-  "@settingsCharactersMemoryGraphTitle": {
-    "placeholders": {
-      "profileName": {
-        "type": "String"
+  "settingsCharactersToolAccessSearchPlaceholder": "搜索名称、描述或标识",
+  "settingsCharactersToolAccessEmptySearch": "未找到匹配的工具",
+  "settingsCharactersToolAccessRequiresUsePackage": "选择工具包、技能或 MCP 时，需要同时允许内置工具 use_package。",
+  "settingsCharactersToolAccessEmptyBuiltin": "当前没有可配置的内建工具",
+  "settingsCharactersToolAccessEmptyPackages": "当前没有全局可用的包",
+  "settingsCharactersToolAccessEmptySkills": "当前没有对 AI 可见的 Skill",
+  "settingsCharactersToolAccessEmptyMcp": "当前没有已启用的 MCP 服务器",
+  "settingsCharactersBuiltinTools": "允许的内置工具",
+  "settingsCharactersAllowedPackages": "允许的工具包",
+  "settingsCharactersAllowedSkills": "允许的技能",
+  "settingsCharactersAllowedMcpServers": "允许的 MCP 服务",
+  "settingsCharactersGroupMembersTitle": "组内角色",
+    "settingsCharactersOpenMemoryGraph": "查看记忆图谱",
+    "settingsCharactersMemoryGraphTitle": "{profileName} 的记忆图谱",
+    "@settingsCharactersMemoryGraphTitle": {
+      "placeholders": {
+        "profileName": {
+          "type": "String"
+        }
       }
-    }
-  },
-  "settingsCharactersMemoryGraphEmpty": "No memory nodes yet",
-  "settingsCharactersMemoryGraphStats": "{nodes} nodes · {edges} links",
-  "@settingsCharactersMemoryGraphStats": {
-    "placeholders": {
-      "nodes": {
-        "type": "int"
-      },
-      "edges": {
-        "type": "int"
+    },
+    "settingsCharactersMemoryGraphEmpty": "当前记忆库还没有节点",
+    "settingsCharactersMemoryGraphStats": "{nodes} 个节点 · {edges} 条关系",
+    "@settingsCharactersMemoryGraphStats": {
+      "placeholders": {
+        "nodes": {
+          "type": "int"
+        },
+        "edges": {
+          "type": "int"
+        }
       }
-    }
-  },
-  "settingsCharactersMemoryGraphLink": "Memory link",
-  "settingsCharactersEditUserMarkdown": "Edit user profile",
-  "settingsCharactersUserMarkdownTitle": "{profileName}'s user profile",
+    },
+    "settingsCharactersMemoryGraphLink": "记忆关系",
+    "settingsCharactersEditUserMarkdown": "编辑用户资料",
+  "settingsCharactersUserMarkdownTitle": "{profileName} 的用户资料",
   "@settingsCharactersUserMarkdownTitle": {
     "placeholders": {
       "profileName": {
@@ -1053,15 +1053,15 @@
       }
     }
   },
-  "settingsCharactersUserMarkdownSaved": "User profile saved",
-  "settingsCharactersUserMarkdownContent": "User profile content",
-  "settingsCharactersMemoryAutoUpdate": "Auto-update memory stores",
-  "settingsCharactersMemoryAutoUpdateDescription": "Allow AI to organize conversation info into memory stores.",
-  "settingsCharactersPreferenceDescription": "Provide user profile to model",
-  "settingsCharactersPreferenceDescriptionSubtitle": "Include the current user profile in chat prompts.",
-  "settingsCharactersCardsSection": "Character cards",
-  "settingsCharactersGroupsSection": "Groups",
-  "settingsCharactersGroupMembers": "{count} members",
+  "settingsCharactersUserMarkdownSaved": "用户资料已保存",
+  "settingsCharactersUserMarkdownContent": "用户资料内容",
+  "settingsCharactersMemoryAutoUpdate": "自动更新记忆库",
+  "settingsCharactersMemoryAutoUpdateDescription": "允许 AI 从对话中整理信息并写入记忆库。",
+  "settingsCharactersPreferenceDescription": "向模型提供用户资料",
+  "settingsCharactersPreferenceDescriptionSubtitle": "聊天时把当前用户资料写入提示词。",
+  "settingsCharactersCardsSection": "角色卡",
+  "settingsCharactersGroupsSection": "群组",
+  "settingsCharactersGroupMembers": "{count} 个成员",
   "@settingsCharactersGroupMembers": {
     "placeholders": {
       "count": {
@@ -1069,17 +1069,17 @@
       }
     }
   },
-  "settingsToolsPermissionMode": "AI capability mode",
-  "settingsToolsAsk": "Ask",
-  "settingsToolsExtensions": "Extension management",
-  "settingsToolsPlugins": "Plugins",
-  "settingsToolsPluginsDescription": "Manage ToolPkg plugin containers and UI extensions.",
-  "settingsToolsPackages": "Tool packages",
-  "settingsToolsPackagesDescription": "Enable, disable, and inspect built-in or external tool packages.",
-  "settingsToolsSkills": "Skills",
-  "settingsToolsSkillsDescription": "Manage skill package visibility and imports.",
-  "settingsToolsMcp": "MCP servers",
-  "settingsToolsMcpDescription": "Manage MCP configuration. Startup wait is {seconds} seconds.",
+  "settingsToolsPermissionMode": "AI 能力模式",
+  "settingsToolsAsk": "询问",
+  "settingsToolsExtensions": "扩展管理",
+  "settingsToolsPlugins": "插件",
+  "settingsToolsPluginsDescription": "管理 ToolPkg 插件容器和 UI 扩展。",
+  "settingsToolsPackages": "工具包",
+  "settingsToolsPackagesDescription": "启用、停用和查看内置/外部工具包。",
+  "settingsToolsSkills": "技能",
+  "settingsToolsSkillsDescription": "管理技能包可见性和导入。",
+  "settingsToolsMcp": "MCP 服务",
+  "settingsToolsMcpDescription": "管理 MCP 配置，当前启动等待 {seconds} 秒。",
   "@settingsToolsMcpDescription": {
     "placeholders": {
       "seconds": {
@@ -1087,22 +1087,22 @@
       }
     }
   },
-  "settingsToolsOverrides": "Tool records",
-  "settingsToolsToolGroups": "Registered tools",
-  "settingsToolsToolGroupsDescription": "Tools registered by the current runtime for AI use.",
-  "settingsToolsAlwaysAllow": "Allowed in this session",
-  "settingsToolsAlwaysAllowDescription": "These tools were approved for the current session.",
-  "settingsToolsAlwaysForbid": "Always forbid",
-  "settingsToolsAlwaysForbidDescription": "AI will not call these tools.",
-  "settingsToolsAddTool": "Add tool",
-  "settingsToolsAddAllowTool": "Add allowed tool",
-  "settingsToolsAddForbidTool": "Add forbidden tool",
-  "settingsToolsSearchTools": "Search tools",
-  "settingsToolsNoToolsInGroup": "No tools in this group.",
-  "settingsToolsMcpStartupTimeout": "MCP startup timeout",
-  "settingsToolsMcpStartupTimeoutSeconds": "Wait seconds",
-  "settingsToolsToolPkgPreHookTimeout": "ToolPkg pre-hook timeout",
-  "settingsToolsToolPkgPreHookDescription": "One ToolPkg pre-hook chain has {seconds} seconds in total.",
+  "settingsToolsOverrides": "工具记录",
+  "settingsToolsToolGroups": "已注册工具",
+  "settingsToolsToolGroupsDescription": "当前运行环境注册给 AI 使用的工具。",
+  "settingsToolsAlwaysAllow": "本次会话已允许",
+  "settingsToolsAlwaysAllowDescription": "这些工具已在当前会话中批准。",
+  "settingsToolsAlwaysForbid": "始终禁止",
+  "settingsToolsAlwaysForbidDescription": "这些工具不会被 AI 调用。",
+  "settingsToolsAddTool": "添加工具",
+  "settingsToolsAddAllowTool": "添加允许工具",
+  "settingsToolsAddForbidTool": "添加禁止工具",
+  "settingsToolsSearchTools": "搜索工具",
+  "settingsToolsNoToolsInGroup": "当前没有工具。",
+  "settingsToolsMcpStartupTimeout": "MCP 启动超时",
+  "settingsToolsMcpStartupTimeoutSeconds": "等待秒数",
+  "settingsToolsToolPkgPreHookTimeout": "ToolPkg 前置 Hook 超时",
+  "settingsToolsToolPkgPreHookDescription": "每条 ToolPkg 前置 Hook 链总计最多执行 {seconds} 秒。",
   "@settingsToolsToolPkgPreHookDescription": {
     "placeholders": {
       "seconds": {
@@ -1110,24 +1110,24 @@
       }
     }
   },
-  "settingsToolsToolPkgPreHookTimeoutSeconds": "Total seconds",
-  "settingsWorkspaceCurrentDesign": "Current workspace structure",
-  "settingsWorkspaceCurrentDesignDescription": "Workspaces are bound to chats. Terminal sessions and browser sessions are global sessions shown flat inside the workspace.",
-  "settingsWorkspaceOpenChat": "Return to chat workspace",
-  "settingsWorkspaceOpenChatDescription": "Open files, terminals, browser, and web automation on the right side of chat.",
-  "settingsWorkspaceContains": "Workspace contains",
-  "settingsWorkspacePerChat": "Bound per chat",
-  "settingsWorkspaceGlobalSessions": "Global terminal sessions",
-  "settingsWorkspaceBrowserSessions": "Browser and WebVisit sessions",
-  "settingsWorkspaceBoundOverview": "Workspace binding overview",
-  "settingsWorkspaceBoundOverviewDescription": "Workspace paths recorded by chat histories are used as the binding source.",
-  "settingsWorkspaceBoundChats": "Bound chats",
-  "settingsWorkspaceInternalRoot": "Internal workspace root",
-  "settingsWorkspaceExternalRoot": "Legacy external workspace root",
-  "settingsWorkspaceUnboundTitle": "Unbound workspaces",
-  "settingsWorkspaceUnboundSubtitle": "These workspace folders are not used by any chat.",
-  "settingsWorkspaceNoUnbound": "No unbound workspaces.",
-  "settingsWorkspaceSelectedCount": "Selected {selected} / {total}",
+  "settingsToolsToolPkgPreHookTimeoutSeconds": "总秒数",
+  "settingsWorkspaceCurrentDesign": "当前工作区结构",
+  "settingsWorkspaceCurrentDesignDescription": "工作区跟随聊天绑定；终端会话和浏览器会话作为全局会话在工作区里扁平展示。",
+  "settingsWorkspaceOpenChat": "回到聊天工作区",
+  "settingsWorkspaceOpenChatDescription": "在聊天右侧打开文件、终端、浏览器和网页自动化。",
+  "settingsWorkspaceContains": "工作区包含",
+  "settingsWorkspacePerChat": "按聊天绑定",
+  "settingsWorkspaceGlobalSessions": "全局终端会话",
+  "settingsWorkspaceBrowserSessions": "浏览器与 WebVisit 会话",
+  "settingsWorkspaceBoundOverview": "工作区绑定概览",
+  "settingsWorkspaceBoundOverviewDescription": "聊天记录里的工作区路径就是绑定来源。",
+  "settingsWorkspaceBoundChats": "已绑定聊天",
+  "settingsWorkspaceInternalRoot": "内部工作区根目录",
+  "settingsWorkspaceExternalRoot": "旧外部工作区根目录",
+  "settingsWorkspaceUnboundTitle": "无绑定工作区",
+  "settingsWorkspaceUnboundSubtitle": "这些工作区文件夹没有被任何聊天使用。",
+  "settingsWorkspaceNoUnbound": "没有无绑定工作区。",
+  "settingsWorkspaceSelectedCount": "已选择 {selected} / {total}",
   "@settingsWorkspaceSelectedCount": {
     "placeholders": {
       "selected": {
@@ -1138,12 +1138,12 @@
       }
     }
   },
-  "settingsWorkspaceSelectAllCurrentList": "Select all",
-  "settingsWorkspaceClearAll": "Clear",
-  "settingsWorkspaceInternalStorage": "Internal storage",
-  "settingsWorkspaceExternalStorage": "External storage",
-  "settingsWorkspaceNotUsedByAnyChat": "Not used by any chat",
-  "settingsWorkspaceDeleteSelected": "Delete selected workspaces ({count})",
+  "settingsWorkspaceSelectAllCurrentList": "全选",
+  "settingsWorkspaceClearAll": "清空",
+  "settingsWorkspaceInternalStorage": "内部存储",
+  "settingsWorkspaceExternalStorage": "外部存储",
+  "settingsWorkspaceNotUsedByAnyChat": "未被任何聊天使用",
+  "settingsWorkspaceDeleteSelected": "删除选中的工作区（{count}）",
   "@settingsWorkspaceDeleteSelected": {
     "placeholders": {
       "count": {
@@ -1151,8 +1151,8 @@
       }
     }
   },
-  "settingsWorkspaceConfirmDeleteTitle": "Confirm delete",
-  "settingsWorkspaceDeleteConfirmation": "Delete {count} selected workspace folders?",
+  "settingsWorkspaceConfirmDeleteTitle": "确认删除",
+  "settingsWorkspaceDeleteConfirmation": "确定删除选中的 {count} 个工作区文件夹吗？",
   "@settingsWorkspaceDeleteConfirmation": {
     "placeholders": {
       "count": {
@@ -1160,7 +1160,7 @@
       }
     }
   },
-  "settingsWorkspaceDeleted": "Deleted {count} unbound workspaces.",
+  "settingsWorkspaceDeleted": "已删除 {count} 个无绑定工作区。",
   "@settingsWorkspaceDeleted": {
     "placeholders": {
       "count": {
@@ -1168,7 +1168,7 @@
       }
     }
   },
-  "settingsWorkspaceDeleteFailed": "Delete failed: {error}",
+  "settingsWorkspaceDeleteFailed": "删除失败：{error}",
   "@settingsWorkspaceDeleteFailed": {
     "placeholders": {
       "error": {
@@ -1176,7 +1176,7 @@
       }
     }
   },
-  "settingsWorkspaceLoadFailed": "Failed to load workspaces: {error}",
+  "settingsWorkspaceLoadFailed": "加载工作区失败：{error}",
   "@settingsWorkspaceLoadFailed": {
     "placeholders": {
       "error": {
@@ -1184,16 +1184,16 @@
       }
     }
   },
-  "settingsWorkspaceRefresh": "Refresh",
-  "runtimeIdentity": "Current identity",
-  "runtimeIdentityManage": "Switch or manage identities",
-  "runtimeIdentitySheetTitle": "Identities",
-  "runtimeIdentityCreate": "New identity",
-  "runtimeIdentityCreateTitle": "New identity",
-  "runtimeIdentityRename": "Rename identity",
-  "runtimeIdentityRenameTitle": "Rename identity",
-  "runtimeIdentityName": "Name (optional)",
-  "runtimeIdentitySwitchTitle": "Switch to {identityName}?",
+  "settingsWorkspaceRefresh": "刷新",
+  "runtimeIdentity": "当前身份",
+  "runtimeIdentityManage": "切换或管理身份",
+  "runtimeIdentitySheetTitle": "身份",
+  "runtimeIdentityCreate": "新建身份",
+  "runtimeIdentityCreateTitle": "新建身份",
+  "runtimeIdentityRename": "重命名身份",
+  "runtimeIdentityRenameTitle": "重命名身份",
+  "runtimeIdentityName": "名称（可选）",
+  "runtimeIdentitySwitchTitle": "切换到 {identityName}？",
   "@runtimeIdentitySwitchTitle": {
     "placeholders": {
       "identityName": {
@@ -1201,16 +1201,16 @@
       }
     }
   },
-  "runtimeIdentitySwitchDescription": "Each identity has separate chats, settings, device space, paired devices, and workspaces. Switching ends the current runtime; the selected identity is used the next time the app starts.",
-  "runtimeIdentitySwitchConfirm": "Switch identity",
-  "runtimeIdentityCurrent": "Current",
-  "settingsUserProfileTitle": "User profile",
-  "settingsUserProfileSubtitle": "Avatar, name, identities, and GitHub",
-  "settingsUserProfileDescription": "Manage this profile and switch isolated identities.",
-  "settingsUserProfileUnnamed": "Unnamed",
-  "settingsUserProfileNotLoggedIn": "Not logged in",
-  "settingsUserProfileGitHubLoading": "Loading GitHub account...",
-  "settingsUserProfileGitHubAccount": "GitHub: @{account}",
+  "runtimeIdentitySwitchDescription": "每个身份拥有独立的聊天、配置、设备空间、配对设备和工作区。切换会结束当前运行实例；应用再次启动时将进入所选身份。",
+  "runtimeIdentitySwitchConfirm": "切换身份",
+  "runtimeIdentityCurrent": "当前",
+  "settingsUserProfileTitle": "用户档案",
+  "settingsUserProfileSubtitle": "头像、名字、身份与 GitHub",
+  "settingsUserProfileDescription": "管理当前档案并切换隔离的身份。",
+  "settingsUserProfileUnnamed": "未命名",
+  "settingsUserProfileNotLoggedIn": "未登录",
+  "settingsUserProfileGitHubLoading": "正在读取 GitHub 账号...",
+  "settingsUserProfileGitHubAccount": "GitHub：@{account}",
   "@settingsUserProfileGitHubAccount": {
     "placeholders": {
       "account": {
@@ -1218,7 +1218,7 @@
       }
     }
   },
-  "settingsUserProfileGitHubStatusError": "GitHub status error: {error}",
+  "settingsUserProfileGitHubStatusError": "GitHub 状态错误：{error}",
   "@settingsUserProfileGitHubStatusError": {
     "placeholders": {
       "error": {
@@ -1226,29 +1226,29 @@
       }
     }
   },
-  "settingsUserProfileOverview": "Profile",
-  "settingsUserProfileAvatar": "Avatar",
-  "settingsUserProfileName": "Name",
-  "settingsUserProfileChooseAvatar": "Choose avatar",
-  "settingsUserProfileClearAvatar": "Clear avatar",
-  "settingsUserProfileEditName": "Edit name",
-  "settingsUserProfileIdentities": "Identities",
-  "settingsUserProfileGitHub": "GitHub account",
-  "settingsUserProfileGitHubDescription": "Not logged in",
-  "settingsUserProfileLogin": "Log in",
-  "settingsUserProfileLogout": "Log out",
-  "settingsAppearanceAvatarCustom": "Custom avatar",
-  "settingsRuntimeConnection": "Current device space",
-  "settingsRuntimeConnectionDescription": "Connection status for this device and its device space.",
-  "settingsRuntimeCurrentSpace": "Current device space",
-  "settingsRuntimeOverviewDescription": "Devices in the same space can connect and share data and routes.",
-  "settingsRuntimeRenameSpace": "Rename device space",
-  "settingsRuntimeLeaveSpace": "Leave device space",
-  "settingsRuntimeLeaveSpaceTitle": "Leave the current device space?",
-  "settingsRuntimeLeaveSpaceDescription": "This device will create a new single-device space. Business data and paired devices are preserved.",
-  "settingsRuntimeLeaveSpaceConfirm": "Leave",
-  "settingsRuntimeSpaceName": "Device space name",
-  "settingsRuntimeSpaceId": "Device space ID: {spaceId}",
+  "settingsUserProfileOverview": "档案",
+  "settingsUserProfileAvatar": "头像",
+  "settingsUserProfileName": "名字",
+  "settingsUserProfileChooseAvatar": "选择头像",
+  "settingsUserProfileClearAvatar": "清除头像",
+  "settingsUserProfileEditName": "修改名字",
+  "settingsUserProfileIdentities": "身份",
+  "settingsUserProfileGitHub": "GitHub 账号",
+  "settingsUserProfileGitHubDescription": "未登录",
+  "settingsUserProfileLogin": "登录",
+  "settingsUserProfileLogout": "退出登录",
+  "settingsAppearanceAvatarCustom": "自定义头像",
+  "settingsRuntimeConnection": "当前设备空间",
+  "settingsRuntimeConnectionDescription": "当前设备及其所在设备空间的连接状态。",
+  "settingsRuntimeCurrentSpace": "当前设备空间",
+  "settingsRuntimeOverviewDescription": "在同一设备空间内，设备可以建立连接，共享数据和路由。",
+  "settingsRuntimeRenameSpace": "重命名设备空间",
+  "settingsRuntimeLeaveSpace": "退出设备空间",
+  "settingsRuntimeLeaveSpaceTitle": "退出当前设备空间？",
+  "settingsRuntimeLeaveSpaceDescription": "这台设备会创建一个新的单设备空间。业务数据保留，已配对设备也不会被删除。",
+  "settingsRuntimeLeaveSpaceConfirm": "退出",
+  "settingsRuntimeSpaceName": "设备空间名称",
+  "settingsRuntimeSpaceId": "设备空间 ID：{spaceId}",
   "@settingsRuntimeSpaceId": {
     "placeholders": {
       "spaceId": {
@@ -1256,7 +1256,7 @@
       }
     }
   },
-  "settingsRuntimeSpaceDeviceCount": "{count} devices",
+  "settingsRuntimeSpaceDeviceCount": "共 {count} 台设备",
   "@settingsRuntimeSpaceDeviceCount": {
     "placeholders": {
       "count": {
@@ -1264,8 +1264,8 @@
       }
     }
   },
-  "settingsRuntimeViewSpaceTopology": "View device topology",
-  "settingsRuntimeSpaceTopologyTitle": "{spaceName} device topology",
+  "settingsRuntimeViewSpaceTopology": "查看设备拓扑",
+  "settingsRuntimeSpaceTopologyTitle": "{spaceName} 的设备拓扑",
   "@settingsRuntimeSpaceTopologyTitle": {
     "placeholders": {
       "spaceName": {
@@ -1273,7 +1273,7 @@
       }
     }
   },
-  "settingsRuntimeSpaceTopologySummary": "{deviceCount} devices · {connectionCount} direct connections",
+  "settingsRuntimeSpaceTopologySummary": "{deviceCount} 台设备 · {connectionCount} 条直连",
   "@settingsRuntimeSpaceTopologySummary": {
     "placeholders": {
       "deviceCount": {
@@ -1284,9 +1284,9 @@
       }
     }
   },
-  "settingsRuntimeDisconnectConnection": "Disconnect",
-  "settingsRuntimeDisconnectConnectionTitle": "Disconnect direct connection",
-  "settingsRuntimeDisconnectConnectionMessage": "Disconnect the direct connection to {deviceName}? Pairing records will be kept.",
+  "settingsRuntimeDisconnectConnection": "断开连接",
+  "settingsRuntimeDisconnectConnectionTitle": "断开直连",
+  "settingsRuntimeDisconnectConnectionMessage": "确定要断开与 {deviceName} 的直连吗？配对记录会保留。",
   "@settingsRuntimeDisconnectConnectionMessage": {
     "placeholders": {
       "deviceName": {
@@ -1294,23 +1294,23 @@
       }
     }
   },
-  "settingsRuntimeDisconnectConnectionFailed": "Disconnect failed",
-  "settingsRuntimeCurrentDevice": "Current device",
-  "settingsRuntimeRemoteTitle": "Connected devices",
-  "settingsRuntimeRemoteDescription": "Directly paired devices. Pairing establishes a connection; joining a device space enables shared data and routing.",
-  "settingsRuntimePairRemote": "Connect another device",
-  "settingsRuntimeDiscoveredEdges": "ESP32 devices",
-  "settingsRuntimeEdgeEndpointTokenRequired": "Edge endpoint and token are required",
-  "settingsRuntimeEdgeEndpointRequired": "Edge endpoint is required",
-  "settingsRuntimePairingCodeRequired": "Pairing code is required",
-  "settingsRuntimeNoPairedRemote": "No connected devices yet.",
-  "settingsRuntimeConnectionInitiatedByOtherDevice": "Connection initiated by the other device",
-  "settingsRuntimePairToken": "Connection token",
-  "settingsRuntimePairCode": "Pairing code",
-  "settingsRuntimeStartPairing": "Start connection",
-  "settingsRuntimeFinishPairing": "Finish connection",
-  "settingsRuntimeBaseUrl": "Device address",
-  "settingsRuntimeConnectionFailed": "Device connection failed: {error}",
+  "settingsRuntimeDisconnectConnectionFailed": "断开失败",
+  "settingsRuntimeCurrentDevice": "当前设备",
+  "settingsRuntimeRemoteTitle": "已连接的设备",
+  "settingsRuntimeRemoteDescription": "已直接配对的设备。配对负责建立连接，加入设备空间后才会共享数据和路由。",
+  "settingsRuntimePairRemote": "连接另一台设备",
+  "settingsRuntimeDiscoveredEdges": "ESP32 设备",
+  "settingsRuntimeEdgeEndpointTokenRequired": "Edge 地址和 Token 不能为空",
+  "settingsRuntimeEdgeEndpointRequired": "Edge 地址不能为空",
+  "settingsRuntimePairingCodeRequired": "请输入配对码",
+  "settingsRuntimeNoPairedRemote": "还没有已连接的设备。",
+  "settingsRuntimeConnectionInitiatedByOtherDevice": "连接由对方设备发起",
+  "settingsRuntimePairToken": "连接 Token",
+  "settingsRuntimePairCode": "配对码",
+  "settingsRuntimeStartPairing": "开始连接",
+  "settingsRuntimeFinishPairing": "完成连接",
+  "settingsRuntimeBaseUrl": "设备地址",
+  "settingsRuntimeConnectionFailed": "设备连接失败：{error}",
   "@settingsRuntimeConnectionFailed": {
     "placeholders": {
       "error": {
@@ -1318,21 +1318,21 @@
       }
     }
   },
-  "settingsRuntimePairingRejected": "A device connection was rejected",
-  "settingsRuntimePairedChecking": "Checking",
-  "settingsRuntimePairedOnline": "Online",
-  "settingsRuntimePairedOffline": "Offline",
-  "settingsRuntimePairedInvalid": "Pairing invalid",
-  "settingsRuntimePairedError": "Status unavailable",
-  "settingsRuntimePairingRevokedTitle": "Pairing revoked by the other device",
-  "settingsRuntimePairingRevokedMessage": "The other device cancelled its pairing with this device. The local pairing record is no longer valid.",
-  "settingsRuntimePairingRevokedConfirm": "Got it",
-  "settingsRuntimePairedRemovedFromSpace": "Removed from device space",
-  "settingsRuntimeRemovedFromSpaceTitle": "Removed from device space",
-  "settingsRuntimeRemovedFromSpaceMessage": "The remote device removed this device from the space. Leave the current space and create a standalone device space now.",
-  "settingsRuntimeRemovedFromSpaceConfirm": "Leave and create standalone space",
-  "settingsRuntimeJoinSpace": "Join device space",
-  "settingsRuntimeJoinSpaceTitle": "Join {deviceName}'s device space?",
+  "settingsRuntimePairingRejected": "有设备的连接请求被拒绝",
+  "settingsRuntimePairedChecking": "检测中",
+  "settingsRuntimePairedOnline": "在线",
+  "settingsRuntimePairedOffline": "离线",
+  "settingsRuntimePairedInvalid": "配对已失效",
+  "settingsRuntimePairedError": "状态获取失败",
+  "settingsRuntimePairingRevokedTitle": "对方已解除配对",
+  "settingsRuntimePairingRevokedMessage": "对方已取消与本设备的配对。当前本地配对记录已失效。",
+  "settingsRuntimePairingRevokedConfirm": "知道了",
+  "settingsRuntimePairedRemovedFromSpace": "已被移出设备空间",
+  "settingsRuntimeRemovedFromSpaceTitle": "已被移出设备空间",
+  "settingsRuntimeRemovedFromSpaceMessage": "对方已将本设备移出设备空间。请立即退出当前设备空间并创建一个独立的设备空间。",
+  "settingsRuntimeRemovedFromSpaceConfirm": "退出并创建独立空间",
+  "settingsRuntimeJoinSpace": "加入设备空间",
+  "settingsRuntimeJoinSpaceTitle": "加入 {deviceName} 的设备空间？",
   "@settingsRuntimeJoinSpaceTitle": {
     "placeholders": {
       "deviceName": {
@@ -1340,13 +1340,13 @@
       }
     }
   },
-  "settingsRuntimeJoinSpaceDescription": "The current device space will merge with the other one and use its name.",
-  "settingsRuntimePairingComplete": "Device paired",
-  "settingsRuntimeDeviceInCurrentSpace": "In the current device space",
-  "settingsRuntimeDiscoverSpaces": "Discover device spaces",
-  "settingsRuntimeDiscoverSpacesDescription": "Nearby devices are grouped by device space. Expand a device space to connect directly to one of its devices.",
-  "settingsRuntimeWebPairDescription": "Enter another device's address and pairing token to connect this browser as an active pairing client.",
-  "settingsRuntimeDiscoveredSpaceSummary": "{memberCount} devices total · {nearbyCount} nearby",
+  "settingsRuntimeJoinSpaceDescription": "当前设备空间会与对方合并，并采用对方的设备空间名称。",
+  "settingsRuntimePairingComplete": "设备已配对",
+  "settingsRuntimeDeviceInCurrentSpace": "已在当前设备空间",
+  "settingsRuntimeDiscoverSpaces": "发现设备空间",
+  "settingsRuntimeDiscoverSpacesDescription": "附近设备会按设备空间归并；展开设备空间后，可以选择其中一台设备直接连接。",
+  "settingsRuntimeWebPairDescription": "输入其他设备的地址和配对令牌，让此浏览器作为主动配对方连接。",
+  "settingsRuntimeDiscoveredSpaceSummary": "共 {memberCount} 台设备 · 附近可连接 {nearbyCount} 台",
   "@settingsRuntimeDiscoveredSpaceSummary": {
     "placeholders": {
       "memberCount": {
@@ -1357,13 +1357,13 @@
       }
     }
   },
-  "settingsRuntimeScan": "Scan",
-  "settingsRuntimeScanning": "Scanning…",
-  "settingsRuntimeEnterManually": "Enter manually",
-  "settingsRuntimeConnect": "Connect",
-  "settingsRuntimeEnableDiscovery": "Allow nearby devices to discover this device space",
-  "settingsRuntimeEnableDiscoveryDescription": "Devices on the same network can find this device space and choose this device for a direct connection.",
-  "settingsRuntimeEnableDiscoveryFailed": "Could not enable device space discovery: {error}",
+  "settingsRuntimeScan": "扫描",
+  "settingsRuntimeScanning": "扫描中…",
+  "settingsRuntimeEnterManually": "手动输入",
+  "settingsRuntimeConnect": "连接",
+  "settingsRuntimeEnableDiscovery": "允许附近设备发现当前设备空间",
+  "settingsRuntimeEnableDiscoveryDescription": "开启后，同一网络下的设备可以找到当前设备空间，并选择这台设备建立连接。",
+  "settingsRuntimeEnableDiscoveryFailed": "无法开启设备空间发现：{error}",
   "@settingsRuntimeEnableDiscoveryFailed": {
     "placeholders": {
       "error": {
@@ -1371,7 +1371,7 @@
       }
     }
   },
-  "settingsRuntimeDisableDiscoveryFailed": "Could not disable device space discovery: {error}",
+  "settingsRuntimeDisableDiscoveryFailed": "无法关闭设备空间发现：{error}",
   "@settingsRuntimeDisableDiscoveryFailed": {
     "placeholders": {
       "error": {
@@ -1379,8 +1379,8 @@
       }
     }
   },
-  "settingsRuntimeUsingLocal": "Using: this device",
-  "settingsRuntimeUsingRemote": "Using: {device}",
+  "settingsRuntimeUsingLocal": "正在使用：这台设备",
+  "settingsRuntimeUsingRemote": "正在使用：{device}",
   "@settingsRuntimeUsingRemote": {
     "placeholders": {
       "device": {
@@ -1388,36 +1388,36 @@
       }
     }
   },
-  "settingsRuntimeRemoteInUseDescription": "Chats and tools run on this connected device.",
-  "settingsWebAccessService": "Allow access",
-  "settingsWebAccessServiceDescription": "When enabled, browsers can access this device with an address and token.",
-  "settingsWebAccessEnable": "Allow external access",
-  "settingsWebAccessPortMode": "Port mode",
-  "settingsWebAccessPortAutomatic": "Automatic",
-  "settingsWebAccessPortFixed": "Fixed",
-  "settingsWebAccessPortAutomaticDescription": "The app chooses a port automatically. No manual setup is needed.",
-  "settingsWebAccessPortFixedDescription": "Only the port in the listen address is used.",
-  "settingsWebAccessBindAddress": "Listen address",
-  "settingsWebAccessToken": "Access token",
-  "settingsWebAccessRotateToken": "Change token",
-  "settingsWebAccessCopyToken": "Copy token",
-  "settingsWebAccessAccessUrl": "Access address",
-  "settingsWebAccessLocalUrl": "This device",
-  "settingsWebAccessPairingUrl": "Pairing address",
-  "settingsWebAccessPairingUrlLocalOnly": "This device only",
-  "settingsWebAccessPairingUrlUnavailable": "No LAN address found",
-  "settingsWebAccessCopyUrl": "Copy URL",
-  "settingsWebAccessOpenUrl": "Open address",
-  "settingsWebAccessRunning": "On",
-  "settingsWebAccessStopped": "Off",
-  "settingsWebAccessSaved": "Access settings saved.",
-  "settingsWebAccessTokenCopied": "Access token copied.",
-  "settingsWebAccessUrlCopied": "Access URL copied.",
-  "settingsWebAccessPairedClients": "Authorized devices",
-  "settingsWebAccessNoPairedClients": "No device is authorized yet.",
-  "settingsWebAccessPairedDeleted": "Authorized device deleted.",
-  "settingsWebAccessPairingRequest": "Pairing request",
-  "settingsWebAccessPairingRequestMessage": "Pairing code: {code}\nDevice: {client}",
+  "settingsRuntimeRemoteInUseDescription": "聊天和工具会在这台已连接设备上运行。",
+  "settingsWebAccessService": "允许访问",
+  "settingsWebAccessServiceDescription": "开启后，浏览器可以通过地址和口令访问这台设备。",
+  "settingsWebAccessEnable": "允许外部访问",
+  "settingsWebAccessPortMode": "端口模式",
+  "settingsWebAccessPortAutomatic": "自动",
+  "settingsWebAccessPortFixed": "固定",
+  "settingsWebAccessPortAutomaticDescription": "端口由系统自动选择，不需要手动配置。",
+  "settingsWebAccessPortFixedDescription": "只使用监听地址中填写的端口。",
+  "settingsWebAccessBindAddress": "监听地址",
+  "settingsWebAccessToken": "访问口令",
+  "settingsWebAccessRotateToken": "更换口令",
+  "settingsWebAccessCopyToken": "复制口令",
+  "settingsWebAccessAccessUrl": "访问地址",
+  "settingsWebAccessLocalUrl": "本机",
+  "settingsWebAccessPairingUrl": "配对地址",
+  "settingsWebAccessPairingUrlLocalOnly": "仅本机可用",
+  "settingsWebAccessPairingUrlUnavailable": "未找到局域网地址",
+  "settingsWebAccessCopyUrl": "复制地址",
+  "settingsWebAccessOpenUrl": "打开地址",
+  "settingsWebAccessRunning": "已开启",
+  "settingsWebAccessStopped": "已关闭",
+  "settingsWebAccessSaved": "访问设置已保存。",
+  "settingsWebAccessTokenCopied": "访问口令已复制。",
+  "settingsWebAccessUrlCopied": "访问地址已复制。",
+  "settingsWebAccessPairedClients": "已授权设备",
+  "settingsWebAccessNoPairedClients": "还没有设备被授权。",
+  "settingsWebAccessPairedDeleted": "已删除授权设备。",
+  "settingsWebAccessPairingRequest": "配对请求",
+  "settingsWebAccessPairingRequestMessage": "配对码：{code}\n设备：{client}",
   "@settingsWebAccessPairingRequestMessage": {
     "placeholders": {
       "code": {
@@ -1428,8 +1428,8 @@
       }
     }
   },
-  "settingsWebAccessInvalidBindAddress": "Bind address must be host:port.",
-  "settingsWebAccessStartFailed": "Failed to enable access: {error}",
+  "settingsWebAccessInvalidBindAddress": "绑定地址格式应为 host:port。",
+  "settingsWebAccessStartFailed": "开启访问失败：{error}",
   "@settingsWebAccessStartFailed": {
     "placeholders": {
       "error": {
@@ -1437,7 +1437,7 @@
       }
     }
   },
-  "settingsWebAccessStopFailed": "Failed to turn off access: {error}",
+  "settingsWebAccessStopFailed": "关闭访问失败：{error}",
   "@settingsWebAccessStopFailed": {
     "placeholders": {
       "error": {
@@ -1445,162 +1445,162 @@
       }
     }
   },
-  "settingsAppearanceThemeSection": "Theme",
-  "settingsAppearanceThemeMode": "Current mode",
-  "settingsAppearanceThemeTarget": "Theme save target",
-  "settingsAppearanceThemeTargetGlobal": "Global",
-  "settingsAppearanceThemeTargetCharacter": "Current character: {name}",
+  "settingsAppearanceThemeSection": "主题",
+  "settingsAppearanceThemeMode": "当前模式",
+  "settingsAppearanceThemeTarget": "主题保存目标",
+  "settingsAppearanceThemeTargetGlobal": "全局",
+  "settingsAppearanceThemeTargetCharacter": "当前角色：{name}",
   "@settingsAppearanceThemeTargetCharacter": {
     "placeholders": {
       "name": {}
     }
   },
-  "settingsAppearanceThemeTargetGroup": "Current group: {name}",
+  "settingsAppearanceThemeTargetGroup": "当前群组：{name}",
   "@settingsAppearanceThemeTargetGroup": {
     "placeholders": {
       "name": {}
     }
   },
-  "settingsAppearanceThemeSystem": "System",
-  "settingsAppearanceThemeLight": "Light",
-  "settingsAppearanceThemeDark": "Dark",
-  "settingsAppearanceInputSection": "Input",
-  "settingsAppearanceInputStyle": "Input style",
-  "settingsAppearanceInputStyleClassic": "Classic",
+  "settingsAppearanceThemeSystem": "跟随系统",
+  "settingsAppearanceThemeLight": "浅色",
+  "settingsAppearanceThemeDark": "深色",
+  "settingsAppearanceInputSection": "输入框",
+  "settingsAppearanceInputStyle": "输入框样式",
+  "settingsAppearanceInputStyleClassic": "经典",
   "settingsAppearanceInputStyleAgent": "Agent",
-  "settingsAppearanceInputFloating": "Floating input",
-  "settingsAppearanceColorSection": "Theme color",
-  "settingsAppearanceColorDescription": "Choose a simple color preset. System bars and current app chrome follow the theme automatically.",
-  "settingsAppearanceColorDefault": "Default",
-  "settingsAppearanceColorSky": "Sky",
-  "settingsAppearanceColorMatcha": "Matcha",
-  "settingsAppearanceColorEmber": "Ember",
-  "settingsAppearanceColorRose": "Rose",
-  "settingsAppearanceColorCustom": "Custom colors",
-  "settingsAppearanceCustomColorsTitle": "Custom theme colors",
-  "settingsAppearancePrimaryColor": "Primary color",
-  "settingsAppearanceSecondaryColor": "Secondary color",
+  "settingsAppearanceInputFloating": "悬浮输入框",
+  "settingsAppearanceColorSection": "主题色",
+  "settingsAppearanceColorDescription": "选择一个简单的颜色预设。系统栏和当前应用外壳会自动跟随主题，不再单独配置。",
+  "settingsAppearanceColorDefault": "默认",
+  "settingsAppearanceColorSky": "天蓝",
+  "settingsAppearanceColorMatcha": "抹茶",
+  "settingsAppearanceColorEmber": "暖橙",
+  "settingsAppearanceColorRose": "玫瑰",
+  "settingsAppearanceColorCustom": "自定义颜色",
+  "settingsAppearanceCustomColorsTitle": "自定义主题色",
+  "settingsAppearancePrimaryColor": "主色",
+  "settingsAppearanceSecondaryColor": "辅色",
   "settingsAppearanceHexColorHint": "#RRGGBB",
-  "settingsAppearanceHexColorInvalid": "Enter a color in #RRGGBB format",
-  "settingsAppearanceBackgroundSection": "Background",
-  "settingsAppearanceBackgroundDescription": "Choose a local image or video as the app background. App surfaces and system bars follow the theme automatically.",
-  "settingsAppearanceBackgroundImage": "Background media",
-  "settingsAppearanceBackgroundNone": "None selected",
-  "settingsAppearanceBackgroundChooseImage": "Choose image",
-  "settingsAppearanceBackgroundChooseVideo": "Choose video",
-  "settingsAppearanceBackgroundDisable": "Disable background",
-  "settingsAppearanceBackgroundEnabled": "Enable background",
-  "settingsAppearanceBackgroundOpacity": "Background opacity",
-  "settingsAppearanceBackgroundBlur": "Blur background",
-  "settingsAppearanceBackgroundBlurRadius": "Blur strength",
-  "settingsAppearanceBackgroundVideoMuted": "Mute video background",
-  "settingsAppearanceBackgroundVideoLoop": "Loop video background",
-  "settingsAppearanceTextSection": "Text",
-  "settingsAppearanceFontFamily": "Font",
-  "settingsAppearanceFontDefault": "Default",
-  "settingsAppearanceCustomFont": "Custom font",
-  "settingsAppearanceFontCustom": "Custom",
-  "settingsAppearanceChooseCustomFont": "Choose custom font",
-  "settingsAppearanceClearCustomFont": "Clear custom font",
-  "settingsAppearanceFontSerif": "Serif",
-  "settingsAppearanceFontMonospace": "Mono",
-  "settingsAppearanceFontScale": "Font size",
-  "settingsAppearanceAvatarSection": "Avatars",
-  "settingsAppearanceUserAvatar": "User avatar",
-  "settingsAppearanceAiAvatar": "AI avatar",
-  "settingsAppearanceAvatarDefault": "Default avatar",
-  "settingsAppearanceAvatarShape": "Avatar shape",
-  "settingsAppearanceAvatarShapeCircle": "Circle",
-  "settingsAppearanceAvatarShapeSquare": "Square",
-  "settingsAppearanceChooseUserAvatar": "Choose user avatar",
-  "settingsAppearanceChooseAiAvatar": "Choose AI avatar",
-  "settingsAppearanceClearUserAvatar": "Clear user avatar",
-  "settingsAppearanceClearAiAvatar": "Clear AI avatar",
-  "settingsAppearanceChatDisplaySection": "Chat display",
-  "settingsAppearanceMessageStyle": "Message style",
-  "settingsAppearanceMessageStyleClean": "Command",
-  "settingsAppearanceMessageStyleCard": "Bubble",
-  "settingsAppearanceMessageColors": "Message colors",
-  "settingsAppearanceMessageColorsTheme": "Follow theme",
-  "settingsAppearanceMessageColorsSky": "Clean blue",
-  "settingsAppearanceMessageColorsMatcha": "Matcha",
-  "settingsAppearanceMessageColorsInk": "Dark",
-  "settingsAppearanceMessageColorsCustom": "Custom message colors",
-  "settingsAppearanceCustomMessageColorsTitle": "Custom message colors",
-  "settingsAppearanceCursorUserBubbleColor": "Command user bubble",
-  "settingsAppearanceUserBubbleColor": "User bubble",
-  "settingsAppearanceAiBubbleColor": "AI bubble",
-  "settingsAppearanceUserTextColor": "User text",
-  "settingsAppearanceAiTextColor": "AI text",
-  "settingsAppearanceMessageSurface": "Global texture",
-  "settingsAppearanceMessageSurfaceNormal": "Normal",
-  "settingsAppearanceMessageSurfaceTransparent": "Transparent",
-  "settingsAppearanceUserBubbleFont": "User bubble font",
-  "settingsAppearanceAiBubbleFont": "AI bubble font",
-  "settingsAppearanceAdjustUserBubbleFont": "Adjust user bubble font",
-  "settingsAppearanceAdjustAiBubbleFont": "Adjust AI bubble font",
-  "settingsAppearanceEnableBubbleFont": "Enable bubble-specific font",
-  "settingsAppearanceUserBubbleImage": "User bubble image",
-  "settingsAppearanceAiBubbleImage": "AI bubble image",
-  "settingsAppearanceChooseUserBubbleImage": "Choose user bubble",
-  "settingsAppearanceChooseAiBubbleImage": "Choose AI bubble",
-  "settingsAppearanceClearUserBubbleImage": "Clear user bubble",
-  "settingsAppearanceClearAiBubbleImage": "Clear AI bubble",
-  "settingsAppearanceBubbleImageRenderMode": "Bubble image mode",
-  "settingsAppearanceBubbleImageTiledNineSlice": "Tiled 9-slice",
-  "settingsAppearanceBubbleImageNinePatch": "Stretch 9-patch",
-  "settingsAppearanceBubbleImageAdjustUser": "Adjust user bubble image",
-  "settingsAppearanceBubbleImageAdjustAi": "Adjust AI bubble image",
-  "settingsAppearanceBubbleImagePreview": "Preview",
-  "settingsAppearanceBubbleImagePreviewText": "Bubble preview with 9-slice guides",
-  "settingsAppearanceBubbleImageCrop": "Crop",
-  "settingsAppearanceBubbleImageRepeat": "Repeat region",
-  "settingsAppearanceBubbleImageScale": "Image scale",
-  "settingsAppearanceBubbleImageCropLeft": "Crop left",
-  "settingsAppearanceBubbleImageCropTop": "Crop top",
-  "settingsAppearanceBubbleImageCropRight": "Crop right",
-  "settingsAppearanceBubbleImageCropBottom": "Crop bottom",
-  "settingsAppearanceBubbleImageRepeatStart": "Repeat X start",
-  "settingsAppearanceBubbleImageRepeatEnd": "Repeat X end",
-  "settingsAppearanceBubbleImageRepeatYStart": "Repeat Y start",
-  "settingsAppearanceBubbleImageRepeatYEnd": "Repeat Y end",
-  "settingsAppearanceMessageDensity": "Message spacing",
-  "settingsAppearanceMessageDensityComfortable": "Comfortable",
-  "settingsAppearanceMessageDensityCompact": "Compact",
-  "settingsAppearanceWideLayout": "Use wider chat layout",
-  "settingsAppearanceRoundedMessages": "Rounded message cards",
-  "settingsAppearanceShowAvatars": "Show message avatars",
-  "settingsAppearanceMessageDisplaySection": "Message display",
-  "settingsAppearanceShowThinkingProcess": "Show thinking process",
-  "settingsAppearanceShowRoleName": "Show role name",
-  "settingsAppearanceShowUserName": "Show user name",
-  "settingsAppearanceShowModelName": "Show model name",
-  "settingsAppearanceShowModelProvider": "Show model provider",
-  "settingsAppearanceShowMessageTokenStats": "Show token stats",
-  "settingsAppearanceShowMessageTimingStats": "Show timing stats",
-  "settingsAppearanceShowMessageTimestamp": "Show message time",
-  "settingsAppearanceShowInputProcessingStatus": "Show input processing status",
-  "settingsAppearanceResetTheme": "Reset theme settings",
-  "settingsAppearanceLanguageSection": "Language",
-  "settingsAppearanceLanguage": "Current language",
-  "settingsAppearanceLanguageDescription": "Language follows the localization configuration loaded at app startup.",
-  "settingsAppearanceBubblesTab": "Messages & Bubbles",
-  "settingsAppearanceInteractionTab": "Interaction & Feed",
-  "settingsAppearanceBubbleStyleSection": "Layout & Style",
-  "settingsAppearanceBubbleFontSection": "Bubble Fonts",
-  "settingsAppearanceBubbleImageSection": "Bubble Images",
-  "settingsAppearanceInteractionStatusSection": "Process & Status",
-  "settingsAppearanceBackgroundEffectsSection": "Visual Effects",
-  "settingsAppearanceBackgroundVideoSection": "Video Playback",
-  "settingsAppearanceLivePreviewTitle": "Live Preview",
-  "settingsAppearanceLivePreviewUserSample": "Help me organize today's work plan.",
-  "settingsAppearanceLivePreviewAiSample": "Sure! I've organized your core task list and we're ready to start.",
-  "settingsAppearanceLivePreviewThinkingSample": "Analyzing context and schedule priorities...",
-  "settingsDataLogsSection": "Diagnostic logs",
-  "settingsDataLogsDescription": "Export the selected Core and this client’s logs as one time-ordered .log file, marked [CORE] / [CLIENT]. Logs may contain sensitive data; review before sharing.",
-  "settingsDataExportLogs": "Export diagnostic logs",
-  "settingsDataLogsExporting": "Exporting logs…",
-  "settingsDataLogsExportError": "Log export failed: {error}",
+  "settingsAppearanceHexColorInvalid": "请输入 #RRGGBB 格式的颜色",
+  "settingsAppearanceBackgroundSection": "背景",
+  "settingsAppearanceBackgroundDescription": "选择本地图片或视频作为应用背景，界面底色和系统栏会自动跟随主题。",
+  "settingsAppearanceBackgroundImage": "背景媒体",
+  "settingsAppearanceBackgroundNone": "未选择",
+  "settingsAppearanceBackgroundChooseImage": "选择图片",
+  "settingsAppearanceBackgroundChooseVideo": "选择视频",
+  "settingsAppearanceBackgroundDisable": "关闭背景",
+  "settingsAppearanceBackgroundEnabled": "启用背景",
+  "settingsAppearanceBackgroundOpacity": "背景透明度",
+  "settingsAppearanceBackgroundBlur": "背景模糊",
+  "settingsAppearanceBackgroundBlurRadius": "模糊强度",
+  "settingsAppearanceBackgroundVideoMuted": "视频背景静音",
+  "settingsAppearanceBackgroundVideoLoop": "视频背景循环",
+  "settingsAppearanceTextSection": "文字",
+  "settingsAppearanceFontFamily": "字体",
+  "settingsAppearanceFontDefault": "默认",
+  "settingsAppearanceCustomFont": "自定义字体",
+  "settingsAppearanceFontCustom": "自定义",
+  "settingsAppearanceChooseCustomFont": "选择自定义字体",
+  "settingsAppearanceClearCustomFont": "清除自定义字体",
+  "settingsAppearanceFontSerif": "衬线",
+  "settingsAppearanceFontMonospace": "等宽",
+  "settingsAppearanceFontScale": "字体大小",
+  "settingsAppearanceAvatarSection": "头像",
+  "settingsAppearanceUserAvatar": "用户头像",
+  "settingsAppearanceAiAvatar": "AI 头像",
+  "settingsAppearanceAvatarDefault": "默认头像",
+  "settingsAppearanceAvatarShape": "头像形状",
+  "settingsAppearanceAvatarShapeCircle": "圆形",
+  "settingsAppearanceAvatarShapeSquare": "方形",
+  "settingsAppearanceChooseUserAvatar": "选择用户头像",
+  "settingsAppearanceChooseAiAvatar": "选择 AI 头像",
+  "settingsAppearanceClearUserAvatar": "清除用户头像",
+  "settingsAppearanceClearAiAvatar": "清除 AI 头像",
+  "settingsAppearanceChatDisplaySection": "聊天显示",
+  "settingsAppearanceMessageStyle": "消息样式",
+  "settingsAppearanceMessageStyleClean": "命令式",
+  "settingsAppearanceMessageStyleCard": "气泡式",
+  "settingsAppearanceMessageColors": "消息配色",
+  "settingsAppearanceMessageColorsTheme": "跟随主题",
+  "settingsAppearanceMessageColorsSky": "清爽蓝",
+  "settingsAppearanceMessageColorsMatcha": "抹茶",
+  "settingsAppearanceMessageColorsInk": "深色",
+  "settingsAppearanceMessageColorsCustom": "自定义消息颜色",
+  "settingsAppearanceCustomMessageColorsTitle": "自定义消息颜色",
+  "settingsAppearanceCursorUserBubbleColor": "命令式用户气泡",
+  "settingsAppearanceUserBubbleColor": "用户气泡",
+  "settingsAppearanceAiBubbleColor": "AI 气泡",
+  "settingsAppearanceUserTextColor": "用户文字",
+  "settingsAppearanceAiTextColor": "AI 文字",
+  "settingsAppearanceMessageSurface": "全局质感",
+  "settingsAppearanceMessageSurfaceNormal": "普通",
+  "settingsAppearanceMessageSurfaceTransparent": "透明",
+  "settingsAppearanceUserBubbleFont": "用户气泡字体",
+  "settingsAppearanceAiBubbleFont": "AI 气泡字体",
+  "settingsAppearanceAdjustUserBubbleFont": "调整用户气泡字体",
+  "settingsAppearanceAdjustAiBubbleFont": "调整 AI 气泡字体",
+  "settingsAppearanceEnableBubbleFont": "启用气泡专属字体",
+  "settingsAppearanceUserBubbleImage": "用户气泡图片",
+  "settingsAppearanceAiBubbleImage": "AI 气泡图片",
+  "settingsAppearanceChooseUserBubbleImage": "选择用户气泡",
+  "settingsAppearanceChooseAiBubbleImage": "选择 AI 气泡",
+  "settingsAppearanceClearUserBubbleImage": "清除用户气泡",
+  "settingsAppearanceClearAiBubbleImage": "清除 AI 气泡",
+  "settingsAppearanceBubbleImageRenderMode": "气泡图片模式",
+  "settingsAppearanceBubbleImageTiledNineSlice": "平铺九宫格",
+  "settingsAppearanceBubbleImageNinePatch": "拉伸九宫格",
+  "settingsAppearanceBubbleImageAdjustUser": "调整用户气泡图片",
+  "settingsAppearanceBubbleImageAdjustAi": "调整 AI 气泡图片",
+  "settingsAppearanceBubbleImagePreview": "预览",
+  "settingsAppearanceBubbleImagePreviewText": "这是一条气泡预览，切线展示九宫格区域",
+  "settingsAppearanceBubbleImageCrop": "裁切",
+  "settingsAppearanceBubbleImageRepeat": "重复区域",
+  "settingsAppearanceBubbleImageScale": "图片缩放",
+  "settingsAppearanceBubbleImageCropLeft": "左侧裁切",
+  "settingsAppearanceBubbleImageCropTop": "顶部裁切",
+  "settingsAppearanceBubbleImageCropRight": "右侧裁切",
+  "settingsAppearanceBubbleImageCropBottom": "底部裁切",
+  "settingsAppearanceBubbleImageRepeatStart": "横向重复起点",
+  "settingsAppearanceBubbleImageRepeatEnd": "横向重复终点",
+  "settingsAppearanceBubbleImageRepeatYStart": "纵向重复起点",
+  "settingsAppearanceBubbleImageRepeatYEnd": "纵向重复终点",
+  "settingsAppearanceMessageDensity": "消息间距",
+  "settingsAppearanceMessageDensityComfortable": "舒适",
+  "settingsAppearanceMessageDensityCompact": "紧凑",
+  "settingsAppearanceWideLayout": "使用更宽的聊天布局",
+  "settingsAppearanceRoundedMessages": "消息卡片圆角",
+  "settingsAppearanceShowAvatars": "显示消息头像",
+  "settingsAppearanceMessageDisplaySection": "消息显示",
+  "settingsAppearanceShowThinkingProcess": "显示思考过程",
+  "settingsAppearanceShowRoleName": "显示角色名",
+  "settingsAppearanceShowUserName": "显示用户名",
+  "settingsAppearanceShowModelName": "显示模型名",
+  "settingsAppearanceShowModelProvider": "显示模型供应商",
+  "settingsAppearanceShowMessageTokenStats": "显示 Token 统计",
+  "settingsAppearanceShowMessageTimingStats": "显示耗时统计",
+  "settingsAppearanceShowMessageTimestamp": "显示消息时间",
+  "settingsAppearanceShowInputProcessingStatus": "显示输入处理状态",
+  "settingsAppearanceResetTheme": "重置主题设置",
+  "settingsAppearanceLanguageSection": "语言",
+  "settingsAppearanceLanguage": "当前语言",
+  "settingsAppearanceLanguageDescription": "语言跟随应用启动时的本地化配置。",
+  "settingsAppearanceBubblesTab": "消息与气泡",
+  "settingsAppearanceInteractionTab": "交互与信息",
+  "settingsAppearanceBubbleStyleSection": "版式与风格",
+  "settingsAppearanceBubbleFontSection": "气泡字体",
+  "settingsAppearanceBubbleImageSection": "气泡贴图",
+  "settingsAppearanceInteractionStatusSection": "过程与状态",
+  "settingsAppearanceBackgroundEffectsSection": "视觉效果",
+  "settingsAppearanceBackgroundVideoSection": "视频播放",
+  "settingsAppearanceLivePreviewTitle": "实时预览",
+  "settingsAppearanceLivePreviewUserSample": "帮我梳理一下今天的工作计划。",
+  "settingsAppearanceLivePreviewAiSample": "好的！我已经为你整理好核心任务清单，随时可以开始执行。",
+  "settingsAppearanceLivePreviewThinkingSample": "正在分析上下文与日程优先级...",
+  "settingsDataLogsSection": "诊断日志",
+  "settingsDataLogsDescription": "将当前连接的 Core 与本客户端的日志按时间合并为一个 .log 文件，并标记 [CORE] / [CLIENT]。日志可能包含敏感信息，分享前请检查。",
+  "settingsDataExportLogs": "导出诊断日志",
+  "settingsDataLogsExporting": "正在导出日志…",
+  "settingsDataLogsExportError": "日志导出失败：{error}",
   "@settingsDataLogsExportError": {
     "placeholders": {
       "error": {
@@ -1608,7 +1608,7 @@
       }
     }
   },
-  "settingsDataLogsExportPartial": "Saved to {path}. One log source could not be read; see the warnings in the file.",
+  "settingsDataLogsExportPartial": "已保存至 {path}。部分日志读取失败，请查看文件中的警告。",
   "@settingsDataLogsExportPartial": {
     "placeholders": {
       "path": {
@@ -1616,7 +1616,7 @@
       }
     }
   },
-  "settingsDataOverviewLoadError": "The data overview could not be loaded: {error}. You can still export diagnostic logs.",
+  "settingsDataOverviewLoadError": "数据概览加载失败：{error}。仍可导出诊断日志。",
   "@settingsDataOverviewLoadError": {
     "placeholders": {
       "error": {
@@ -1624,20 +1624,20 @@
       }
     }
   },
-  "settingsDataRuntimeSection": "Data overview",
-  "settingsDataCoreVersion": "Current version",
-  "settingsDataStorageSection": "Storage location",
-  "settingsDataStorageDescription": "Move runtime and workspace data into independently selected local folders.",
-  "settingsDataRuntimeRoot": "Runtime root",
-  "settingsDataWorkspaceRoot": "Workspace root",
-  "settingsDataChooseStorageRoots": "Edit locations",
-  "settingsDataEditStorageRootsTitle": "Edit storage locations",
-  "settingsDataStorageRootsRequired": "Runtime root and workspace root are required.",
-  "settingsDataStorageConfirmTitle": "Change storage location",
-  "settingsDataStorageConfirmMessage": "Runtime and workspace data will be copied into the selected directories, and the app will use them after restart.",
-  "settingsDataStorageConfirmAction": "Change location",
-  "settingsDataStorageChanged": "Storage location changed. Restart the app to use it.",
-  "settingsDataStorageChangeError": "Storage location change failed: {error}",
+  "settingsDataRuntimeSection": "数据概览",
+  "settingsDataCoreVersion": "当前版本",
+  "settingsDataStorageSection": "储存路径",
+  "settingsDataStorageDescription": "把 runtime 和 workspace 数据分别迁移到指定的本地文件夹。",
+  "settingsDataRuntimeRoot": "运行时目录",
+  "settingsDataWorkspaceRoot": "工作区目录",
+  "settingsDataChooseStorageRoots": "编辑位置",
+  "settingsDataEditStorageRootsTitle": "编辑储存位置",
+  "settingsDataStorageRootsRequired": "运行时目录和工作区目录都不能为空。",
+  "settingsDataStorageConfirmTitle": "更改储存路径",
+  "settingsDataStorageConfirmMessage": "runtime 和 workspace 数据会分别复制到所选目录，重启应用后使用新位置。",
+  "settingsDataStorageConfirmAction": "更改位置",
+  "settingsDataStorageChanged": "储存路径已更改，重启应用后生效。",
+  "settingsDataStorageChangeError": "储存路径更改失败：{error}",
   "@settingsDataStorageChangeError": {
     "placeholders": {
       "error": {
@@ -1645,17 +1645,17 @@
       }
     }
   },
-  "settingsDataTokenSection": "Usage statistics",
-  "settingsDataInputTokens": "Input",
-  "settingsDataOutputTokens": "Output",
-  "settingsDataOpenDetailedStats": "View detailed statistics",
-  "settingsDataOpenDetailedStatsDescription": "Open daily trends, input/output token changes, heatmap intensity, and usage breakdown by provider, model, and function model.",
-  "settingsDataRefreshTokenStats": "Refresh statistics",
-  "settingsDataResetTokenStats": "Reset statistics",
-  "settingsDataDetailedStatsTitle": "Detailed statistics",
-  "settingsDataDetailedStatsDescription": "Statistics are calculated from dedicated model request records.",
-  "settingsDataDetailedStatsEmpty": "No detailed usage records yet",
-  "settingsDataDetailedStatsDateRange": "{start} to {end}",
+  "settingsDataTokenSection": "使用统计",
+  "settingsDataInputTokens": "输入",
+  "settingsDataOutputTokens": "输出",
+  "settingsDataOpenDetailedStats": "查看详细统计",
+  "settingsDataOpenDetailedStatsDescription": "打开每日趋势、输入输出 Token 变化、使用热力图，以及按供应商、模型、功能模型分类的使用明细。",
+  "settingsDataRefreshTokenStats": "刷新统计",
+  "settingsDataResetTokenStats": "重置统计",
+  "settingsDataDetailedStatsTitle": "详细统计",
+  "settingsDataDetailedStatsDescription": "统计基于独立保存的模型请求明细计算。",
+  "settingsDataDetailedStatsEmpty": "暂无可展示的详细使用记录",
+  "settingsDataDetailedStatsDateRange": "{start} 至 {end}",
   "@settingsDataDetailedStatsDateRange": {
     "placeholders": {
       "start": {
@@ -1666,35 +1666,35 @@
       }
     }
   },
-  "settingsDataDetailedStatsSourceLabel": "Model request records",
-  "settingsDataDetailedStatsHistoricalTotal": "Historical total",
-  "settingsDataDetailedStatsRangeAll": "All",
-  "settingsDataDetailedStatsRangeLast7Days": "7 days",
-  "settingsDataDetailedStatsRangeLast30Days": "30 days",
-  "settingsDataDetailedStatsRangeCustom": "Custom",
-  "settingsDataDetailedStatsCustomRangePickerTitle": "Select statistics date range",
-  "settingsDataDetailedStatsNoDataInRange": "No data in this range",
-  "settingsDataDetailedStatsNoRankRows": "No ranking data in this range",
-  "settingsDataDetailedStatsFunctionModels": "Function models",
-  "settingsDataDetailedStatsFunctionModelPieTitle": "Function model distribution",
-  "settingsDataDetailedStatsTopFunctionModelsTitle": "Function model ranking",
-  "settingsDataDetailedStatsTopFunctionModelsSubtitle": "Highest total token consumption by function model",
-  "settingsDataDetailedStatsSourceChat": "Chat response",
-  "settingsDataDetailedStatsSourceToolResult": "Tool-result response",
-  "settingsDataDetailedStatsSourceSummary": "Summary generation",
-  "settingsDataDetailedStatsSourceTitleGeneration": "Title generation",
-  "settingsDataDetailedStatsSourceMemory": "Memory analysis",
-  "settingsDataDetailedStatsTotalRequests": "Total requests",
-  "settingsDataDetailedStatsCachedInput": "Cached input",
-  "settingsDataDetailedStatsActiveDays": "Active days",
-  "settingsDataDetailedStatsChats": "Conversations",
-  "settingsDataDetailedStatsProviders": "Providers",
-  "settingsDataDetailedStatsModels": "Models",
-  "settingsDataDetailedStatsUnknownTokenRecords": "Records with unknown tokens",
-  "settingsDataDetailedStatsHeatmapTitle": "Usage heatmap",
-  "settingsDataDetailedStatsHeatmapSubtitle": "Daily token intensity across the selected range",
-  "settingsDataDetailedStatsHeatmapTapHint": "Tap a cell to view details",
-  "settingsDataDetailedStatsHeatmapDayDetail": "{date} used {tokens} tokens · {requests} requests",
+  "settingsDataDetailedStatsSourceLabel": "模型请求明细",
+  "settingsDataDetailedStatsHistoricalTotal": "历史累计",
+  "settingsDataDetailedStatsRangeAll": "全部",
+  "settingsDataDetailedStatsRangeLast7Days": "近 7 天",
+  "settingsDataDetailedStatsRangeLast30Days": "近 30 天",
+  "settingsDataDetailedStatsRangeCustom": "自定义",
+  "settingsDataDetailedStatsCustomRangePickerTitle": "选择统计时间范围",
+  "settingsDataDetailedStatsNoDataInRange": "当前范围暂无数据",
+  "settingsDataDetailedStatsNoRankRows": "当前范围暂无排行数据",
+  "settingsDataDetailedStatsFunctionModels": "功能模型数",
+  "settingsDataDetailedStatsFunctionModelPieTitle": "功能模型分布",
+  "settingsDataDetailedStatsTopFunctionModelsTitle": "功能模型排行",
+  "settingsDataDetailedStatsTopFunctionModelsSubtitle": "按功能模型累计 Token 消耗排序",
+  "settingsDataDetailedStatsSourceChat": "对话回复",
+  "settingsDataDetailedStatsSourceToolResult": "工具结果续写",
+  "settingsDataDetailedStatsSourceSummary": "摘要生成",
+  "settingsDataDetailedStatsSourceTitleGeneration": "标题生成",
+  "settingsDataDetailedStatsSourceMemory": "记忆分析",
+  "settingsDataDetailedStatsTotalRequests": "总请求数",
+  "settingsDataDetailedStatsCachedInput": "缓存输入",
+  "settingsDataDetailedStatsActiveDays": "活跃天数",
+  "settingsDataDetailedStatsChats": "会话数",
+  "settingsDataDetailedStatsProviders": "供应商数",
+  "settingsDataDetailedStatsModels": "模型数",
+  "settingsDataDetailedStatsUnknownTokenRecords": "含未知 Token 的记录",
+  "settingsDataDetailedStatsHeatmapTitle": "使用热力图",
+  "settingsDataDetailedStatsHeatmapSubtitle": "所选时间范围内每日 Token 消耗强度",
+  "settingsDataDetailedStatsHeatmapTapHint": "点击方格查看详细数据",
+  "settingsDataDetailedStatsHeatmapDayDetail": "{date} 使用了 {tokens} Token · {requests} 次请求",
   "@settingsDataDetailedStatsHeatmapDayDetail": {
     "placeholders": {
       "date": {
@@ -1708,23 +1708,23 @@
       }
     }
   },
-  "settingsDataDetailedStatsHeatmapLow": "Less",
-  "settingsDataDetailedStatsHeatmapHigh": "More",
-  "settingsDataDetailedStatsDailyUsageTitle": "Daily usage trend",
-  "settingsDataDetailedStatsDailyUsageSubtitle": "Request count by day",
-  "settingsDataDetailedStatsRequestsSeries": "Requests",
-  "settingsDataDetailedStatsInputOutputTitle": "Input / output consumption trend",
-  "settingsDataDetailedStatsInputOutputSubtitle": "Daily token changes for input and output",
-  "settingsDataDetailedStatsProviderPieTitle": "Provider distribution",
-  "settingsDataDetailedStatsModelPieTitle": "Model distribution",
-  "settingsDataDetailedStatsChatPieTitle": "Conversation distribution",
-  "settingsDataDetailedStatsTotalTokens": "Total tokens",
-  "settingsDataDetailedStatsTopRequestsTitle": "Single-request peaks",
-  "settingsDataDetailedStatsTopRequestsSubtitle": "Highest token consumption from individual calls",
-  "settingsDataDetailedStatsTopChatsTitle": "Top conversations",
-  "settingsDataDetailedStatsTopChatsSubtitle": "Highest total token consumption by conversation",
-  "settingsDataDetailedStatsOther": "Other",
-  "settingsDataDetailedStatsInputOutputSummary": "Input {input} · Output {output} · {chatTitle} · {time}",
+  "settingsDataDetailedStatsHeatmapLow": "少",
+  "settingsDataDetailedStatsHeatmapHigh": "多",
+  "settingsDataDetailedStatsDailyUsageTitle": "每日使用趋势",
+  "settingsDataDetailedStatsDailyUsageSubtitle": "按天统计请求次数",
+  "settingsDataDetailedStatsRequestsSeries": "请求数",
+  "settingsDataDetailedStatsInputOutputTitle": "输入 / 输出消耗趋势",
+  "settingsDataDetailedStatsInputOutputSubtitle": "按天统计输入与输出 Token 变化",
+  "settingsDataDetailedStatsProviderPieTitle": "供应商分布",
+  "settingsDataDetailedStatsModelPieTitle": "模型分布",
+  "settingsDataDetailedStatsChatPieTitle": "会话分布",
+  "settingsDataDetailedStatsTotalTokens": "总 Token",
+  "settingsDataDetailedStatsTopRequestsTitle": "单次请求峰值",
+  "settingsDataDetailedStatsTopRequestsSubtitle": "单次调用中 Token 消耗最高的记录",
+  "settingsDataDetailedStatsTopChatsTitle": "会话排行",
+  "settingsDataDetailedStatsTopChatsSubtitle": "按会话累计 Token 消耗排序",
+  "settingsDataDetailedStatsOther": "其他",
+  "settingsDataDetailedStatsInputOutputSummary": "输入 {input} · 输出 {output} · {chatTitle} · {time}",
   "@settingsDataDetailedStatsInputOutputSummary": {
     "placeholders": {
       "input": {
@@ -1741,7 +1741,7 @@
       }
     }
   },
-  "settingsDataDetailedStatsRequestModelSummary": "{requests} requests · {models} models",
+  "settingsDataDetailedStatsRequestModelSummary": "{requests} 次请求 · {models} 个模型",
   "@settingsDataDetailedStatsRequestModelSummary": {
     "placeholders": {
       "requests": {
@@ -1752,7 +1752,7 @@
       }
     }
   },
-  "settingsDataDetailedStatsRequestCountSummary": "{requests} requests",
+  "settingsDataDetailedStatsRequestCountSummary": "{requests} 次请求",
   "@settingsDataDetailedStatsRequestCountSummary": {
     "placeholders": {
       "requests": {
@@ -1760,19 +1760,19 @@
       }
     }
   },
-  "settingsDataDetailedStatsUnlabeledProvider": "Unlabeled provider",
-  "settingsDataDetailedStatsUnlabeledModel": "Unlabeled model",
-  "settingsDataDetailedStatsUntitledChat": "Untitled conversation",
-  "settingsDataBackupSection": "Backup & restore",
-  "settingsDataChatHistoriesBackup": "Chat data",
-  "settingsDataChatHistoriesBackupDescription": "Back up all chats and messages. Restore updates or creates chats by chat ID.",
-  "settingsDataCharacterCardsBackup": "Character card data",
-  "settingsDataCharacterCardsBackupDescription": "Back up all character cards and referenced tags. Restore updates or creates items by original ID.",
-  "settingsDataCharacterGroupsBackup": "Group data",
-  "settingsDataCharacterGroupsBackupDescription": "Back up all groups. Restore keeps member references and ordering.",
-  "settingsDataModelConfigsBackup": "Model settings",
-  "settingsDataModelConfigsBackupDescription": "Back up all model settings, including model parameters and API key pools.",
-  "settingsDataBackupCount": "{count} items",
+  "settingsDataDetailedStatsUnlabeledProvider": "未标记供应商",
+  "settingsDataDetailedStatsUnlabeledModel": "未标记模型",
+  "settingsDataDetailedStatsUntitledChat": "未命名会话",
+  "settingsDataBackupSection": "备份与恢复",
+  "settingsDataChatHistoriesBackup": "聊天数据",
+  "settingsDataChatHistoriesBackupDescription": "备份全部聊天和消息；恢复时按聊天 ID 更新或新增。",
+  "settingsDataCharacterCardsBackup": "角色卡数据",
+  "settingsDataCharacterCardsBackupDescription": "备份全部角色卡和已引用标签；恢复时按原 ID 更新或新增。",
+  "settingsDataCharacterGroupsBackup": "群组数据",
+  "settingsDataCharacterGroupsBackupDescription": "备份全部群组；恢复时保留组内角色引用和顺序。",
+  "settingsDataModelConfigsBackup": "模型配置",
+  "settingsDataModelConfigsBackupDescription": "备份全部模型配置，包含模型参数和 API Key 池。",
+  "settingsDataBackupCount": "当前 {count} 项",
   "@settingsDataBackupCount": {
     "placeholders": {
       "count": {
@@ -1780,9 +1780,9 @@
       }
     }
   },
-  "settingsDataExportBackupJson": "Export backup",
-  "settingsDataImportBackupJson": "Restore data",
-  "settingsDataBackupImportResult": "Restore complete: {newCount} new, {updatedCount} updated, {skippedCount} skipped.",
+  "settingsDataExportBackupJson": "导出备份",
+  "settingsDataImportBackupJson": "恢复数据",
+  "settingsDataBackupImportResult": "恢复完成：新增 {newCount}，更新 {updatedCount}，跳过 {skippedCount}。",
   "@settingsDataBackupImportResult": {
     "placeholders": {
       "newCount": {
@@ -1796,7 +1796,7 @@
       }
     }
   },
-  "settingsDataBackupImportError": "Restore failed: {error}",
+  "settingsDataBackupImportError": "恢复失败：{error}",
   "@settingsDataBackupImportError": {
     "placeholders": {
       "error": {
@@ -1804,7 +1804,7 @@
       }
     }
   },
-  "settingsDataBackupExportError": "Export failed: {error}",
+  "settingsDataBackupExportError": "导出失败：{error}",
   "@settingsDataBackupExportError": {
     "placeholders": {
       "error": {
@@ -1812,11 +1812,11 @@
       }
     }
   },
-  "settingsDataSnapshotBackupTitle": "Full snapshot",
-  "settingsDataExportRawSnapshot": "Export snapshot",
-  "settingsDataImportRawSnapshot": "Restore snapshot",
-  "settingsDataExportRawSnapshotDescription": "Pack chats, characters, model settings, and local files into one backup file. Restoring replaces current data with the backup.",
-  "settingsDataSnapshotBytes": "Snapshot size: {bytes} bytes",
+  "settingsDataSnapshotBackupTitle": "完整快照",
+  "settingsDataExportRawSnapshot": "导出快照",
+  "settingsDataImportRawSnapshot": "恢复快照",
+  "settingsDataExportRawSnapshotDescription": "把聊天、角色、模型设置和本地文件打包成一个备份文件。恢复时会用备份里的数据覆盖当前数据。",
+  "settingsDataSnapshotBytes": "快照大小：{bytes} 字节",
   "@settingsDataSnapshotBytes": {
     "placeholders": {
       "bytes": {
@@ -1824,8 +1824,8 @@
       }
     }
   },
-  "settingsDataSnapshotImported": "Snapshot restored.",
-  "settingsDataSnapshotExportError": "Snapshot export failed: {error}",
+  "settingsDataSnapshotImported": "快照恢复完成。",
+  "settingsDataSnapshotExportError": "快照导出失败：{error}",
   "@settingsDataSnapshotExportError": {
     "placeholders": {
       "error": {
@@ -1833,7 +1833,7 @@
       }
     }
   },
-  "settingsDataSnapshotImportError": "Snapshot restore failed: {error}",
+  "settingsDataSnapshotImportError": "快照恢复失败：{error}",
   "@settingsDataSnapshotImportError": {
     "placeholders": {
       "error": {
@@ -1841,8 +1841,8 @@
       }
     }
   },
-  "settingsDataSnapshotRestoreConfirmTitle": "Restore full snapshot",
-  "settingsDataSnapshotRestoreConfirmMessage": "Restoring will replace the current runtime data.\nFormat version: {formatVersion}\nFiles: {fileCount}\nCreated: {createdAt}\nSnapshot size: {bytes} bytes",
+  "settingsDataSnapshotRestoreConfirmTitle": "恢复完整快照",
+  "settingsDataSnapshotRestoreConfirmMessage": "恢复会替换当前 runtime 数据。\n格式版本：{formatVersion}\n文件数量：{fileCount}\n创建时间：{createdAt}\n快照大小：{bytes} 字节",
   "@settingsDataSnapshotRestoreConfirmMessage": {
     "placeholders": {
       "formatVersion": {
@@ -1859,10 +1859,10 @@
       }
     }
   },
-  "settingsDataSnapshotRestoreConfirmAction": "Restore",
-  "settingsDataImportOperit1Snapshot": "Import from Operit1",
-  "settingsDataOperit1SnapshotImported": "Operit1 snapshot imported.",
-  "settingsDataOperit1SnapshotImportError": "Operit1 snapshot import failed: {error}",
+  "settingsDataSnapshotRestoreConfirmAction": "确认恢复",
+  "settingsDataImportOperit1Snapshot": "从 Operit1 导入",
+  "settingsDataOperit1SnapshotImported": "Operit1 快照导入完成。",
+  "settingsDataOperit1SnapshotImportError": "Operit1 快照导入失败：{error}",
   "@settingsDataOperit1SnapshotImportError": {
     "placeholders": {
       "error": {
@@ -1870,7 +1870,7 @@
       }
     }
   },
-  "settingsDataOperit1SnapshotImportConfirmMessage": "Import this Operit1 snapshot into the current Runtime.\nFile: {fileName}\nFormat version: {formatVersion}\nChat model: {chatModelId}\nChats: {chatCount}; messages: {messageCount}\nResource files: {fileCount}\nSnapshot size: {byteCount} bytes",
+  "settingsDataOperit1SnapshotImportConfirmMessage": "将导入 Operit1 快照到当前 Runtime。\n文件：{fileName}\n格式版本：{formatVersion}\n聊天模型：{chatModelId}\n聊天：{chatCount} 个，消息：{messageCount} 条\n资源文件：{fileCount} 个\n快照大小：{byteCount} 字节",
   "@settingsDataOperit1SnapshotImportConfirmMessage": {
     "placeholders": {
       "fileName": {
@@ -1896,72 +1896,72 @@
       }
     }
   },
-  "settingsDataOperit1SnapshotImportAction": "Import",
-  "settingsDataAdvancedBackupOptions": "Advanced options",
-  "settingsDataAdvancedBackupOptionsDescription": "Single-item JSON export and restore",
-  "settingsRuntimeNetworkControl": "Network control",
-  "settingsRuntimeNetworkControlDescription": "Roles, identities, device authority, and audit",
-  "settingsRuntimeControlInitialize": "Initialize control",
-  "settingsRuntimeControlRoles": "Roles",
-  "settingsRuntimeControlIdentities": "Identities",
-  "settingsRuntimeControlAudit": "Audit",
-  "settingsRuntimeControlAddRole": "Add role",
-  "settingsRuntimeControlGrantRole": "Grant role",
-  "settingsRuntimeControlAddIdentity": "Add identity",
-  "settingsRuntimeControlBindDevice": "Bind device",
-  "settingsRuntimeControlRoleName": "Role name",
-  "settingsRuntimeControlCapabilities": "What can this role do?",
-  "settingsRuntimeControlManagedDevices": "Devices this role can manage (empty = all)",
-  "settingsRuntimeControlIdentityName": "Identity name",
-  "settingsRuntimeControlDevice": "Device",
-  "settingsRuntimeControlDeviceId": "Device ID",
-  "settingsRuntimeControlNoAudit": "No control commands recorded",
-  "settingsRuntimeControlNoBindings": "No device bindings",
-  "settingsRuntimeControlGranted": "Granted",
-  "settingsRuntimeControlRevoked": "Revoked",
-  "settingsRuntimeControlRemoveDevice": "Remove device",
-  "settingsRuntimeControlDisconnectDevice": "Disconnect device",
-  "settingsRuntimeControlRemoved": "Removed",
-  "settingsRuntimeControlDisconnected": "Disconnected",
-  "settingsRuntimeControlAdmitDevice": "Readmit device",
-  "settingsRuntimeControlAllDevices": "All devices",
-  "settingsRuntimeControlManages": "Manages",
-  "settingsRuntimeControlCurrentIdentity": "Current identity",
-  "settingsRuntimeControlCurrentCapabilities": "Current capabilities",
-  "settingsRuntimeControlManageIdentities": "Manage identities",
-  "settingsRuntimeControlAssignIdentity": "Set device identity",
-  "settingsRuntimeControlClearIdentity": "Clear device identity",
-  "settingsRuntimeControlIdentityDefinitions": "Identity definitions",
-  "settingsRuntimeControlIdentityAssignment": "Identity assignment",
-  "settingsRuntimeControlNoIdentity": "No identity assigned",
-  "settingsRuntimeControlOnline": "Online",
-  "settingsRuntimeControlOffline": "Offline",
-  "settingsRuntimeControlCapabilityAll": "Everything",
-  "settingsRuntimeControlCapabilityAuditRead": "View audit history",
-  "settingsRuntimeControlCapabilityNetworkRelay": "Relay network traffic",
-  "settingsRuntimeControlCapabilityStorageProvide": "Provide storage",
-  "settingsRuntimeControlCapabilityRuntimeExecute": "Run tasks",
-  "settingsRuntimeControlCapabilityNetworkUser": "Use the network",
-  "settingsRuntimeControlCapabilityChatRead": "Read chat history",
-  "settingsRuntimeControlCapabilityViewDevices": "View devices and current identities",
-  "settingsRuntimeControlCapabilityApproval": "Approve authorizations",
-  "chatRoutePermissionDenied": "Permission denied: target device {targetNodeId} lacks the {capability} capability.",
+  "settingsDataOperit1SnapshotImportAction": "开始导入",
+  "settingsDataAdvancedBackupOptions": "高级选项",
+  "settingsDataAdvancedBackupOptionsDescription": "单项 JSON 导出与恢复",
+  "settingsRuntimeNetworkControl": "网络控制",
+  "settingsRuntimeNetworkControlDescription": "角色、身份、设备权限与审计",
+  "settingsRuntimeControlInitialize": "初始化控制",
+  "settingsRuntimeControlRoles": "角色",
+  "settingsRuntimeControlIdentities": "身份",
+  "settingsRuntimeControlAudit": "审计",
+  "settingsRuntimeControlAddRole": "添加角色",
+  "settingsRuntimeControlGrantRole": "授予角色",
+  "settingsRuntimeControlAddIdentity": "添加身份",
+  "settingsRuntimeControlBindDevice": "绑定设备",
+  "settingsRuntimeControlRoleName": "角色名称",
+  "settingsRuntimeControlCapabilities": "这个角色可以做什么",
+  "settingsRuntimeControlManagedDevices": "这个角色可以管理哪些设备（不选表示全部）",
+  "settingsRuntimeControlIdentityName": "身份名称",
+  "settingsRuntimeControlDevice": "设备",
+  "settingsRuntimeControlDeviceId": "设备 ID",
+  "settingsRuntimeControlNoAudit": "暂无控制命令记录",
+  "settingsRuntimeControlNoBindings": "暂无设备绑定",
+  "settingsRuntimeControlGranted": "已授予",
+  "settingsRuntimeControlRevoked": "已撤销",
+  "settingsRuntimeControlRemoveDevice": "移除设备",
+  "settingsRuntimeControlDisconnectDevice": "断开设备",
+  "settingsRuntimeControlRemoved": "已移除",
+  "settingsRuntimeControlDisconnected": "已断开",
+  "settingsRuntimeControlAdmitDevice": "重新接纳设备",
+  "settingsRuntimeControlAllDevices": "全部设备",
+  "settingsRuntimeControlManages": "可管理",
+  "settingsRuntimeControlCurrentIdentity": "当前身份",
+  "settingsRuntimeControlCurrentCapabilities": "当前能力",
+  "settingsRuntimeControlManageIdentities": "管理身份",
+  "settingsRuntimeControlAssignIdentity": "设置设备身份",
+  "settingsRuntimeControlClearIdentity": "清除设备身份",
+  "settingsRuntimeControlIdentityDefinitions": "身份定义",
+  "settingsRuntimeControlIdentityAssignment": "身份分配",
+  "settingsRuntimeControlNoIdentity": "未设置身份",
+  "settingsRuntimeControlOnline": "在线",
+  "settingsRuntimeControlOffline": "离线",
+  "settingsRuntimeControlCapabilityAll": "全部权限",
+  "settingsRuntimeControlCapabilityAuditRead": "查看审计记录",
+  "settingsRuntimeControlCapabilityNetworkRelay": "中继网络流量",
+  "settingsRuntimeControlCapabilityStorageProvide": "提供存储空间",
+  "settingsRuntimeControlCapabilityRuntimeExecute": "执行任务",
+  "settingsRuntimeControlCapabilityNetworkUser": "使用网络",
+  "settingsRuntimeControlCapabilityChatRead": "读取聊天记录",
+  "settingsRuntimeControlCapabilityViewDevices": "查看设备与当前身份",
+  "settingsRuntimeControlCapabilityApproval": "审批授权",
+  "chatRoutePermissionDenied": "权限不足：目标设备 {targetNodeId} 没有 {capability} 权限。",
   "@chatRoutePermissionDenied": {
     "placeholders": {
       "targetNodeId": {},
       "capability": {}
     }
   },
-  "settingsRuntimeControlRoleAdministrator": "Administrator",
-  "settingsRuntimeControlRoleAuditor": "Auditor",
-  "settingsRuntimeControlRoleRelay": "Relay node",
-  "settingsRuntimeControlRoleStorage": "Storage node",
-  "settingsRuntimeControlRoleRunner": "Task runner",
-  "settingsRuntimeControlRoleUser": "User",
-  "pluginLoadingTitle": "Loading",
-  "pluginLoadingSkip": "Skip",
-  "pluginLoadingCollapse": "Collapse",
-  "pluginLoadingStatus": "Started: {started} / {total}",
+  "settingsRuntimeControlRoleAdministrator": "管理员",
+  "settingsRuntimeControlRoleAuditor": "审计员",
+  "settingsRuntimeControlRoleRelay": "中继节点",
+  "settingsRuntimeControlRoleStorage": "存储节点",
+  "settingsRuntimeControlRoleRunner": "执行节点",
+  "settingsRuntimeControlRoleUser": "普通用户",
+  "pluginLoadingTitle": "正在加载",
+  "pluginLoadingSkip": "跳过",
+  "pluginLoadingCollapse": "收起",
+  "pluginLoadingStatus": "已启动: {started} / {total}",
   "@pluginLoadingStatus": {
     "placeholders": {
       "started": {
@@ -1972,7 +1972,7 @@
       }
     }
   },
-  "pluginLoadingCurrentTask": "Loading {task}",
+  "pluginLoadingCurrentTask": "正在加载 {task}",
   "@pluginLoadingCurrentTask": {
     "placeholders": {
       "task": {
@@ -1980,19 +1980,19 @@
       }
     }
   },
-  "pluginLoadingSuccess": "Loaded",
-  "pluginLoadingFailed": "Failed",
-  "pluginLoadingWaiting": "Waiting",
-  "pluginLoadingKindPackage": "Package",
+  "pluginLoadingSuccess": "加载成功",
+  "pluginLoadingFailed": "加载失败",
+  "pluginLoadingWaiting": "等待中",
+  "pluginLoadingKindPackage": "包",
   "pluginLoadingKindMcp": "MCP",
-  "pluginLoadingCompleteSuccess": "All packages and plugins loaded",
-  "pluginLoadingCompleteWithFailures": "Some packages or plugins failed to load",
-  "pluginLoadingNoLogs": "No logs",
-  "chatRouteLocal": "Local",
-  "chatRouteRemote": "Remote {platform}",
-  "chatRouteRemoteOffline": "Remote {platform} offline",
-  "chatRouteLoading": "Loading execution device",
-  "chatRouteUnknown": "Execution device status unknown",
+  "pluginLoadingCompleteSuccess": "包和插件已全部加载",
+  "pluginLoadingCompleteWithFailures": "部分包或插件加载失败",
+  "pluginLoadingNoLogs": "没有日志",
+  "chatRouteLocal": "本地",
+  "chatRouteRemote": "远程{platform}",
+  "chatRouteRemoteOffline": "远程{platform} 离线",
+  "chatRouteLoading": "正在读取运行设备",
+  "chatRouteUnknown": "运行设备状态未知",
   "@chatRouteRemote": {
     "placeholders": {
       "platform": {
@@ -2007,7 +2007,7 @@
       }
     }
   },
-  "edgePairingCodeTitle": "Enter the pairing code for {deviceName}",
+  "edgePairingCodeTitle": "输入 {deviceName} 的配对码",
   "@edgePairingCodeTitle": {
     "placeholders": {
       "deviceName": {
@@ -2015,10 +2015,10 @@
       }
     }
   },
-  "edgePairingCodeHint": "Read the six-digit code shown by the device.",
-  "chatMessageResponse": "Response",
-  "chatMessagePrompt": "Prompt",
-  "chatMessagePromptBy": "Prompt by {sender}",
+  "edgePairingCodeHint": "查看设备提供的 6 位配对码。",
+  "chatMessageResponse": "回复",
+  "chatMessagePrompt": "提示词",
+  "chatMessagePromptBy": "{sender} 的提示词",
   "@chatMessagePromptBy": {
     "placeholders": {
       "sender": {
@@ -2026,7 +2026,7 @@
       }
     }
   },
-  "chatMessageTokensTooltip": "Tokens: ↑{input} · ↓{output}",
+  "chatMessageTokensTooltip": "Token: ↑{input} · ↓{output}",
   "@chatMessageTokensTooltip": {
     "placeholders": {
       "input": {
@@ -2037,7 +2037,7 @@
       }
     }
   },
-  "chatMessageTokensCachedTooltip": "Tokens: ↑{input} (cached: {cached}) · ↓{output}",
+  "chatMessageTokensCachedTooltip": "Token: ↑{input}（缓存: {cached}）· ↓{output}",
   "@chatMessageTokensCachedTooltip": {
     "placeholders": {
       "input": {
@@ -2051,7 +2051,7 @@
       }
     }
   },
-  "chatMessageTimingTooltip": "Timing: {wait} wait · {output} output",
+  "chatMessageTimingTooltip": "耗时: {wait} 等待 · {output} 输出",
   "@chatMessageTimingTooltip": {
     "placeholders": {
       "wait": {
@@ -2062,7 +2062,7 @@
       }
     }
   },
-  "chatMessageTimeTooltip": "Time: {time}",
+  "chatMessageTimeTooltip": "时间: {time}",
   "@chatMessageTimeTooltip": {
     "placeholders": {
       "time": {
@@ -2070,10 +2070,10 @@
       }
     }
   },
-  "chatMessageInfoDialogTitle": "Message Details",
-  "chatMessageDeleteConfirmTitle": "Confirm delete",
-  "chatMessageDeleteConfirmMessage": "Delete this message?",
-  "chatMessageSender": "Sender: {sender}",
+  "chatMessageInfoDialogTitle": "消息信息",
+  "chatMessageDeleteConfirmTitle": "确认删除",
+  "chatMessageDeleteConfirmMessage": "确定删除这条消息？",
+  "chatMessageSender": "发送者: {sender}",
   "@chatMessageSender": {
     "placeholders": {
       "sender": {
@@ -2081,7 +2081,7 @@
       }
     }
   },
-  "chatMessageTimestamp": "Timestamp: {timestamp}",
+  "chatMessageTimestamp": "时间戳: {timestamp}",
   "@chatMessageTimestamp": {
     "placeholders": {
       "timestamp": {
@@ -2089,7 +2089,7 @@
       }
     }
   },
-  "chatMessageRole": "Role: {roleName}",
+  "chatMessageRole": "角色: {roleName}",
   "@chatMessageRole": {
     "placeholders": {
       "roleName": {
@@ -2097,7 +2097,7 @@
       }
     }
   },
-  "chatMessageModel": "Model: {modelName}",
+  "chatMessageModel": "模型: {modelName}",
   "@chatMessageModel": {
     "placeholders": {
       "modelName": {
@@ -2105,7 +2105,7 @@
       }
     }
   },
-  "chatMessageProvider": "Provider: {provider}",
+  "chatMessageProvider": "提供商: {provider}",
   "@chatMessageProvider": {
     "placeholders": {
       "provider": {
@@ -2113,7 +2113,7 @@
       }
     }
   },
-  "chatMessageTokensInput": "Input tokens: {count}",
+  "chatMessageTokensInput": "输入 token: {count}",
   "@chatMessageTokensInput": {
     "placeholders": {
       "count": {
@@ -2121,7 +2121,7 @@
       }
     }
   },
-  "chatMessageTokensCached": "Cached input tokens: {count}",
+  "chatMessageTokensCached": "缓存输入 token: {count}",
   "@chatMessageTokensCached": {
     "placeholders": {
       "count": {
@@ -2129,7 +2129,7 @@
       }
     }
   },
-  "chatMessageTokensOutput": "Output tokens: {count}",
+  "chatMessageTokensOutput": "输出 token: {count}",
   "@chatMessageTokensOutput": {
     "placeholders": {
       "count": {
@@ -2137,7 +2137,7 @@
       }
     }
   },
-  "chatMessageWaitDuration": "Wait duration: {duration}",
+  "chatMessageWaitDuration": "等待耗时: {duration}",
   "@chatMessageWaitDuration": {
     "placeholders": {
       "duration": {
@@ -2145,7 +2145,7 @@
       }
     }
   },
-  "chatMessageOutputDuration": "Output duration: {duration}",
+  "chatMessageOutputDuration": "输出耗时: {duration}",
   "@chatMessageOutputDuration": {
     "placeholders": {
       "duration": {
@@ -2153,7 +2153,7 @@
       }
     }
   },
-  "chatMessageTokenSpeed": "Token speed: {speed}",
+  "chatMessageTokenSpeed": "Token 速率: {speed}",
   "@chatMessageTokenSpeed": {
     "placeholders": {
       "speed": {
@@ -2161,7 +2161,7 @@
       }
     }
   },
-  "chatMessageCacheShort": "cache {count}",
+  "chatMessageCacheShort": "缓存 {count}",
   "@chatMessageCacheShort": {
     "placeholders": {
       "count": {
@@ -2169,7 +2169,7 @@
       }
     }
   },
-  "chatMessageCacheHitRate": "Cache hit rate: {rate}",
+  "chatMessageCacheHitRate": "缓存命中率: {rate}",
   "@chatMessageCacheHitRate": {
     "placeholders": {
       "rate": {
@@ -2177,38 +2177,34 @@
       }
     }
   },
-  "settingsPeerToken": "Connection token",
-  "settingsPeerTokenHelp": "Remote connections require this token.",
-  "settingsPeerCopyToken": "Copy token",
-  "settingsPeerRefreshToken": "Refresh token",
-  "settingsPeerTokenCopied": "Connection token copied.",
-  "settingsPeerTokenRequired": "Enter or refresh a connection token.",
-  "settingsPeerPortModeHelp": "Fixed mode keeps the entered IP and port for tunnels and port forwarding. A busy fixed port reports an error without changing the address.",
-  "settingsPeerPortMode": "Port allocation",
-  "settingsPeerPortModeFixed": "Fixed address and port",
-  "settingsPeerPortModeAutomatic": "Automatic port",
-  "settingsPeerAdvanced": "Advanced options",
-  "settingsPeerDiscoveryUnavailable": "This Host cannot advertise listeners on the local network. Direct connections remain available for supported transports.",
-  "settingsPeerTransportUnavailable": "{transport} listening is not supported by this Host.",
-  "@settingsPeerTransportUnavailable": {
-    "placeholders": {
-      "transport": {
-        "type": "String"
-      }
-    }
-  },
-  "settingsPeerTransportHelp": "Listener transports (multiple selections). HTTP and WebSocket can share a port; TCP cannot share that port with them. Bluetooth requires platform support. Clear all selections and disable discovery to stop listening. Changing settings interrupts existing connections. Disabling discovery alone does not stop direct connections.",
-  "settingsPeerBindAddress": "Listen IP address",
-  "settingsPeerBindAddressHelp": "Example: 0.0.0.0 for LAN access; IPv6 addresses are also supported.",
-  "settingsPeerBindPort": "Listen port",
-  "settingsPeerBindPortHelp": "The port used by fixed listener mode.",
-  "settingsPeerBindPortAutomaticHelp": "Automatic mode selects a free port starting from this value.",
-  "settingsPeerDiscoveryNeedsTransport": "Select at least one transport before enabling discovery.",
-  "settingsPeerPortConflict": "TCP cannot currently share a listen port with HTTP/WebSocket. Select TCP or HTTP/WebSocket.",
-  "settingsPeerAddressRequired": "Enter a listen IP address.",
-  "settingsPeerPortRequired": "Enter a port from 1 to 65535.",
-  "settingsPeerApplied": "Listener settings applied.",
-  "settingsPeerRestoreFailed": "Failed to restore previous listeners: {error}",
+
+  "settingsPeerToken": "连接 token",
+  "settingsPeerTokenHelp": "远程连接必须使用这个 token。",
+  "settingsPeerCopyToken": "复制 token",
+  "settingsPeerRefreshToken": "刷新 token",
+  "settingsPeerTokenCopied": "连接 token 已复制。",
+  "settingsPeerTokenRequired": "请输入或刷新连接 token。",
+  "settingsPeerPortModeHelp": "固定模式使用填写的 IP 和端口，适用于内网穿透和端口映射。固定端口被占用时会报错，不会改变监听地址。",
+  "settingsPeerPortMode": "端口分配方式",
+  "settingsPeerPortModeFixed": "固定 IP 和端口",
+  "settingsPeerPortModeAutomatic": "自动分配端口",
+
+  "settingsPeerAdvanced": "高级选项",
+  "settingsPeerDiscoveryUnavailable": "当前 Host 不支持在局域网广播监听服务。支持的协议仍可通过地址直接连接。",
+  "settingsPeerTransportUnavailable": "当前 Host 不支持 {transport} 监听。",
+  "@settingsPeerTransportUnavailable": {"placeholders": {"transport": {"type": "String"}}},
+  "settingsPeerTransportHelp": "暴露方式（可多选）。HTTP 和 WebSocket 可共用端口；TCP 暂不能与它们共用端口。蓝牙需要平台支持。关闭发现并取消全部选择可停止监听。修改设置会中断现有连接；仅关闭发现不会关闭直接连接。",
+  "settingsPeerBindAddress": "监听 IP 地址",
+  "settingsPeerBindAddressHelp": "例如 0.0.0.0，允许局域网访问；也支持 IPv6 地址。",
+  "settingsPeerBindPort": "监听端口",
+  "settingsPeerBindPortHelp": "固定模式使用此端口监听。",
+  "settingsPeerBindPortAutomaticHelp": "自动模式会从此端口开始选择空闲端口。",
+  "settingsPeerDiscoveryNeedsTransport": "开启允许被搜索前，请至少选择一种暴露方式。",
+  "settingsPeerPortConflict": "当前 TCP 不能与 HTTP/WebSocket 共用监听端口，请选择 TCP 或 HTTP/WebSocket。",
+  "settingsPeerAddressRequired": "请输入监听 IP 地址。",
+  "settingsPeerPortRequired": "请输入 1 到 65535 之间的端口。",
+  "settingsPeerApplied": "监听设置已生效。",
+  "settingsPeerRestoreFailed": "恢复原监听配置失败：{error}",
   "@settingsPeerRestoreFailed": {
     "placeholders": {
       "error": {
@@ -2216,10 +2212,10 @@
       }
     }
   },
-  "settingsPeerCodeInstructions": "Enter this code on the other device to finish pairing. It expires in five minutes. Do not share it with strangers.",
-  "settingsPeerSixDigitCode": "Enter the six-digit pairing code shown on the receiving device.",
-  "spaceJoinRequests": "Space join requests",
-  "spaceJoinReviewer": "Reviewer: {name}",
+  "settingsPeerCodeInstructions": "在另一台设备上输入此验证码以完成配对。验证码五分钟内有效，请勿提供给陌生人。",
+  "settingsPeerSixDigitCode": "请输入接收设备上显示的六位配对码。",
+  "spaceJoinRequests": "空间加入申请",
+  "spaceJoinReviewer": "审批人：{name}",
   "@spaceJoinReviewer": {
     "placeholders": {
       "name": {
@@ -2227,17 +2223,17 @@
       }
     }
   },
-  "spaceJoinWaitingReviewer": "Waiting for an authorized reviewer to come online",
-  "spaceJoinPending": "Waiting for approval",
-  "spaceJoinApproving": "Decision is being processed",
-  "spaceJoinApproved": "Approved · completing join",
-  "spaceJoinJoined": "Joined",
-  "spaceJoinRejected": "Rejected",
-  "spaceJoinCancelled": "Cancelled",
-  "spaceJoinExpired": "Expired",
-  "spaceJoinSubmit": "Submit request",
-  "spaceJoinApprovalTitle": "Space join request",
-  "spaceJoinApprovalDescription": "{name} wants to join “{space}”. No Space data is shared before approval.",
+  "spaceJoinWaitingReviewer": "等待有审批权限的设备上线",
+  "spaceJoinPending": "等待批准",
+  "spaceJoinApproving": "正在处理审批结果",
+  "spaceJoinApproved": "已批准，正在完成加入",
+  "spaceJoinJoined": "已加入",
+  "spaceJoinRejected": "已拒绝",
+  "spaceJoinCancelled": "已取消",
+  "spaceJoinExpired": "已过期",
+  "spaceJoinSubmit": "提交申请",
+  "spaceJoinApprovalTitle": "空间加入申请",
+  "spaceJoinApprovalDescription": "{name} 申请加入「{space}」。批准前不会共享空间数据。",
   "@spaceJoinApprovalDescription": {
     "placeholders": {
       "name": {
@@ -2248,37 +2244,31 @@
       }
     }
   },
-  "spaceJoinApprove": "Approve",
-  "spaceJoinReject": "Reject",
-  "spaceJoinRetry": "Submit again",
-  "spaceJoinKeepWaiting": "Keep waiting in background",
-  "spaceJoinCancel": "Cancel request",
-  "spaceJoinRefreshingFailed": "Cannot reach the device right now. The request is saved and will retry.",
-  "spaceJoinAssignmentChanged": "This request has been transferred or already processed.",
-  "spaceJoinProgressTitle": "Space join request",
-  "spaceJoinSending": "Submitting request…",
-  "spaceJoinSubmitFailed": "Could not submit the request. Check the connection and try again.",
-  "spaceJoinNoDataYet": "Your current Space remains unchanged until approval. You can close this window and keep waiting in the background.",
-  "deviceSpaceAddDevice": "Add device",
-  "deviceSpaceDevices": "Devices",
-  "deviceSpaceMore": "More device actions",
-  "deviceSpaceConnectionSettings": "Connection settings",
-  "deviceSpaceViewRequest": "View request",
-  "devicePickerNearby": "Nearby devices",
-  "devicePickerEmpty": "No nearby devices found",
-  "devicePickerHint": "Connect both devices to the same network and enable discovery on the other device.",
-  "devicePickerManual": "Connect using an address",
-  "deviceSpaceMyRequests": "My requests",
-  "deviceSpaceMyReviews": "Awaiting my review",
-  "deviceSpaceNoRequests": "No requests",
-  "workspaceUndo": "Undo",
-  "workspaceRedo": "Redo",
-  "workspaceInsertSymbol": "Insert {symbol}",
-  "@workspaceInsertSymbol": {
-    "placeholders": {
-      "symbol": {
-        "type": "String"
-      }
-    }
-  }
+  "spaceJoinApprove": "批准",
+  "spaceJoinReject": "拒绝",
+  "spaceJoinRetry": "重新申请",
+  "spaceJoinKeepWaiting": "后台等待",
+  "spaceJoinCancel": "取消申请",
+  "spaceJoinRefreshingFailed": "暂时无法联系设备。申请已保留，会继续重试。",
+  "spaceJoinAssignmentChanged": "该申请已转交或已处理。",
+  "spaceJoinProgressTitle": "申请加入空间",
+  "spaceJoinSending": "正在提交申请…",
+  "spaceJoinSubmitFailed": "申请暂时未能提交，请检查连接后重试。",
+  "spaceJoinNoDataYet": "批准前，你当前的空间不会改变。关闭窗口后，申请仍会在后台等待。",
+  "deviceSpaceAddDevice": "添加设备",
+  "deviceSpaceDevices": "设备",
+  "deviceSpaceMore": "更多设备操作",
+  "deviceSpaceConnectionSettings": "连接设置",
+  "deviceSpaceViewRequest": "查看申请",
+  "devicePickerNearby": "附近设备",
+  "devicePickerEmpty": "暂未发现附近设备",
+  "devicePickerHint": "请让两台设备连接同一网络，并在对方设备开启允许被搜索。",
+  "devicePickerManual": "通过地址连接",
+  "deviceSpaceMyRequests": "我发出的",
+  "deviceSpaceMyReviews": "待我审批",
+  "deviceSpaceNoRequests": "暂无申请",
+  "workspaceUndo": "撤销",
+  "workspaceRedo": "重做",
+  "workspaceInsertSymbol": "插入 {symbol}",
+  "@workspaceInsertSymbol": {"placeholders": {"symbol": {"type": "String"}}}
 }

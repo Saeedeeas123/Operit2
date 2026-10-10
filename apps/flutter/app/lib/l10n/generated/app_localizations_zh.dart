@@ -9,183 +9,178 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get workspaceUnsavedChangesTitle => 'Unsaved changes';
+  String get workspaceUnsavedChangesTitle => '有未保存的修改';
 
   @override
-  String get workspaceUnsavedChangesMessage =>
-      'Save your changes before closing this file?';
+  String get workspaceUnsavedChangesMessage => '关闭此文件前，要保存你的修改吗？';
 
   @override
-  String get workspaceDiscardChanges => 'Discard changes';
+  String get workspaceDiscardChanges => '放弃修改';
 
   @override
-  String get askOperitHint => 'Ask Operit';
+  String get askOperitHint => '向 Operit 提问';
 
   @override
-  String get aiChat => 'AI Chat';
+  String get aiChat => 'AI聊天';
 
   @override
-  String get fullscreenInput => 'Fullscreen input';
+  String get fullscreenInput => '全屏输入';
 
   @override
-  String get expandInput => 'Expand input';
+  String get expandInput => '展开输入框';
 
   @override
-  String get collapseInput => 'Collapse input';
+  String get collapseInput => '收起输入框';
 
   @override
-  String get settings => 'Settings';
+  String get settings => '设置';
 
   @override
-  String get packageManager => 'Package manager';
+  String get packageManager => '包管理';
 
   @override
-  String get market => 'Market';
+  String get market => '市场';
 
   @override
-  String get addAttachment => 'Add attachment';
+  String get addAttachment => '添加附件';
 
   @override
-  String get attachmentPhoto => 'Photo';
+  String get attachmentPhoto => '照片';
 
   @override
-  String get attachmentCamera => 'Camera';
+  String get attachmentCamera => '拍照';
 
   @override
-  String get attachmentMemory => 'Memory';
+  String get attachmentMemory => '记忆';
 
   @override
-  String get attachmentFile => 'File';
+  String get attachmentFile => '文件';
 
   @override
-  String get attachmentScreenContent => 'Screen content';
+  String get attachmentScreenContent => '屏幕内容';
 
   @override
-  String get attachmentNotifications => 'Current notifications';
+  String get attachmentNotifications => '当前通知';
 
   @override
-  String get attachmentLocation => 'Current location';
+  String get attachmentLocation => '当前位置';
 
   @override
-  String get attachmentPackage => 'Package';
+  String get attachmentPackage => '包';
 
   @override
-  String get attachmentPackageSelectTitle => 'Select package';
+  String get attachmentPackageSelectTitle => '选择包';
 
   @override
-  String get attachmentPackageEmpty => 'No available packages';
+  String get attachmentPackageEmpty => '暂无可用包';
 
   @override
-  String get attachmentPackageSearchPlaceholder =>
-      'Search package name or description';
+  String get attachmentPackageSearchPlaceholder => '搜索包名、描述';
 
   @override
-  String get attachmentPackageSearchEmpty => 'No matching packages';
+  String get attachmentPackageSearchEmpty => '没有匹配的包';
 
   @override
-  String get attachmentPackageKindPackage => 'Package';
+  String get attachmentPackageKindPackage => '包';
 
   @override
-  String get attachmentPackageKindSkill => 'Skill';
+  String get attachmentPackageKindSkill => '技能';
 
   @override
   String get attachmentPackageKindMcp => 'MCP';
 
   @override
-  String get attachmentCameraUnavailable =>
-      'Camera capture is not available in the Flutter client';
+  String get attachmentCameraUnavailable => '当前 Flutter 端没有相机采集能力';
 
   @override
-  String get attachmentMemoryUnavailable =>
-      'Memory folder selection is not available in the Flutter client';
+  String get attachmentMemoryUnavailable => '当前 Flutter 端没有记忆文件夹选择器';
 
   @override
-  String get clearSearch => 'Clear search';
+  String get clearSearch => '清空搜索';
 
   @override
   String chatPendingQueueTitle(int count) {
-    return 'Queued messages ($count)';
+    return '待发送消息（$count）';
   }
 
   @override
-  String get chatQueueAddMessage => 'Queue message';
+  String get chatQueueAddMessage => '加入队列';
 
   @override
-  String get chatQueueAdded => 'Added to queue';
+  String get chatQueueAdded => '已加入发送队列';
 
   @override
-  String get chatPleaseCreateNewChat => 'Please create a chat';
+  String get chatPleaseCreateNewChat => '请新建对话';
 
   @override
-  String get cancel => 'Cancel';
+  String get cancel => '取消';
 
   @override
-  String get send => 'Send';
+  String get send => '发送';
 
   @override
-  String get model => 'Model';
+  String get model => '模型';
 
   @override
-  String get processingInput => 'Processing input...';
+  String get processingInput => '正在处理输入...';
 
   @override
-  String get processingMessage => 'Processing message...';
+  String get processingMessage => '正在处理消息...';
 
   @override
-  String get connectingAiService => 'Connecting to AI service...';
+  String get connectingAiService => '正在连接 AI 服务...';
 
   @override
-  String get receivingAiResponse => 'Receiving AI response...';
+  String get receivingAiResponse => '正在接收 AI 响应...';
 
   @override
-  String get receivingToolResultAiResponse =>
-      'Receiving AI response after tool execution...';
+  String get receivingToolResultAiResponse => '正在接收工具执行后的 AI 响应...';
 
   @override
-  String get roleResponsePlannerPlanning => 'Planning group speaking order...';
+  String get roleResponsePlannerPlanning => '正在规划群组发言顺序...';
 
   @override
   String roleResponsePlannerMemberReplying(String memberName) {
-    return 'Generating a reply from \"$memberName\"...';
+    return '正在生成「$memberName」的回复...';
   }
 
   @override
-  String get roleResponsePlannerFailed => 'Group planning failed';
+  String get roleResponsePlannerFailed => '群组规划失败';
 
   @override
-  String get summarizingMemories => 'Summarizing memories...';
+  String get summarizingMemories => '正在总结记忆...';
 
   @override
-  String get summaryGenerating => 'Generating summary...';
+  String get summaryGenerating => '正在生成总结...';
 
   @override
-  String get chatCompressingHistory => 'Compressing history records...';
+  String get chatCompressingHistory => '正在压缩历史记录...';
 
   @override
-  String get executingPlan => 'Executing plan...';
+  String get executingPlan => '正在执行计划...';
 
   @override
   String executingTool(String toolName) {
-    return 'Executing tool: $toolName';
+    return '正在执行工具: $toolName';
   }
 
   @override
   String processingToolResult(String toolName) {
-    return 'Processing tool result: $toolName';
+    return '正在处理工具结果: $toolName';
   }
 
   @override
-  String get statusWarningAiErrorSummary => 'The AI made an error';
+  String get statusWarningAiErrorSummary => 'AI犯了一个错误';
 
   @override
-  String get statusWarningAiErrorDetailTitle => 'AI Error Reason';
+  String get statusWarningAiErrorDetailTitle => 'AI错误原因';
 
   @override
-  String get toolRunning => 'Tool running...';
+  String get toolRunning => '工具执行中...';
 
   @override
   String toolRunningWithName(String toolName) {
-    return '$toolName: Tool running...';
+    return '$toolName: 工具执行中...';
   }
 
   @override
@@ -194,959 +189,923 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get close => 'Close';
+  String get close => '关闭';
 
   @override
-  String get commonExpand => 'Expand';
+  String get commonExpand => '展开';
 
   @override
-  String get commonCollapse => 'Collapse';
+  String get commonCollapse => '收起';
 
   @override
-  String get create => 'Create';
+  String get create => '创建';
 
   @override
-  String get save => 'Save';
+  String get save => '保存';
 
   @override
-  String get delete => 'Delete';
+  String get delete => '删除';
 
   @override
-  String get search => 'Search';
+  String get search => '搜索';
 
   @override
-  String get loading => 'Loading';
+  String get loading => '加载中';
 
   @override
-  String get toolApprovalTitle => 'Tool permission request';
+  String get toolApprovalTitle => '工具权限申请';
 
   @override
-  String get toolApprovalToolLabel => 'Tool';
+  String get toolApprovalToolLabel => '工具';
 
   @override
-  String get toolApprovalActionLabel => 'Action';
+  String get toolApprovalActionLabel => '操作';
 
   @override
-  String get toolApprovalDeny => 'Deny';
+  String get toolApprovalDeny => '拒绝';
 
   @override
-  String get toolApprovalAllowOnce => 'Allow once';
+  String get toolApprovalAllowOnce => '允许本次';
 
   @override
-  String get toolApprovalAlwaysAllow => 'Always allow in this session';
+  String get toolApprovalAlwaysAllow => '本次会话中始终允许';
 
   @override
-  String get createGroupTitle => 'New group';
+  String get createGroupTitle => '新建分组';
 
   @override
-  String get groupNameLabel => 'Group name';
+  String get groupNameLabel => '群组名称';
 
   @override
-  String get renameConversationTitle => 'Edit title';
+  String get renameConversationTitle => '编辑标题';
 
   @override
-  String get newTitleLabel => 'New title';
+  String get newTitleLabel => '新标题';
 
   @override
-  String get deleteConversationTitle => 'Delete conversation?';
+  String get deleteConversationTitle => '确认删除对话';
 
   @override
   String deleteConversationMessage(String title) {
-    return 'Delete \"$title\"?';
+    return '删除 “$title”？';
   }
 
   @override
-  String get chatHistory => 'Chat history';
+  String get chatHistory => '聊天记录';
 
   @override
-  String get editTitle => 'Edit title';
+  String get editTitle => '编辑标题';
 
   @override
-  String get moveUp => 'Move up';
+  String get moveUp => '上移';
 
   @override
-  String get moveDown => 'Move down';
+  String get moveDown => '下移';
 
   @override
-  String get pin => 'Pin';
+  String get pin => '置顶';
 
   @override
-  String get unpin => 'Unpin';
+  String get unpin => '取消置顶';
 
   @override
-  String get lock => 'Lock';
+  String get lock => '锁定';
 
   @override
-  String get unlock => 'Unlock';
+  String get unlock => '解锁';
 
   @override
-  String get chatLockedCannotDelete =>
-      'This chat is locked and cannot be deleted';
+  String get chatLockedCannotDelete => '该聊天已锁定，无法删除';
 
   @override
-  String get messageLocatorTitle => 'Message locator';
+  String get messageLocatorTitle => '消息定位';
 
   @override
   String messageLocatorCurrent(int current, int total) {
-    return 'Current $current / $total';
+    return '当前 $current / $total';
   }
 
   @override
-  String get messageLocatorSearchHint => 'Search message content';
+  String get messageLocatorSearchHint => '搜索消息内容';
 
   @override
-  String get messageLocatorInstruction =>
-      'Scroll the list or search to jump to a message';
+  String get messageLocatorInstruction => '滚动列表或搜索后跳转到指定消息';
 
   @override
   String messageLocatorResultCount(int count) {
-    return '$count results';
+    return '$count 条结果';
   }
 
   @override
-  String get messageLocatorNoMatches => 'No matching messages';
+  String get messageLocatorNoMatches => '没有匹配的消息';
 
   @override
-  String get messageSenderUser => 'User';
+  String get messageSenderUser => '用户';
 
   @override
-  String get messageSenderSummary => 'Summary';
+  String get messageSenderSummary => '总结';
 
   @override
-  String get historyDialogSummary => 'History Dialog Summary';
+  String get historyDialogSummary => '历史对话摘要';
 
   @override
-  String get confirmDeleteSummary => 'Delete Summary';
+  String get confirmDeleteSummary => '删除摘要';
 
   @override
-  String get confirmDeleteSummaryMessage =>
-      'Are you sure you want to delete this summary?';
+  String get confirmDeleteSummaryMessage => '确定要删除这条摘要吗？';
 
   @override
-  String get messageSenderSystem => 'System';
+  String get messageSenderSystem => '系统';
 
   @override
-  String get messageSenderThinking => 'Thinking';
+  String get messageSenderThinking => '思考';
 
   @override
-  String get thinkingProcess => 'Thinking Process';
+  String get thinkingProcess => '思考过程';
 
   @override
   String thinkingToolsGroupTitleWithCount(int count) {
-    return 'Thinking & Tool Calls ($count)';
+    return '思考与工具调用（$count）';
   }
 
   @override
   String toolsGroupTitleWithCount(int count) {
-    return 'Tool Calls ($count)';
+    return '工具调用（$count）';
   }
 
   @override
-  String get searchGroupTitle => 'Search';
+  String get searchGroupTitle => '搜索';
 
   @override
-  String get searchSources => 'Search Sources';
+  String get searchSources => '搜索来源';
 
   @override
-  String get thinkingSearchGroupTitle => 'Thinking and searching';
+  String get thinkingSearchGroupTitle => '思考并搜索';
 
   @override
   String thinkingSearchToolsGroupTitleWithCount(int count) {
-    return 'Thinking, searching, and calling tools ($count)';
+    return '思考、搜索并调用工具（$count）';
   }
 
   @override
-  String get messageSenderOther => 'Other';
+  String get messageSenderOther => '其他';
 
   @override
-  String get hiddenUserMessage => 'Hidden user message';
+  String get hiddenUserMessage => '隐藏的用户消息';
 
   @override
-  String get workspaceSetupTitle => 'Set up workspace';
+  String get workspaceSetupTitle => '设置工作区';
 
   @override
-  String get workspaceSetupSubtitle =>
-      'Provide a dedicated file environment for your AI projects';
+  String get workspaceSetupSubtitle => '为您的AI项目提供一个专属的文件环境';
 
   @override
-  String get workspaceCreateTitle => 'Create workspace';
+  String get workspaceCreateTitle => '创建工作区';
 
   @override
-  String get workspaceCreateDescription => 'Create a named workspace';
+  String get workspaceCreateDescription => '创建一个指定名字的工作区';
 
   @override
-  String get workspaceNameLabel => 'Workspace name';
+  String get workspaceNameLabel => '工作区名称';
 
   @override
-  String get workspaceNameHint => 'Enter a workspace name';
+  String get workspaceNameHint => '请输入工作区名称';
 
   @override
-  String get workspaceBindExistingTitle => 'Choose workspace';
+  String get workspaceBindExistingTitle => '选择工作区';
 
   @override
-  String get workspacePickLocalFolder => 'Choose a folder on this device';
+  String get workspacePickLocalFolder => '选择本机文件夹';
 
   @override
-  String get workspaceBindExistingDescription => 'Bind an existing workspace';
+  String get workspaceBindExistingDescription => '绑定已有工作区';
 
   @override
-  String get workspaceAddFolderTitle => 'Add folder';
+  String get workspaceAddFolderTitle => '添加文件夹';
 
   @override
-  String get workspaceAddFolderDescription =>
-      'Mount another folder into the current workspace';
+  String get workspaceAddFolderDescription => '把另一个文件夹挂进当前工作区';
 
   @override
-  String get workspaceProjectTypeDialogTitle => 'Choose project type';
+  String get workspaceProjectTypeDialogTitle => '选择语言类型';
 
   @override
-  String get workspaceProjectTypeDialogDescription =>
-      'Choose the default workspace type to create';
+  String get workspaceProjectTypeDialogDescription => '请选择要创建的默认工作区类型';
 
   @override
-  String get workspaceUnbindTitle => 'Unbind workspace';
+  String get workspaceUnbindTitle => '解除绑定';
 
   @override
-  String get workspaceUnbindDescription =>
-      'Detach this chat without deleting workspace files';
+  String get workspaceUnbindDescription => '解除当前会话的关联，保留工作区文件';
 
   @override
   String get workspaceUnbindConfirmation =>
-      'Unbind the workspace from this chat? The workspace and its files will be kept, and other chats will not be affected. You can bind a workspace again later.';
+      '确定解除当前会话与工作区的绑定吗？工作区和文件都会保留，不影响其他会话，之后可以重新绑定工作区。';
 
   @override
-  String get workspaceUnbindFailed =>
-      'Failed to unbind workspace. Please try again.';
+  String get workspaceUnbindFailed => '解除绑定失败，请重试。';
 
   @override
-  String get workspaceUnbindChanged =>
-      'The current chat or workspace has changed. Cancel and try again.';
+  String get workspaceUnbindChanged => '当前会话或工作区已切换，请取消后重试。';
 
   @override
-  String get workspaceBindDialogTitle => 'Choose existing workspace';
+  String get workspaceBindDialogTitle => '选择已有工作区';
 
   @override
-  String get workspacePathLabel => 'Selected workspace';
+  String get workspacePathLabel => '已选工作区';
 
   @override
-  String get workspaceEnvLabel => 'Workspace environment';
+  String get workspaceEnvLabel => '工作区环境';
 
   @override
-  String get optionalHint => 'Optional';
+  String get optionalHint => '可留空';
 
   @override
-  String get workspacePathRequired => 'Select a workspace folder';
+  String get workspacePathRequired => '请选择工作区文件夹';
 
   @override
-  String get bind => 'Bind';
+  String get bind => '绑定';
 
   @override
-  String get workspaceProjectBlankTitle => 'Blank workspace';
+  String get workspaceProjectBlankTitle => '空白工作区';
 
   @override
-  String get workspaceProjectBlankDescription =>
-      'Create an empty workspace directory without template files';
+  String get workspaceProjectBlankDescription => '仅创建一个空的工作区目录，不包含任何模板文件';
 
   @override
-  String get workspaceProjectOfficeTitle => 'Office documents';
+  String get workspaceProjectOfficeTitle => '办公文档';
 
   @override
-  String get workspaceProjectOfficeDescription =>
-      'For document editing, file processing, and general office tasks';
+  String get workspaceProjectOfficeDescription => '用于文档编辑、文件处理和通用办公任务';
 
   @override
-  String get workspaceProjectWebTitle => 'Web project';
+  String get workspaceProjectWebTitle => 'Web 项目';
 
   @override
   String get workspaceProjectWebDescription =>
-      'For web development with HTML/CSS/JavaScript and an automatic local server';
+      '适用于网页开发，支持 HTML/CSS/JavaScript，自动启动本地服务器';
 
   @override
-  String get workspaceProjectAndroidTitle => 'Android project';
+  String get workspaceProjectAndroidTitle => 'Android 项目';
 
   @override
   String get workspaceProjectAndroidDescription =>
-      'For Android engineering with common Gradle task shortcuts';
+      '适用于 Android 工程开发，包含 Gradle 常用任务快捷按钮';
 
   @override
-  String get workspaceProjectFlutterTitle => 'Flutter project';
+  String get workspaceProjectFlutterTitle => 'Flutter 项目';
 
   @override
   String get workspaceProjectFlutterDescription =>
-      'For Flutter cross-platform development with a stable app template and common commands';
+      '适用于 Flutter 跨平台开发，内置当前稳定版应用模板和常用命令';
 
   @override
-  String get workspaceProjectNodeTitle => 'Node.js project';
+  String get workspaceProjectNodeTitle => 'Node.js 项目';
 
   @override
   String get workspaceProjectNodeDescription =>
-      'For Node.js backend development with npm command shortcuts';
+      '适用于 Node.js 后端开发，提供 npm 命令快捷按钮';
 
   @override
-  String get workspaceProjectTypeScriptTitle => 'TypeScript project';
+  String get workspaceProjectTypeScriptTitle => 'TypeScript 项目';
 
   @override
   String get workspaceProjectTypeScriptDescription =>
-      'TypeScript + pnpm with type-safe development and tsc watch';
+      'TypeScript + pnpm，支持类型安全开发和 tsc watch 实时编译';
 
   @override
-  String get workspaceProjectPythonTitle => 'Python project';
+  String get workspaceProjectPythonTitle => 'Python 项目';
 
   @override
   String get workspaceProjectPythonDescription =>
-      'For Python development with pip and an HTTP server';
+      '适用于 Python 开发，支持 pip 和 HTTP 服务器';
 
   @override
-  String get workspaceProjectJavaTitle => 'Java project';
+  String get workspaceProjectJavaTitle => 'Java 项目';
 
   @override
   String get workspaceProjectJavaDescription =>
-      'For Java development with Gradle and Maven builds';
+      '适用于 Java 开发，支持 Gradle 和 Maven 构建';
 
   @override
-  String get workspaceProjectGoTitle => 'Go project';
+  String get workspaceProjectGoTitle => 'Go 项目';
 
   @override
-  String get workspaceProjectGoDescription =>
-      'For Go development with go mod and build commands';
+  String get workspaceProjectGoDescription => '适用于 Go 开发，提供 go mod 和 build 命令';
 
   @override
-  String get version => 'Version';
+  String get version => '版本';
 
   @override
-  String get author => 'Author';
+  String get author => '作者';
 
   @override
-  String get entry => 'Entry';
+  String get entry => '入口';
 
   @override
-  String get source => 'Source';
+  String get source => '来源';
 
   @override
-  String get category => 'Category';
+  String get category => '分类';
 
   @override
-  String get defaultStatus => 'Default status';
+  String get defaultStatus => '默认状态';
 
   @override
-  String get builtIn => 'Built-in';
+  String get builtIn => '内置';
 
   @override
-  String get external => 'External';
+  String get external => '外部';
 
   @override
-  String get enabledByDefault => 'Enabled by default';
+  String get enabledByDefault => '默认启用';
 
   @override
-  String get disabledByDefault => 'Disabled by default';
+  String get disabledByDefault => '默认停用';
 
   @override
-  String get toolPkgResources => 'ToolPkg resources';
+  String get toolPkgResources => 'ToolPkg 资源';
 
   @override
   String resourcesCount(int count) {
-    return 'Resources $count';
+    return '资源 $count';
   }
 
   @override
   String uiModulesCount(int count) {
-    return 'UI modules $count';
+    return 'UI 模块 $count';
   }
 
   @override
   String navigationEntriesCount(int count) {
-    return 'Navigation entries $count';
+    return '导航入口 $count';
   }
 
   @override
   String desktopWidgetsCount(int count) {
-    return 'Desktop widgets $count';
+    return '桌面组件 $count';
   }
 
   @override
   String workflowTemplatesCount(int count) {
-    return 'Workflow templates $count';
+    return 'Workflow 模板 $count';
   }
 
   @override
   String workspaceTemplatesCount(int count) {
-    return 'Workspace templates $count';
+    return 'Workspace 模板 $count';
   }
 
   @override
-  String get pluginConfiguration => 'Plugin configuration';
+  String get pluginConfiguration => '插件配置';
 
   @override
-  String get subpackages => 'Subpackages';
+  String get subpackages => '子包';
 
   @override
-  String get toolPkgNoSubpackages => 'This ToolPkg declares no subpackages';
+  String get toolPkgNoSubpackages => '此 ToolPkg 未声明子包';
 
   @override
   String subpackageToolCount(String packageName, int count) {
-    return '$packageName · $count tools';
+    return '$packageName · $count 工具';
   }
 
   @override
-  String get workflowTemplates => 'Workflow templates';
+  String get workflowTemplates => 'Workflow 模板';
 
   @override
-  String get workspaceTemplates => 'Workspace templates';
+  String get workspaceTemplates => 'Workspace 模板';
 
   @override
-  String get disable => 'Disable';
+  String get disable => '停用';
 
   @override
-  String get enable => 'Enable';
+  String get enable => '启用';
 
   @override
-  String get environmentVariables => 'Environment variables';
+  String get environmentVariables => '环境变量';
 
   @override
-  String get packageConfigureEnvironmentVariables =>
-      'Configure Environment Variables';
+  String get packageConfigureEnvironmentVariables => '配置环境变量';
 
   @override
-  String get packageNoEnvironmentVariables =>
-      'The currently enabled tool packages have not declared any environment variables.';
+  String get packageNoEnvironmentVariables => '当前已启用的工具包没有声明需要的环境变量。';
 
   @override
-  String get packageEnvironmentOptional => 'Optional';
+  String get packageEnvironmentOptional => '可选';
 
   @override
-  String get packageEnvironmentInputRequired => 'Input value (required)';
+  String get packageEnvironmentInputRequired => '输入值（必需）';
 
   @override
-  String get packageEnvironmentInputOptional => 'Input value (optional)';
+  String get packageEnvironmentInputOptional => '输入值（可选）';
 
   @override
   String packageEnvironmentDefault(String value) {
-    return 'Default: $value';
+    return '默认: $value';
   }
 
   @override
-  String get required => 'Required';
+  String get required => '必填';
 
   @override
-  String get states => 'States';
+  String get states => '状态';
 
   @override
   String stateToolSummary(String condition, int toolCount, int excludeCount) {
-    return '$condition · $toolCount tools · excludes $excludeCount';
+    return '$condition · $toolCount 工具 · 排除 $excludeCount';
   }
 
   @override
-  String get inherit => 'Inherit';
+  String get inherit => '继承';
 
   @override
-  String get tools => 'Tools';
+  String get tools => '工具';
 
   @override
-  String get packageNoTools => 'This package declares no tools';
+  String get packageNoTools => '此包未声明工具';
 
   @override
-  String get permissionsTitle => 'Permissions';
+  String get permissionsTitle => '权限';
 
   @override
-  String get clear => 'Clear';
+  String get clear => '清空';
 
   @override
-  String get noPermissionRecords => 'No permission records yet';
+  String get noPermissionRecords => '还没有权限记录';
 
   @override
-  String get allow => 'Allow';
+  String get allow => '允许';
 
   @override
-  String get deny => 'Deny';
+  String get deny => '拒绝';
 
   @override
-  String get camera => 'Camera';
+  String get camera => '摄像头';
 
   @override
-  String get microphone => 'Microphone';
+  String get microphone => '麦克风';
 
   @override
-  String get protectedMedia => 'Protected media';
+  String get protectedMedia => '受保护媒体';
 
   @override
-  String get midiDevice => 'MIDI device';
+  String get midiDevice => 'MIDI 设备';
 
   @override
-  String get browserPermissionRequestTitle => 'Website permission request';
+  String get browserPermissionRequestTitle => '网页权限请求';
 
   @override
   String chatSpeechInputFailed(Object error) {
-    return 'Speech input failed: $error';
+    return '语音输入失败：$error';
   }
 
   @override
   String get chatSpeechInputConfigurationRequired =>
-      'Select a speech recognition configuration in Settings > Models & AI before using speech input.';
+      '请先在设置 > 模型与 AI 中添加并选中一个语音识别配置。';
 
   @override
-  String get chatSpeechNoTextRecognized => 'No speech recognized.';
+  String get chatSpeechNoTextRecognized => '未识别到文本';
 
   @override
-  String get history => 'History';
+  String get history => '历史记录';
 
   @override
-  String get bookmarks => 'Bookmarks';
+  String get bookmarks => '收藏夹';
 
   @override
-  String get downloads => 'Downloads';
+  String get downloads => '下载';
 
   @override
-  String get scripts => 'Scripts';
+  String get scripts => '脚本';
 
   @override
-  String get zoom => 'Zoom';
+  String get zoom => '缩放';
 
   @override
-  String get zoomIn => 'Zoom in';
+  String get zoomIn => '放大';
 
   @override
-  String get zoomOut => 'Zoom out';
+  String get zoomOut => '缩小';
 
   @override
-  String get desktopMode => 'Desktop mode';
+  String get desktopMode => '桌面模式';
 
   @override
-  String get clearLocalStorage => 'Clear local storage';
+  String get clearLocalStorage => '清理本地存储';
 
   @override
-  String get searchHistory => 'Search history';
+  String get searchHistory => '搜索历史';
 
   @override
-  String get noDownloadTasks => 'No download tasks yet';
+  String get noDownloadTasks => '还没有下载任务';
 
   @override
-  String get openFile => 'Open file';
+  String get openFile => '打开文件';
 
   @override
-  String get openLocation => 'Open location';
+  String get openLocation => '打开位置';
 
   @override
-  String get retry => 'Retry';
+  String get retry => '重试';
 
   @override
-  String get removeRecord => 'Remove record';
+  String get removeRecord => '移除记录';
 
   @override
-  String get pending => 'Pending';
+  String get pending => '等待';
 
   @override
-  String get completed => 'Completed';
+  String get completed => '完成';
 
   @override
-  String get failed => 'Failed';
+  String get failed => '失败';
 
   @override
-  String get back => 'Back';
+  String get back => '后退';
 
   @override
-  String get forward => 'Forward';
+  String get forward => '前进';
 
   @override
-  String get stop => 'Stop';
+  String get stop => '停止';
 
   @override
-  String get refresh => 'Refresh';
+  String get refresh => '刷新';
 
   @override
-  String get home => 'Home';
+  String get home => '主页';
 
   @override
-  String get newTab => 'New tab';
+  String get newTab => '新建标签页';
 
   @override
-  String get openExternalApplication => 'Open external application';
+  String get openExternalApplication => '打开外部应用';
 
   @override
-  String get open => 'Open';
+  String get open => '打开';
 
   @override
-  String get ok => 'OK';
+  String get ok => '确定';
 
   @override
-  String get webPage => 'Web page';
+  String get webPage => '网页';
 
   @override
-  String get tabs => 'Tabs';
+  String get tabs => '标签页';
 
   @override
-  String get noBookmarks => 'No bookmarks yet';
+  String get noBookmarks => '还没有收藏';
 
   @override
-  String get removeBookmark => 'Remove bookmark';
+  String get removeBookmark => '取消收藏';
 
   @override
-  String get addBookmark => 'Add bookmark';
+  String get addBookmark => '收藏';
 
   @override
-  String get menu => 'Menu';
+  String get menu => '菜单';
 
   @override
-  String get siteData => 'Site data';
+  String get siteData => '站点数据';
 
   @override
-  String get clearAllWebViewCookies => 'Clear all WebView cookies';
+  String get clearAllWebViewCookies => '清除所有 WebView Cookie';
 
   @override
-  String get clearCookies => 'Clear cookies';
+  String get clearCookies => '清除 Cookie';
 
   @override
-  String get noData => 'No data';
+  String get noData => '没有数据';
 
   @override
-  String get local => 'Local';
+  String get local => '本地';
 
   @override
-  String get pageLoadFailed => 'Page load failed';
+  String get pageLoadFailed => '页面加载失败';
 
   @override
-  String get pause => 'Pause';
+  String get pause => '暂停';
 
   @override
-  String get resume => 'Resume';
+  String get resume => '恢复';
 
   @override
-  String get paused => 'Paused';
+  String get paused => '暂停';
 
   @override
-  String get cancelled => 'Cancelled';
+  String get cancelled => '取消';
 
   @override
-  String get downloading => 'Downloading';
+  String get downloading => '正在下载';
 
   @override
   String savedTo(String path) {
-    return 'Saved to $path';
+    return '已保存到 $path';
   }
 
   @override
-  String get sslCertificateError => 'SSL certificate error';
+  String get sslCertificateError => 'SSL 证书错误';
 
   @override
-  String get edit => 'Edit';
+  String get edit => '编辑';
 
   @override
-  String get files => 'Files';
+  String get files => '文件';
 
   @override
-  String get terminal => 'Terminal';
+  String get terminal => '终端';
 
   @override
-  String get browser => 'Browser';
+  String get browser => '浏览器';
 
   @override
-  String get filePreview => 'File preview';
+  String get filePreview => '文件预览';
 
   @override
-  String get workspaceBoundTitle => 'Bound workspace';
+  String get workspaceBoundTitle => '已绑定工作区';
 
   @override
-  String get selectFile => 'Select file';
+  String get selectFile => '选择文件';
 
   @override
-  String get selectFileDescription =>
-      'Select a file from the workspace to view, edit, or send to AI';
+  String get selectFileDescription => '从工作区里选择要查看、编辑或交给 AI 的文件';
 
   @override
-  String get openTerminal => 'Open terminal';
+  String get openTerminal => '打开终端';
 
   @override
-  String get openTerminalDescription =>
-      'Enter the command line for the current workspace';
+  String get openTerminalDescription => '进入当前工作区的命令行';
 
   @override
-  String get openBrowser => 'Open browser';
+  String get openBrowser => '打开浏览器';
 
   @override
-  String get openBrowserDescription =>
-      'Open a full browser session, project preview, and web automation';
+  String get openBrowserDescription => '打开完整浏览器会话、项目预览和网页自动化';
 
   @override
-  String get noWorkspaceBound => 'This conversation has no bound workspace.';
+  String get noWorkspaceBound => '当前对话还没有绑定工作区。';
 
   @override
-  String get terminalSessionPlaceholder =>
-      'The current workspace terminal session will appear here.';
+  String get terminalSessionPlaceholder => '这里会显示当前工作区的终端会话。';
 
   @override
-  String get emptyFolder => 'This folder is empty';
+  String get emptyFolder => '这个文件夹是空的';
 
   @override
-  String get imagePreview => 'Image preview';
+  String get imagePreview => '图片预览';
 
   @override
-  String get audioPreview => 'Audio preview';
+  String get audioPreview => '音频预览';
 
   @override
-  String get videoPreview => 'Video preview';
+  String get videoPreview => '视频预览';
 
   @override
-  String get pdfPreview => 'PDF preview';
+  String get pdfPreview => 'PDF 预览';
 
   @override
-  String get wordPreview => 'Word preview';
+  String get wordPreview => 'Word 预览';
 
   @override
-  String get spreadsheetPreview => 'Spreadsheet preview';
+  String get spreadsheetPreview => '表格预览';
 
   @override
-  String get presentationPreview => 'Presentation preview';
+  String get presentationPreview => '演示文稿预览';
 
   @override
-  String get webPagePreview => 'Web page preview';
+  String get webPagePreview => '网页预览';
 
   @override
-  String get markdownPreview => 'Markdown preview';
+  String get markdownPreview => 'Markdown 预览';
 
   @override
-  String get textPreview => 'Text preview';
+  String get textPreview => '文本预览';
 
   @override
-  String get file => 'File';
+  String get file => '文件';
 
   @override
-  String get unsupportedReadOnlyPreview =>
-      'This file is not a built-in read-only preview type.';
+  String get unsupportedReadOnlyPreview => '此文件不属于内置只读预览类型。';
 
   @override
-  String get cannotPreview => 'Cannot preview';
+  String get cannotPreview => '无法预览';
 
   @override
-  String get openProjectInFullBrowser => 'Open project in full browser';
+  String get openProjectInFullBrowser => '用完整浏览器打开项目';
 
   @override
-  String get openInBrowser => 'Open in browser';
+  String get openInBrowser => '在浏览器打开';
 
   @override
-  String get emptySpreadsheet => 'Spreadsheet is empty';
+  String get emptySpreadsheet => '表格为空';
 
   @override
-  String get settingsCategoryModelTitle => 'Models & AI';
+  String get settingsCategoryModelTitle => '模型与 AI';
 
   @override
-  String get settingsCategoryModelSubtitle => 'Models, keys, context';
+  String get settingsCategoryModelSubtitle => '模型、Key、上下文';
 
   @override
   String get settingsCategoryModelDescription =>
-      'Configure model connections, choose the chat model, and manage thinking, context, and multimodal abilities.';
+      '配置模型连接，选择聊天模型，并管理思考、上下文和多模态能力。';
 
   @override
-  String get settingsCategoryLocalModelsTitle => 'Local Models';
+  String get settingsCategoryLocalModelsTitle => '本地模型';
 
   @override
-  String get settingsCategoryLocalModelsSubtitle =>
-      'Downloads, engines, STT / TTS';
+  String get settingsCategoryLocalModelsSubtitle => '下载、引擎、STT / TTS';
 
   @override
-  String get settingsCategoryLocalModelsDescription =>
-      'Manage local models and inference engines installed on demand.';
+  String get settingsCategoryLocalModelsDescription => '管理按需安装的本地模型和推理引擎。';
 
   @override
-  String get settingsCategoryCharactersTitle => 'Characters';
+  String get settingsCategoryCharactersTitle => '角色';
 
   @override
-  String get settingsCategoryCharactersSubtitle => 'Cards, groups, bindings';
+  String get settingsCategoryCharactersSubtitle => '角色卡、群组、绑定';
 
   @override
   String get settingsCategoryCharactersDescription =>
-      'Manage character cards, groups, active roles, and role-level model, memory, and tool bindings.';
+      '管理角色卡、群组、当前激活角色和角色级模型/记忆/工具绑定。';
 
   @override
-  String get settingsCategoryMemoryTitle => 'Memory';
+  String get settingsCategoryMemoryTitle => '记忆';
 
   @override
-  String get settingsCategoryMemorySubtitle =>
-      'Memory graph, shared stores, user profile';
+  String get settingsCategoryMemorySubtitle => '记忆图谱、共享记忆库、用户资料';
 
   @override
   String get settingsCategoryMemoryDescription =>
-      'Manage character and shared memory stores, memory graph visualization, user profiles, and auto-update behavior.';
+      '管理角色与共享记忆库、记忆图谱可视化、用户资料与自动更新策略。';
 
   @override
-  String get settingsCategoryToolsTitle => 'Tools & Permissions';
+  String get settingsCategoryToolsTitle => '工具与权限';
 
   @override
-  String get settingsCategoryToolsSubtitle =>
-      'AI capability, system authorization, extensions';
+  String get settingsCategoryToolsSubtitle => 'AI 能力、系统授权、扩展';
 
   @override
   String get settingsCategoryToolsDescription =>
-      'Set AI read-only, read-write, or full access, and review the current device system authorization status.';
+      '设置 AI 的只读、读写或完整权限，并查看当前设备的系统授权状态。';
 
   @override
-  String get settingsCategoryWorkspaceTitle => 'Workspace & Browser';
+  String get settingsCategoryWorkspaceTitle => '工作区与浏览器';
 
   @override
-  String get settingsCategoryWorkspaceSubtitle => 'Files, terminal, browser';
+  String get settingsCategoryWorkspaceSubtitle => '文件、终端、浏览器';
 
   @override
   String get settingsCategoryWorkspaceDescription =>
-      'Manage default workspaces, terminal sessions, browser mode, scripts, and web automation.';
+      '管理默认工作区、终端会话、浏览器模式、脚本和网页自动化。';
 
   @override
-  String get settingsCategoryGlobalBehaviorTitle => 'Global Behavior Settings';
+  String get settingsCategoryGlobalBehaviorTitle => '全局行为设置';
 
   @override
-  String get settingsCategoryGlobalBehaviorSubtitle =>
-      'Input processing and interaction';
+  String get settingsCategoryGlobalBehaviorSubtitle => '输入处理与交互';
 
   @override
-  String get settingsCategoryGlobalBehaviorDescription =>
-      'Configure input and interaction behavior that does not vary by character card.';
+  String get settingsCategoryGlobalBehaviorDescription => '设置不随角色卡变化的输入与交互行为。';
 
   @override
-  String get settingsCategoryAppearanceTitle => 'Appearance & Interaction';
+  String get settingsCategoryAppearanceTitle => '外观与交互';
 
   @override
-  String get settingsCategoryAppearanceSubtitle =>
-      'Theme, bubbles, and interaction';
+  String get settingsCategoryAppearanceSubtitle => '主题、气泡与交互';
 
   @override
   String get settingsCategoryAppearanceDescription =>
-      'Customize global theme, background media, message bubbles, and chat interaction.';
+      '调整全局主题、背景壁纸、聊天气泡样式与信息流交互。';
 
   @override
-  String get settingsCategoryDataTitle => 'Data & Backup';
+  String get settingsCategoryDataTitle => '数据与备份';
 
   @override
-  String get settingsCategoryDataSubtitle => 'Backup, restore, stats';
+  String get settingsCategoryDataSubtitle => '备份、恢复、统计';
 
   @override
-  String get settingsCategoryDataDescription =>
-      'Back up chats, characters, and model settings, restore backup content, and view data statistics.';
+  String get settingsCategoryDataDescription => '备份聊天、角色和模型配置，恢复备份内容，并查看数据统计。';
 
   @override
-  String get settingsCategoryAccessLinksTitle => 'Device Space';
+  String get settingsCategoryAccessLinksTitle => '设备空间';
 
   @override
-  String get settingsCategoryAccessLinksSubtitle =>
-      'Connect, sync, collaborate';
+  String get settingsCategoryAccessLinksSubtitle => '连接、同步、协同';
 
   @override
-  String get settingsCategoryAccessLinksDescription =>
-      'Manage this device space, connect devices, and share data and routes.';
+  String get settingsCategoryAccessLinksDescription => '管理当前设备空间，连接设备并同步数据和路由。';
 
   @override
-  String get settingsCategoryGroupAssistant => 'AI & Creation';
+  String get settingsCategoryGroupAssistant => 'AI 与创作';
 
   @override
-  String get settingsCategoryGroupWorkspace => 'Workspace & Automation';
+  String get settingsCategoryGroupWorkspace => '工作与自动化';
 
   @override
-  String get settingsCategoryGroupExperience => 'Display & Interaction';
+  String get settingsCategoryGroupExperience => '显示与交互';
 
   @override
-  String get settingsCategoryGroupSystem => 'Data & System';
+  String get settingsCategoryGroupSystem => '数据与系统';
 
   @override
-  String get settingsGlobalBehaviorChatInputSection => 'Chat input';
+  String get settingsGlobalBehaviorChatInputSection => '聊天输入';
 
   @override
-  String get settingsGlobalBehaviorLongPastedTextAsAttachment =>
-      'Convert long pasted text to a file';
+  String get settingsGlobalBehaviorLongPastedTextAsAttachment => '将超长粘贴文本转为文件';
 
   @override
-  String get settingsGlobalBehaviorLongPastedTextThreshold =>
-      'Conversion threshold';
+  String get settingsGlobalBehaviorLongPastedTextThreshold => '转换阈值';
 
   @override
   String settingsGlobalBehaviorLongPastedTextThresholdValue(int count) {
-    return '$count characters';
+    return '$count 个字符';
   }
 
   @override
-  String get settingsComingSoon =>
-      'This area will continue connecting existing runtime capabilities. Models, characters, and tools are being completed first.';
+  String get settingsComingSoon => '这个区域会继续接入现有 runtime 能力。当前优先完成模型、角色和工具设置。';
 
   @override
-  String get settingsAdvanced => 'Advanced settings';
+  String get settingsAdvanced => '高级设置';
 
   @override
-  String get settingsActive => 'Active';
+  String get settingsActive => '当前';
 
   @override
-  String get settingsActivate => 'Activate';
+  String get settingsActivate => '设为当前';
 
   @override
-  String get settingsModelCurrentSection => 'Current chat model';
+  String get settingsModelCurrentSection => '当前聊天模型';
 
   @override
-  String get settingsModelCurrentChatModel => 'Chat uses';
+  String get settingsModelCurrentChatModel => '聊天使用';
 
   @override
-  String get settingsModelCurrentActive => 'Active';
+  String get settingsModelCurrentActive => '当前激活';
 
   @override
-  String get settingsModelMultimodalBadge => 'Multimodal';
+  String get settingsModelMultimodalBadge => '多模态';
 
   @override
-  String get settingsModelNoModels => 'No models yet';
+  String get settingsModelNoModels => '暂无模型';
 
   @override
   String settingsModelProviderModelCount(int count) {
-    return '$count models';
+    return '$count 个模型';
   }
 
   @override
-  String get settingsModelSetCurrentActive => 'Set active';
+  String get settingsModelSetCurrentActive => '设为当前';
 
   @override
-  String get settingsChatThinkingMode => 'Thinking mode';
+  String get settingsChatThinkingMode => '思考模式';
 
   @override
-  String get settingsChatThinkingModeDescription =>
-      'Let supported models produce steadier reasoning.';
+  String get settingsChatThinkingModeDescription => '让支持的模型输出更稳的推理过程。';
 
   @override
-  String get settingsChatStreamOutput => 'Stream output';
+  String get settingsChatStreamOutput => '流式输出';
 
   @override
-  String get settingsChatStreamOutputDescription =>
-      'Show generated replies progressively.';
+  String get settingsChatStreamOutputDescription => '回复生成时逐步显示内容。';
 
   @override
-  String get settingsModelProfilesSection => 'Model profiles';
+  String get settingsModelProfilesSection => '模型档案';
 
   @override
-  String get settingsModelFunctionFollowChat => 'Follow chat';
+  String get settingsModelFunctionFollowChat => '跟随聊天';
 
   @override
-  String get settingsModelFunctionFollowChatAll => 'Follow all';
+  String get settingsModelFunctionFollowChatAll => '全部跟随';
 
   @override
-  String get settingsModelFunctionFollowChatHint =>
-      'Automatically uses the current chat model';
+  String get settingsModelFunctionFollowChatHint => '自动使用当前聊天模型';
 
   @override
-  String get settingsModelFunctionGroupBackground => 'Background helpers';
+  String get settingsModelFunctionGroupBackground => '后台辅助';
 
   @override
-  String get settingsModelFunctionGroupMain => 'Main chat model';
+  String get settingsModelFunctionGroupMain => '主聊天模型';
 
   @override
-  String get settingsModelFunctionGroupMultimodal => 'Multimodal recognition';
+  String get settingsModelFunctionGroupMultimodal => '多模态识别';
 
   @override
-  String get settingsModelFunctionMappingsSection =>
-      'Function model assignment';
+  String get settingsModelFunctionMappingsSection => '功能模型分配';
 
   @override
   String get settingsModelFunctionMappingsDescription =>
-      'Choose the model profile and concrete model used by chat, summary, memory, image recognition, and other functions.';
+      '为聊天、总结、记忆、识图等功能指定使用的模型配置和具体模型。';
 
   @override
-  String get settingsModelFunctionMappingsReset => 'Reset all';
+  String get settingsModelFunctionMappingsReset => '全部重置';
 
   @override
-  String get settingsModelFunctionMappingsChange => 'Change';
+  String get settingsModelFunctionMappingsChange => '更改';
 
   @override
   String settingsModelFunctionMappingsSelect(String name) {
-    return 'Select $name model';
+    return '选择$name模型';
   }
 
   @override
@@ -1162,241 +1121,230 @@ class AppLocalizationsZh extends AppLocalizations {
     String providerId,
     String modelId,
   ) {
-    return 'Bound model does not exist: $providerId · $modelId';
+    return '绑定的模型不存在：$providerId · $modelId';
   }
 
   @override
   String settingsModelDeleteBlocked(String functions) {
-    return 'This model is used by these functions. Change their model assignments first: $functions';
+    return '该模型正在被这些功能使用，请先更改功能模型分配：$functions';
   }
 
   @override
   String settingsModelDeleteProviderBlocked(String functions) {
-    return 'Models under this provider are used by these functions. Change their model assignments first: $functions';
+    return '该供应商下的模型正在被这些功能使用，请先更改功能模型分配：$functions';
   }
 
   @override
   String settingsModelDeleteProviderConfirm(String name, int count) {
-    return 'Delete provider “$name”? This will also delete its $count models.';
+    return '确定删除供应商“$name”吗？这会同时删除其中的 $count 个模型。';
   }
 
   @override
-  String get settingsModelDeleteProviderConfirmAction => 'Delete provider';
+  String get settingsModelDeleteProviderConfirmAction => '删除供应商';
 
   @override
-  String get settingsTtsDeleteProvider => 'Delete TTS provider';
+  String get settingsTtsDeleteProvider => '删除 TTS 供应商';
 
   @override
   String settingsTtsDeleteProviderConfirm(String name, int count) {
-    return 'Delete TTS provider “$name” and its $count voice configurations?';
+    return '删除 TTS 供应商“$name”及其 $count 个音色配置？';
   }
 
   @override
   String settingsTtsDeleteProviderFailed(String error) {
-    return 'Failed to delete TTS provider: $error';
+    return '删除 TTS 供应商失败：$error';
   }
 
   @override
-  String get settingsTtsCurrentConfigCannotDelete =>
-      'The TTS configuration currently in use cannot be deleted.';
+  String get settingsTtsCurrentConfigCannotDelete => '当前正在使用的 TTS 配置不能删除';
 
   @override
-  String get settingsTtsConfigUsedByCharacter =>
-      'This TTS configuration is used by a character card and cannot be deleted.';
+  String get settingsTtsConfigUsedByCharacter => '该 TTS 配置正在被角色卡使用，不能删除';
 
   @override
   String get settingsModelChatAutoGlmWarning =>
-      'AutoGLM cannot be used as the main chat model. Chat and UI control use separate model assignments; choose another large model.';
+      '禁止使用 AutoGLM 作为对话主模型。对话模型和 UI 控制模型是分离的，请选择其他大模型。';
 
   @override
-  String get settingsModelFunctionChat => 'Chat';
+  String get settingsModelFunctionChat => '聊天';
 
   @override
-  String get settingsModelFunctionChatDescription =>
-      'Model used for main conversation replies.';
+  String get settingsModelFunctionChatDescription => '主对话回复使用的模型。';
 
   @override
-  String get settingsModelFunctionSummary => 'Summary';
+  String get settingsModelFunctionSummary => '总结';
 
   @override
-  String get settingsModelFunctionSummaryDescription =>
-      'Model used for long-context automatic summaries.';
+  String get settingsModelFunctionSummaryDescription => '长上下文自动总结使用的模型。';
 
   @override
-  String get settingsModelFunctionTitleGeneration => 'Conversation title';
+  String get settingsModelFunctionTitleGeneration => '对话标题';
 
   @override
   String get settingsModelFunctionTitleGenerationDescription =>
-      'Model used to summarize the first message and attachments into a conversation title.';
+      '根据首条消息和附件生成对话标题使用的模型。';
 
   @override
-  String get settingsModelFunctionMemory => 'Memory';
+  String get settingsModelFunctionMemory => '记忆';
 
   @override
-  String get settingsModelFunctionMemoryDescription =>
-      'Model used to extract, organize, and update memories.';
+  String get settingsModelFunctionMemoryDescription => '记忆提取、整理和更新使用的模型。';
 
   @override
-  String get settingsModelFunctionUiController => 'UI control';
+  String get settingsModelFunctionUiController => 'UI 控制';
 
   @override
   String get settingsModelFunctionUiControllerDescription =>
-      'Model used for interface control and lightweight action planning.';
+      '界面控制和轻量操作规划使用的模型。';
 
   @override
-  String get settingsModelFunctionTranslation => 'Translation';
+  String get settingsModelFunctionTranslation => '翻译';
 
   @override
-  String get settingsModelFunctionTranslationDescription =>
-      'Model used to translate text and localized content.';
+  String get settingsModelFunctionTranslationDescription => '翻译文本和本地化内容使用的模型。';
 
   @override
-  String get settingsModelFunctionGrep => 'Text search';
+  String get settingsModelFunctionGrep => '文本检索';
 
   @override
-  String get settingsModelFunctionGrepDescription =>
-      'Model used to filter search results and judge text matches.';
+  String get settingsModelFunctionGrepDescription => '搜索结果筛选和文本匹配判断使用的模型。';
 
   @override
-  String get settingsModelFunctionRoleResponsePlanner => 'Group reply planner';
+  String get settingsModelFunctionRoleResponsePlanner => '群聊发言规划';
 
   @override
   String get settingsModelFunctionRoleResponsePlannerDescription =>
-      'Model used to plan speaking roles and order in group conversations.';
+      '群组对话中规划发言角色和顺序使用的模型。';
 
   @override
-  String get settingsModelFunctionImageRecognition => 'Image recognition';
+  String get settingsModelFunctionImageRecognition => '图片识别';
 
   @override
   String get settingsModelFunctionImageRecognitionDescription =>
-      'Model used to understand images and extract image content.';
+      '图片理解和图片内容提取使用的模型。';
 
   @override
-  String get settingsModelFunctionAudioRecognition => 'Audio recognition';
+  String get settingsModelFunctionAudioRecognition => '音频识别';
 
   @override
   String get settingsModelFunctionAudioRecognitionDescription =>
-      'Model used to understand audio and extract audio content.';
+      '音频理解和音频内容提取使用的模型。';
 
   @override
-  String get settingsModelFunctionVideoRecognition => 'Video recognition';
+  String get settingsModelFunctionVideoRecognition => '视频识别';
 
   @override
   String get settingsModelFunctionVideoRecognitionDescription =>
-      'Model used to understand video and extract video content.';
+      '视频理解和视频内容提取使用的模型。';
 
   @override
-  String get settingsModelFunctionImageUnsupported =>
-      'The selected model profile has direct image input disabled.';
+  String get settingsModelFunctionImageUnsupported => '当前模型配置未开启图片直传。';
 
   @override
-  String get settingsModelFunctionAudioUnsupported =>
-      'The selected model profile has direct audio input disabled.';
+  String get settingsModelFunctionAudioUnsupported => '当前模型配置未开启音频直传。';
 
   @override
-  String get settingsModelFunctionVideoUnsupported =>
-      'The selected model profile has direct video input disabled.';
+  String get settingsModelFunctionVideoUnsupported => '当前模型配置未开启视频直传。';
 
   @override
-  String get settingsModelCreateProfile => 'New model profile';
+  String get settingsModelCreateProfile => '新建模型档案';
 
   @override
-  String get settingsModelEditProfile => 'Edit model profile';
+  String get settingsModelEditProfile => '编辑模型档案';
 
   @override
-  String get settingsModelProfileName => 'Profile name';
+  String get settingsModelProfileName => '档案名称';
 
   @override
-  String get settingsModelApiEndpoint => 'API endpoint';
+  String get settingsModelApiEndpoint => 'API 地址';
 
   @override
-  String get settingsModelModelNames => 'Model names';
+  String get settingsModelModelNames => '模型名称';
 
   @override
-  String get settingsModelApiKey => 'API key';
+  String get settingsModelApiKey => 'API Key';
 
   @override
-  String get settingsModelCodexLogin => 'ChatGPT login';
+  String get settingsModelCodexLogin => 'ChatGPT 登录';
 
   @override
-  String get settingsModelCodexLoginTitle => 'Sign in to ChatGPT Codex';
+  String get settingsModelCodexLoginTitle => '登录 ChatGPT Codex';
 
   @override
   String get settingsModelCodexLoginDescription =>
-      'OpenAI Codex uses a ChatGPT subscription sign-in instead of an API key.';
+      'OpenAI Codex 使用 ChatGPT 订阅登录，不使用 API Key。';
 
   @override
   String settingsModelCodexSignedIn(String account) {
-    return 'Signed in as $account';
+    return '已登录 $account';
   }
 
   @override
-  String get settingsModelCodexSignedOut => 'Not signed in to ChatGPT';
+  String get settingsModelCodexSignedOut => '尚未登录 ChatGPT';
 
   @override
-  String get settingsModelCodexBrowser => 'Browser sign-in';
+  String get settingsModelCodexBrowser => '浏览器登录';
 
   @override
-  String get settingsModelCodexDevice => 'Device code';
+  String get settingsModelCodexDevice => '设备码登录';
 
   @override
-  String get settingsModelCodexWaiting => 'Waiting for ChatGPT authorization…';
+  String get settingsModelCodexWaiting => '正在等待 ChatGPT 授权…';
 
   @override
   String get settingsModelCodexDeviceInstructions =>
-      'Enter this code on the opened page, then return to Operit.';
+      '在打开的页面输入这个验证码，然后回到 Operit。';
 
   @override
-  String get settingsModelCodexOpenPage => 'Open verification page';
+  String get settingsModelCodexOpenPage => '打开验证页面';
 
   @override
-  String get settingsModelCodexLogout => 'Sign out';
+  String get settingsModelCodexLogout => '退出登录';
 
   @override
   String settingsModelCodexLoginFailed(String error) {
-    return 'ChatGPT sign-in failed: $error';
+    return 'ChatGPT 登录失败：$error';
   }
 
   @override
-  String get settingsModelApiKeyPool => 'API key pool';
+  String get settingsModelApiKeyPool => 'API Key 池';
 
   @override
   String get settingsModelApiKeyPoolDescription =>
-      'Prepare multiple keys for one model profile so runtime can rotate between them.';
+      '给同一个模型配置准备多个 Key，用于多 Key 轮换。';
 
   @override
   String settingsModelApiKeyPoolCount(int count) {
-    return '$count keys';
+    return '$count 个 Key';
   }
 
   @override
-  String get settingsModelApiKeyPoolEmpty =>
-      'No keys yet. Add keys and this profile will use the key pool.';
+  String get settingsModelApiKeyPoolEmpty => '还没有 Key。添加后，运行时会按当前配置使用 Key 池。';
 
   @override
-  String get settingsModelAddApiKey => 'Add key';
+  String get settingsModelAddApiKey => '添加 Key';
 
   @override
-  String get settingsModelEditApiKey => 'Edit key';
+  String get settingsModelEditApiKey => '编辑 Key';
 
   @override
-  String get settingsModelApiKeyName => 'Key name';
+  String get settingsModelApiKeyName => 'Key 名称';
 
   @override
-  String get settingsModelApiKeyEnabled => 'Enable this key';
+  String get settingsModelApiKeyEnabled => '启用这个 Key';
 
   @override
-  String get settingsModelProviderId => 'Provider ID';
+  String get settingsModelProviderId => '供应商 ID';
 
   @override
-  String get settingsModelProvidersSection => 'LLM providers';
+  String get settingsModelProvidersSection => 'LLM 供应商';
 
   @override
-  String get settingsModelProviderType => 'Provider type';
+  String get settingsModelProviderType => '供应商类型';
 
   @override
   String settingsModelProviderTypeOption(String name, String original) {
-    return '$name ($original)';
+    return '$name（$original）';
   }
 
   @override
@@ -1413,44 +1361,43 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsModelProviderTypeOpenaiResponsesGeneric =>
-      'OpenAI Responses compatible';
+      'OpenAI Responses 兼容';
 
   @override
-  String get settingsModelProviderTypeOpenaiGeneric => 'OpenAI compatible';
+  String get settingsModelProviderTypeOpenaiGeneric => 'OpenAI 兼容';
 
   @override
   String get settingsModelProviderTypeAnthropic => 'Anthropic';
 
   @override
-  String get settingsModelProviderTypeAnthropicGeneric =>
-      'Anthropic compatible';
+  String get settingsModelProviderTypeAnthropicGeneric => 'Anthropic 兼容';
 
   @override
   String get settingsModelProviderTypeGoogle => 'Google Gemini';
 
   @override
-  String get settingsModelProviderTypeGeminiGeneric => 'Gemini compatible';
+  String get settingsModelProviderTypeGeminiGeneric => 'Gemini 兼容';
 
   @override
-  String get settingsModelProviderTypeBaidu => 'Baidu';
+  String get settingsModelProviderTypeBaidu => '百度';
 
   @override
-  String get settingsModelProviderTypeAliyun => 'Aliyun';
+  String get settingsModelProviderTypeAliyun => '阿里云';
 
   @override
-  String get settingsModelProviderTypeXunfei => 'Xunfei';
+  String get settingsModelProviderTypeXunfei => '讯飞';
 
   @override
-  String get settingsModelProviderTypeZhipu => 'Zhipu AI';
+  String get settingsModelProviderTypeZhipu => '智谱';
 
   @override
-  String get settingsModelProviderTypeBaichuan => 'Baichuan';
+  String get settingsModelProviderTypeBaichuan => '百川';
 
   @override
-  String get settingsModelProviderTypeMoonshot => 'Moonshot';
+  String get settingsModelProviderTypeMoonshot => '月之暗面';
 
   @override
-  String get settingsModelProviderTypeMimo => 'MiMo';
+  String get settingsModelProviderTypeMimo => '小米 MiMo';
 
   @override
   String get settingsModelProviderTypeDeepseek => 'DeepSeek';
@@ -1459,10 +1406,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsModelProviderTypeMistral => 'Mistral';
 
   @override
-  String get settingsModelProviderTypeSiliconflow => 'SiliconFlow';
+  String get settingsModelProviderTypeSiliconflow => '硅基流动';
 
   @override
-  String get settingsModelProviderTypeIflow => 'iFlow';
+  String get settingsModelProviderTypeIflow => '心流';
 
   @override
   String get settingsModelProviderTypeOpenrouter => 'OpenRouter';
@@ -1477,13 +1424,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsModelProviderTypeNousPortal => 'Nous Portal';
 
   @override
-  String get settingsModelProviderTypeInfiniai => 'InfiniAI';
+  String get settingsModelProviderTypeInfiniai => '无问芯穹';
 
   @override
-  String get settingsModelProviderTypeAlipayBailing => 'Alipay Bailing';
+  String get settingsModelProviderTypeAlipayBailing => '支付宝百灵';
 
   @override
-  String get settingsModelProviderTypeDoubao => 'Doubao';
+  String get settingsModelProviderTypeDoubao => '豆包';
 
   @override
   String get settingsModelProviderTypeNvidia => 'NVIDIA';
@@ -1495,199 +1442,194 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsModelProviderTypeOllama => 'Ollama';
 
   @override
-  String get settingsModelProviderTypeOpenaiLocal => 'OpenAI Local';
+  String get settingsModelProviderTypeOpenaiLocal => 'OpenAI 本地';
 
   @override
-  String get settingsModelProviderTypeLocalModel => 'Local model';
+  String get settingsModelProviderTypeLocalModel => '本地模型';
 
   @override
   String localModelsLoadFailed(Object error) {
-    return 'Failed to load local model status: $error';
+    return '本地模型状态加载失败：$error';
   }
 
   @override
   String localModelsOperationFailed(Object error) {
-    return 'Local model operation failed: $error';
+    return '本地模型操作失败：$error';
   }
 
   @override
-  String get localModelsCatalog => 'Model catalog';
+  String get localModelsCatalog => '模型目录';
 
   @override
-  String get localModelsCategorySpeechToText => 'Speech-to-text models';
+  String get localModelsCategorySpeechToText => '语音识别（STT）模型';
 
   @override
-  String get localModelsCategoryTextToSpeech => 'Text-to-speech models';
+  String get localModelsCategoryTextToSpeech => '语音合成（TTS）模型';
 
   @override
-  String get localModelsCategoryChat => 'LLM models';
+  String get localModelsCategoryChat => '大语言（LLM）模型';
 
   @override
-  String get localModelsCategoryEmbedding => 'Embedding models';
+  String get localModelsCategoryEmbedding => '嵌入模型';
 
   @override
-  String get localModelsInstalledEngines => 'Installed engines';
+  String get localModelsInstalledEngines => '已安装引擎';
 
   @override
-  String get localModelsNoInstalledEngines =>
-      'No local inference engine is installed on this platform.';
+  String get localModelsNoInstalledEngines => '当前平台尚未安装本地推理引擎。';
 
   @override
-  String get localModelsDeleteModelTitle => 'Delete local model';
+  String get localModelsDeleteModelTitle => '删除本地模型';
 
   @override
   String localModelsDeleteModelMessage(Object modelName) {
-    return 'Delete model files for $modelName?';
+    return '删除 $modelName 的模型文件？';
   }
 
   @override
-  String get localModelsDeleteEngineTitle => 'Delete local engine';
+  String get localModelsDeleteEngineTitle => '删除本地引擎';
 
   @override
   String localModelsDeleteEngineMessage(Object engineName, Object version) {
-    return 'Delete $engineName $version?';
+    return '删除 $engineName $version？';
   }
 
   @override
-  String get localModelsCancelling => 'Pausing';
+  String get localModelsCancelling => '正在暂停';
 
   @override
   String localModelsDownloadPaused(Object downloaded, Object total) {
-    return 'Paused: $downloaded / $total';
+    return '已暂停 · $downloaded / $total';
   }
 
   @override
-  String get localModelsDownloadInstalling => 'Download complete, installing';
+  String get localModelsDownloadInstalling => '下载完成，正在安装';
 
   @override
   String localModelsDownloading(Object downloaded, Object total) {
-    return 'Downloading: $downloaded / $total';
+    return '下载 $downloaded / $total';
   }
 
   @override
   String localModelsLicense(Object license) {
-    return 'License: $license';
+    return '许可证：$license';
   }
 
   @override
-  String get localModelsPlatformCompatible => 'Platform compatible';
+  String get localModelsPlatformCompatible => '平台兼容';
 
   @override
-  String get localModelsPlatformIncompatible => 'Platform incompatible';
+  String get localModelsPlatformIncompatible => '平台不兼容';
 
   @override
-  String get localModelsModelInstalled => 'Model installed';
+  String get localModelsModelInstalled => '模型已安装';
 
   @override
-  String get localModelsModelNotInstalled => 'Model not installed';
+  String get localModelsModelNotInstalled => '模型未安装';
 
   @override
-  String get localModelsEngineInstalled => 'Engine installed';
+  String get localModelsEngineInstalled => '引擎已安装';
 
   @override
-  String get localModelsEngineNotInstalled => 'Engine not installed';
+  String get localModelsEngineNotInstalled => '引擎未安装';
 
   @override
-  String get localModelsVerifyModelAndEngine => 'Verify model and engine';
+  String get localModelsVerifyModelAndEngine => '校验模型和引擎';
 
   @override
-  String get localModelsDeleteModel => 'Delete model';
+  String get localModelsDeleteModel => '删除模型';
 
   @override
-  String get localModelsPauseDownload => 'Pause download';
+  String get localModelsPauseDownload => '暂停下载';
 
   @override
-  String get localModelsDeleteDownload => 'Delete download';
+  String get localModelsDeleteDownload => '删除下载';
 
   @override
-  String get localModelsResumeDownload => 'Resume';
+  String get localModelsResumeDownload => '继续';
 
   @override
-  String get localModelsInstalling => 'Installing';
+  String get localModelsInstalling => '下载中';
 
   @override
-  String get localModelsInstall => 'Install';
+  String get localModelsInstall => '安装';
 
   @override
-  String get localModelsDeleteEngine => 'Delete engine';
+  String get localModelsDeleteEngine => '删除引擎';
 
   @override
-  String get localModelsDownloadSource => 'Download source';
+  String get localModelsDownloadSource => '下载源';
 
   @override
   String get localModelsSourceHuggingFace => 'Hugging Face';
 
   @override
-  String get localModelsSourceModelScope => 'ModelScope';
+  String get localModelsSourceModelScope => 'ModelScope (魔搭)';
 
   @override
-  String get localModelsSourceHfMirror => 'HF-Mirror';
+  String get localModelsSourceHfMirror => 'HF-Mirror (镜像)';
 
   @override
-  String get localModelsSourceDirectHttp => 'Direct HTTP';
+  String get localModelsSourceDirectHttp => '直链下载';
 
   @override
-  String get localModelsExploreHub => 'Explore / Import Models';
+  String get localModelsExploreHub => '探索 / 导入模型';
 
   @override
-  String get localModelsHubSearchHint => 'Search models or enter owner/repo...';
+  String get localModelsHubSearchHint => '搜索模型或输入 owner/repo...';
 
   @override
-  String get localModelsHubImport => 'Import';
+  String get localModelsHubImport => '导入';
 
   @override
-  String get localModelsHubImporting => 'Analyzing and importing model...';
+  String get localModelsHubImporting => '正在解析并导入模型...';
 
   @override
-  String get localModelsHubImportSuccess =>
-      'Model successfully imported into catalog';
+  String get localModelsHubImportSuccess => '模型已成功导入模型目录';
 
   @override
-  String get localModelsRemoveFromCatalog => 'Remove from catalog';
+  String get localModelsRemoveFromCatalog => '从目录移除';
 
   @override
-  String get localModelsCustomBadge => 'Custom';
+  String get localModelsCustomBadge => '自定义导入';
 
   @override
-  String get localModelsHubSearching => 'Searching...';
+  String get localModelsHubSearching => '正在搜索...';
 
   @override
-  String get localModelsHubNoResults => 'No matching model repositories found';
+  String get localModelsHubNoResults => '未找到匹配的模型仓库';
 
   @override
-  String get localModelsHubDirectImportTitle => 'Import by Repository';
+  String get localModelsHubDirectImportTitle => '按仓库地址导入';
 
   @override
   String get localModelsHubDirectImportPrompt =>
-      'Enter a Hugging Face or ModelScope repository (owner/repo) or URL:';
+      '输入 Hugging Face 或 ModelScope 的仓库路径（如 owner/repo）或完整 URL：';
 
   @override
-  String get localModelDescriptionSherpaOnnxStreamingStt =>
-      'Streaming bilingual Chinese and English speech recognition.';
+  String get localModelDescriptionSherpaOnnxStreamingStt => '流式中英双语语音识别。';
 
   @override
-  String get localModelDescriptionSherpaOnnxVitsAishell3 =>
-      'Local Chinese multi-speaker speech synthesis.';
+  String get localModelDescriptionSherpaOnnxVitsAishell3 => '本地中文多说话人语音合成。';
 
   @override
-  String get localModelDescriptionSherpaOnnxVitsZhLl =>
-      'Local Chinese five-speaker speech synthesis.';
+  String get localModelDescriptionSherpaOnnxVitsZhLl => '本地中文五说话人语音合成。';
 
   @override
   String get localModelDescriptionSherpaOnnxMatchaBaker =>
-      'Local Chinese single-speaker Matcha speech synthesis.';
+      '本地中文单说话人 Matcha 语音合成。';
 
   @override
   String get localModelDescriptionSherpaOnnxKittenNano =>
-      'Local English eight-speaker KittenTTS speech synthesis.';
+      '本地英文八说话人 KittenTTS 语音合成。';
 
   @override
   String get localModelDescriptionSherpaOnnxWebParaformer =>
-      'Browser packaged Chinese and English Paraformer speech recognition.';
+      '浏览器内置的中英 Paraformer 语音识别。';
 
   @override
   String get localModelDescriptionSherpaOnnxWebVitsPiper =>
-      'Browser packaged English multi-speaker VITS speech synthesis.';
+      '浏览器内置的英文多说话人 VITS 语音合成。';
 
   @override
   String get settingsModelProviderTypeMnn => 'MNN';
@@ -1705,411 +1647,386 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsModelProviderTypeMinimax => 'MiniMax';
 
   @override
-  String get settingsModelProviderTypeOther => 'Other';
+  String get settingsModelProviderTypeOther => '其他';
 
   @override
-  String get settingsModelEditModelSettings => 'Model settings';
+  String get settingsModelEditModelSettings => '模型设置';
 
   @override
-  String get settingsModelCreateProvider => 'Create provider';
+  String get settingsModelCreateProvider => '创建供应商';
 
   @override
-  String get settingsModelEditProvider => 'Edit provider';
+  String get settingsModelEditProvider => '编辑供应商';
 
   @override
-  String get settingsModelAddModel => 'Add model';
+  String get settingsModelAddModel => '添加模型';
 
   @override
-  String get settingsModelAddModelShort => 'Add';
+  String get settingsModelAddModelShort => '添加';
 
   @override
-  String get settingsModelAvailableFetchedOnly => 'Fetched only';
+  String get settingsModelAvailableFetchedOnly => '仅拉取到的';
 
   @override
-  String get settingsModelAvailableIncludeHistory => 'Include history';
+  String get settingsModelAvailableIncludeHistory => '包含历史';
 
   @override
-  String get settingsModelAvailableSourceFetched => 'Fetched';
+  String get settingsModelAvailableSourceFetched => '已拉取';
 
   @override
-  String get settingsModelAvailableSourceHistory => 'History';
+  String get settingsModelAvailableSourceHistory => '历史';
 
   @override
   String get settingsModelAvailableEmptyFetched =>
-      'No fetched models. Choose Include history to see catalog IDs.';
+      '没有拉取到的模型。可选择「包含历史」查看目录中的模型 ID。';
 
   @override
-  String get settingsModelCustomModel => 'Custom model';
+  String get settingsModelCustomModel => '自定义模型';
 
   @override
-  String get settingsModelModelId => 'Model ID';
+  String get settingsModelModelId => '模型 ID';
 
   @override
-  String get settingsModelDuplicateModelId =>
-      'This model has already been added to this provider.';
+  String get settingsModelDuplicateModelId => '该模型已添加到当前供应商。';
 
   @override
-  String get settingsModelDuplicateProviderName =>
-      'A provider with this name already exists.';
+  String get settingsModelDuplicateProviderName => '已存在同名供应商。';
 
   @override
   String get settingsModelMaxTokens => 'Max tokens';
 
   @override
-  String get settingsModelMaxTokensDescription =>
-      'Limit how many tokens one response may generate.';
+  String get settingsModelMaxTokensDescription => '限制一次回复最多生成多少 Token。';
 
   @override
   String get settingsModelTemperature => 'Temperature';
 
   @override
-  String get settingsModelTemperatureDescription =>
-      'Controls randomness. Lower is steadier, higher is more varied.';
+  String get settingsModelTemperatureDescription => '控制随机性，越低越稳定，越高越发散。';
 
   @override
   String get settingsModelTopP => 'Top-p';
 
   @override
-  String get settingsModelTopPDescription =>
-      'Sample only from the cumulative Top-p probability range.';
+  String get settingsModelTopPDescription => '只从累计概率 Top-p 范围内采样。';
 
   @override
   String get settingsModelTopK => 'Top-k';
 
   @override
-  String get settingsModelTopKDescription =>
-      'Sample from the K most likely candidate tokens. 0 disables it.';
+  String get settingsModelTopKDescription => '只从概率最高的 K 个候选 Token 中采样，0 表示关闭。';
 
   @override
   String get settingsModelPresencePenalty => 'Presence penalty';
 
   @override
-  String get settingsModelPresencePenaltyDescription =>
-      'Encourages new topics and reduces reuse of existing content.';
+  String get settingsModelPresencePenaltyDescription => '鼓励引入新话题，减少重复已有内容。';
 
   @override
   String get settingsModelFrequencyPenalty => 'Frequency penalty';
 
   @override
-  String get settingsModelFrequencyPenaltyDescription =>
-      'Penalizes repeated tokens by frequency.';
+  String get settingsModelFrequencyPenaltyDescription => '按出现频率惩罚重复 Token。';
 
   @override
   String get settingsModelRepetitionPenalty => 'Repetition penalty';
 
   @override
-  String get settingsModelRepetitionPenaltyDescription =>
-      'Further reduces repeated output. 1.0 means no penalty.';
+  String get settingsModelRepetitionPenaltyDescription => '进一步降低重复，1.0 表示不惩罚。';
 
   @override
-  String get settingsModelRequestLimit => 'Requests per minute';
+  String get settingsModelRequestLimit => '每分钟请求数';
 
   @override
-  String get settingsModelMaxConcurrent => 'Max concurrent requests';
+  String get settingsModelMaxConcurrent => '最大并发请求';
 
   @override
-  String get settingsModelContextLength => 'Context length';
+  String get settingsModelContextLength => '上下文长度';
 
   @override
-  String get settingsModelMaxContextLength => 'Max context length';
+  String get settingsModelMaxContextLength => '最大上下文长度';
 
   @override
-  String get settingsModelMaxContextLengthInvalid =>
-      'Enter a max context length greater than 0';
+  String get settingsModelMaxContextLengthInvalid => '请输入大于 0 的最大上下文长度';
 
   @override
-  String get settingsModelSummaryThreshold => 'Summary token threshold';
+  String get settingsModelSummaryThreshold => '总结 Token 阈值';
 
   @override
-  String get settingsModelSummaryByMessageCount => 'Summarize by message count';
+  String get settingsModelSummaryByMessageCount => '按消息数总结';
 
   @override
-  String get settingsModelSummaryMessageCount => 'Summary message threshold';
+  String get settingsModelSummaryMessageCount => '总结消息数阈值';
 
   @override
-  String get settingsModelCustomHeaders => 'Custom headers';
+  String get settingsModelCustomHeaders => '自定义 Headers';
 
   @override
-  String get settingsModelCustomParameters => 'Custom parameters JSON';
+  String get settingsModelCustomParameters => '自定义参数 JSON';
 
   @override
-  String get settingsModelToolCall => 'Tool calling';
+  String get settingsModelToolCall => '工具调用';
 
   @override
-  String get settingsModelToolCallDescription =>
-      'Allow the model to use structured tool calls.';
+  String get settingsModelToolCallDescription => '允许模型使用结构化工具调用能力。';
 
   @override
-  String get settingsModelDirectImage => 'Direct image input';
+  String get settingsModelDirectImage => '图片直传';
 
   @override
-  String get settingsModelDirectImageDescription =>
-      'Send images directly to models that support image input.';
+  String get settingsModelDirectImageDescription => '支持图片能力的模型可直接接收图片。';
 
   @override
-  String get settingsModelDirectAudio => 'Direct audio input';
+  String get settingsModelDirectAudio => '音频直传';
 
   @override
-  String get settingsModelDirectAudioDescription =>
-      'Send audio directly to models that support audio input.';
+  String get settingsModelDirectAudioDescription => '支持音频能力的模型可直接接收音频。';
 
   @override
-  String get settingsModelDirectVideo => 'Direct video input';
+  String get settingsModelDirectVideo => '视频直传';
 
   @override
-  String get settingsModelDirectVideoDescription =>
-      'Send video directly to models that support video input.';
+  String get settingsModelDirectVideoDescription => '支持视频能力的模型可直接接收视频。';
 
   @override
-  String get settingsModelGoogleSearch => 'Google Search';
+  String get settingsModelGoogleSearch => 'Google 搜索';
 
   @override
-  String get settingsModelGoogleSearchDescription =>
-      'Enable provider-side search capability.';
+  String get settingsModelGoogleSearchDescription => '启用供应商侧搜索能力。';
 
   @override
-  String get settingsModelContext => 'Context window';
+  String get settingsModelContext => '上下文窗口';
 
   @override
-  String get settingsModelSummary => 'Auto summary';
+  String get settingsModelSummary => '自动总结';
 
   @override
-  String get settingsModelThinking => 'Thinking';
+  String get settingsModelThinking => '思考';
 
   @override
-  String get settingsModelThinkingOption => 'Thinking option';
+  String get settingsModelThinkingOption => '思考档位';
 
   @override
-  String get settingsModelThinkingRules => 'Thinking rules JSON';
+  String get settingsModelThinkingRules => '思考规则 JSON';
 
   @override
-  String get settingsModelMediaHistory => 'Media history';
+  String get settingsModelMediaHistory => '媒体历史';
 
   @override
-  String get settingsModelCapabilities => 'Capabilities';
+  String get settingsModelCapabilities => '能力';
 
   @override
-  String get settingsModelBuiltinTools => 'Built-in tools';
+  String get settingsModelBuiltinTools => '内置工具';
 
   @override
-  String get settingsModelBuiltinToolExclusive =>
-      'Turns off external tool calling when enabled';
+  String get settingsModelBuiltinToolExclusive => '开启后会关闭外部工具调用';
 
   @override
-  String get settingsModelConnectionTestSection => 'Connection test';
+  String get settingsModelConnectionTestSection => '连接测试';
 
   @override
-  String get settingsModelRunConnectionTest => 'Test current model';
+  String get settingsModelRunConnectionTest => '测试当前模型';
 
   @override
-  String get settingsModelTestModel => 'Test model';
+  String get settingsModelTestModel => '测试模型';
 
   @override
-  String get settingsModelTestingConnection =>
-      'Testing current model connection…';
+  String get settingsModelTestingConnection => '正在测试当前模型连接…';
 
   @override
-  String get settingsModelTestedModel => 'Tested model';
+  String get settingsModelTestedModel => '测试模型';
 
   @override
-  String get settingsModelConnectionTestPassed => 'All checks passed';
+  String get settingsModelConnectionTestPassed => '全部通过';
 
   @override
-  String get settingsModelConnectionTestFailed => 'Some checks failed';
+  String get settingsModelConnectionTestFailed => '存在失败项';
 
   @override
-  String get settingsModelCapabilitiesApplied =>
-      'Model capability switches were updated from the test result.';
+  String get settingsModelCapabilitiesApplied => '已按测试结果更新模型能力开关。';
 
   @override
-  String get settingsModelCapabilitiesNeedChat =>
-      'Chat test did not pass, so model capability switches were not updated.';
+  String get settingsModelCapabilitiesNeedChat => '聊天测试未通过，模型能力开关未更新。';
 
   @override
   String settingsModelConnectionTestError(String error) {
-    return 'Connection test failed: $error';
+    return '连接测试失败：$error';
   }
 
   @override
-  String get settingsModelTestItemChat => 'Chat';
+  String get settingsModelTestItemChat => '聊天';
 
   @override
-  String get settingsModelTestItemToolCall => 'Tool call';
+  String get settingsModelTestItemToolCall => '工具调用';
 
   @override
-  String get settingsModelTestItemImage => 'Image';
+  String get settingsModelTestItemImage => '图片';
 
   @override
-  String get settingsModelTestItemAudio => 'Audio';
+  String get settingsModelTestItemAudio => '音频';
 
   @override
-  String get settingsModelTestItemVideo => 'Video';
+  String get settingsModelTestItemVideo => '视频';
 
   @override
-  String get settingsModelTestItemUnknown => 'Unknown item';
+  String get settingsModelTestItemUnknown => '未知项';
 
   @override
-  String get settingsCharactersCreateCard => 'New character card';
+  String get settingsCharactersCreateCard => '新建角色卡';
 
   @override
-  String get settingsCharactersEditCard => 'Edit character card';
+  String get settingsCharactersEditCard => '编辑角色卡';
 
   @override
-  String get settingsCharactersCardName => 'Character name';
+  String get settingsCharactersCardName => '角色名称';
 
   @override
-  String get settingsCharactersCreateGroup => 'New group';
+  String get settingsCharactersCreateGroup => '新建群组';
 
   @override
-  String get settingsCharactersEditGroup => 'Edit group';
+  String get settingsCharactersEditGroup => '编辑群组';
 
   @override
-  String get settingsCharactersGroupName => 'Group name';
+  String get settingsCharactersGroupName => '群组名称';
 
   @override
-  String get settingsCharactersDescription => 'Description';
+  String get settingsCharactersDescription => '描述';
 
   @override
-  String get settingsCharactersCharacterSetting => 'Character setting';
+  String get settingsCharactersCharacterSetting => '角色设定';
 
   @override
-  String get settingsCharactersOpeningStatement => 'Opening statement';
+  String get settingsCharactersOpeningStatement => '开场白';
 
   @override
-  String get settingsCharactersOtherContentChat => 'Extra chat content';
+  String get settingsCharactersOtherContentChat => '聊天附加内容';
 
   @override
-  String get settingsCharactersOtherContentVoice => 'Extra voice content';
+  String get settingsCharactersOtherContentVoice => '语音附加内容';
 
   @override
-  String get settingsCharactersAdvancedPrompt => 'Advanced custom prompt';
+  String get settingsCharactersAdvancedPrompt => '高级自定义 Prompt';
 
   @override
-  String get settingsCharactersMarks => 'Notes';
+  String get settingsCharactersMarks => '备注';
 
   @override
-  String get settingsCharactersTags => 'Tags';
+  String get settingsCharactersTags => '标签';
 
   @override
-  String get settingsCharactersNoTags =>
-      'No tags available. Create one in tag management, then bind it to this character card.';
+  String get settingsCharactersNoTags => '当前没有可选标签。可在标签管理中创建后绑定到角色卡。';
 
   @override
-  String get settingsCharactersImport => 'Import';
+  String get settingsCharactersImport => '导入';
 
   @override
-  String get settingsCharactersExport => 'Export';
+  String get settingsCharactersExport => '导出';
 
   @override
-  String get settingsCharactersImportJson => 'Import JSON';
+  String get settingsCharactersImportJson => '导入 JSON';
 
   @override
-  String get settingsCharactersExportJson => 'Export JSON';
+  String get settingsCharactersExportJson => '导出 JSON';
 
   @override
-  String get settingsCharactersImportTavernJson => 'Import Tavern JSON';
+  String get settingsCharactersImportTavernJson => '导入 Tavern JSON';
 
   @override
-  String get settingsCharactersExportTavernJson => 'Export Tavern JSON';
+  String get settingsCharactersExportTavernJson => '导出 Tavern JSON';
 
   @override
-  String get settingsCharactersImportCardJson => 'Import character card JSON';
+  String get settingsCharactersImportCardJson => '导入角色卡 JSON';
 
   @override
-  String get settingsCharactersImportCardJsonDone => 'Character card imported.';
+  String get settingsCharactersImportCardJsonDone => '已导入角色卡。';
 
   @override
-  String get settingsCharactersImportTavernJsonDone =>
-      'Tavern character card imported.';
+  String get settingsCharactersImportTavernJsonDone => '已导入 Tavern 角色卡。';
 
   @override
-  String get settingsCharactersImportGroupJson => 'Import group JSON';
+  String get settingsCharactersImportGroupJson => '导入群组 JSON';
 
   @override
-  String get settingsCharactersImportGroupJsonDone => 'Group imported.';
+  String get settingsCharactersImportGroupJsonDone => '已导入群组。';
 
   @override
   String settingsCharactersImportJsonError(String error) {
-    return 'JSON import failed: $error';
+    return '导入 JSON 失败：$error';
   }
 
   @override
   String settingsCharactersImportTavernJsonError(String error) {
-    return 'Tavern JSON import failed: $error';
+    return '导入 Tavern JSON 失败：$error';
   }
 
   @override
   String settingsCharactersExportJsonError(String error) {
-    return 'JSON export failed: $error';
+    return '导出 JSON 失败：$error';
   }
 
   @override
   String settingsCharactersExportTavernJsonError(String error) {
-    return 'Tavern JSON export failed: $error';
+    return '导出 Tavern JSON 失败：$error';
   }
 
   @override
-  String get settingsCharactersTagsSection => 'Tags';
+  String get settingsCharactersTagsSection => '标签';
 
   @override
-  String get settingsCharactersManageTags => 'Manage tags';
+  String get settingsCharactersManageTags => '管理标签';
 
   @override
-  String get settingsCharactersCreateTag => 'New tag';
+  String get settingsCharactersCreateTag => '新建标签';
 
   @override
-  String get settingsCharactersEditTag => 'Edit tag';
+  String get settingsCharactersEditTag => '编辑标签';
 
   @override
-  String get settingsCharactersDeleteTag => 'Delete tag';
+  String get settingsCharactersDeleteTag => '删除标签';
 
   @override
   String settingsCharactersDeleteTagMessage(String name) {
-    return 'Delete “$name”?';
+    return '确定删除“$name”吗？';
   }
 
   @override
-  String get settingsCharactersTagName => 'Tag name';
+  String get settingsCharactersTagName => '标签名称';
 
   @override
-  String get settingsCharactersTagDescription => 'Tag description';
+  String get settingsCharactersTagDescription => '标签描述';
 
   @override
-  String get settingsCharactersTagPromptContent => 'Prompt content';
+  String get settingsCharactersTagPromptContent => 'Prompt 内容';
 
   @override
-  String get settingsCharactersChatModelBindingMode =>
-      'Chat model binding mode';
+  String get settingsCharactersChatModelBindingMode => '聊天模型绑定模式';
 
   @override
-  String get settingsCharactersChatModelConfigId => 'Chat model config ID';
+  String get settingsCharactersChatModelConfigId => '聊天模型配置 ID';
 
   @override
-  String get settingsCharactersChatModelIndex => 'Chat model index';
+  String get settingsCharactersChatModelIndex => '聊天模型序号';
 
   @override
-  String get settingsCharactersToolAccess => 'Tool permission mode';
+  String get settingsCharactersToolAccess => '工具权限模式';
 
   @override
-  String get settingsCharactersChatModelFollowGlobal => 'Follow global model';
+  String get settingsCharactersChatModelFollowGlobal => '跟随全局模型';
 
   @override
-  String get settingsCharactersChatModelFixedConfig => 'Use fixed model config';
+  String get settingsCharactersChatModelFixedConfig => '固定模型配置';
 
   @override
-  String get settingsCharactersChatModelConfig => 'Model config';
+  String get settingsCharactersChatModelConfig => '模型配置';
 
   @override
-  String get settingsCharactersToolAccessFollowGlobal =>
-      'Follow global tool permissions';
+  String get settingsCharactersToolAccessFollowGlobal => '跟随全局工具权限';
 
   @override
-  String get settingsCharactersToolAccessCustom =>
-      'Custom character tool permissions';
+  String get settingsCharactersToolAccessCustom => '自定义角色工具权限';
 
   @override
-  String get settingsCharactersToolAccessEmpty =>
-      'Enabled with no selected tools';
+  String get settingsCharactersToolAccessEmpty => '已启用，但未选择任何工具';
 
   @override
   String settingsCharactersToolAccessSummaryCounts(
@@ -2118,21 +2035,20 @@ class AppLocalizationsZh extends AppLocalizations {
     int skillCount,
     int mcpCount,
   ) {
-    return 'Built-in $builtinCount · packages $packageCount · skills $skillCount · MCP $mcpCount';
+    return '内置 $builtinCount · 工具包 $packageCount · 技能 $skillCount · MCP $mcpCount';
   }
 
   @override
-  String get settingsCharactersToolAccessConfigure =>
-      'Configure tool allowlist';
+  String get settingsCharactersToolAccessConfigure => '配置工具白名单';
 
   @override
-  String get settingsCharactersToolAccessTitle => 'Custom Allowed Tools';
+  String get settingsCharactersToolAccessTitle => '自定义允许使用的工具';
 
   @override
-  String get settingsCharactersToolAccessTabBuiltin => 'Built-ins';
+  String get settingsCharactersToolAccessTabBuiltin => '内建工具';
 
   @override
-  String get settingsCharactersToolAccessTabPackage => 'Packages';
+  String get settingsCharactersToolAccessTabPackage => '包';
 
   @override
   String get settingsCharactersToolAccessTabSkill => 'Skill';
@@ -2141,460 +2057,438 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsCharactersToolAccessTabMcp => 'MCP';
 
   @override
-  String get settingsCharactersToolAccessSearchPlaceholder =>
-      'Search name, description, or ID';
+  String get settingsCharactersToolAccessSearchPlaceholder => '搜索名称、描述或标识';
 
   @override
-  String get settingsCharactersToolAccessEmptySearch =>
-      'No matching tools found';
+  String get settingsCharactersToolAccessEmptySearch => '未找到匹配的工具';
 
   @override
   String get settingsCharactersToolAccessRequiresUsePackage =>
-      'Selecting packages, skills, or MCP also requires allowing the built-in use_package tool.';
+      '选择工具包、技能或 MCP 时，需要同时允许内置工具 use_package。';
 
   @override
-  String get settingsCharactersToolAccessEmptyBuiltin =>
-      'No built-in tools are available for configuration';
+  String get settingsCharactersToolAccessEmptyBuiltin => '当前没有可配置的内建工具';
 
   @override
-  String get settingsCharactersToolAccessEmptyPackages =>
-      'No globally available packages right now';
+  String get settingsCharactersToolAccessEmptyPackages => '当前没有全局可用的包';
 
   @override
-  String get settingsCharactersToolAccessEmptySkills =>
-      'No AI-visible skills are available right now';
+  String get settingsCharactersToolAccessEmptySkills => '当前没有对 AI 可见的 Skill';
 
   @override
-  String get settingsCharactersToolAccessEmptyMcp =>
-      'No enabled MCP servers are available right now';
+  String get settingsCharactersToolAccessEmptyMcp => '当前没有已启用的 MCP 服务器';
 
   @override
-  String get settingsCharactersBuiltinTools => 'Allowed built-in tools';
+  String get settingsCharactersBuiltinTools => '允许的内置工具';
 
   @override
-  String get settingsCharactersAllowedPackages => 'Allowed packages';
+  String get settingsCharactersAllowedPackages => '允许的工具包';
 
   @override
-  String get settingsCharactersAllowedSkills => 'Allowed skills';
+  String get settingsCharactersAllowedSkills => '允许的技能';
 
   @override
-  String get settingsCharactersAllowedMcpServers => 'Allowed MCP servers';
+  String get settingsCharactersAllowedMcpServers => '允许的 MCP 服务';
 
   @override
-  String get settingsCharactersGroupMembersTitle => 'Group characters';
+  String get settingsCharactersGroupMembersTitle => '组内角色';
 
   @override
-  String get settingsCharactersOpenMemoryGraph => 'View memory graph';
+  String get settingsCharactersOpenMemoryGraph => '查看记忆图谱';
 
   @override
   String settingsCharactersMemoryGraphTitle(String profileName) {
-    return '$profileName\'s memory graph';
+    return '$profileName 的记忆图谱';
   }
 
   @override
-  String get settingsCharactersMemoryGraphEmpty => 'No memory nodes yet';
+  String get settingsCharactersMemoryGraphEmpty => '当前记忆库还没有节点';
 
   @override
   String settingsCharactersMemoryGraphStats(int nodes, int edges) {
-    return '$nodes nodes · $edges links';
+    return '$nodes 个节点 · $edges 条关系';
   }
 
   @override
-  String get settingsCharactersMemoryGraphLink => 'Memory link';
+  String get settingsCharactersMemoryGraphLink => '记忆关系';
 
   @override
-  String get settingsCharactersEditUserMarkdown => 'Edit user profile';
+  String get settingsCharactersEditUserMarkdown => '编辑用户资料';
 
   @override
   String settingsCharactersUserMarkdownTitle(String profileName) {
-    return '$profileName\'s user profile';
+    return '$profileName 的用户资料';
   }
 
   @override
-  String get settingsCharactersUserMarkdownSaved => 'User profile saved';
+  String get settingsCharactersUserMarkdownSaved => '用户资料已保存';
 
   @override
-  String get settingsCharactersUserMarkdownContent => 'User profile content';
+  String get settingsCharactersUserMarkdownContent => '用户资料内容';
 
   @override
-  String get settingsCharactersMemoryAutoUpdate => 'Auto-update memory stores';
+  String get settingsCharactersMemoryAutoUpdate => '自动更新记忆库';
 
   @override
   String get settingsCharactersMemoryAutoUpdateDescription =>
-      'Allow AI to organize conversation info into memory stores.';
+      '允许 AI 从对话中整理信息并写入记忆库。';
 
   @override
-  String get settingsCharactersPreferenceDescription =>
-      'Provide user profile to model';
+  String get settingsCharactersPreferenceDescription => '向模型提供用户资料';
 
   @override
   String get settingsCharactersPreferenceDescriptionSubtitle =>
-      'Include the current user profile in chat prompts.';
+      '聊天时把当前用户资料写入提示词。';
 
   @override
-  String get settingsCharactersCardsSection => 'Character cards';
+  String get settingsCharactersCardsSection => '角色卡';
 
   @override
-  String get settingsCharactersGroupsSection => 'Groups';
+  String get settingsCharactersGroupsSection => '群组';
 
   @override
   String settingsCharactersGroupMembers(int count) {
-    return '$count members';
+    return '$count 个成员';
   }
 
   @override
-  String get settingsToolsPermissionMode => 'AI capability mode';
+  String get settingsToolsPermissionMode => 'AI 能力模式';
 
   @override
-  String get settingsToolsAsk => 'Ask';
+  String get settingsToolsAsk => '询问';
 
   @override
-  String get settingsToolsExtensions => 'Extension management';
+  String get settingsToolsExtensions => '扩展管理';
 
   @override
-  String get settingsToolsPlugins => 'Plugins';
+  String get settingsToolsPlugins => '插件';
 
   @override
-  String get settingsToolsPluginsDescription =>
-      'Manage ToolPkg plugin containers and UI extensions.';
+  String get settingsToolsPluginsDescription => '管理 ToolPkg 插件容器和 UI 扩展。';
 
   @override
-  String get settingsToolsPackages => 'Tool packages';
+  String get settingsToolsPackages => '工具包';
 
   @override
-  String get settingsToolsPackagesDescription =>
-      'Enable, disable, and inspect built-in or external tool packages.';
+  String get settingsToolsPackagesDescription => '启用、停用和查看内置/外部工具包。';
 
   @override
-  String get settingsToolsSkills => 'Skills';
+  String get settingsToolsSkills => '技能';
 
   @override
-  String get settingsToolsSkillsDescription =>
-      'Manage skill package visibility and imports.';
+  String get settingsToolsSkillsDescription => '管理技能包可见性和导入。';
 
   @override
-  String get settingsToolsMcp => 'MCP servers';
+  String get settingsToolsMcp => 'MCP 服务';
 
   @override
   String settingsToolsMcpDescription(int seconds) {
-    return 'Manage MCP configuration. Startup wait is $seconds seconds.';
+    return '管理 MCP 配置，当前启动等待 $seconds 秒。';
   }
 
   @override
-  String get settingsToolsOverrides => 'Tool records';
+  String get settingsToolsOverrides => '工具记录';
 
   @override
-  String get settingsToolsToolGroups => 'Registered tools';
+  String get settingsToolsToolGroups => '已注册工具';
 
   @override
-  String get settingsToolsToolGroupsDescription =>
-      'Tools registered by the current runtime for AI use.';
+  String get settingsToolsToolGroupsDescription => '当前运行环境注册给 AI 使用的工具。';
 
   @override
-  String get settingsToolsAlwaysAllow => 'Allowed in this session';
+  String get settingsToolsAlwaysAllow => '本次会话已允许';
 
   @override
-  String get settingsToolsAlwaysAllowDescription =>
-      'These tools were approved for the current session.';
+  String get settingsToolsAlwaysAllowDescription => '这些工具已在当前会话中批准。';
 
   @override
-  String get settingsToolsAlwaysForbid => 'Always forbid';
+  String get settingsToolsAlwaysForbid => '始终禁止';
 
   @override
-  String get settingsToolsAlwaysForbidDescription =>
-      'AI will not call these tools.';
+  String get settingsToolsAlwaysForbidDescription => '这些工具不会被 AI 调用。';
 
   @override
-  String get settingsToolsAddTool => 'Add tool';
+  String get settingsToolsAddTool => '添加工具';
 
   @override
-  String get settingsToolsAddAllowTool => 'Add allowed tool';
+  String get settingsToolsAddAllowTool => '添加允许工具';
 
   @override
-  String get settingsToolsAddForbidTool => 'Add forbidden tool';
+  String get settingsToolsAddForbidTool => '添加禁止工具';
 
   @override
-  String get settingsToolsSearchTools => 'Search tools';
+  String get settingsToolsSearchTools => '搜索工具';
 
   @override
-  String get settingsToolsNoToolsInGroup => 'No tools in this group.';
+  String get settingsToolsNoToolsInGroup => '当前没有工具。';
 
   @override
-  String get settingsToolsMcpStartupTimeout => 'MCP startup timeout';
+  String get settingsToolsMcpStartupTimeout => 'MCP 启动超时';
 
   @override
-  String get settingsToolsMcpStartupTimeoutSeconds => 'Wait seconds';
+  String get settingsToolsMcpStartupTimeoutSeconds => '等待秒数';
 
   @override
-  String get settingsToolsToolPkgPreHookTimeout => 'ToolPkg pre-hook timeout';
+  String get settingsToolsToolPkgPreHookTimeout => 'ToolPkg 前置 Hook 超时';
 
   @override
   String settingsToolsToolPkgPreHookDescription(int seconds) {
-    return 'One ToolPkg pre-hook chain has $seconds seconds in total.';
+    return '每条 ToolPkg 前置 Hook 链总计最多执行 $seconds 秒。';
   }
 
   @override
-  String get settingsToolsToolPkgPreHookTimeoutSeconds => 'Total seconds';
+  String get settingsToolsToolPkgPreHookTimeoutSeconds => '总秒数';
 
   @override
-  String get settingsWorkspaceCurrentDesign => 'Current workspace structure';
+  String get settingsWorkspaceCurrentDesign => '当前工作区结构';
 
   @override
   String get settingsWorkspaceCurrentDesignDescription =>
-      'Workspaces are bound to chats. Terminal sessions and browser sessions are global sessions shown flat inside the workspace.';
+      '工作区跟随聊天绑定；终端会话和浏览器会话作为全局会话在工作区里扁平展示。';
 
   @override
-  String get settingsWorkspaceOpenChat => 'Return to chat workspace';
+  String get settingsWorkspaceOpenChat => '回到聊天工作区';
 
   @override
-  String get settingsWorkspaceOpenChatDescription =>
-      'Open files, terminals, browser, and web automation on the right side of chat.';
+  String get settingsWorkspaceOpenChatDescription => '在聊天右侧打开文件、终端、浏览器和网页自动化。';
 
   @override
-  String get settingsWorkspaceContains => 'Workspace contains';
+  String get settingsWorkspaceContains => '工作区包含';
 
   @override
-  String get settingsWorkspacePerChat => 'Bound per chat';
+  String get settingsWorkspacePerChat => '按聊天绑定';
 
   @override
-  String get settingsWorkspaceGlobalSessions => 'Global terminal sessions';
+  String get settingsWorkspaceGlobalSessions => '全局终端会话';
 
   @override
-  String get settingsWorkspaceBrowserSessions =>
-      'Browser and WebVisit sessions';
+  String get settingsWorkspaceBrowserSessions => '浏览器与 WebVisit 会话';
 
   @override
-  String get settingsWorkspaceBoundOverview => 'Workspace binding overview';
+  String get settingsWorkspaceBoundOverview => '工作区绑定概览';
 
   @override
-  String get settingsWorkspaceBoundOverviewDescription =>
-      'Workspace paths recorded by chat histories are used as the binding source.';
+  String get settingsWorkspaceBoundOverviewDescription => '聊天记录里的工作区路径就是绑定来源。';
 
   @override
-  String get settingsWorkspaceBoundChats => 'Bound chats';
+  String get settingsWorkspaceBoundChats => '已绑定聊天';
 
   @override
-  String get settingsWorkspaceInternalRoot => 'Internal workspace root';
+  String get settingsWorkspaceInternalRoot => '内部工作区根目录';
 
   @override
-  String get settingsWorkspaceExternalRoot => 'Legacy external workspace root';
+  String get settingsWorkspaceExternalRoot => '旧外部工作区根目录';
 
   @override
-  String get settingsWorkspaceUnboundTitle => 'Unbound workspaces';
+  String get settingsWorkspaceUnboundTitle => '无绑定工作区';
 
   @override
-  String get settingsWorkspaceUnboundSubtitle =>
-      'These workspace folders are not used by any chat.';
+  String get settingsWorkspaceUnboundSubtitle => '这些工作区文件夹没有被任何聊天使用。';
 
   @override
-  String get settingsWorkspaceNoUnbound => 'No unbound workspaces.';
+  String get settingsWorkspaceNoUnbound => '没有无绑定工作区。';
 
   @override
   String settingsWorkspaceSelectedCount(int selected, int total) {
-    return 'Selected $selected / $total';
+    return '已选择 $selected / $total';
   }
 
   @override
-  String get settingsWorkspaceSelectAllCurrentList => 'Select all';
+  String get settingsWorkspaceSelectAllCurrentList => '全选';
 
   @override
-  String get settingsWorkspaceClearAll => 'Clear';
+  String get settingsWorkspaceClearAll => '清空';
 
   @override
-  String get settingsWorkspaceInternalStorage => 'Internal storage';
+  String get settingsWorkspaceInternalStorage => '内部存储';
 
   @override
-  String get settingsWorkspaceExternalStorage => 'External storage';
+  String get settingsWorkspaceExternalStorage => '外部存储';
 
   @override
-  String get settingsWorkspaceNotUsedByAnyChat => 'Not used by any chat';
+  String get settingsWorkspaceNotUsedByAnyChat => '未被任何聊天使用';
 
   @override
   String settingsWorkspaceDeleteSelected(int count) {
-    return 'Delete selected workspaces ($count)';
+    return '删除选中的工作区（$count）';
   }
 
   @override
-  String get settingsWorkspaceConfirmDeleteTitle => 'Confirm delete';
+  String get settingsWorkspaceConfirmDeleteTitle => '确认删除';
 
   @override
   String settingsWorkspaceDeleteConfirmation(int count) {
-    return 'Delete $count selected workspace folders?';
+    return '确定删除选中的 $count 个工作区文件夹吗？';
   }
 
   @override
   String settingsWorkspaceDeleted(int count) {
-    return 'Deleted $count unbound workspaces.';
+    return '已删除 $count 个无绑定工作区。';
   }
 
   @override
   String settingsWorkspaceDeleteFailed(String error) {
-    return 'Delete failed: $error';
+    return '删除失败：$error';
   }
 
   @override
   String settingsWorkspaceLoadFailed(String error) {
-    return 'Failed to load workspaces: $error';
+    return '加载工作区失败：$error';
   }
 
   @override
-  String get settingsWorkspaceRefresh => 'Refresh';
+  String get settingsWorkspaceRefresh => '刷新';
 
   @override
-  String get runtimeIdentity => 'Current identity';
+  String get runtimeIdentity => '当前身份';
 
   @override
-  String get runtimeIdentityManage => 'Switch or manage identities';
+  String get runtimeIdentityManage => '切换或管理身份';
 
   @override
-  String get runtimeIdentitySheetTitle => 'Identities';
+  String get runtimeIdentitySheetTitle => '身份';
 
   @override
-  String get runtimeIdentityCreate => 'New identity';
+  String get runtimeIdentityCreate => '新建身份';
 
   @override
-  String get runtimeIdentityCreateTitle => 'New identity';
+  String get runtimeIdentityCreateTitle => '新建身份';
 
   @override
-  String get runtimeIdentityRename => 'Rename identity';
+  String get runtimeIdentityRename => '重命名身份';
 
   @override
-  String get runtimeIdentityRenameTitle => 'Rename identity';
+  String get runtimeIdentityRenameTitle => '重命名身份';
 
   @override
-  String get runtimeIdentityName => 'Name (optional)';
+  String get runtimeIdentityName => '名称（可选）';
 
   @override
   String runtimeIdentitySwitchTitle(String identityName) {
-    return 'Switch to $identityName?';
+    return '切换到 $identityName？';
   }
 
   @override
   String get runtimeIdentitySwitchDescription =>
-      'Each identity has separate chats, settings, device space, paired devices, and workspaces. Switching ends the current runtime; the selected identity is used the next time the app starts.';
+      '每个身份拥有独立的聊天、配置、设备空间、配对设备和工作区。切换会结束当前运行实例；应用再次启动时将进入所选身份。';
 
   @override
-  String get runtimeIdentitySwitchConfirm => 'Switch identity';
+  String get runtimeIdentitySwitchConfirm => '切换身份';
 
   @override
-  String get runtimeIdentityCurrent => 'Current';
+  String get runtimeIdentityCurrent => '当前';
 
   @override
-  String get settingsUserProfileTitle => 'User profile';
+  String get settingsUserProfileTitle => '用户档案';
 
   @override
-  String get settingsUserProfileSubtitle =>
-      'Avatar, name, identities, and GitHub';
+  String get settingsUserProfileSubtitle => '头像、名字、身份与 GitHub';
 
   @override
-  String get settingsUserProfileDescription =>
-      'Manage this profile and switch isolated identities.';
+  String get settingsUserProfileDescription => '管理当前档案并切换隔离的身份。';
 
   @override
-  String get settingsUserProfileUnnamed => 'Unnamed';
+  String get settingsUserProfileUnnamed => '未命名';
 
   @override
-  String get settingsUserProfileNotLoggedIn => 'Not logged in';
+  String get settingsUserProfileNotLoggedIn => '未登录';
 
   @override
-  String get settingsUserProfileGitHubLoading => 'Loading GitHub account...';
+  String get settingsUserProfileGitHubLoading => '正在读取 GitHub 账号...';
 
   @override
   String settingsUserProfileGitHubAccount(String account) {
-    return 'GitHub: @$account';
+    return 'GitHub：@$account';
   }
 
   @override
   String settingsUserProfileGitHubStatusError(String error) {
-    return 'GitHub status error: $error';
+    return 'GitHub 状态错误：$error';
   }
 
   @override
-  String get settingsUserProfileOverview => 'Profile';
+  String get settingsUserProfileOverview => '档案';
 
   @override
-  String get settingsUserProfileAvatar => 'Avatar';
+  String get settingsUserProfileAvatar => '头像';
 
   @override
-  String get settingsUserProfileName => 'Name';
+  String get settingsUserProfileName => '名字';
 
   @override
-  String get settingsUserProfileChooseAvatar => 'Choose avatar';
+  String get settingsUserProfileChooseAvatar => '选择头像';
 
   @override
-  String get settingsUserProfileClearAvatar => 'Clear avatar';
+  String get settingsUserProfileClearAvatar => '清除头像';
 
   @override
-  String get settingsUserProfileEditName => 'Edit name';
+  String get settingsUserProfileEditName => '修改名字';
 
   @override
-  String get settingsUserProfileIdentities => 'Identities';
+  String get settingsUserProfileIdentities => '身份';
 
   @override
-  String get settingsUserProfileGitHub => 'GitHub account';
+  String get settingsUserProfileGitHub => 'GitHub 账号';
 
   @override
-  String get settingsUserProfileGitHubDescription => 'Not logged in';
+  String get settingsUserProfileGitHubDescription => '未登录';
 
   @override
-  String get settingsUserProfileLogin => 'Log in';
+  String get settingsUserProfileLogin => '登录';
 
   @override
-  String get settingsUserProfileLogout => 'Log out';
+  String get settingsUserProfileLogout => '退出登录';
 
   @override
-  String get settingsAppearanceAvatarCustom => 'Custom avatar';
+  String get settingsAppearanceAvatarCustom => '自定义头像';
 
   @override
-  String get settingsRuntimeConnection => 'Current device space';
+  String get settingsRuntimeConnection => '当前设备空间';
 
   @override
-  String get settingsRuntimeConnectionDescription =>
-      'Connection status for this device and its device space.';
+  String get settingsRuntimeConnectionDescription => '当前设备及其所在设备空间的连接状态。';
 
   @override
-  String get settingsRuntimeCurrentSpace => 'Current device space';
+  String get settingsRuntimeCurrentSpace => '当前设备空间';
 
   @override
-  String get settingsRuntimeOverviewDescription =>
-      'Devices in the same space can connect and share data and routes.';
+  String get settingsRuntimeOverviewDescription => '在同一设备空间内，设备可以建立连接，共享数据和路由。';
 
   @override
-  String get settingsRuntimeRenameSpace => 'Rename device space';
+  String get settingsRuntimeRenameSpace => '重命名设备空间';
 
   @override
-  String get settingsRuntimeLeaveSpace => 'Leave device space';
+  String get settingsRuntimeLeaveSpace => '退出设备空间';
 
   @override
-  String get settingsRuntimeLeaveSpaceTitle =>
-      'Leave the current device space?';
+  String get settingsRuntimeLeaveSpaceTitle => '退出当前设备空间？';
 
   @override
   String get settingsRuntimeLeaveSpaceDescription =>
-      'This device will create a new single-device space. Business data and paired devices are preserved.';
+      '这台设备会创建一个新的单设备空间。业务数据保留，已配对设备也不会被删除。';
 
   @override
-  String get settingsRuntimeLeaveSpaceConfirm => 'Leave';
+  String get settingsRuntimeLeaveSpaceConfirm => '退出';
 
   @override
-  String get settingsRuntimeSpaceName => 'Device space name';
+  String get settingsRuntimeSpaceName => '设备空间名称';
 
   @override
   String settingsRuntimeSpaceId(String spaceId) {
-    return 'Device space ID: $spaceId';
+    return '设备空间 ID：$spaceId';
   }
 
   @override
   String settingsRuntimeSpaceDeviceCount(int count) {
-    return '$count devices';
+    return '共 $count 台设备';
   }
 
   @override
-  String get settingsRuntimeViewSpaceTopology => 'View device topology';
+  String get settingsRuntimeViewSpaceTopology => '查看设备拓扑';
 
   @override
   String settingsRuntimeSpaceTopologyTitle(String spaceName) {
-    return '$spaceName device topology';
+    return '$spaceName 的设备拓扑';
   }
 
   @override
@@ -2602,955 +2496,918 @@ class AppLocalizationsZh extends AppLocalizations {
     int deviceCount,
     int connectionCount,
   ) {
-    return '$deviceCount devices · $connectionCount direct connections';
+    return '$deviceCount 台设备 · $connectionCount 条直连';
   }
 
   @override
-  String get settingsRuntimeDisconnectConnection => 'Disconnect';
+  String get settingsRuntimeDisconnectConnection => '断开连接';
 
   @override
-  String get settingsRuntimeDisconnectConnectionTitle =>
-      'Disconnect direct connection';
+  String get settingsRuntimeDisconnectConnectionTitle => '断开直连';
 
   @override
   String settingsRuntimeDisconnectConnectionMessage(String deviceName) {
-    return 'Disconnect the direct connection to $deviceName? Pairing records will be kept.';
+    return '确定要断开与 $deviceName 的直连吗？配对记录会保留。';
   }
 
   @override
-  String get settingsRuntimeDisconnectConnectionFailed => 'Disconnect failed';
+  String get settingsRuntimeDisconnectConnectionFailed => '断开失败';
 
   @override
-  String get settingsRuntimeCurrentDevice => 'Current device';
+  String get settingsRuntimeCurrentDevice => '当前设备';
 
   @override
-  String get settingsRuntimeRemoteTitle => 'Connected devices';
+  String get settingsRuntimeRemoteTitle => '已连接的设备';
 
   @override
   String get settingsRuntimeRemoteDescription =>
-      'Directly paired devices. Pairing establishes a connection; joining a device space enables shared data and routing.';
+      '已直接配对的设备。配对负责建立连接，加入设备空间后才会共享数据和路由。';
 
   @override
-  String get settingsRuntimePairRemote => 'Connect another device';
+  String get settingsRuntimePairRemote => '连接另一台设备';
 
   @override
-  String get settingsRuntimeDiscoveredEdges => 'ESP32 devices';
+  String get settingsRuntimeDiscoveredEdges => 'ESP32 设备';
 
   @override
-  String get settingsRuntimeEdgeEndpointTokenRequired =>
-      'Edge endpoint and token are required';
+  String get settingsRuntimeEdgeEndpointTokenRequired => 'Edge 地址和 Token 不能为空';
 
   @override
-  String get settingsRuntimeEdgeEndpointRequired => 'Edge endpoint is required';
+  String get settingsRuntimeEdgeEndpointRequired => 'Edge 地址不能为空';
 
   @override
-  String get settingsRuntimePairingCodeRequired => 'Pairing code is required';
+  String get settingsRuntimePairingCodeRequired => '请输入配对码';
 
   @override
-  String get settingsRuntimeNoPairedRemote => 'No connected devices yet.';
+  String get settingsRuntimeNoPairedRemote => '还没有已连接的设备。';
 
   @override
-  String get settingsRuntimeConnectionInitiatedByOtherDevice =>
-      'Connection initiated by the other device';
+  String get settingsRuntimeConnectionInitiatedByOtherDevice => '连接由对方设备发起';
 
   @override
-  String get settingsRuntimePairToken => 'Connection token';
+  String get settingsRuntimePairToken => '连接 Token';
 
   @override
-  String get settingsRuntimePairCode => 'Pairing code';
+  String get settingsRuntimePairCode => '配对码';
 
   @override
-  String get settingsRuntimeStartPairing => 'Start connection';
+  String get settingsRuntimeStartPairing => '开始连接';
 
   @override
-  String get settingsRuntimeFinishPairing => 'Finish connection';
+  String get settingsRuntimeFinishPairing => '完成连接';
 
   @override
-  String get settingsRuntimeBaseUrl => 'Device address';
+  String get settingsRuntimeBaseUrl => '设备地址';
 
   @override
   String settingsRuntimeConnectionFailed(String error) {
-    return 'Device connection failed: $error';
+    return '设备连接失败：$error';
   }
 
   @override
-  String get settingsRuntimePairingRejected =>
-      'A device connection was rejected';
+  String get settingsRuntimePairingRejected => '有设备的连接请求被拒绝';
 
   @override
-  String get settingsRuntimePairedChecking => 'Checking';
+  String get settingsRuntimePairedChecking => '检测中';
 
   @override
-  String get settingsRuntimePairedOnline => 'Online';
+  String get settingsRuntimePairedOnline => '在线';
 
   @override
-  String get settingsRuntimePairedOffline => 'Offline';
+  String get settingsRuntimePairedOffline => '离线';
 
   @override
-  String get settingsRuntimePairedInvalid => 'Pairing invalid';
+  String get settingsRuntimePairedInvalid => '配对已失效';
 
   @override
-  String get settingsRuntimePairedError => 'Status unavailable';
+  String get settingsRuntimePairedError => '状态获取失败';
 
   @override
-  String get settingsRuntimePairingRevokedTitle =>
-      'Pairing revoked by the other device';
+  String get settingsRuntimePairingRevokedTitle => '对方已解除配对';
 
   @override
   String get settingsRuntimePairingRevokedMessage =>
-      'The other device cancelled its pairing with this device. The local pairing record is no longer valid.';
+      '对方已取消与本设备的配对。当前本地配对记录已失效。';
 
   @override
-  String get settingsRuntimePairingRevokedConfirm => 'Got it';
+  String get settingsRuntimePairingRevokedConfirm => '知道了';
 
   @override
-  String get settingsRuntimePairedRemovedFromSpace =>
-      'Removed from device space';
+  String get settingsRuntimePairedRemovedFromSpace => '已被移出设备空间';
 
   @override
-  String get settingsRuntimeRemovedFromSpaceTitle =>
-      'Removed from device space';
+  String get settingsRuntimeRemovedFromSpaceTitle => '已被移出设备空间';
 
   @override
   String get settingsRuntimeRemovedFromSpaceMessage =>
-      'The remote device removed this device from the space. Leave the current space and create a standalone device space now.';
+      '对方已将本设备移出设备空间。请立即退出当前设备空间并创建一个独立的设备空间。';
 
   @override
-  String get settingsRuntimeRemovedFromSpaceConfirm =>
-      'Leave and create standalone space';
+  String get settingsRuntimeRemovedFromSpaceConfirm => '退出并创建独立空间';
 
   @override
-  String get settingsRuntimeJoinSpace => 'Join device space';
+  String get settingsRuntimeJoinSpace => '加入设备空间';
 
   @override
   String settingsRuntimeJoinSpaceTitle(String deviceName) {
-    return 'Join $deviceName\'s device space?';
+    return '加入 $deviceName 的设备空间？';
   }
 
   @override
   String get settingsRuntimeJoinSpaceDescription =>
-      'The current device space will merge with the other one and use its name.';
+      '当前设备空间会与对方合并，并采用对方的设备空间名称。';
 
   @override
-  String get settingsRuntimePairingComplete => 'Device paired';
+  String get settingsRuntimePairingComplete => '设备已配对';
 
   @override
-  String get settingsRuntimeDeviceInCurrentSpace =>
-      'In the current device space';
+  String get settingsRuntimeDeviceInCurrentSpace => '已在当前设备空间';
 
   @override
-  String get settingsRuntimeDiscoverSpaces => 'Discover device spaces';
+  String get settingsRuntimeDiscoverSpaces => '发现设备空间';
 
   @override
   String get settingsRuntimeDiscoverSpacesDescription =>
-      'Nearby devices are grouped by device space. Expand a device space to connect directly to one of its devices.';
+      '附近设备会按设备空间归并；展开设备空间后，可以选择其中一台设备直接连接。';
 
   @override
   String get settingsRuntimeWebPairDescription =>
-      'Enter another device\'s address and pairing token to connect this browser as an active pairing client.';
+      '输入其他设备的地址和配对令牌，让此浏览器作为主动配对方连接。';
 
   @override
   String settingsRuntimeDiscoveredSpaceSummary(
     int memberCount,
     int nearbyCount,
   ) {
-    return '$memberCount devices total · $nearbyCount nearby';
+    return '共 $memberCount 台设备 · 附近可连接 $nearbyCount 台';
   }
 
   @override
-  String get settingsRuntimeScan => 'Scan';
+  String get settingsRuntimeScan => '扫描';
 
   @override
-  String get settingsRuntimeScanning => 'Scanning…';
+  String get settingsRuntimeScanning => '扫描中…';
 
   @override
-  String get settingsRuntimeEnterManually => 'Enter manually';
+  String get settingsRuntimeEnterManually => '手动输入';
 
   @override
-  String get settingsRuntimeConnect => 'Connect';
+  String get settingsRuntimeConnect => '连接';
 
   @override
-  String get settingsRuntimeEnableDiscovery =>
-      'Allow nearby devices to discover this device space';
+  String get settingsRuntimeEnableDiscovery => '允许附近设备发现当前设备空间';
 
   @override
   String get settingsRuntimeEnableDiscoveryDescription =>
-      'Devices on the same network can find this device space and choose this device for a direct connection.';
+      '开启后，同一网络下的设备可以找到当前设备空间，并选择这台设备建立连接。';
 
   @override
   String settingsRuntimeEnableDiscoveryFailed(String error) {
-    return 'Could not enable device space discovery: $error';
+    return '无法开启设备空间发现：$error';
   }
 
   @override
   String settingsRuntimeDisableDiscoveryFailed(String error) {
-    return 'Could not disable device space discovery: $error';
+    return '无法关闭设备空间发现：$error';
   }
 
   @override
-  String get settingsRuntimeUsingLocal => 'Using: this device';
+  String get settingsRuntimeUsingLocal => '正在使用：这台设备';
 
   @override
   String settingsRuntimeUsingRemote(String device) {
-    return 'Using: $device';
+    return '正在使用：$device';
   }
 
   @override
-  String get settingsRuntimeRemoteInUseDescription =>
-      'Chats and tools run on this connected device.';
+  String get settingsRuntimeRemoteInUseDescription => '聊天和工具会在这台已连接设备上运行。';
 
   @override
-  String get settingsWebAccessService => 'Allow access';
+  String get settingsWebAccessService => '允许访问';
 
   @override
-  String get settingsWebAccessServiceDescription =>
-      'When enabled, browsers can access this device with an address and token.';
+  String get settingsWebAccessServiceDescription => '开启后，浏览器可以通过地址和口令访问这台设备。';
 
   @override
-  String get settingsWebAccessEnable => 'Allow external access';
+  String get settingsWebAccessEnable => '允许外部访问';
 
   @override
-  String get settingsWebAccessPortMode => 'Port mode';
+  String get settingsWebAccessPortMode => '端口模式';
 
   @override
-  String get settingsWebAccessPortAutomatic => 'Automatic';
+  String get settingsWebAccessPortAutomatic => '自动';
 
   @override
-  String get settingsWebAccessPortFixed => 'Fixed';
+  String get settingsWebAccessPortFixed => '固定';
 
   @override
-  String get settingsWebAccessPortAutomaticDescription =>
-      'The app chooses a port automatically. No manual setup is needed.';
+  String get settingsWebAccessPortAutomaticDescription => '端口由系统自动选择，不需要手动配置。';
 
   @override
-  String get settingsWebAccessPortFixedDescription =>
-      'Only the port in the listen address is used.';
+  String get settingsWebAccessPortFixedDescription => '只使用监听地址中填写的端口。';
 
   @override
-  String get settingsWebAccessBindAddress => 'Listen address';
+  String get settingsWebAccessBindAddress => '监听地址';
 
   @override
-  String get settingsWebAccessToken => 'Access token';
+  String get settingsWebAccessToken => '访问口令';
 
   @override
-  String get settingsWebAccessRotateToken => 'Change token';
+  String get settingsWebAccessRotateToken => '更换口令';
 
   @override
-  String get settingsWebAccessCopyToken => 'Copy token';
+  String get settingsWebAccessCopyToken => '复制口令';
 
   @override
-  String get settingsWebAccessAccessUrl => 'Access address';
+  String get settingsWebAccessAccessUrl => '访问地址';
 
   @override
-  String get settingsWebAccessLocalUrl => 'This device';
+  String get settingsWebAccessLocalUrl => '本机';
 
   @override
-  String get settingsWebAccessPairingUrl => 'Pairing address';
+  String get settingsWebAccessPairingUrl => '配对地址';
 
   @override
-  String get settingsWebAccessPairingUrlLocalOnly => 'This device only';
+  String get settingsWebAccessPairingUrlLocalOnly => '仅本机可用';
 
   @override
-  String get settingsWebAccessPairingUrlUnavailable => 'No LAN address found';
+  String get settingsWebAccessPairingUrlUnavailable => '未找到局域网地址';
 
   @override
-  String get settingsWebAccessCopyUrl => 'Copy URL';
+  String get settingsWebAccessCopyUrl => '复制地址';
 
   @override
-  String get settingsWebAccessOpenUrl => 'Open address';
+  String get settingsWebAccessOpenUrl => '打开地址';
 
   @override
-  String get settingsWebAccessRunning => 'On';
+  String get settingsWebAccessRunning => '已开启';
 
   @override
-  String get settingsWebAccessStopped => 'Off';
+  String get settingsWebAccessStopped => '已关闭';
 
   @override
-  String get settingsWebAccessSaved => 'Access settings saved.';
+  String get settingsWebAccessSaved => '访问设置已保存。';
 
   @override
-  String get settingsWebAccessTokenCopied => 'Access token copied.';
+  String get settingsWebAccessTokenCopied => '访问口令已复制。';
 
   @override
-  String get settingsWebAccessUrlCopied => 'Access URL copied.';
+  String get settingsWebAccessUrlCopied => '访问地址已复制。';
 
   @override
-  String get settingsWebAccessPairedClients => 'Authorized devices';
+  String get settingsWebAccessPairedClients => '已授权设备';
 
   @override
-  String get settingsWebAccessNoPairedClients => 'No device is authorized yet.';
+  String get settingsWebAccessNoPairedClients => '还没有设备被授权。';
 
   @override
-  String get settingsWebAccessPairedDeleted => 'Authorized device deleted.';
+  String get settingsWebAccessPairedDeleted => '已删除授权设备。';
 
   @override
-  String get settingsWebAccessPairingRequest => 'Pairing request';
+  String get settingsWebAccessPairingRequest => '配对请求';
 
   @override
   String settingsWebAccessPairingRequestMessage(String code, String client) {
-    return 'Pairing code: $code\nDevice: $client';
+    return '配对码：$code\n设备：$client';
   }
 
   @override
-  String get settingsWebAccessInvalidBindAddress =>
-      'Bind address must be host:port.';
+  String get settingsWebAccessInvalidBindAddress => '绑定地址格式应为 host:port。';
 
   @override
   String settingsWebAccessStartFailed(String error) {
-    return 'Failed to enable access: $error';
+    return '开启访问失败：$error';
   }
 
   @override
   String settingsWebAccessStopFailed(String error) {
-    return 'Failed to turn off access: $error';
+    return '关闭访问失败：$error';
   }
 
   @override
-  String get settingsAppearanceThemeSection => 'Theme';
+  String get settingsAppearanceThemeSection => '主题';
 
   @override
-  String get settingsAppearanceThemeMode => 'Current mode';
+  String get settingsAppearanceThemeMode => '当前模式';
 
   @override
-  String get settingsAppearanceThemeTarget => 'Theme save target';
+  String get settingsAppearanceThemeTarget => '主题保存目标';
 
   @override
-  String get settingsAppearanceThemeTargetGlobal => 'Global';
+  String get settingsAppearanceThemeTargetGlobal => '全局';
 
   @override
   String settingsAppearanceThemeTargetCharacter(Object name) {
-    return 'Current character: $name';
+    return '当前角色：$name';
   }
 
   @override
   String settingsAppearanceThemeTargetGroup(Object name) {
-    return 'Current group: $name';
+    return '当前群组：$name';
   }
 
   @override
-  String get settingsAppearanceThemeSystem => 'System';
+  String get settingsAppearanceThemeSystem => '跟随系统';
 
   @override
-  String get settingsAppearanceThemeLight => 'Light';
+  String get settingsAppearanceThemeLight => '浅色';
 
   @override
-  String get settingsAppearanceThemeDark => 'Dark';
+  String get settingsAppearanceThemeDark => '深色';
 
   @override
-  String get settingsAppearanceInputSection => 'Input';
+  String get settingsAppearanceInputSection => '输入框';
 
   @override
-  String get settingsAppearanceInputStyle => 'Input style';
+  String get settingsAppearanceInputStyle => '输入框样式';
 
   @override
-  String get settingsAppearanceInputStyleClassic => 'Classic';
+  String get settingsAppearanceInputStyleClassic => '经典';
 
   @override
   String get settingsAppearanceInputStyleAgent => 'Agent';
 
   @override
-  String get settingsAppearanceInputFloating => 'Floating input';
+  String get settingsAppearanceInputFloating => '悬浮输入框';
 
   @override
-  String get settingsAppearanceColorSection => 'Theme color';
+  String get settingsAppearanceColorSection => '主题色';
 
   @override
   String get settingsAppearanceColorDescription =>
-      'Choose a simple color preset. System bars and current app chrome follow the theme automatically.';
+      '选择一个简单的颜色预设。系统栏和当前应用外壳会自动跟随主题，不再单独配置。';
 
   @override
-  String get settingsAppearanceColorDefault => 'Default';
+  String get settingsAppearanceColorDefault => '默认';
 
   @override
-  String get settingsAppearanceColorSky => 'Sky';
+  String get settingsAppearanceColorSky => '天蓝';
 
   @override
-  String get settingsAppearanceColorMatcha => 'Matcha';
+  String get settingsAppearanceColorMatcha => '抹茶';
 
   @override
-  String get settingsAppearanceColorEmber => 'Ember';
+  String get settingsAppearanceColorEmber => '暖橙';
 
   @override
-  String get settingsAppearanceColorRose => 'Rose';
+  String get settingsAppearanceColorRose => '玫瑰';
 
   @override
-  String get settingsAppearanceColorCustom => 'Custom colors';
+  String get settingsAppearanceColorCustom => '自定义颜色';
 
   @override
-  String get settingsAppearanceCustomColorsTitle => 'Custom theme colors';
+  String get settingsAppearanceCustomColorsTitle => '自定义主题色';
 
   @override
-  String get settingsAppearancePrimaryColor => 'Primary color';
+  String get settingsAppearancePrimaryColor => '主色';
 
   @override
-  String get settingsAppearanceSecondaryColor => 'Secondary color';
+  String get settingsAppearanceSecondaryColor => '辅色';
 
   @override
   String get settingsAppearanceHexColorHint => '#RRGGBB';
 
   @override
-  String get settingsAppearanceHexColorInvalid =>
-      'Enter a color in #RRGGBB format';
+  String get settingsAppearanceHexColorInvalid => '请输入 #RRGGBB 格式的颜色';
 
   @override
-  String get settingsAppearanceBackgroundSection => 'Background';
+  String get settingsAppearanceBackgroundSection => '背景';
 
   @override
   String get settingsAppearanceBackgroundDescription =>
-      'Choose a local image or video as the app background. App surfaces and system bars follow the theme automatically.';
+      '选择本地图片或视频作为应用背景，界面底色和系统栏会自动跟随主题。';
 
   @override
-  String get settingsAppearanceBackgroundImage => 'Background media';
+  String get settingsAppearanceBackgroundImage => '背景媒体';
 
   @override
-  String get settingsAppearanceBackgroundNone => 'None selected';
+  String get settingsAppearanceBackgroundNone => '未选择';
 
   @override
-  String get settingsAppearanceBackgroundChooseImage => 'Choose image';
+  String get settingsAppearanceBackgroundChooseImage => '选择图片';
 
   @override
-  String get settingsAppearanceBackgroundChooseVideo => 'Choose video';
+  String get settingsAppearanceBackgroundChooseVideo => '选择视频';
 
   @override
-  String get settingsAppearanceBackgroundDisable => 'Disable background';
+  String get settingsAppearanceBackgroundDisable => '关闭背景';
 
   @override
-  String get settingsAppearanceBackgroundEnabled => 'Enable background';
+  String get settingsAppearanceBackgroundEnabled => '启用背景';
 
   @override
-  String get settingsAppearanceBackgroundOpacity => 'Background opacity';
+  String get settingsAppearanceBackgroundOpacity => '背景透明度';
 
   @override
-  String get settingsAppearanceBackgroundBlur => 'Blur background';
+  String get settingsAppearanceBackgroundBlur => '背景模糊';
 
   @override
-  String get settingsAppearanceBackgroundBlurRadius => 'Blur strength';
+  String get settingsAppearanceBackgroundBlurRadius => '模糊强度';
 
   @override
-  String get settingsAppearanceBackgroundVideoMuted => 'Mute video background';
+  String get settingsAppearanceBackgroundVideoMuted => '视频背景静音';
 
   @override
-  String get settingsAppearanceBackgroundVideoLoop => 'Loop video background';
+  String get settingsAppearanceBackgroundVideoLoop => '视频背景循环';
 
   @override
-  String get settingsAppearanceTextSection => 'Text';
+  String get settingsAppearanceTextSection => '文字';
 
   @override
-  String get settingsAppearanceFontFamily => 'Font';
+  String get settingsAppearanceFontFamily => '字体';
 
   @override
-  String get settingsAppearanceFontDefault => 'Default';
+  String get settingsAppearanceFontDefault => '默认';
 
   @override
-  String get settingsAppearanceCustomFont => 'Custom font';
+  String get settingsAppearanceCustomFont => '自定义字体';
 
   @override
-  String get settingsAppearanceFontCustom => 'Custom';
+  String get settingsAppearanceFontCustom => '自定义';
 
   @override
-  String get settingsAppearanceChooseCustomFont => 'Choose custom font';
+  String get settingsAppearanceChooseCustomFont => '选择自定义字体';
 
   @override
-  String get settingsAppearanceClearCustomFont => 'Clear custom font';
+  String get settingsAppearanceClearCustomFont => '清除自定义字体';
 
   @override
-  String get settingsAppearanceFontSerif => 'Serif';
+  String get settingsAppearanceFontSerif => '衬线';
 
   @override
-  String get settingsAppearanceFontMonospace => 'Mono';
+  String get settingsAppearanceFontMonospace => '等宽';
 
   @override
-  String get settingsAppearanceFontScale => 'Font size';
+  String get settingsAppearanceFontScale => '字体大小';
 
   @override
-  String get settingsAppearanceAvatarSection => 'Avatars';
+  String get settingsAppearanceAvatarSection => '头像';
 
   @override
-  String get settingsAppearanceUserAvatar => 'User avatar';
+  String get settingsAppearanceUserAvatar => '用户头像';
 
   @override
-  String get settingsAppearanceAiAvatar => 'AI avatar';
+  String get settingsAppearanceAiAvatar => 'AI 头像';
 
   @override
-  String get settingsAppearanceAvatarDefault => 'Default avatar';
+  String get settingsAppearanceAvatarDefault => '默认头像';
 
   @override
-  String get settingsAppearanceAvatarShape => 'Avatar shape';
+  String get settingsAppearanceAvatarShape => '头像形状';
 
   @override
-  String get settingsAppearanceAvatarShapeCircle => 'Circle';
+  String get settingsAppearanceAvatarShapeCircle => '圆形';
 
   @override
-  String get settingsAppearanceAvatarShapeSquare => 'Square';
+  String get settingsAppearanceAvatarShapeSquare => '方形';
 
   @override
-  String get settingsAppearanceChooseUserAvatar => 'Choose user avatar';
+  String get settingsAppearanceChooseUserAvatar => '选择用户头像';
 
   @override
-  String get settingsAppearanceChooseAiAvatar => 'Choose AI avatar';
+  String get settingsAppearanceChooseAiAvatar => '选择 AI 头像';
 
   @override
-  String get settingsAppearanceClearUserAvatar => 'Clear user avatar';
+  String get settingsAppearanceClearUserAvatar => '清除用户头像';
 
   @override
-  String get settingsAppearanceClearAiAvatar => 'Clear AI avatar';
+  String get settingsAppearanceClearAiAvatar => '清除 AI 头像';
 
   @override
-  String get settingsAppearanceChatDisplaySection => 'Chat display';
+  String get settingsAppearanceChatDisplaySection => '聊天显示';
 
   @override
-  String get settingsAppearanceMessageStyle => 'Message style';
+  String get settingsAppearanceMessageStyle => '消息样式';
 
   @override
-  String get settingsAppearanceMessageStyleClean => 'Command';
+  String get settingsAppearanceMessageStyleClean => '命令式';
 
   @override
-  String get settingsAppearanceMessageStyleCard => 'Bubble';
+  String get settingsAppearanceMessageStyleCard => '气泡式';
 
   @override
-  String get settingsAppearanceMessageColors => 'Message colors';
+  String get settingsAppearanceMessageColors => '消息配色';
 
   @override
-  String get settingsAppearanceMessageColorsTheme => 'Follow theme';
+  String get settingsAppearanceMessageColorsTheme => '跟随主题';
 
   @override
-  String get settingsAppearanceMessageColorsSky => 'Clean blue';
+  String get settingsAppearanceMessageColorsSky => '清爽蓝';
 
   @override
-  String get settingsAppearanceMessageColorsMatcha => 'Matcha';
+  String get settingsAppearanceMessageColorsMatcha => '抹茶';
 
   @override
-  String get settingsAppearanceMessageColorsInk => 'Dark';
+  String get settingsAppearanceMessageColorsInk => '深色';
 
   @override
-  String get settingsAppearanceMessageColorsCustom => 'Custom message colors';
+  String get settingsAppearanceMessageColorsCustom => '自定义消息颜色';
 
   @override
-  String get settingsAppearanceCustomMessageColorsTitle =>
-      'Custom message colors';
+  String get settingsAppearanceCustomMessageColorsTitle => '自定义消息颜色';
 
   @override
-  String get settingsAppearanceCursorUserBubbleColor => 'Command user bubble';
+  String get settingsAppearanceCursorUserBubbleColor => '命令式用户气泡';
 
   @override
-  String get settingsAppearanceUserBubbleColor => 'User bubble';
+  String get settingsAppearanceUserBubbleColor => '用户气泡';
 
   @override
-  String get settingsAppearanceAiBubbleColor => 'AI bubble';
+  String get settingsAppearanceAiBubbleColor => 'AI 气泡';
 
   @override
-  String get settingsAppearanceUserTextColor => 'User text';
+  String get settingsAppearanceUserTextColor => '用户文字';
 
   @override
-  String get settingsAppearanceAiTextColor => 'AI text';
+  String get settingsAppearanceAiTextColor => 'AI 文字';
 
   @override
-  String get settingsAppearanceMessageSurface => 'Global texture';
+  String get settingsAppearanceMessageSurface => '全局质感';
 
   @override
-  String get settingsAppearanceMessageSurfaceNormal => 'Normal';
+  String get settingsAppearanceMessageSurfaceNormal => '普通';
 
   @override
-  String get settingsAppearanceMessageSurfaceTransparent => 'Transparent';
+  String get settingsAppearanceMessageSurfaceTransparent => '透明';
 
   @override
-  String get settingsAppearanceUserBubbleFont => 'User bubble font';
+  String get settingsAppearanceUserBubbleFont => '用户气泡字体';
 
   @override
-  String get settingsAppearanceAiBubbleFont => 'AI bubble font';
+  String get settingsAppearanceAiBubbleFont => 'AI 气泡字体';
 
   @override
-  String get settingsAppearanceAdjustUserBubbleFont =>
-      'Adjust user bubble font';
+  String get settingsAppearanceAdjustUserBubbleFont => '调整用户气泡字体';
 
   @override
-  String get settingsAppearanceAdjustAiBubbleFont => 'Adjust AI bubble font';
+  String get settingsAppearanceAdjustAiBubbleFont => '调整 AI 气泡字体';
 
   @override
-  String get settingsAppearanceEnableBubbleFont =>
-      'Enable bubble-specific font';
+  String get settingsAppearanceEnableBubbleFont => '启用气泡专属字体';
 
   @override
-  String get settingsAppearanceUserBubbleImage => 'User bubble image';
+  String get settingsAppearanceUserBubbleImage => '用户气泡图片';
 
   @override
-  String get settingsAppearanceAiBubbleImage => 'AI bubble image';
+  String get settingsAppearanceAiBubbleImage => 'AI 气泡图片';
 
   @override
-  String get settingsAppearanceChooseUserBubbleImage => 'Choose user bubble';
+  String get settingsAppearanceChooseUserBubbleImage => '选择用户气泡';
 
   @override
-  String get settingsAppearanceChooseAiBubbleImage => 'Choose AI bubble';
+  String get settingsAppearanceChooseAiBubbleImage => '选择 AI 气泡';
 
   @override
-  String get settingsAppearanceClearUserBubbleImage => 'Clear user bubble';
+  String get settingsAppearanceClearUserBubbleImage => '清除用户气泡';
 
   @override
-  String get settingsAppearanceClearAiBubbleImage => 'Clear AI bubble';
+  String get settingsAppearanceClearAiBubbleImage => '清除 AI 气泡';
 
   @override
-  String get settingsAppearanceBubbleImageRenderMode => 'Bubble image mode';
+  String get settingsAppearanceBubbleImageRenderMode => '气泡图片模式';
 
   @override
-  String get settingsAppearanceBubbleImageTiledNineSlice => 'Tiled 9-slice';
+  String get settingsAppearanceBubbleImageTiledNineSlice => '平铺九宫格';
 
   @override
-  String get settingsAppearanceBubbleImageNinePatch => 'Stretch 9-patch';
+  String get settingsAppearanceBubbleImageNinePatch => '拉伸九宫格';
 
   @override
-  String get settingsAppearanceBubbleImageAdjustUser =>
-      'Adjust user bubble image';
+  String get settingsAppearanceBubbleImageAdjustUser => '调整用户气泡图片';
 
   @override
-  String get settingsAppearanceBubbleImageAdjustAi => 'Adjust AI bubble image';
+  String get settingsAppearanceBubbleImageAdjustAi => '调整 AI 气泡图片';
 
   @override
-  String get settingsAppearanceBubbleImagePreview => 'Preview';
+  String get settingsAppearanceBubbleImagePreview => '预览';
 
   @override
-  String get settingsAppearanceBubbleImagePreviewText =>
-      'Bubble preview with 9-slice guides';
+  String get settingsAppearanceBubbleImagePreviewText => '这是一条气泡预览，切线展示九宫格区域';
 
   @override
-  String get settingsAppearanceBubbleImageCrop => 'Crop';
+  String get settingsAppearanceBubbleImageCrop => '裁切';
 
   @override
-  String get settingsAppearanceBubbleImageRepeat => 'Repeat region';
+  String get settingsAppearanceBubbleImageRepeat => '重复区域';
 
   @override
-  String get settingsAppearanceBubbleImageScale => 'Image scale';
+  String get settingsAppearanceBubbleImageScale => '图片缩放';
 
   @override
-  String get settingsAppearanceBubbleImageCropLeft => 'Crop left';
+  String get settingsAppearanceBubbleImageCropLeft => '左侧裁切';
 
   @override
-  String get settingsAppearanceBubbleImageCropTop => 'Crop top';
+  String get settingsAppearanceBubbleImageCropTop => '顶部裁切';
 
   @override
-  String get settingsAppearanceBubbleImageCropRight => 'Crop right';
+  String get settingsAppearanceBubbleImageCropRight => '右侧裁切';
 
   @override
-  String get settingsAppearanceBubbleImageCropBottom => 'Crop bottom';
+  String get settingsAppearanceBubbleImageCropBottom => '底部裁切';
 
   @override
-  String get settingsAppearanceBubbleImageRepeatStart => 'Repeat X start';
+  String get settingsAppearanceBubbleImageRepeatStart => '横向重复起点';
 
   @override
-  String get settingsAppearanceBubbleImageRepeatEnd => 'Repeat X end';
+  String get settingsAppearanceBubbleImageRepeatEnd => '横向重复终点';
 
   @override
-  String get settingsAppearanceBubbleImageRepeatYStart => 'Repeat Y start';
+  String get settingsAppearanceBubbleImageRepeatYStart => '纵向重复起点';
 
   @override
-  String get settingsAppearanceBubbleImageRepeatYEnd => 'Repeat Y end';
+  String get settingsAppearanceBubbleImageRepeatYEnd => '纵向重复终点';
 
   @override
-  String get settingsAppearanceMessageDensity => 'Message spacing';
+  String get settingsAppearanceMessageDensity => '消息间距';
 
   @override
-  String get settingsAppearanceMessageDensityComfortable => 'Comfortable';
+  String get settingsAppearanceMessageDensityComfortable => '舒适';
 
   @override
-  String get settingsAppearanceMessageDensityCompact => 'Compact';
+  String get settingsAppearanceMessageDensityCompact => '紧凑';
 
   @override
-  String get settingsAppearanceWideLayout => 'Use wider chat layout';
+  String get settingsAppearanceWideLayout => '使用更宽的聊天布局';
 
   @override
-  String get settingsAppearanceRoundedMessages => 'Rounded message cards';
+  String get settingsAppearanceRoundedMessages => '消息卡片圆角';
 
   @override
-  String get settingsAppearanceShowAvatars => 'Show message avatars';
+  String get settingsAppearanceShowAvatars => '显示消息头像';
 
   @override
-  String get settingsAppearanceMessageDisplaySection => 'Message display';
+  String get settingsAppearanceMessageDisplaySection => '消息显示';
 
   @override
-  String get settingsAppearanceShowThinkingProcess => 'Show thinking process';
+  String get settingsAppearanceShowThinkingProcess => '显示思考过程';
 
   @override
-  String get settingsAppearanceShowRoleName => 'Show role name';
+  String get settingsAppearanceShowRoleName => '显示角色名';
 
   @override
-  String get settingsAppearanceShowUserName => 'Show user name';
+  String get settingsAppearanceShowUserName => '显示用户名';
 
   @override
-  String get settingsAppearanceShowModelName => 'Show model name';
+  String get settingsAppearanceShowModelName => '显示模型名';
 
   @override
-  String get settingsAppearanceShowModelProvider => 'Show model provider';
+  String get settingsAppearanceShowModelProvider => '显示模型供应商';
 
   @override
-  String get settingsAppearanceShowMessageTokenStats => 'Show token stats';
+  String get settingsAppearanceShowMessageTokenStats => '显示 Token 统计';
 
   @override
-  String get settingsAppearanceShowMessageTimingStats => 'Show timing stats';
+  String get settingsAppearanceShowMessageTimingStats => '显示耗时统计';
 
   @override
-  String get settingsAppearanceShowMessageTimestamp => 'Show message time';
+  String get settingsAppearanceShowMessageTimestamp => '显示消息时间';
 
   @override
-  String get settingsAppearanceShowInputProcessingStatus =>
-      'Show input processing status';
+  String get settingsAppearanceShowInputProcessingStatus => '显示输入处理状态';
 
   @override
-  String get settingsAppearanceResetTheme => 'Reset theme settings';
+  String get settingsAppearanceResetTheme => '重置主题设置';
 
   @override
-  String get settingsAppearanceLanguageSection => 'Language';
+  String get settingsAppearanceLanguageSection => '语言';
 
   @override
-  String get settingsAppearanceLanguage => 'Current language';
+  String get settingsAppearanceLanguage => '当前语言';
 
   @override
-  String get settingsAppearanceLanguageDescription =>
-      'Language follows the localization configuration loaded at app startup.';
+  String get settingsAppearanceLanguageDescription => '语言跟随应用启动时的本地化配置。';
 
   @override
-  String get settingsAppearanceBubblesTab => 'Messages & Bubbles';
+  String get settingsAppearanceBubblesTab => '消息与气泡';
 
   @override
-  String get settingsAppearanceInteractionTab => 'Interaction & Feed';
+  String get settingsAppearanceInteractionTab => '交互与信息';
 
   @override
-  String get settingsAppearanceBubbleStyleSection => 'Layout & Style';
+  String get settingsAppearanceBubbleStyleSection => '版式与风格';
 
   @override
-  String get settingsAppearanceBubbleFontSection => 'Bubble Fonts';
+  String get settingsAppearanceBubbleFontSection => '气泡字体';
 
   @override
-  String get settingsAppearanceBubbleImageSection => 'Bubble Images';
+  String get settingsAppearanceBubbleImageSection => '气泡贴图';
 
   @override
-  String get settingsAppearanceInteractionStatusSection => 'Process & Status';
+  String get settingsAppearanceInteractionStatusSection => '过程与状态';
 
   @override
-  String get settingsAppearanceBackgroundEffectsSection => 'Visual Effects';
+  String get settingsAppearanceBackgroundEffectsSection => '视觉效果';
 
   @override
-  String get settingsAppearanceBackgroundVideoSection => 'Video Playback';
+  String get settingsAppearanceBackgroundVideoSection => '视频播放';
 
   @override
-  String get settingsAppearanceLivePreviewTitle => 'Live Preview';
+  String get settingsAppearanceLivePreviewTitle => '实时预览';
 
   @override
-  String get settingsAppearanceLivePreviewUserSample =>
-      'Help me organize today\'s work plan.';
+  String get settingsAppearanceLivePreviewUserSample => '帮我梳理一下今天的工作计划。';
 
   @override
   String get settingsAppearanceLivePreviewAiSample =>
-      'Sure! I\'ve organized your core task list and we\'re ready to start.';
+      '好的！我已经为你整理好核心任务清单，随时可以开始执行。';
 
   @override
-  String get settingsAppearanceLivePreviewThinkingSample =>
-      'Analyzing context and schedule priorities...';
+  String get settingsAppearanceLivePreviewThinkingSample => '正在分析上下文与日程优先级...';
 
   @override
-  String get settingsDataLogsSection => 'Diagnostic logs';
+  String get settingsDataLogsSection => '诊断日志';
 
   @override
   String get settingsDataLogsDescription =>
-      'Export the selected Core and this client’s logs as one time-ordered .log file, marked [CORE] / [CLIENT]. Logs may contain sensitive data; review before sharing.';
+      '将当前连接的 Core 与本客户端的日志按时间合并为一个 .log 文件，并标记 [CORE] / [CLIENT]。日志可能包含敏感信息，分享前请检查。';
 
   @override
-  String get settingsDataExportLogs => 'Export diagnostic logs';
+  String get settingsDataExportLogs => '导出诊断日志';
 
   @override
-  String get settingsDataLogsExporting => 'Exporting logs…';
+  String get settingsDataLogsExporting => '正在导出日志…';
 
   @override
   String settingsDataLogsExportError(String error) {
-    return 'Log export failed: $error';
+    return '日志导出失败：$error';
   }
 
   @override
   String settingsDataLogsExportPartial(String path) {
-    return 'Saved to $path. One log source could not be read; see the warnings in the file.';
+    return '已保存至 $path。部分日志读取失败，请查看文件中的警告。';
   }
 
   @override
   String settingsDataOverviewLoadError(String error) {
-    return 'The data overview could not be loaded: $error. You can still export diagnostic logs.';
+    return '数据概览加载失败：$error。仍可导出诊断日志。';
   }
 
   @override
-  String get settingsDataRuntimeSection => 'Data overview';
+  String get settingsDataRuntimeSection => '数据概览';
 
   @override
-  String get settingsDataCoreVersion => 'Current version';
+  String get settingsDataCoreVersion => '当前版本';
 
   @override
-  String get settingsDataStorageSection => 'Storage location';
+  String get settingsDataStorageSection => '储存路径';
 
   @override
   String get settingsDataStorageDescription =>
-      'Move runtime and workspace data into independently selected local folders.';
+      '把 runtime 和 workspace 数据分别迁移到指定的本地文件夹。';
 
   @override
-  String get settingsDataRuntimeRoot => 'Runtime root';
+  String get settingsDataRuntimeRoot => '运行时目录';
 
   @override
-  String get settingsDataWorkspaceRoot => 'Workspace root';
+  String get settingsDataWorkspaceRoot => '工作区目录';
 
   @override
-  String get settingsDataChooseStorageRoots => 'Edit locations';
+  String get settingsDataChooseStorageRoots => '编辑位置';
 
   @override
-  String get settingsDataEditStorageRootsTitle => 'Edit storage locations';
+  String get settingsDataEditStorageRootsTitle => '编辑储存位置';
 
   @override
-  String get settingsDataStorageRootsRequired =>
-      'Runtime root and workspace root are required.';
+  String get settingsDataStorageRootsRequired => '运行时目录和工作区目录都不能为空。';
 
   @override
-  String get settingsDataStorageConfirmTitle => 'Change storage location';
+  String get settingsDataStorageConfirmTitle => '更改储存路径';
 
   @override
   String get settingsDataStorageConfirmMessage =>
-      'Runtime and workspace data will be copied into the selected directories, and the app will use them after restart.';
+      'runtime 和 workspace 数据会分别复制到所选目录，重启应用后使用新位置。';
 
   @override
-  String get settingsDataStorageConfirmAction => 'Change location';
+  String get settingsDataStorageConfirmAction => '更改位置';
 
   @override
-  String get settingsDataStorageChanged =>
-      'Storage location changed. Restart the app to use it.';
+  String get settingsDataStorageChanged => '储存路径已更改，重启应用后生效。';
 
   @override
   String settingsDataStorageChangeError(String error) {
-    return 'Storage location change failed: $error';
+    return '储存路径更改失败：$error';
   }
 
   @override
-  String get settingsDataTokenSection => 'Usage statistics';
+  String get settingsDataTokenSection => '使用统计';
 
   @override
-  String get settingsDataInputTokens => 'Input';
+  String get settingsDataInputTokens => '输入';
 
   @override
-  String get settingsDataOutputTokens => 'Output';
+  String get settingsDataOutputTokens => '输出';
 
   @override
-  String get settingsDataOpenDetailedStats => 'View detailed statistics';
+  String get settingsDataOpenDetailedStats => '查看详细统计';
 
   @override
   String get settingsDataOpenDetailedStatsDescription =>
-      'Open daily trends, input/output token changes, heatmap intensity, and usage breakdown by provider, model, and function model.';
+      '打开每日趋势、输入输出 Token 变化、使用热力图，以及按供应商、模型、功能模型分类的使用明细。';
 
   @override
-  String get settingsDataRefreshTokenStats => 'Refresh statistics';
+  String get settingsDataRefreshTokenStats => '刷新统计';
 
   @override
-  String get settingsDataResetTokenStats => 'Reset statistics';
+  String get settingsDataResetTokenStats => '重置统计';
 
   @override
-  String get settingsDataDetailedStatsTitle => 'Detailed statistics';
+  String get settingsDataDetailedStatsTitle => '详细统计';
 
   @override
-  String get settingsDataDetailedStatsDescription =>
-      'Statistics are calculated from dedicated model request records.';
+  String get settingsDataDetailedStatsDescription => '统计基于独立保存的模型请求明细计算。';
 
   @override
-  String get settingsDataDetailedStatsEmpty => 'No detailed usage records yet';
+  String get settingsDataDetailedStatsEmpty => '暂无可展示的详细使用记录';
 
   @override
   String settingsDataDetailedStatsDateRange(String start, String end) {
-    return '$start to $end';
+    return '$start 至 $end';
   }
 
   @override
-  String get settingsDataDetailedStatsSourceLabel => 'Model request records';
+  String get settingsDataDetailedStatsSourceLabel => '模型请求明细';
 
   @override
-  String get settingsDataDetailedStatsHistoricalTotal => 'Historical total';
+  String get settingsDataDetailedStatsHistoricalTotal => '历史累计';
 
   @override
-  String get settingsDataDetailedStatsRangeAll => 'All';
+  String get settingsDataDetailedStatsRangeAll => '全部';
 
   @override
-  String get settingsDataDetailedStatsRangeLast7Days => '7 days';
+  String get settingsDataDetailedStatsRangeLast7Days => '近 7 天';
 
   @override
-  String get settingsDataDetailedStatsRangeLast30Days => '30 days';
+  String get settingsDataDetailedStatsRangeLast30Days => '近 30 天';
 
   @override
-  String get settingsDataDetailedStatsRangeCustom => 'Custom';
+  String get settingsDataDetailedStatsRangeCustom => '自定义';
 
   @override
-  String get settingsDataDetailedStatsCustomRangePickerTitle =>
-      'Select statistics date range';
+  String get settingsDataDetailedStatsCustomRangePickerTitle => '选择统计时间范围';
 
   @override
-  String get settingsDataDetailedStatsNoDataInRange => 'No data in this range';
+  String get settingsDataDetailedStatsNoDataInRange => '当前范围暂无数据';
 
   @override
-  String get settingsDataDetailedStatsNoRankRows =>
-      'No ranking data in this range';
+  String get settingsDataDetailedStatsNoRankRows => '当前范围暂无排行数据';
 
   @override
-  String get settingsDataDetailedStatsFunctionModels => 'Function models';
+  String get settingsDataDetailedStatsFunctionModels => '功能模型数';
 
   @override
-  String get settingsDataDetailedStatsFunctionModelPieTitle =>
-      'Function model distribution';
+  String get settingsDataDetailedStatsFunctionModelPieTitle => '功能模型分布';
 
   @override
-  String get settingsDataDetailedStatsTopFunctionModelsTitle =>
-      'Function model ranking';
+  String get settingsDataDetailedStatsTopFunctionModelsTitle => '功能模型排行';
 
   @override
   String get settingsDataDetailedStatsTopFunctionModelsSubtitle =>
-      'Highest total token consumption by function model';
+      '按功能模型累计 Token 消耗排序';
 
   @override
-  String get settingsDataDetailedStatsSourceChat => 'Chat response';
+  String get settingsDataDetailedStatsSourceChat => '对话回复';
 
   @override
-  String get settingsDataDetailedStatsSourceToolResult =>
-      'Tool-result response';
+  String get settingsDataDetailedStatsSourceToolResult => '工具结果续写';
 
   @override
-  String get settingsDataDetailedStatsSourceSummary => 'Summary generation';
+  String get settingsDataDetailedStatsSourceSummary => '摘要生成';
 
   @override
-  String get settingsDataDetailedStatsSourceTitleGeneration =>
-      'Title generation';
+  String get settingsDataDetailedStatsSourceTitleGeneration => '标题生成';
 
   @override
-  String get settingsDataDetailedStatsSourceMemory => 'Memory analysis';
+  String get settingsDataDetailedStatsSourceMemory => '记忆分析';
 
   @override
-  String get settingsDataDetailedStatsTotalRequests => 'Total requests';
+  String get settingsDataDetailedStatsTotalRequests => '总请求数';
 
   @override
-  String get settingsDataDetailedStatsCachedInput => 'Cached input';
+  String get settingsDataDetailedStatsCachedInput => '缓存输入';
 
   @override
-  String get settingsDataDetailedStatsActiveDays => 'Active days';
+  String get settingsDataDetailedStatsActiveDays => '活跃天数';
 
   @override
-  String get settingsDataDetailedStatsChats => 'Conversations';
+  String get settingsDataDetailedStatsChats => '会话数';
 
   @override
-  String get settingsDataDetailedStatsProviders => 'Providers';
+  String get settingsDataDetailedStatsProviders => '供应商数';
 
   @override
-  String get settingsDataDetailedStatsModels => 'Models';
+  String get settingsDataDetailedStatsModels => '模型数';
 
   @override
-  String get settingsDataDetailedStatsUnknownTokenRecords =>
-      'Records with unknown tokens';
+  String get settingsDataDetailedStatsUnknownTokenRecords => '含未知 Token 的记录';
 
   @override
-  String get settingsDataDetailedStatsHeatmapTitle => 'Usage heatmap';
+  String get settingsDataDetailedStatsHeatmapTitle => '使用热力图';
 
   @override
-  String get settingsDataDetailedStatsHeatmapSubtitle =>
-      'Daily token intensity across the selected range';
+  String get settingsDataDetailedStatsHeatmapSubtitle => '所选时间范围内每日 Token 消耗强度';
 
   @override
-  String get settingsDataDetailedStatsHeatmapTapHint =>
-      'Tap a cell to view details';
+  String get settingsDataDetailedStatsHeatmapTapHint => '点击方格查看详细数据';
 
   @override
   String settingsDataDetailedStatsHeatmapDayDetail(
@@ -3558,64 +3415,58 @@ class AppLocalizationsZh extends AppLocalizations {
     String tokens,
     String requests,
   ) {
-    return '$date used $tokens tokens · $requests requests';
+    return '$date 使用了 $tokens Token · $requests 次请求';
   }
 
   @override
-  String get settingsDataDetailedStatsHeatmapLow => 'Less';
+  String get settingsDataDetailedStatsHeatmapLow => '少';
 
   @override
-  String get settingsDataDetailedStatsHeatmapHigh => 'More';
+  String get settingsDataDetailedStatsHeatmapHigh => '多';
 
   @override
-  String get settingsDataDetailedStatsDailyUsageTitle => 'Daily usage trend';
+  String get settingsDataDetailedStatsDailyUsageTitle => '每日使用趋势';
 
   @override
-  String get settingsDataDetailedStatsDailyUsageSubtitle =>
-      'Request count by day';
+  String get settingsDataDetailedStatsDailyUsageSubtitle => '按天统计请求次数';
 
   @override
-  String get settingsDataDetailedStatsRequestsSeries => 'Requests';
+  String get settingsDataDetailedStatsRequestsSeries => '请求数';
 
   @override
-  String get settingsDataDetailedStatsInputOutputTitle =>
-      'Input / output consumption trend';
+  String get settingsDataDetailedStatsInputOutputTitle => '输入 / 输出消耗趋势';
 
   @override
   String get settingsDataDetailedStatsInputOutputSubtitle =>
-      'Daily token changes for input and output';
+      '按天统计输入与输出 Token 变化';
 
   @override
-  String get settingsDataDetailedStatsProviderPieTitle =>
-      'Provider distribution';
+  String get settingsDataDetailedStatsProviderPieTitle => '供应商分布';
 
   @override
-  String get settingsDataDetailedStatsModelPieTitle => 'Model distribution';
+  String get settingsDataDetailedStatsModelPieTitle => '模型分布';
 
   @override
-  String get settingsDataDetailedStatsChatPieTitle =>
-      'Conversation distribution';
+  String get settingsDataDetailedStatsChatPieTitle => '会话分布';
 
   @override
-  String get settingsDataDetailedStatsTotalTokens => 'Total tokens';
+  String get settingsDataDetailedStatsTotalTokens => '总 Token';
 
   @override
-  String get settingsDataDetailedStatsTopRequestsTitle =>
-      'Single-request peaks';
+  String get settingsDataDetailedStatsTopRequestsTitle => '单次请求峰值';
 
   @override
   String get settingsDataDetailedStatsTopRequestsSubtitle =>
-      'Highest token consumption from individual calls';
+      '单次调用中 Token 消耗最高的记录';
 
   @override
-  String get settingsDataDetailedStatsTopChatsTitle => 'Top conversations';
+  String get settingsDataDetailedStatsTopChatsTitle => '会话排行';
 
   @override
-  String get settingsDataDetailedStatsTopChatsSubtitle =>
-      'Highest total token consumption by conversation';
+  String get settingsDataDetailedStatsTopChatsSubtitle => '按会话累计 Token 消耗排序';
 
   @override
-  String get settingsDataDetailedStatsOther => 'Other';
+  String get settingsDataDetailedStatsOther => '其他';
 
   @override
   String settingsDataDetailedStatsInputOutputSummary(
@@ -3624,7 +3475,7 @@ class AppLocalizationsZh extends AppLocalizations {
     String chatTitle,
     String time,
   ) {
-    return 'Input $input · Output $output · $chatTitle · $time';
+    return '输入 $input · 输出 $output · $chatTitle · $time';
   }
 
   @override
@@ -3632,64 +3483,64 @@ class AppLocalizationsZh extends AppLocalizations {
     int requests,
     int models,
   ) {
-    return '$requests requests · $models models';
+    return '$requests 次请求 · $models 个模型';
   }
 
   @override
   String settingsDataDetailedStatsRequestCountSummary(int requests) {
-    return '$requests requests';
+    return '$requests 次请求';
   }
 
   @override
-  String get settingsDataDetailedStatsUnlabeledProvider => 'Unlabeled provider';
+  String get settingsDataDetailedStatsUnlabeledProvider => '未标记供应商';
 
   @override
-  String get settingsDataDetailedStatsUnlabeledModel => 'Unlabeled model';
+  String get settingsDataDetailedStatsUnlabeledModel => '未标记模型';
 
   @override
-  String get settingsDataDetailedStatsUntitledChat => 'Untitled conversation';
+  String get settingsDataDetailedStatsUntitledChat => '未命名会话';
 
   @override
-  String get settingsDataBackupSection => 'Backup & restore';
+  String get settingsDataBackupSection => '备份与恢复';
 
   @override
-  String get settingsDataChatHistoriesBackup => 'Chat data';
+  String get settingsDataChatHistoriesBackup => '聊天数据';
 
   @override
   String get settingsDataChatHistoriesBackupDescription =>
-      'Back up all chats and messages. Restore updates or creates chats by chat ID.';
+      '备份全部聊天和消息；恢复时按聊天 ID 更新或新增。';
 
   @override
-  String get settingsDataCharacterCardsBackup => 'Character card data';
+  String get settingsDataCharacterCardsBackup => '角色卡数据';
 
   @override
   String get settingsDataCharacterCardsBackupDescription =>
-      'Back up all character cards and referenced tags. Restore updates or creates items by original ID.';
+      '备份全部角色卡和已引用标签；恢复时按原 ID 更新或新增。';
 
   @override
-  String get settingsDataCharacterGroupsBackup => 'Group data';
+  String get settingsDataCharacterGroupsBackup => '群组数据';
 
   @override
   String get settingsDataCharacterGroupsBackupDescription =>
-      'Back up all groups. Restore keeps member references and ordering.';
+      '备份全部群组；恢复时保留组内角色引用和顺序。';
 
   @override
-  String get settingsDataModelConfigsBackup => 'Model settings';
+  String get settingsDataModelConfigsBackup => '模型配置';
 
   @override
   String get settingsDataModelConfigsBackupDescription =>
-      'Back up all model settings, including model parameters and API key pools.';
+      '备份全部模型配置，包含模型参数和 API Key 池。';
 
   @override
   String settingsDataBackupCount(int count) {
-    return '$count items';
+    return '当前 $count 项';
   }
 
   @override
-  String get settingsDataExportBackupJson => 'Export backup';
+  String get settingsDataExportBackupJson => '导出备份';
 
   @override
-  String get settingsDataImportBackupJson => 'Restore data';
+  String get settingsDataImportBackupJson => '恢复数据';
 
   @override
   String settingsDataBackupImportResult(
@@ -3697,52 +3548,52 @@ class AppLocalizationsZh extends AppLocalizations {
     int updatedCount,
     int skippedCount,
   ) {
-    return 'Restore complete: $newCount new, $updatedCount updated, $skippedCount skipped.';
+    return '恢复完成：新增 $newCount，更新 $updatedCount，跳过 $skippedCount。';
   }
 
   @override
   String settingsDataBackupImportError(String error) {
-    return 'Restore failed: $error';
+    return '恢复失败：$error';
   }
 
   @override
   String settingsDataBackupExportError(String error) {
-    return 'Export failed: $error';
+    return '导出失败：$error';
   }
 
   @override
-  String get settingsDataSnapshotBackupTitle => 'Full snapshot';
+  String get settingsDataSnapshotBackupTitle => '完整快照';
 
   @override
-  String get settingsDataExportRawSnapshot => 'Export snapshot';
+  String get settingsDataExportRawSnapshot => '导出快照';
 
   @override
-  String get settingsDataImportRawSnapshot => 'Restore snapshot';
+  String get settingsDataImportRawSnapshot => '恢复快照';
 
   @override
   String get settingsDataExportRawSnapshotDescription =>
-      'Pack chats, characters, model settings, and local files into one backup file. Restoring replaces current data with the backup.';
+      '把聊天、角色、模型设置和本地文件打包成一个备份文件。恢复时会用备份里的数据覆盖当前数据。';
 
   @override
   String settingsDataSnapshotBytes(int bytes) {
-    return 'Snapshot size: $bytes bytes';
+    return '快照大小：$bytes 字节';
   }
 
   @override
-  String get settingsDataSnapshotImported => 'Snapshot restored.';
+  String get settingsDataSnapshotImported => '快照恢复完成。';
 
   @override
   String settingsDataSnapshotExportError(String error) {
-    return 'Snapshot export failed: $error';
+    return '快照导出失败：$error';
   }
 
   @override
   String settingsDataSnapshotImportError(String error) {
-    return 'Snapshot restore failed: $error';
+    return '快照恢复失败：$error';
   }
 
   @override
-  String get settingsDataSnapshotRestoreConfirmTitle => 'Restore full snapshot';
+  String get settingsDataSnapshotRestoreConfirmTitle => '恢复完整快照';
 
   @override
   String settingsDataSnapshotRestoreConfirmMessage(
@@ -3751,22 +3602,21 @@ class AppLocalizationsZh extends AppLocalizations {
     String createdAt,
     int bytes,
   ) {
-    return 'Restoring will replace the current runtime data.\nFormat version: $formatVersion\nFiles: $fileCount\nCreated: $createdAt\nSnapshot size: $bytes bytes';
+    return '恢复会替换当前 runtime 数据。\n格式版本：$formatVersion\n文件数量：$fileCount\n创建时间：$createdAt\n快照大小：$bytes 字节';
   }
 
   @override
-  String get settingsDataSnapshotRestoreConfirmAction => 'Restore';
+  String get settingsDataSnapshotRestoreConfirmAction => '确认恢复';
 
   @override
-  String get settingsDataImportOperit1Snapshot => 'Import from Operit1';
+  String get settingsDataImportOperit1Snapshot => '从 Operit1 导入';
 
   @override
-  String get settingsDataOperit1SnapshotImported =>
-      'Operit1 snapshot imported.';
+  String get settingsDataOperit1SnapshotImported => 'Operit1 快照导入完成。';
 
   @override
   String settingsDataOperit1SnapshotImportError(String error) {
-    return 'Operit1 snapshot import failed: $error';
+    return 'Operit1 快照导入失败：$error';
   }
 
   @override
@@ -3779,274 +3629,263 @@ class AppLocalizationsZh extends AppLocalizations {
     int fileCount,
     int byteCount,
   ) {
-    return 'Import this Operit1 snapshot into the current Runtime.\nFile: $fileName\nFormat version: $formatVersion\nChat model: $chatModelId\nChats: $chatCount; messages: $messageCount\nResource files: $fileCount\nSnapshot size: $byteCount bytes';
+    return '将导入 Operit1 快照到当前 Runtime。\n文件：$fileName\n格式版本：$formatVersion\n聊天模型：$chatModelId\n聊天：$chatCount 个，消息：$messageCount 条\n资源文件：$fileCount 个\n快照大小：$byteCount 字节';
   }
 
   @override
-  String get settingsDataOperit1SnapshotImportAction => 'Import';
+  String get settingsDataOperit1SnapshotImportAction => '开始导入';
 
   @override
-  String get settingsDataAdvancedBackupOptions => 'Advanced options';
+  String get settingsDataAdvancedBackupOptions => '高级选项';
 
   @override
-  String get settingsDataAdvancedBackupOptionsDescription =>
-      'Single-item JSON export and restore';
+  String get settingsDataAdvancedBackupOptionsDescription => '单项 JSON 导出与恢复';
 
   @override
-  String get settingsRuntimeNetworkControl => 'Network control';
+  String get settingsRuntimeNetworkControl => '网络控制';
 
   @override
-  String get settingsRuntimeNetworkControlDescription =>
-      'Roles, identities, device authority, and audit';
+  String get settingsRuntimeNetworkControlDescription => '角色、身份、设备权限与审计';
 
   @override
-  String get settingsRuntimeControlInitialize => 'Initialize control';
+  String get settingsRuntimeControlInitialize => '初始化控制';
 
   @override
-  String get settingsRuntimeControlRoles => 'Roles';
+  String get settingsRuntimeControlRoles => '角色';
 
   @override
-  String get settingsRuntimeControlIdentities => 'Identities';
+  String get settingsRuntimeControlIdentities => '身份';
 
   @override
-  String get settingsRuntimeControlAudit => 'Audit';
+  String get settingsRuntimeControlAudit => '审计';
 
   @override
-  String get settingsRuntimeControlAddRole => 'Add role';
+  String get settingsRuntimeControlAddRole => '添加角色';
 
   @override
-  String get settingsRuntimeControlGrantRole => 'Grant role';
+  String get settingsRuntimeControlGrantRole => '授予角色';
 
   @override
-  String get settingsRuntimeControlAddIdentity => 'Add identity';
+  String get settingsRuntimeControlAddIdentity => '添加身份';
 
   @override
-  String get settingsRuntimeControlBindDevice => 'Bind device';
+  String get settingsRuntimeControlBindDevice => '绑定设备';
 
   @override
-  String get settingsRuntimeControlRoleName => 'Role name';
+  String get settingsRuntimeControlRoleName => '角色名称';
 
   @override
-  String get settingsRuntimeControlCapabilities => 'What can this role do?';
+  String get settingsRuntimeControlCapabilities => '这个角色可以做什么';
 
   @override
-  String get settingsRuntimeControlManagedDevices =>
-      'Devices this role can manage (empty = all)';
+  String get settingsRuntimeControlManagedDevices => '这个角色可以管理哪些设备（不选表示全部）';
 
   @override
-  String get settingsRuntimeControlIdentityName => 'Identity name';
+  String get settingsRuntimeControlIdentityName => '身份名称';
 
   @override
-  String get settingsRuntimeControlDevice => 'Device';
+  String get settingsRuntimeControlDevice => '设备';
 
   @override
-  String get settingsRuntimeControlDeviceId => 'Device ID';
+  String get settingsRuntimeControlDeviceId => '设备 ID';
 
   @override
-  String get settingsRuntimeControlNoAudit => 'No control commands recorded';
+  String get settingsRuntimeControlNoAudit => '暂无控制命令记录';
 
   @override
-  String get settingsRuntimeControlNoBindings => 'No device bindings';
+  String get settingsRuntimeControlNoBindings => '暂无设备绑定';
 
   @override
-  String get settingsRuntimeControlGranted => 'Granted';
+  String get settingsRuntimeControlGranted => '已授予';
 
   @override
-  String get settingsRuntimeControlRevoked => 'Revoked';
+  String get settingsRuntimeControlRevoked => '已撤销';
 
   @override
-  String get settingsRuntimeControlRemoveDevice => 'Remove device';
+  String get settingsRuntimeControlRemoveDevice => '移除设备';
 
   @override
-  String get settingsRuntimeControlDisconnectDevice => 'Disconnect device';
+  String get settingsRuntimeControlDisconnectDevice => '断开设备';
 
   @override
-  String get settingsRuntimeControlRemoved => 'Removed';
+  String get settingsRuntimeControlRemoved => '已移除';
 
   @override
-  String get settingsRuntimeControlDisconnected => 'Disconnected';
+  String get settingsRuntimeControlDisconnected => '已断开';
 
   @override
-  String get settingsRuntimeControlAdmitDevice => 'Readmit device';
+  String get settingsRuntimeControlAdmitDevice => '重新接纳设备';
 
   @override
-  String get settingsRuntimeControlAllDevices => 'All devices';
+  String get settingsRuntimeControlAllDevices => '全部设备';
 
   @override
-  String get settingsRuntimeControlManages => 'Manages';
+  String get settingsRuntimeControlManages => '可管理';
 
   @override
-  String get settingsRuntimeControlCurrentIdentity => 'Current identity';
+  String get settingsRuntimeControlCurrentIdentity => '当前身份';
 
   @override
-  String get settingsRuntimeControlCurrentCapabilities =>
-      'Current capabilities';
+  String get settingsRuntimeControlCurrentCapabilities => '当前能力';
 
   @override
-  String get settingsRuntimeControlManageIdentities => 'Manage identities';
+  String get settingsRuntimeControlManageIdentities => '管理身份';
 
   @override
-  String get settingsRuntimeControlAssignIdentity => 'Set device identity';
+  String get settingsRuntimeControlAssignIdentity => '设置设备身份';
 
   @override
-  String get settingsRuntimeControlClearIdentity => 'Clear device identity';
+  String get settingsRuntimeControlClearIdentity => '清除设备身份';
 
   @override
-  String get settingsRuntimeControlIdentityDefinitions =>
-      'Identity definitions';
+  String get settingsRuntimeControlIdentityDefinitions => '身份定义';
 
   @override
-  String get settingsRuntimeControlIdentityAssignment => 'Identity assignment';
+  String get settingsRuntimeControlIdentityAssignment => '身份分配';
 
   @override
-  String get settingsRuntimeControlNoIdentity => 'No identity assigned';
+  String get settingsRuntimeControlNoIdentity => '未设置身份';
 
   @override
-  String get settingsRuntimeControlOnline => 'Online';
+  String get settingsRuntimeControlOnline => '在线';
 
   @override
-  String get settingsRuntimeControlOffline => 'Offline';
+  String get settingsRuntimeControlOffline => '离线';
 
   @override
-  String get settingsRuntimeControlCapabilityAll => 'Everything';
+  String get settingsRuntimeControlCapabilityAll => '全部权限';
 
   @override
-  String get settingsRuntimeControlCapabilityAuditRead => 'View audit history';
+  String get settingsRuntimeControlCapabilityAuditRead => '查看审计记录';
 
   @override
-  String get settingsRuntimeControlCapabilityNetworkRelay =>
-      'Relay network traffic';
+  String get settingsRuntimeControlCapabilityNetworkRelay => '中继网络流量';
 
   @override
-  String get settingsRuntimeControlCapabilityStorageProvide =>
-      'Provide storage';
+  String get settingsRuntimeControlCapabilityStorageProvide => '提供存储空间';
 
   @override
-  String get settingsRuntimeControlCapabilityRuntimeExecute => 'Run tasks';
+  String get settingsRuntimeControlCapabilityRuntimeExecute => '执行任务';
 
   @override
-  String get settingsRuntimeControlCapabilityNetworkUser => 'Use the network';
+  String get settingsRuntimeControlCapabilityNetworkUser => '使用网络';
 
   @override
-  String get settingsRuntimeControlCapabilityChatRead => 'Read chat history';
+  String get settingsRuntimeControlCapabilityChatRead => '读取聊天记录';
 
   @override
-  String get settingsRuntimeControlCapabilityViewDevices =>
-      'View devices and current identities';
+  String get settingsRuntimeControlCapabilityViewDevices => '查看设备与当前身份';
 
   @override
-  String get settingsRuntimeControlCapabilityApproval =>
-      'Approve authorizations';
+  String get settingsRuntimeControlCapabilityApproval => '审批授权';
 
   @override
   String chatRoutePermissionDenied(Object targetNodeId, Object capability) {
-    return 'Permission denied: target device $targetNodeId lacks the $capability capability.';
+    return '权限不足：目标设备 $targetNodeId 没有 $capability 权限。';
   }
 
   @override
-  String get settingsRuntimeControlRoleAdministrator => 'Administrator';
+  String get settingsRuntimeControlRoleAdministrator => '管理员';
 
   @override
-  String get settingsRuntimeControlRoleAuditor => 'Auditor';
+  String get settingsRuntimeControlRoleAuditor => '审计员';
 
   @override
-  String get settingsRuntimeControlRoleRelay => 'Relay node';
+  String get settingsRuntimeControlRoleRelay => '中继节点';
 
   @override
-  String get settingsRuntimeControlRoleStorage => 'Storage node';
+  String get settingsRuntimeControlRoleStorage => '存储节点';
 
   @override
-  String get settingsRuntimeControlRoleRunner => 'Task runner';
+  String get settingsRuntimeControlRoleRunner => '执行节点';
 
   @override
-  String get settingsRuntimeControlRoleUser => 'User';
+  String get settingsRuntimeControlRoleUser => '普通用户';
 
   @override
-  String get pluginLoadingTitle => 'Loading';
+  String get pluginLoadingTitle => '正在加载';
 
   @override
-  String get pluginLoadingSkip => 'Skip';
+  String get pluginLoadingSkip => '跳过';
 
   @override
-  String get pluginLoadingCollapse => 'Collapse';
+  String get pluginLoadingCollapse => '收起';
 
   @override
   String pluginLoadingStatus(int started, int total) {
-    return 'Started: $started / $total';
+    return '已启动: $started / $total';
   }
 
   @override
   String pluginLoadingCurrentTask(String task) {
-    return 'Loading $task';
+    return '正在加载 $task';
   }
 
   @override
-  String get pluginLoadingSuccess => 'Loaded';
+  String get pluginLoadingSuccess => '加载成功';
 
   @override
-  String get pluginLoadingFailed => 'Failed';
+  String get pluginLoadingFailed => '加载失败';
 
   @override
-  String get pluginLoadingWaiting => 'Waiting';
+  String get pluginLoadingWaiting => '等待中';
 
   @override
-  String get pluginLoadingKindPackage => 'Package';
+  String get pluginLoadingKindPackage => '包';
 
   @override
   String get pluginLoadingKindMcp => 'MCP';
 
   @override
-  String get pluginLoadingCompleteSuccess => 'All packages and plugins loaded';
+  String get pluginLoadingCompleteSuccess => '包和插件已全部加载';
 
   @override
-  String get pluginLoadingCompleteWithFailures =>
-      'Some packages or plugins failed to load';
+  String get pluginLoadingCompleteWithFailures => '部分包或插件加载失败';
 
   @override
-  String get pluginLoadingNoLogs => 'No logs';
+  String get pluginLoadingNoLogs => '没有日志';
 
   @override
-  String get chatRouteLocal => 'Local';
+  String get chatRouteLocal => '本地';
 
   @override
   String chatRouteRemote(String platform) {
-    return 'Remote $platform';
+    return '远程$platform';
   }
 
   @override
   String chatRouteRemoteOffline(String platform) {
-    return 'Remote $platform offline';
+    return '远程$platform 离线';
   }
 
   @override
-  String get chatRouteLoading => 'Loading execution device';
+  String get chatRouteLoading => '正在读取运行设备';
 
   @override
-  String get chatRouteUnknown => 'Execution device status unknown';
+  String get chatRouteUnknown => '运行设备状态未知';
 
   @override
   String edgePairingCodeTitle(String deviceName) {
-    return 'Enter the pairing code for $deviceName';
+    return '输入 $deviceName 的配对码';
   }
 
   @override
-  String get edgePairingCodeHint =>
-      'Read the six-digit code shown by the device.';
+  String get edgePairingCodeHint => '查看设备提供的 6 位配对码。';
 
   @override
-  String get chatMessageResponse => 'Response';
+  String get chatMessageResponse => '回复';
 
   @override
-  String get chatMessagePrompt => 'Prompt';
+  String get chatMessagePrompt => '提示词';
 
   @override
   String chatMessagePromptBy(String sender) {
-    return 'Prompt by $sender';
+    return '$sender 的提示词';
   }
 
   @override
   String chatMessageTokensTooltip(String input, String output) {
-    return 'Tokens: ↑$input · ↓$output';
+    return 'Token: ↑$input · ↓$output';
   }
 
   @override
@@ -4055,315 +3894,303 @@ class AppLocalizationsZh extends AppLocalizations {
     String cached,
     String output,
   ) {
-    return 'Tokens: ↑$input (cached: $cached) · ↓$output';
+    return 'Token: ↑$input（缓存: $cached）· ↓$output';
   }
 
   @override
   String chatMessageTimingTooltip(String wait, String output) {
-    return 'Timing: $wait wait · $output output';
+    return '耗时: $wait 等待 · $output 输出';
   }
 
   @override
   String chatMessageTimeTooltip(String time) {
-    return 'Time: $time';
+    return '时间: $time';
   }
 
   @override
-  String get chatMessageInfoDialogTitle => 'Message Details';
+  String get chatMessageInfoDialogTitle => '消息信息';
 
   @override
-  String get chatMessageDeleteConfirmTitle => 'Confirm delete';
+  String get chatMessageDeleteConfirmTitle => '确认删除';
 
   @override
-  String get chatMessageDeleteConfirmMessage => 'Delete this message?';
+  String get chatMessageDeleteConfirmMessage => '确定删除这条消息？';
 
   @override
   String chatMessageSender(String sender) {
-    return 'Sender: $sender';
+    return '发送者: $sender';
   }
 
   @override
   String chatMessageTimestamp(String timestamp) {
-    return 'Timestamp: $timestamp';
+    return '时间戳: $timestamp';
   }
 
   @override
   String chatMessageRole(String roleName) {
-    return 'Role: $roleName';
+    return '角色: $roleName';
   }
 
   @override
   String chatMessageModel(String modelName) {
-    return 'Model: $modelName';
+    return '模型: $modelName';
   }
 
   @override
   String chatMessageProvider(String provider) {
-    return 'Provider: $provider';
+    return '提供商: $provider';
   }
 
   @override
   String chatMessageTokensInput(String count) {
-    return 'Input tokens: $count';
+    return '输入 token: $count';
   }
 
   @override
   String chatMessageTokensCached(String count) {
-    return 'Cached input tokens: $count';
+    return '缓存输入 token: $count';
   }
 
   @override
   String chatMessageTokensOutput(String count) {
-    return 'Output tokens: $count';
+    return '输出 token: $count';
   }
 
   @override
   String chatMessageWaitDuration(String duration) {
-    return 'Wait duration: $duration';
+    return '等待耗时: $duration';
   }
 
   @override
   String chatMessageOutputDuration(String duration) {
-    return 'Output duration: $duration';
+    return '输出耗时: $duration';
   }
 
   @override
   String chatMessageTokenSpeed(String speed) {
-    return 'Token speed: $speed';
+    return 'Token 速率: $speed';
   }
 
   @override
   String chatMessageCacheShort(String count) {
-    return 'cache $count';
+    return '缓存 $count';
   }
 
   @override
   String chatMessageCacheHitRate(String rate) {
-    return 'Cache hit rate: $rate';
+    return '缓存命中率: $rate';
   }
 
   @override
-  String get settingsPeerToken => 'Connection token';
+  String get settingsPeerToken => '连接 token';
 
   @override
-  String get settingsPeerTokenHelp => 'Remote connections require this token.';
+  String get settingsPeerTokenHelp => '远程连接必须使用这个 token。';
 
   @override
-  String get settingsPeerCopyToken => 'Copy token';
+  String get settingsPeerCopyToken => '复制 token';
 
   @override
-  String get settingsPeerRefreshToken => 'Refresh token';
+  String get settingsPeerRefreshToken => '刷新 token';
 
   @override
-  String get settingsPeerTokenCopied => 'Connection token copied.';
+  String get settingsPeerTokenCopied => '连接 token 已复制。';
 
   @override
-  String get settingsPeerTokenRequired =>
-      'Enter or refresh a connection token.';
+  String get settingsPeerTokenRequired => '请输入或刷新连接 token。';
 
   @override
   String get settingsPeerPortModeHelp =>
-      'Fixed mode keeps the entered IP and port for tunnels and port forwarding. A busy fixed port reports an error without changing the address.';
+      '固定模式使用填写的 IP 和端口，适用于内网穿透和端口映射。固定端口被占用时会报错，不会改变监听地址。';
 
   @override
-  String get settingsPeerPortMode => 'Port allocation';
+  String get settingsPeerPortMode => '端口分配方式';
 
   @override
-  String get settingsPeerPortModeFixed => 'Fixed address and port';
+  String get settingsPeerPortModeFixed => '固定 IP 和端口';
 
   @override
-  String get settingsPeerPortModeAutomatic => 'Automatic port';
+  String get settingsPeerPortModeAutomatic => '自动分配端口';
 
   @override
-  String get settingsPeerAdvanced => 'Advanced options';
+  String get settingsPeerAdvanced => '高级选项';
 
   @override
   String get settingsPeerDiscoveryUnavailable =>
-      'This Host cannot advertise listeners on the local network. Direct connections remain available for supported transports.';
+      '当前 Host 不支持在局域网广播监听服务。支持的协议仍可通过地址直接连接。';
 
   @override
   String settingsPeerTransportUnavailable(String transport) {
-    return '$transport listening is not supported by this Host.';
+    return '当前 Host 不支持 $transport 监听。';
   }
 
   @override
   String get settingsPeerTransportHelp =>
-      'Listener transports (multiple selections). HTTP and WebSocket can share a port; TCP cannot share that port with them. Bluetooth requires platform support. Clear all selections and disable discovery to stop listening. Changing settings interrupts existing connections. Disabling discovery alone does not stop direct connections.';
+      '暴露方式（可多选）。HTTP 和 WebSocket 可共用端口；TCP 暂不能与它们共用端口。蓝牙需要平台支持。关闭发现并取消全部选择可停止监听。修改设置会中断现有连接；仅关闭发现不会关闭直接连接。';
 
   @override
-  String get settingsPeerBindAddress => 'Listen IP address';
+  String get settingsPeerBindAddress => '监听 IP 地址';
 
   @override
-  String get settingsPeerBindAddressHelp =>
-      'Example: 0.0.0.0 for LAN access; IPv6 addresses are also supported.';
+  String get settingsPeerBindAddressHelp => '例如 0.0.0.0，允许局域网访问；也支持 IPv6 地址。';
 
   @override
-  String get settingsPeerBindPort => 'Listen port';
+  String get settingsPeerBindPort => '监听端口';
 
   @override
-  String get settingsPeerBindPortHelp =>
-      'The port used by fixed listener mode.';
+  String get settingsPeerBindPortHelp => '固定模式使用此端口监听。';
 
   @override
-  String get settingsPeerBindPortAutomaticHelp =>
-      'Automatic mode selects a free port starting from this value.';
+  String get settingsPeerBindPortAutomaticHelp => '自动模式会从此端口开始选择空闲端口。';
 
   @override
-  String get settingsPeerDiscoveryNeedsTransport =>
-      'Select at least one transport before enabling discovery.';
+  String get settingsPeerDiscoveryNeedsTransport => '开启允许被搜索前，请至少选择一种暴露方式。';
 
   @override
   String get settingsPeerPortConflict =>
-      'TCP cannot currently share a listen port with HTTP/WebSocket. Select TCP or HTTP/WebSocket.';
+      '当前 TCP 不能与 HTTP/WebSocket 共用监听端口，请选择 TCP 或 HTTP/WebSocket。';
 
   @override
-  String get settingsPeerAddressRequired => 'Enter a listen IP address.';
+  String get settingsPeerAddressRequired => '请输入监听 IP 地址。';
 
   @override
-  String get settingsPeerPortRequired => 'Enter a port from 1 to 65535.';
+  String get settingsPeerPortRequired => '请输入 1 到 65535 之间的端口。';
 
   @override
-  String get settingsPeerApplied => 'Listener settings applied.';
+  String get settingsPeerApplied => '监听设置已生效。';
 
   @override
   String settingsPeerRestoreFailed(String error) {
-    return 'Failed to restore previous listeners: $error';
+    return '恢复原监听配置失败：$error';
   }
 
   @override
   String get settingsPeerCodeInstructions =>
-      'Enter this code on the other device to finish pairing. It expires in five minutes. Do not share it with strangers.';
+      '在另一台设备上输入此验证码以完成配对。验证码五分钟内有效，请勿提供给陌生人。';
 
   @override
-  String get settingsPeerSixDigitCode =>
-      'Enter the six-digit pairing code shown on the receiving device.';
+  String get settingsPeerSixDigitCode => '请输入接收设备上显示的六位配对码。';
 
   @override
-  String get spaceJoinRequests => 'Space join requests';
+  String get spaceJoinRequests => '空间加入申请';
 
   @override
   String spaceJoinReviewer(String name) {
-    return 'Reviewer: $name';
+    return '审批人：$name';
   }
 
   @override
-  String get spaceJoinWaitingReviewer =>
-      'Waiting for an authorized reviewer to come online';
+  String get spaceJoinWaitingReviewer => '等待有审批权限的设备上线';
 
   @override
-  String get spaceJoinPending => 'Waiting for approval';
+  String get spaceJoinPending => '等待批准';
 
   @override
-  String get spaceJoinApproving => 'Decision is being processed';
+  String get spaceJoinApproving => '正在处理审批结果';
 
   @override
-  String get spaceJoinApproved => 'Approved · completing join';
+  String get spaceJoinApproved => '已批准，正在完成加入';
 
   @override
-  String get spaceJoinJoined => 'Joined';
+  String get spaceJoinJoined => '已加入';
 
   @override
-  String get spaceJoinRejected => 'Rejected';
+  String get spaceJoinRejected => '已拒绝';
 
   @override
-  String get spaceJoinCancelled => 'Cancelled';
+  String get spaceJoinCancelled => '已取消';
 
   @override
-  String get spaceJoinExpired => 'Expired';
+  String get spaceJoinExpired => '已过期';
 
   @override
-  String get spaceJoinSubmit => 'Submit request';
+  String get spaceJoinSubmit => '提交申请';
 
   @override
-  String get spaceJoinApprovalTitle => 'Space join request';
+  String get spaceJoinApprovalTitle => '空间加入申请';
 
   @override
   String spaceJoinApprovalDescription(String name, String space) {
-    return '$name wants to join “$space”. No Space data is shared before approval.';
+    return '$name 申请加入「$space」。批准前不会共享空间数据。';
   }
 
   @override
-  String get spaceJoinApprove => 'Approve';
+  String get spaceJoinApprove => '批准';
 
   @override
-  String get spaceJoinReject => 'Reject';
+  String get spaceJoinReject => '拒绝';
 
   @override
-  String get spaceJoinRetry => 'Submit again';
+  String get spaceJoinRetry => '重新申请';
 
   @override
-  String get spaceJoinKeepWaiting => 'Keep waiting in background';
+  String get spaceJoinKeepWaiting => '后台等待';
 
   @override
-  String get spaceJoinCancel => 'Cancel request';
+  String get spaceJoinCancel => '取消申请';
 
   @override
-  String get spaceJoinRefreshingFailed =>
-      'Cannot reach the device right now. The request is saved and will retry.';
+  String get spaceJoinRefreshingFailed => '暂时无法联系设备。申请已保留，会继续重试。';
 
   @override
-  String get spaceJoinAssignmentChanged =>
-      'This request has been transferred or already processed.';
+  String get spaceJoinAssignmentChanged => '该申请已转交或已处理。';
 
   @override
-  String get spaceJoinProgressTitle => 'Space join request';
+  String get spaceJoinProgressTitle => '申请加入空间';
 
   @override
-  String get spaceJoinSending => 'Submitting request…';
+  String get spaceJoinSending => '正在提交申请…';
 
   @override
-  String get spaceJoinSubmitFailed =>
-      'Could not submit the request. Check the connection and try again.';
+  String get spaceJoinSubmitFailed => '申请暂时未能提交，请检查连接后重试。';
 
   @override
-  String get spaceJoinNoDataYet =>
-      'Your current Space remains unchanged until approval. You can close this window and keep waiting in the background.';
+  String get spaceJoinNoDataYet => '批准前，你当前的空间不会改变。关闭窗口后，申请仍会在后台等待。';
 
   @override
-  String get deviceSpaceAddDevice => 'Add device';
+  String get deviceSpaceAddDevice => '添加设备';
 
   @override
-  String get deviceSpaceDevices => 'Devices';
+  String get deviceSpaceDevices => '设备';
 
   @override
-  String get deviceSpaceMore => 'More device actions';
+  String get deviceSpaceMore => '更多设备操作';
 
   @override
-  String get deviceSpaceConnectionSettings => 'Connection settings';
+  String get deviceSpaceConnectionSettings => '连接设置';
 
   @override
-  String get deviceSpaceViewRequest => 'View request';
+  String get deviceSpaceViewRequest => '查看申请';
 
   @override
-  String get devicePickerNearby => 'Nearby devices';
+  String get devicePickerNearby => '附近设备';
 
   @override
-  String get devicePickerEmpty => 'No nearby devices found';
+  String get devicePickerEmpty => '暂未发现附近设备';
 
   @override
-  String get devicePickerHint =>
-      'Connect both devices to the same network and enable discovery on the other device.';
+  String get devicePickerHint => '请让两台设备连接同一网络，并在对方设备开启允许被搜索。';
 
   @override
-  String get devicePickerManual => 'Connect using an address';
+  String get devicePickerManual => '通过地址连接';
 
   @override
-  String get deviceSpaceMyRequests => 'My requests';
+  String get deviceSpaceMyRequests => '我发出的';
 
   @override
-  String get deviceSpaceMyReviews => 'Awaiting my review';
+  String get deviceSpaceMyReviews => '待我审批';
 
   @override
-  String get deviceSpaceNoRequests => 'No requests';
+  String get deviceSpaceNoRequests => '暂无申请';
 
   @override
-  String get workspaceUndo => 'Undo';
+  String get workspaceUndo => '撤销';
 
   @override
-  String get workspaceRedo => 'Redo';
+  String get workspaceRedo => '重做';
 
   @override
   String workspaceInsertSymbol(String symbol) {
-    return 'Insert $symbol';
+    return '插入 $symbol';
   }
 }
