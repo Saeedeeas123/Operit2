@@ -216,8 +216,14 @@ jobs:
           }
           $snapBefore = Get-ChildItem -Path apps/flutter/app -Recurse -File -Include *.dart | ForEach-Object { "$($_.FullName) $((Get-FileHash $_.FullName -Algorithm MD5).Hash)" }
           $start = Get-Date
-          python tools/build_scripts/build_flutter_android.py --build-name $version[0].Groups[1].Value --build-number $version[0].Groups[2].Value
-          $code = $LASTEXITCODE
+          $code = 1
+          for ($attempt = 1; $attempt -le 2; $attempt++) {
+            Write-Host "=== build attempt $attempt ==="
+            python tools/build_scripts/build_flutter_android.py --build-name $version[0].Groups[1].Value --build-number $version[0].Groups[2].Value
+            $code = $LASTEXITCODE
+            if ($code -eq 0) { break }
+            Write-Host "=== attempt $attempt exited with $code ==="
+          }
           if ($code -ne 0) {
             Write-Host "=== DIAG dart content changed during the build ==="
             $snapAfter = Get-ChildItem -Path apps/flutter/app -Recurse -File -Include *.dart | ForEach-Object { "$($_.FullName) $((Get-FileHash $_.FullName -Algorithm MD5).Hash)" }
