@@ -29,12 +29,12 @@
         "en": "Search using Zhipu Web Search API"
       },
       "parameters": [
-        { "name": "query", "description": { "zh": "搜索关键词", "en": "Search query" }, "type": "string", "required": true },
-        { "name": "api_key", "description": { "zh": "智谱 API Key（可选，不传则读取环境变量）", "en": "Zhipu API Key" }, "type": "string", "required": false },
-        { "name": "engine", "description": { "zh": "搜索引擎：search_std/search_pro/search_pro_sogou/search_pro_quark", "en": "Search engine" }, "type": "string", "required": false },
-        { "name": "count", "description": { "zh": "返回结果数 (1-50)，默认 10", "en": "Result count (1-50)" }, "type": "number", "required": false },
-        { "name": "recency", "description": { "zh": "时间范围：oneDay/oneWeek/oneMonth/oneYear/noLimit", "en": "Time range" }, "type": "string", "required": false },
-        { "name": "content_size", "description": { "zh": "内容长度：medium/high", "en": "Content size" }, "type": "string", "required": false }
+        { "name": "query", "description": { "zh": "Search query", "en": "Search query" }, "type": "string", "required": true },
+        { "name": "api_key", "description": { "zh": "Zhipu API Key", "en": "Zhipu API Key" }, "type": "string", "required": false },
+        { "name": "engine", "description": { "zh": "Search engine", "en": "Search engine" }, "type": "string", "required": false },
+        { "name": "count", "description": { "zh": "Result count (1-50)", "en": "Result count (1-50)" }, "type": "number", "required": false },
+        { "name": "recency", "description": { "zh": "Time range", "en": "Time range" }, "type": "string", "required": false },
+        { "name": "content_size", "description": { "zh": "Content size", "en": "Content size" }, "type": "string", "required": false }
       ]
     },
     {

@@ -920,12 +920,12 @@ exports.windows_exec = WindowsControl.windows_exec;
 "env": [
     {
         "name": "API_KEY",
-        "description": { "zh": "API 密钥", "en": "API Key" },
+        "description": { "zh": "API Key", "en": "API Key" },
         "required": true
     },
     {
         "name": "TIMEOUT",
-        "description": { "zh": "超时时间", "en": "Timeout" },
+        "description": { "zh": "Timeout", "en": "Timeout" },
         "required": false,
         "defaultValue": "30000"
     }

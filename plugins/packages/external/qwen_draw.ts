@@ -45,17 +45,17 @@
         "en": "Generate an image via DashScope text-to-image API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "绘图提示词（英文或中文皆可）", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
-        { "name": "model", "description": { "zh": "模型名称（可选；不传则使用环境变量 QWEN_IMAGE_MODEL，再不行使用默认值）", "en": "Model name (optional; falls back to env QWEN_IMAGE_MODEL, then default)" }, "type": "string", "required": false },
-        { "name": "size", "description": { "zh": "输出图像分辨率，如 '1664*928' 或 '1024x1024'（可选）", "en": "Output image resolution, e.g. '1664*928' or '1024x1024' (optional)" }, "type": "string", "required": false },
-        { "name": "n", "description": { "zh": "生成图片数量（可选，默认 1）", "en": "Number of images (optional; default 1)" }, "type": "number", "required": false },
-        { "name": "negative_prompt", "description": { "zh": "负面提示词（可选）", "en": "Negative prompt (optional)" }, "type": "string", "required": false },
-        { "name": "prompt_extend", "description": { "zh": "是否开启 prompt 智能改写（可选，默认 true）", "en": "Enable prompt extension (optional; default true)" }, "type": "boolean", "required": false },
-        { "name": "watermark", "description": { "zh": "是否加水印（可选，默认 false）", "en": "Enable watermark (optional; default false)" }, "type": "boolean", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义保存到本地的文件名（不含路径和扩展名）", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
-        { "name": "api_base_url", "description": { "zh": "DashScope API Base URL（不传则取环境变量 DASHSCOPE_API_BASE_URL 或默认 https://dashscope.aliyuncs.com ）", "en": "DashScope API base URL (optional; falls back to env DASHSCOPE_API_BASE_URL or https://dashscope.aliyuncs.com)" }, "type": "string", "required": false },
-        { "name": "poll_interval_ms", "description": { "zh": "轮询间隔（毫秒），默认 2000", "en": "Polling interval (milliseconds), default 2000" }, "type": "number", "required": false },
-        { "name": "max_wait_time_ms", "description": { "zh": "最长等待时间（毫秒），默认 10 分钟", "en": "Max wait time (milliseconds), default 10 minutes" }, "type": "number", "required": false }
+        { "name": "prompt", "description": { "zh": "Prompt for image generation (Chinese or English)", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
+        { "name": "model", "description": { "zh": "Model name (optional; falls back to env QWEN_IMAGE_MODEL, then default)", "en": "Model name (optional; falls back to env QWEN_IMAGE_MODEL, then default)" }, "type": "string", "required": false },
+        { "name": "size", "description": { "zh": "Output image resolution, e.g. '1664*928' or '1024x1024' (optional)", "en": "Output image resolution, e.g. '1664*928' or '1024x1024' (optional)" }, "type": "string", "required": false },
+        { "name": "n", "description": { "zh": "Number of images (optional; default 1)", "en": "Number of images (optional; default 1)" }, "type": "number", "required": false },
+        { "name": "negative_prompt", "description": { "zh": "Negative prompt (optional)", "en": "Negative prompt (optional)" }, "type": "string", "required": false },
+        { "name": "prompt_extend", "description": { "zh": "Enable prompt extension (optional; default true)", "en": "Enable prompt extension (optional; default true)" }, "type": "boolean", "required": false },
+        { "name": "watermark", "description": { "zh": "Enable watermark (optional; default false)", "en": "Enable watermark (optional; default false)" }, "type": "boolean", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom output file name (without path or extension)", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
+        { "name": "api_base_url", "description": { "zh": "DashScope API base URL (optional; falls back to env DASHSCOPE_API_BASE_URL or https://dashscope.aliyuncs.com)", "en": "DashScope API base URL (optional; falls back to env DASHSCOPE_API_BASE_URL or https://dashscope.aliyuncs.com)" }, "type": "string", "required": false },
+        { "name": "poll_interval_ms", "description": { "zh": "Polling interval (milliseconds), default 2000", "en": "Polling interval (milliseconds), default 2000" }, "type": "number", "required": false },
+        { "name": "max_wait_time_ms", "description": { "zh": "Max wait time (milliseconds), default 10 minutes", "en": "Max wait time (milliseconds), default 10 minutes" }, "type": "number", "required": false }
       ]
     }
   ]

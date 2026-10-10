@@ -44,10 +44,10 @@
         "en": "Generate an image via the xAI image generation API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "绘图提示词（英文或中文皆可）", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
-        { "name": "model", "description": { "zh": "xAI 图像模型名称；不传则优先取 XAI_IMAGE_MODEL，再用默认值 grok-2-image-1212", "en": "xAI image model name; falls back to XAI_IMAGE_MODEL, then grok-2-image-1212" }, "type": "string", "required": false },
-        { "name": "size", "description": { "zh": "图片尺寸，例如 1024x1024（可选）", "en": "Image size, e.g. 1024x1024 (optional)" }, "type": "string", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义保存到本地的文件名（不含路径和扩展名）", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false }
+        { "name": "prompt", "description": { "zh": "Prompt for image generation (Chinese or English)", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
+        { "name": "model", "description": { "zh": "xAI image model name; falls back to XAI_IMAGE_MODEL, then grok-2-image-1212", "en": "xAI image model name; falls back to XAI_IMAGE_MODEL, then grok-2-image-1212" }, "type": "string", "required": false },
+        { "name": "size", "description": { "zh": "Image size, e.g. 1024x1024 (optional)", "en": "Image size, e.g. 1024x1024 (optional)" }, "type": "string", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom output file name (without path or extension)", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false }
       ]
     },
     {
@@ -57,17 +57,17 @@
         "en": "Generate a video with the official xAI video API. Supports text-to-video, image-to-video, and video editing. Polls until completion, downloads locally, and returns local video link hints."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "视频提示词", "en": "Video prompt" }, "type": "string", "required": true },
-        { "name": "model", "description": { "zh": "视频模型；不传则优先取 XAI_VIDEO_MODEL，再用默认值 grok-imagine-video", "en": "Video model; falls back to XAI_VIDEO_MODEL, then grok-imagine-video" }, "type": "string", "required": false },
-        { "name": "aspect_ratio", "description": { "zh": "输出比例，可选 1:1、16:9、9:16、4:3、3:4、3:2、2:3；默认 16:9；视频编辑模式不支持", "en": "Output aspect ratio. Supported: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3. Defaults to 16:9; not supported for video editing." }, "type": "string", "required": false },
-        { "name": "resolution", "description": { "zh": "输出分辨率，仅支持 480p 或 720p；默认 480p；视频编辑模式不支持", "en": "Output resolution, only 480p or 720p. Defaults to 480p; not supported for video editing." }, "type": "string", "required": false },
-        { "name": "duration", "description": { "zh": "输出时长，支持 1-15 秒；默认 5；视频编辑模式不支持", "en": "Output duration from 1 to 15 seconds. Defaults to 5; not supported for video editing." }, "type": "number", "required": false },
-        { "name": "image_url", "description": { "zh": "图生视频输入图 URL（可选）", "en": "Input image URL for image-to-video (optional)" }, "type": "string", "required": false },
-        { "name": "image_path", "description": { "zh": "图生视频输入图本地路径（可选，会转成 data URL）", "en": "Local input image path for image-to-video (optional; converted to a data URL)" }, "type": "string", "required": false },
-        { "name": "video_url", "description": { "zh": "视频编辑输入视频 URL（可选）", "en": "Input video URL for video editing (optional)" }, "type": "string", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义保存到本地的文件名（不含路径和扩展名）", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
-        { "name": "poll_interval_ms", "description": { "zh": "轮询间隔毫秒数，默认 5000", "en": "Polling interval in milliseconds, default 5000" }, "type": "number", "required": false },
-        { "name": "max_wait_time_ms", "description": { "zh": "最大等待毫秒数，默认 600000", "en": "Maximum wait time in milliseconds, default 600000" }, "type": "number", "required": false }
+        { "name": "prompt", "description": { "zh": "Video prompt", "en": "Video prompt" }, "type": "string", "required": true },
+        { "name": "model", "description": { "zh": "Video model; falls back to XAI_VIDEO_MODEL, then grok-imagine-video", "en": "Video model; falls back to XAI_VIDEO_MODEL, then grok-imagine-video" }, "type": "string", "required": false },
+        { "name": "aspect_ratio", "description": { "zh": "Output aspect ratio. Supported: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3. Defaults to 16:9; not supported for video editing.", "en": "Output aspect ratio. Supported: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3. Defaults to 16:9; not supported for video editing." }, "type": "string", "required": false },
+        { "name": "resolution", "description": { "zh": "Output resolution, only 480p or 720p. Defaults to 480p; not supported for video editing.", "en": "Output resolution, only 480p or 720p. Defaults to 480p; not supported for video editing." }, "type": "string", "required": false },
+        { "name": "duration", "description": { "zh": "Output duration from 1 to 15 seconds. Defaults to 5; not supported for video editing.", "en": "Output duration from 1 to 15 seconds. Defaults to 5; not supported for video editing." }, "type": "number", "required": false },
+        { "name": "image_url", "description": { "zh": "Input image URL for image-to-video (optional)", "en": "Input image URL for image-to-video (optional)" }, "type": "string", "required": false },
+        { "name": "image_path", "description": { "zh": "Local input image path for image-to-video (optional; converted to a data URL)", "en": "Local input image path for image-to-video (optional; converted to a data URL)" }, "type": "string", "required": false },
+        { "name": "video_url", "description": { "zh": "Input video URL for video editing (optional)", "en": "Input video URL for video editing (optional)" }, "type": "string", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom output file name (without path or extension)", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
+        { "name": "poll_interval_ms", "description": { "zh": "Polling interval in milliseconds, default 5000", "en": "Polling interval in milliseconds, default 5000" }, "type": "number", "required": false },
+        { "name": "max_wait_time_ms", "description": { "zh": "Maximum wait time in milliseconds, default 600000", "en": "Maximum wait time in milliseconds, default 600000" }, "type": "number", "required": false }
       ]
     }
   ]

@@ -15,35 +15,35 @@
     "tools": [
         {
             "name": "http_request",
-            "description": { "zh": "发送 HTTP 请求。", "en": "Send an HTTP request." },
+            "description": { "zh": "Send an HTTP request.", "en": "Send an HTTP request." },
             "parameters": [
-                { "name": "url", "description": { "zh": "请求 URL", "en": "Request URL" }, "type": "string", "required": true },
-                { "name": "method", "description": { "zh": "请求方法：GET/POST/PUT/DELETE", "en": "Method: GET/POST/PUT/DELETE" }, "type": "string", "required": true },
-                { "name": "headers", "description": { "zh": "可选：headers（JSON 对象字符串）", "en": "Optional: headers (JSON object string)" }, "type": "string", "required": false },
-                { "name": "body", "description": { "zh": "可选：请求体（字符串）", "en": "Optional: body (string)" }, "type": "string", "required": false },
-                { "name": "body_type", "description": { "zh": "可选：json/form/text/xml", "en": "Optional: json/form/text/xml" }, "type": "string", "required": false },
-                { "name": "ignore_ssl", "description": { "zh": "可选：是否忽略 HTTPS 证书校验（true/false）", "en": "Optional: ignore HTTPS certificate verification (true/false)" }, "type": "boolean", "required": false }
+                { "name": "url", "description": { "zh": "Request URL", "en": "Request URL" }, "type": "string", "required": true },
+                { "name": "method", "description": { "zh": "Method: GET/POST/PUT/DELETE", "en": "Method: GET/POST/PUT/DELETE" }, "type": "string", "required": true },
+                { "name": "headers", "description": { "zh": "Optional: headers (JSON object string)", "en": "Optional: headers (JSON object string)" }, "type": "string", "required": false },
+                { "name": "body", "description": { "zh": "Optional: body (string)", "en": "Optional: body (string)" }, "type": "string", "required": false },
+                { "name": "body_type", "description": { "zh": "Optional: json/form/text/xml", "en": "Optional: json/form/text/xml" }, "type": "string", "required": false },
+                { "name": "ignore_ssl", "description": { "zh": "Optional: ignore HTTPS certificate verification (true/false)", "en": "Optional: ignore HTTPS certificate verification (true/false)" }, "type": "boolean", "required": false }
             ]
         },
         {
             "name": "multipart_request",
-            "description": { "zh": "上传文件（multipart）。", "en": "Upload files (multipart)." },
+            "description": { "zh": "Upload files (multipart).", "en": "Upload files (multipart)." },
             "parameters": [
-                { "name": "url", "description": { "zh": "请求 URL", "en": "Request URL" }, "type": "string", "required": true },
-                { "name": "method", "description": { "zh": "请求方法：POST/PUT", "en": "Method: POST/PUT" }, "type": "string", "required": true },
-                { "name": "headers", "description": { "zh": "可选：headers（JSON 对象字符串）", "en": "Optional: headers (JSON object string)" }, "type": "string", "required": false },
-                { "name": "form_data", "description": { "zh": "可选：form_data（字符串）", "en": "Optional: form_data (string)" }, "type": "string", "required": false },
-                { "name": "files", "description": { "zh": "可选：files（JSON 数组字符串）", "en": "Optional: files (JSON array string)" }, "type": "string", "required": false },
-                { "name": "ignore_ssl", "description": { "zh": "可选：是否忽略 HTTPS 证书校验（true/false）", "en": "Optional: ignore HTTPS certificate verification (true/false)" }, "type": "boolean", "required": false }
+                { "name": "url", "description": { "zh": "Request URL", "en": "Request URL" }, "type": "string", "required": true },
+                { "name": "method", "description": { "zh": "Method: POST/PUT", "en": "Method: POST/PUT" }, "type": "string", "required": true },
+                { "name": "headers", "description": { "zh": "Optional: headers (JSON object string)", "en": "Optional: headers (JSON object string)" }, "type": "string", "required": false },
+                { "name": "form_data", "description": { "zh": "Optional: form_data (string)", "en": "Optional: form_data (string)" }, "type": "string", "required": false },
+                { "name": "files", "description": { "zh": "Optional: files (JSON array string)", "en": "Optional: files (JSON array string)" }, "type": "string", "required": false },
+                { "name": "ignore_ssl", "description": { "zh": "Optional: ignore HTTPS certificate verification (true/false)", "en": "Optional: ignore HTTPS certificate verification (true/false)" }, "type": "boolean", "required": false }
             ]
         },
         {
             "name": "manage_cookies",
-            "description": { "zh": "管理 Cookies。", "en": "Manage cookies." },
+            "description": { "zh": "Manage cookies.", "en": "Manage cookies." },
             "parameters": [
-                { "name": "action", "description": { "zh": "操作：get/set/clear", "en": "Action: get/set/clear" }, "type": "string", "required": true },
-                { "name": "domain", "description": { "zh": "可选：域名", "en": "Optional: domain" }, "type": "string", "required": false },
-                { "name": "cookies", "description": { "zh": "可选：cookies（字符串）", "en": "Optional: cookies (string)" }, "type": "string", "required": false }
+                { "name": "action", "description": { "zh": "Action: get/set/clear", "en": "Action: get/set/clear" }, "type": "string", "required": true },
+                { "name": "domain", "description": { "zh": "Optional: domain", "en": "Optional: domain" }, "type": "string", "required": false },
+                { "name": "cookies", "description": { "zh": "Optional: cookies (string)", "en": "Optional: cookies (string)" }, "type": "string", "required": false }
             ]
         }
     ]

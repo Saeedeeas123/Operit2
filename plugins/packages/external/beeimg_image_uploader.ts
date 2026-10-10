@@ -22,9 +22,9 @@
                 "en": "Upload a local image to BeeIMG via multipart upload and return the image URL."
             },
             "parameters": [
-                { "name": "file_path", "description": { "zh": "要上传的图片文件绝对路径 (建议使用 /sdcard/ 开头的完整路径)。", "en": "Absolute path of the image file to upload (recommended: full path starting with /sdcard/)." }, "type": "string", "required": true },
-                { "name": "album_id", "description": { "zh": "相册ID (可选)。", "en": "Album ID (optional)." }, "type": "string", "required": false },
-                { "name": "privacy", "description": { "zh": "隐私设置，'public' 或 'private' (可选)。", "en": "Privacy setting: 'public' or 'private' (optional)." }, "type": "string", "required": false }
+                { "name": "file_path", "description": { "zh": "Absolute path of the image file to upload (recommended: full path starting with /sdcard/).", "en": "Absolute path of the image file to upload (recommended: full path starting with /sdcard/)." }, "type": "string", "required": true },
+                { "name": "album_id", "description": { "zh": "Album ID (optional).", "en": "Album ID (optional)." }, "type": "string", "required": false },
+                { "name": "privacy", "description": { "zh": "Privacy setting: 'public' or 'private' (optional).", "en": "Privacy setting: 'public' or 'private' (optional)." }, "type": "string", "required": false }
             ]
         }
     ]

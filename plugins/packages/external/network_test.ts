@@ -8,21 +8,21 @@ METADATA
         "en": "Network Test"
     },
     "category": "Network",
-    "description": { "zh": "网络测试工具集合，提供基于OkHttp3的网络请求功能，包括GET、POST、PUT、DELETE请求方法，以及请求超时设置、重定向控制和拦截器管理。支持多种数据格式，便于测试API接口和网络连接性能。", "en": "Network testing tools based on OkHttp3. Provides GET/POST/PUT/DELETE requests, timeout settings, redirect control, and interceptor management. Supports multiple data formats for API testing and connectivity diagnostics." },
+    "description": { "zh": "Network testing tools based on OkHttp3. Provides GET/POST/PUT/DELETE requests, timeout settings, redirect control, and interceptor management. Supports multiple data formats for API testing and connectivity diagnostics.", "en": "Network testing tools based on OkHttp3. Provides GET/POST/PUT/DELETE requests, timeout settings, redirect control, and interceptor management. Supports multiple data formats for API testing and connectivity diagnostics." },
     "tools": [
         {
             "name": "http_get",
-            "description": { "zh": "发送HTTP GET请求", "en": "Send an HTTP GET request." },
+            "description": { "zh": "Send an HTTP GET request.", "en": "Send an HTTP GET request." },
             "parameters": [
                 {
                     "name": "url",
-                    "description": { "zh": "请求URL", "en": "Request URL." },
+                    "description": { "zh": "Request URL.", "en": "Request URL." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "headers",
-                    "description": { "zh": "请求头", "en": "Request headers." },
+                    "description": { "zh": "Request headers.", "en": "Request headers." },
                     "type": "object",
                     "required": false
                 }
@@ -30,29 +30,29 @@ METADATA
         },
         {
             "name": "http_post",
-            "description": { "zh": "发送HTTP POST请求", "en": "Send an HTTP POST request." },
+            "description": { "zh": "Send an HTTP POST request.", "en": "Send an HTTP POST request." },
             "parameters": [
                 {
                     "name": "url",
-                    "description": { "zh": "请求URL", "en": "Request URL." },
+                    "description": { "zh": "Request URL.", "en": "Request URL." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "body",
-                    "description": { "zh": "请求体", "en": "Request body." },
+                    "description": { "zh": "Request body.", "en": "Request body." },
                     "type": "object",
                     "required": true
                 },
                 {
                     "name": "headers",
-                    "description": { "zh": "请求头", "en": "Request headers." },
+                    "description": { "zh": "Request headers.", "en": "Request headers." },
                     "type": "object",
                     "required": false
                 },
                 {
                     "name": "body_type",
-                    "description": { "zh": "请求体类型，支持'text'、'json'、'form'、'multipart'", "en": "Body type: 'text', 'json', 'form', or 'multipart'." },
+                    "description": { "zh": "Body type: 'text', 'json', 'form', or 'multipart'.", "en": "Body type: 'text', 'json', 'form', or 'multipart'." },
                     "type": "string",
                     "required": false
                 }
@@ -60,29 +60,29 @@ METADATA
         },
         {
             "name": "http_put",
-            "description": { "zh": "发送HTTP PUT请求", "en": "Send an HTTP PUT request." },
+            "description": { "zh": "Send an HTTP PUT request.", "en": "Send an HTTP PUT request." },
             "parameters": [
                 {
                     "name": "url",
-                    "description": { "zh": "请求URL", "en": "Request URL." },
+                    "description": { "zh": "Request URL.", "en": "Request URL." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "body",
-                    "description": { "zh": "请求体", "en": "Request body." },
+                    "description": { "zh": "Request body.", "en": "Request body." },
                     "type": "object",
                     "required": true
                 },
                 {
                     "name": "headers",
-                    "description": { "zh": "请求头", "en": "Request headers." },
+                    "description": { "zh": "Request headers.", "en": "Request headers." },
                     "type": "object",
                     "required": false
                 },
                 {
                     "name": "body_type",
-                    "description": { "zh": "请求体类型，支持'text'、'json'、'form'、'multipart'", "en": "Body type: 'text', 'json', 'form', or 'multipart'." },
+                    "description": { "zh": "Body type: 'text', 'json', 'form', or 'multipart'.", "en": "Body type: 'text', 'json', 'form', or 'multipart'." },
                     "type": "string",
                     "required": false
                 }
@@ -90,17 +90,17 @@ METADATA
         },
         {
             "name": "http_delete",
-            "description": { "zh": "发送HTTP DELETE请求", "en": "Send an HTTP DELETE request." },
+            "description": { "zh": "Send an HTTP DELETE request.", "en": "Send an HTTP DELETE request." },
             "parameters": [
                 {
                     "name": "url",
-                    "description": { "zh": "请求URL", "en": "Request URL." },
+                    "description": { "zh": "Request URL.", "en": "Request URL." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "headers",
-                    "description": { "zh": "请求头", "en": "Request headers." },
+                    "description": { "zh": "Request headers.", "en": "Request headers." },
                     "type": "object",
                     "required": false
                 }
@@ -108,35 +108,35 @@ METADATA
         },
         {
             "name": "config_client",
-            "description": { "zh": "配置HTTP客户端", "en": "Configure the HTTP client." },
+            "description": { "zh": "Configure the HTTP client.", "en": "Configure the HTTP client." },
             "parameters": [
                 {
                     "name": "connect_timeout",
-                    "description": { "zh": "连接超时时间(毫秒)", "en": "Connection timeout (milliseconds)." },
+                    "description": { "zh": "Connection timeout (milliseconds).", "en": "Connection timeout (milliseconds)." },
                     "type": "number",
                     "required": false
                 },
                 {
                     "name": "read_timeout",
-                    "description": { "zh": "读取超时时间(毫秒)", "en": "Read timeout (milliseconds)." },
+                    "description": { "zh": "Read timeout (milliseconds).", "en": "Read timeout (milliseconds)." },
                     "type": "number",
                     "required": false
                 },
                 {
                     "name": "write_timeout",
-                    "description": { "zh": "写入超时时间(毫秒)", "en": "Write timeout (milliseconds)." },
+                    "description": { "zh": "Write timeout (milliseconds).", "en": "Write timeout (milliseconds)." },
                     "type": "number",
                     "required": false
                 },
                 {
                     "name": "follow_redirects",
-                    "description": { "zh": "是否跟随重定向", "en": "Whether to follow redirects." },
+                    "description": { "zh": "Whether to follow redirects.", "en": "Whether to follow redirects." },
                     "type": "boolean",
                     "required": false
                 },
                 {
                     "name": "retry_on_failure",
-                    "description": { "zh": "是否在连接失败时重试", "en": "Whether to retry on connection failure." },
+                    "description": { "zh": "Whether to retry on connection failure.", "en": "Whether to retry on connection failure." },
                     "type": "boolean",
                     "required": false
                 }
@@ -144,17 +144,17 @@ METADATA
         },
         {
             "name": "ping_test",
-            "description": { "zh": "测试与指定URL的网络连接", "en": "Test network connectivity to a specified URL." },
+            "description": { "zh": "Test network connectivity to a specified URL.", "en": "Test network connectivity to a specified URL." },
             "parameters": [
                 {
                     "name": "url",
-                    "description": { "zh": "要测试的URL", "en": "URL to test." },
+                    "description": { "zh": "URL to test.", "en": "URL to test." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "count",
-                    "description": { "zh": "测试次数", "en": "Number of test attempts." },
+                    "description": { "zh": "Number of test attempts.", "en": "Number of test attempts." },
                     "type": "number",
                     "required": false
                 }
@@ -162,7 +162,7 @@ METADATA
         },
         {
             "name": "test_all",
-            "description": { "zh": "运行所有网络测试", "en": "Run all network tests." },
+            "description": { "zh": "Run all network tests.", "en": "Run all network tests." },
             "parameters": []
         }
     ]

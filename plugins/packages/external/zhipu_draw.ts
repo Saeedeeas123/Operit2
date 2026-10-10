@@ -36,10 +36,10 @@
         "en": "Generate an image via Zhipu AI image generation API using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "绘图提示词（中文或英文）", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
-        { "name": "size", "description": { "zh": "图片尺寸，例如 '1024x1024' 或 '1280x1280'（可选，默认1024x1024）", "en": "Image size, e.g. '1024x1024' or '1280x1280' (optional, default 1024x1024)" }, "type": "string", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义保存到本地的文件名（不含路径和扩展名）", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
-        { "name": "model", "description": { "zh": "模型名称（可选；不传则使用环境变量 ZHIPU_IMAGE_MODEL，否则默认glm-image）", "en": "Model name (optional; falls back to env ZHIPU_IMAGE_MODEL)" }, "type": "string", "required": false }
+        { "name": "prompt", "description": { "zh": "Prompt for image generation (Chinese or English)", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
+        { "name": "size", "description": { "zh": "Image size, e.g. '1024x1024' or '1280x1280' (optional, default 1024x1024)", "en": "Image size, e.g. '1024x1024' or '1280x1280' (optional, default 1024x1024)" }, "type": "string", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom output file name (without path or extension)", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
+        { "name": "model", "description": { "zh": "Model name (optional; falls back to env ZHIPU_IMAGE_MODEL)", "en": "Model name (optional; falls back to env ZHIPU_IMAGE_MODEL)" }, "type": "string", "required": false }
       ]
     }
   ]

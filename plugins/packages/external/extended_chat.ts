@@ -20,11 +20,11 @@
                 "en": "List and filter chats (to discover chat_id)."
             },
             "parameters": [
-                { "name": "query", "description": { "zh": "可选：标题筛选关键字", "en": "Optional title keyword" }, "type": "string", "required": false },
-                { "name": "match", "description": { "zh": "可选：contains/exact/regex（默认 contains）", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
-                { "name": "limit", "description": { "zh": "可选：最多返回条数（默认 50）", "en": "Optional max results (default 50)" }, "type": "number", "required": false },
-                { "name": "sort_by", "description": { "zh": "可选：updatedAt/createdAt/messageCount（默认 updatedAt）", "en": "Optional: updatedAt/createdAt/messageCount (default updatedAt)" }, "type": "string", "required": false },
-                { "name": "sort_order", "description": { "zh": "可选：asc/desc（默认 desc）", "en": "Optional: asc/desc (default desc)" }, "type": "string", "required": false }
+                { "name": "query", "description": { "zh": "Optional title keyword", "en": "Optional title keyword" }, "type": "string", "required": false },
+                { "name": "match", "description": { "zh": "Optional: contains/exact/regex (default contains)", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
+                { "name": "limit", "description": { "zh": "Optional max results (default 50)", "en": "Optional max results (default 50)" }, "type": "number", "required": false },
+                { "name": "sort_by", "description": { "zh": "Optional: updatedAt/createdAt/messageCount (default updatedAt)", "en": "Optional: updatedAt/createdAt/messageCount (default updatedAt)" }, "type": "string", "required": false },
+                { "name": "sort_order", "description": { "zh": "Optional: asc/desc (default desc)", "en": "Optional: asc/desc (default desc)" }, "type": "string", "required": false }
             ]
         },
         {
@@ -34,9 +34,9 @@
                 "en": "Find a single chat by title and return chat_id."
             },
             "parameters": [
-                { "name": "query", "description": { "zh": "标题关键字/正则", "en": "Title keyword/regex" }, "type": "string", "required": true },
-                { "name": "match", "description": { "zh": "可选：contains/exact/regex（默认 contains）", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
-                { "name": "index", "description": { "zh": "可选：当匹配多个时选择第 N 个（默认 0）", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false }
+                { "name": "query", "description": { "zh": "Title keyword/regex", "en": "Title keyword/regex" }, "type": "string", "required": true },
+                { "name": "match", "description": { "zh": "Optional: contains/exact/regex (default contains)", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
+                { "name": "index", "description": { "zh": "Optional: pick Nth when multiple matches (default 0)", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false }
             ]
         },
         {
@@ -46,13 +46,13 @@
                 "en": "Read messages from a chat (by chat_id or chat_title)."
             },
             "parameters": [
-                { "name": "chat_id", "description": { "zh": "目标对话 ID（可选）", "en": "Target chat id (optional)" }, "type": "string", "required": false },
-                { "name": "chat_title", "description": { "zh": "目标对话标题（可选；当 chat_id 为空时使用）", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
-                { "name": "chat_query", "description": { "zh": "可选：标题筛选关键字（当 chat_id/chat_title 为空时使用）", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
-                { "name": "chat_index", "description": { "zh": "可选：当筛选结果有多个时选择第 N 个（默认 0）", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
-                { "name": "match", "description": { "zh": "可选：contains/exact/regex（默认 contains）", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
-                { "name": "order", "description": { "zh": "可选：asc/desc（默认 desc）", "en": "Optional: asc/desc (default desc)" }, "type": "string", "required": false },
-                { "name": "limit", "description": { "zh": "可选：返回消息条数（默认 20）", "en": "Optional: max number of messages (default 20)" }, "type": "number", "required": false }
+                { "name": "chat_id", "description": { "zh": "Target chat id (optional)", "en": "Target chat id (optional)" }, "type": "string", "required": false },
+                { "name": "chat_title", "description": { "zh": "Target chat title (optional; used when chat_id is empty)", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
+                { "name": "chat_query", "description": { "zh": "Optional title keyword (used when chat_id/chat_title is empty)", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
+                { "name": "chat_index", "description": { "zh": "Optional: pick Nth when multiple matches (default 0)", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
+                { "name": "match", "description": { "zh": "Optional: contains/exact/regex (default contains)", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false },
+                { "name": "order", "description": { "zh": "Optional: asc/desc (default desc)", "en": "Optional: asc/desc (default desc)" }, "type": "string", "required": false },
+                { "name": "limit", "description": { "zh": "Optional: max number of messages (default 20)", "en": "Optional: max number of messages (default 20)" }, "type": "number", "required": false }
             ]
         },
         {
@@ -62,12 +62,12 @@
                 "en": "Rename a chat (by chat_id or chat_title)."
             },
             "parameters": [
-                { "name": "new_title", "description": { "zh": "新的对话标题", "en": "New chat title" }, "type": "string", "required": true },
-                { "name": "chat_id", "description": { "zh": "目标对话 ID（可选）", "en": "Target chat id (optional)" }, "type": "string", "required": false },
-                { "name": "chat_title", "description": { "zh": "目标对话标题（可选；当 chat_id 为空时使用）", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
-                { "name": "chat_query", "description": { "zh": "可选：标题筛选关键字（当 chat_id/chat_title 为空时使用）", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
-                { "name": "chat_index", "description": { "zh": "可选：当筛选结果有多个时选择第 N 个（默认 0）", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
-                { "name": "match", "description": { "zh": "可选：contains/exact/regex（默认 contains）", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false }
+                { "name": "new_title", "description": { "zh": "New chat title", "en": "New chat title" }, "type": "string", "required": true },
+                { "name": "chat_id", "description": { "zh": "Target chat id (optional)", "en": "Target chat id (optional)" }, "type": "string", "required": false },
+                { "name": "chat_title", "description": { "zh": "Target chat title (optional; used when chat_id is empty)", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
+                { "name": "chat_query", "description": { "zh": "Optional title keyword (used when chat_id/chat_title is empty)", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
+                { "name": "chat_index", "description": { "zh": "Optional: pick Nth when multiple matches (default 0)", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
+                { "name": "match", "description": { "zh": "Optional: contains/exact/regex (default contains)", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false }
             ]
         },
         {
@@ -77,11 +77,11 @@
                 "en": "Delete a chat (by chat_id or chat_title)."
             },
             "parameters": [
-                { "name": "chat_id", "description": { "zh": "目标对话 ID（可选）", "en": "Target chat id (optional)" }, "type": "string", "required": false },
-                { "name": "chat_title", "description": { "zh": "目标对话标题（可选；当 chat_id 为空时使用）", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
-                { "name": "chat_query", "description": { "zh": "可选：标题筛选关键字（当 chat_id/chat_title 为空时使用）", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
-                { "name": "chat_index", "description": { "zh": "可选：当筛选结果有多个时选择第 N 个（默认 0）", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
-                { "name": "match", "description": { "zh": "可选：contains/exact/regex（默认 contains）", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false }
+                { "name": "chat_id", "description": { "zh": "Target chat id (optional)", "en": "Target chat id (optional)" }, "type": "string", "required": false },
+                { "name": "chat_title", "description": { "zh": "Target chat title (optional; used when chat_id is empty)", "en": "Target chat title (optional; used when chat_id is empty)" }, "type": "string", "required": false },
+                { "name": "chat_query", "description": { "zh": "Optional title keyword (used when chat_id/chat_title is empty)", "en": "Optional title keyword (used when chat_id/chat_title is empty)" }, "type": "string", "required": false },
+                { "name": "chat_index", "description": { "zh": "Optional: pick Nth when multiple matches (default 0)", "en": "Optional: pick Nth when multiple matches (default 0)" }, "type": "number", "required": false },
+                { "name": "match", "description": { "zh": "Optional: contains/exact/regex (default contains)", "en": "Optional: contains/exact/regex (default contains)" }, "type": "string", "required": false }
             ]
         },
         {
@@ -91,14 +91,14 @@
                 "en": "Chat with the agent for the specified character card name; if chat_id is empty, create a new chat and return its ID. Enforces one role per chat (no sharing between roles). Use this tool to delegate tasks to other agents or communicate with other roles when the user explicitly intends it; otherwise, prefer completing tasks directly without using this tool."
             },
             "parameters": [
-                { "name": "message", "description": { "zh": "发送给 AI 的内容", "en": "Message to send to AI" }, "type": "string", "required": true },
-                { "name": "character_card_name", "description": { "zh": "角色卡名称", "en": "Character card name" }, "type": "string", "required": true },
-                { "name": "chat_id", "description": { "zh": "目标对话 ID（可选；为空时新建）", "en": "Target chat id (optional; create new if empty)" }, "type": "string", "required": false },
-                { "name": "timeout", "description": { "zh": "可选：等待返回的超时秒数（默认 180）", "en": "Optional timeout seconds to wait for response (default 180)" }, "type": "number", "required": false },
-                { "name": "persist_turn", "description": { "zh": "可选：是否持久化本轮用户消息和 AI 回复（默认 true）", "en": "Optional: whether to persist this turn's user message and AI reply (default true)" }, "type": "boolean", "required": false },
-                { "name": "notify_reply", "description": { "zh": "可选：是否覆盖本轮回复通知开关", "en": "Optional: override reply notification for this turn" }, "type": "boolean", "required": false },
-                { "name": "hide_user_message", "description": { "zh": "可选：是否在 UI 中隐藏用户消息正文并显示占位标记", "en": "Optional: hide the user message body in UI and show a placeholder marker" }, "type": "boolean", "required": false },
-                { "name": "disable_warning", "description": { "zh": "可选：是否关闭本轮 AI 生成的 warning 标记", "en": "Optional: suppress AI-generated warning markup for this turn" }, "type": "boolean", "required": false }
+                { "name": "message", "description": { "zh": "Message to send to AI", "en": "Message to send to AI" }, "type": "string", "required": true },
+                { "name": "character_card_name", "description": { "zh": "Character card name", "en": "Character card name" }, "type": "string", "required": true },
+                { "name": "chat_id", "description": { "zh": "Target chat id (optional; create new if empty)", "en": "Target chat id (optional; create new if empty)" }, "type": "string", "required": false },
+                { "name": "timeout", "description": { "zh": "Optional timeout seconds to wait for response (default 180)", "en": "Optional timeout seconds to wait for response (default 180)" }, "type": "number", "required": false },
+                { "name": "persist_turn", "description": { "zh": "Optional: whether to persist this turn's user message and AI reply (default true)", "en": "Optional: whether to persist this turn's user message and AI reply (default true)" }, "type": "boolean", "required": false },
+                { "name": "notify_reply", "description": { "zh": "Optional: override reply notification for this turn", "en": "Optional: override reply notification for this turn" }, "type": "boolean", "required": false },
+                { "name": "hide_user_message", "description": { "zh": "Optional: hide the user message body in UI and show a placeholder marker", "en": "Optional: hide the user message body in UI and show a placeholder marker" }, "type": "boolean", "required": false },
+                { "name": "disable_warning", "description": { "zh": "Optional: suppress AI-generated warning markup for this turn", "en": "Optional: suppress AI-generated warning markup for this turn" }, "type": "boolean", "required": false }
             ]
         },
         {
@@ -108,7 +108,7 @@
                 "en": "Check a chat's input processing status."
             },
             "parameters": [
-                { "name": "chat_id", "description": { "zh": "目标对话 ID", "en": "Target chat id" }, "type": "string", "required": true }
+                { "name": "chat_id", "description": { "zh": "Target chat id", "en": "Target chat id" }, "type": "string", "required": true }
             ]
         },
         {

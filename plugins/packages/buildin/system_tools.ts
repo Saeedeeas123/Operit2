@@ -59,11 +59,11 @@
         ] },
         { "name": "bluetooth_connect", "description": { "zh": "Connect to a classic Bluetooth device.", "en": "Connect to a classic Bluetooth device." }, "parameters": [
             { "name": "address", "description": { "zh": "Bluetooth address.", "en": "Bluetooth address." }, "type": "string", "required": true },
-            { "name": "uuid", "description": { "zh": "RFCOMM UUID。", "en": "RFCOMM UUID." }, "type": "string", "required": false }
+            { "name": "uuid", "description": { "zh": "RFCOMM UUID.", "en": "RFCOMM UUID." }, "type": "string", "required": false }
         ] },
         { "name": "bluetooth_listen", "description": { "zh": "Listen for a classic Bluetooth connection.", "en": "Listen for a classic Bluetooth connection." }, "parameters": [
             { "name": "name", "description": { "zh": "Service name.", "en": "Service name." }, "type": "string", "required": false },
-            { "name": "uuid", "description": { "zh": "RFCOMM UUID。", "en": "RFCOMM UUID." }, "type": "string", "required": false }
+            { "name": "uuid", "description": { "zh": "RFCOMM UUID.", "en": "RFCOMM UUID." }, "type": "string", "required": false }
         ] },
         { "name": "bluetooth_accept", "description": { "zh": "Accept a Bluetooth connection.", "en": "Accept a Bluetooth connection." }, "parameters": [
             { "name": "listener_session_id", "description": { "zh": "Listener session ID.", "en": "Listener session ID." }, "type": "string", "required": true },
@@ -99,14 +99,14 @@
         ] },
         { "name": "bluetooth_ble_read_characteristic", "description": { "zh": "Read a BLE characteristic.", "en": "Read a BLE characteristic." }, "parameters": [
             { "name": "session_id", "description": { "zh": "BLE session ID.", "en": "BLE session ID." }, "type": "string", "required": true },
-            { "name": "service_uuid", "description": { "zh": "Service UUID。", "en": "Service UUID." }, "type": "string", "required": true },
-            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID。", "en": "Characteristic UUID." }, "type": "string", "required": true },
+            { "name": "service_uuid", "description": { "zh": "Service UUID.", "en": "Service UUID." }, "type": "string", "required": true },
+            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID.", "en": "Characteristic UUID." }, "type": "string", "required": true },
             { "name": "timeout_ms", "description": { "zh": "Wait time in milliseconds.", "en": "Wait time in milliseconds." }, "type": "number", "required": false }
         ] },
         { "name": "bluetooth_ble_write_characteristic", "description": { "zh": "Write a BLE characteristic.", "en": "Write a BLE characteristic." }, "parameters": [
             { "name": "session_id", "description": { "zh": "BLE session ID.", "en": "BLE session ID." }, "type": "string", "required": true },
-            { "name": "service_uuid", "description": { "zh": "Service UUID。", "en": "Service UUID." }, "type": "string", "required": true },
-            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID。", "en": "Characteristic UUID." }, "type": "string", "required": true },
+            { "name": "service_uuid", "description": { "zh": "Service UUID.", "en": "Service UUID." }, "type": "string", "required": true },
+            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID.", "en": "Characteristic UUID." }, "type": "string", "required": true },
             { "name": "text", "description": { "zh": "UTF-8 text.", "en": "UTF-8 text." }, "type": "string", "required": false },
             { "name": "data_base64", "description": { "zh": "Base64 bytes.", "en": "Base64 bytes." }, "type": "string", "required": false }
         ] },
@@ -122,8 +122,8 @@
         ] },
         { "name": "bluetooth_ble_subscribe_characteristic", "description": { "zh": "Subscribe or unsubscribe a BLE characteristic.", "en": "Subscribe or unsubscribe a BLE characteristic." }, "parameters": [
             { "name": "session_id", "description": { "zh": "BLE session ID.", "en": "BLE session ID." }, "type": "string", "required": true },
-            { "name": "service_uuid", "description": { "zh": "Service UUID。", "en": "Service UUID." }, "type": "string", "required": true },
-            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID。", "en": "Characteristic UUID." }, "type": "string", "required": true },
+            { "name": "service_uuid", "description": { "zh": "Service UUID.", "en": "Service UUID." }, "type": "string", "required": true },
+            { "name": "characteristic_uuid", "description": { "zh": "Characteristic UUID.", "en": "Characteristic UUID." }, "type": "string", "required": true },
             { "name": "enable", "description": { "zh": "Whether to subscribe.", "en": "Whether to subscribe." }, "type": "boolean", "required": false }
         ] },
         { "name": "bluetooth_ble_read_notifications", "description": { "zh": "Read BLE notifications.", "en": "Read BLE notifications." }, "parameters": [

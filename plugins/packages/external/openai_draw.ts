@@ -45,11 +45,11 @@
         "en": "Generate an image via an OpenAI-compatible image generation endpoint using a prompt, save it locally, and return a Markdown image reference."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "绘图提示词（英文或中文皆可）", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
-        { "name": "model", "description": { "zh": "模型名称（可选；不传则使用环境变量 OPENAI_IMAGE_MODEL，再不行使用默认值）", "en": "Model name (optional; falls back to env OPENAI_IMAGE_MODEL, then default)" }, "type": "string", "required": false },
-        { "name": "size", "description": { "zh": "图片尺寸，例如 '1024x1024'，可选", "en": "Image size, e.g. '1024x1024' (optional)" }, "type": "string", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义保存到本地的文件名（不含路径和扩展名）", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
-        { "name": "api_base_url", "description": { "zh": "OpenAI API Base URL（不传则取环境变量 OPENAI_API_BASE_URL 或默认 https://api.openai.com ）", "en": "OpenAI API base URL (optional; falls back to env OPENAI_API_BASE_URL or https://api.openai.com)" }, "type": "string", "required": false }
+        { "name": "prompt", "description": { "zh": "Prompt for image generation (Chinese or English)", "en": "Prompt for image generation (Chinese or English)" }, "type": "string", "required": true },
+        { "name": "model", "description": { "zh": "Model name (optional; falls back to env OPENAI_IMAGE_MODEL, then default)", "en": "Model name (optional; falls back to env OPENAI_IMAGE_MODEL, then default)" }, "type": "string", "required": false },
+        { "name": "size", "description": { "zh": "Image size, e.g. '1024x1024' (optional)", "en": "Image size, e.g. '1024x1024' (optional)" }, "type": "string", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom output file name (without path or extension)", "en": "Custom output file name (without path or extension)" }, "type": "string", "required": false },
+        { "name": "api_base_url", "description": { "zh": "OpenAI API base URL (optional; falls back to env OPENAI_API_BASE_URL or https://api.openai.com)", "en": "OpenAI API base URL (optional; falls back to env OPENAI_API_BASE_URL or https://api.openai.com)" }, "type": "string", "required": false }
       ]
     }
   ]

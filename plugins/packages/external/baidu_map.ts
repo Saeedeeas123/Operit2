@@ -6,23 +6,23 @@ METADATA
         "zh": "百度地图工具",
         "en": "Baidu Map Tools"
     },
-    "description": { "zh": "百度地图工具集合，提供AOI（兴趣区域）数据获取接口。通过调用百度地图API，支持按地理范围查询AOI边界坐标，基于位置的路线规划，助力地理信息系统应用开发和空间数据分析。", "en": "A Baidu Maps toolkit that provides AOI (Area of Interest) data access. It supports querying AOI boundary coordinates by geographic range and location-based route planning, useful for GIS development and spatial data analysis." },
+    "description": { "zh": "A Baidu Maps toolkit that provides AOI (Area of Interest) data access. It supports querying AOI boundary coordinates by geographic range and location-based route planning, useful for GIS development and spatial data analysis.", "en": "A Baidu Maps toolkit that provides AOI (Area of Interest) data access. It supports querying AOI boundary coordinates by geographic range and location-based route planning, useful for GIS development and spatial data analysis." },
     "enabledByDefault": true,
     "category": "Map",
     "tools": [
         {
             "name": "search_aoi",
-            "description": { "zh": "搜索百度地图兴趣区域(AOI)信息", "en": "Search AOI (Area of Interest) information from Baidu Maps." },
+            "description": { "zh": "Search AOI (Area of Interest) information from Baidu Maps.", "en": "Search AOI (Area of Interest) information from Baidu Maps." },
             "parameters": [
                 {
                     "name": "keyword",
-                    "description": { "zh": "搜索关键词，如商场、小区名称等", "en": "Search keyword, e.g. mall name, residential community name, etc." },
+                    "description": { "zh": "Search keyword, e.g. mall name, residential community name, etc.", "en": "Search keyword, e.g. mall name, residential community name, etc." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "city_name",
-                    "description": { "zh": "城市名称，如'北京'，默认全国范围", "en": "City name, e.g. '北京'. Defaults to nationwide." },
+                    "description": { "zh": "City name, e.g. '北京'. Defaults to nationwide.", "en": "City name, e.g. '北京'. Defaults to nationwide." },
                     "type": "string",
                     "required": false
                 }
@@ -30,17 +30,17 @@ METADATA
         },
         {
             "name": "planRoute",
-            "description": { "zh": "智能路线规划，从当前位置到指定目的地，并发返回驾车、步行、公交三种方式的路线规划。", "en": "Smart route planning from current location to a destination, returning driving/walking/transit plans in parallel." },
+            "description": { "zh": "Smart route planning from current location to a destination, returning driving/walking/transit plans in parallel.", "en": "Smart route planning from current location to a destination, returning driving/walking/transit plans in parallel." },
             "parameters": [
                 {
                     "name": "destination",
-                    "description": { "zh": "目的地名称", "en": "Destination name." },
+                    "description": { "zh": "Destination name.", "en": "Destination name." },
                     "type": "string",
                     "required": true
                 },
                 {
                     "name": "city_name",
-                    "description": { "zh": "城市名称，辅助目的地查找", "en": "City name to help resolve the destination (optional)." },
+                    "description": { "zh": "City name to help resolve the destination (optional).", "en": "City name to help resolve the destination (optional)." },
                     "type": "string",
                     "required": false
                 }

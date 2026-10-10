@@ -52,20 +52,20 @@
         "en": "Generate images with the official MiniMax image API using a prompt. Supports text-to-image and reference-image generation, saves locally, and returns Markdown image hints."
       },
       "parameters": [
-        { "name": "prompt", "description": { "zh": "绘图提示词（中文或英文）", "en": "Image prompt (Chinese or English)" }, "type": "string", "required": true },
-        { "name": "model", "description": { "zh": "模型名称（可选；不传则使用环境变量 MINIMAX_IMAGE_MODEL，否则默认 image-01）", "en": "Model name (optional; falls back to MINIMAX_IMAGE_MODEL, then image-01)" }, "type": "string", "required": false },
-        { "name": "aspect_ratio", "description": { "zh": "输出比例，可选 1:1、16:9、4:3、3:2、2:3、3:4、9:16、21:9；21:9 仅 image-01 支持", "en": "Aspect ratio. Supported: 1:1, 16:9, 4:3, 3:2, 2:3, 3:4, 9:16, 21:9. 21:9 is only supported by image-01." }, "type": "string", "required": false },
-        { "name": "width", "description": { "zh": "输出宽度（可选；仅 image-01 支持；需与 height 一起传，范围 512-2048 且为 8 的倍数）", "en": "Output width (optional; image-01 only; must be provided together with height, range 512-2048 and multiple of 8)" }, "type": "number", "required": false },
-        { "name": "height", "description": { "zh": "输出高度（可选；仅 image-01 支持；需与 width 一起传，范围 512-2048 且为 8 的倍数）", "en": "Output height (optional; image-01 only; must be provided together with width, range 512-2048 and multiple of 8)" }, "type": "number", "required": false },
-        { "name": "n", "description": { "zh": "生成图片数量，范围 1-9，默认 1", "en": "Number of images to generate, range 1-9, default 1" }, "type": "number", "required": false },
-        { "name": "response_format", "description": { "zh": "返回格式，可选 url 或 base64；默认 base64（更适合直接保存到本地）", "en": "Response format: url or base64. Defaults to base64 for direct local saving." }, "type": "string", "required": false },
-        { "name": "prompt_optimizer", "description": { "zh": "是否启用提示词优化（可选）", "en": "Enable prompt optimizer (optional)" }, "type": "boolean", "required": false },
-        { "name": "aigc_watermark", "description": { "zh": "是否添加 AIGC 水印（可选）", "en": "Add AIGC watermark (optional)" }, "type": "boolean", "required": false },
-        { "name": "seed", "description": { "zh": "随机种子（可选）", "en": "Seed (optional)" }, "type": "number", "required": false },
-        { "name": "image_urls", "description": { "zh": "参考图公网 URL 数组（可选；图生图用）。支持字符串数组、JSON 字符串或逗号分隔字符串", "en": "Reference image public URL list (optional; for reference-image generation). Accepts string array, JSON string, or comma-separated string." }, "type": "array", "required": false },
-        { "name": "image_paths", "description": { "zh": "参考图本地路径数组（可选；会先上传到图床再提交给 MiniMax）。支持字符串数组、JSON 字符串或逗号分隔字符串", "en": "Reference local image path list (optional; local images are uploaded first before calling MiniMax). Accepts string array, JSON string, or comma-separated string." }, "type": "array", "required": false },
-        { "name": "file_name", "description": { "zh": "自定义本地文件名（不含扩展名）", "en": "Custom local output file name without extension" }, "type": "string", "required": false },
-        { "name": "api_base_url", "description": { "zh": "自定义 MiniMax API Base URL（可选）", "en": "Custom MiniMax API base URL (optional)" }, "type": "string", "required": false }
+        { "name": "prompt", "description": { "zh": "Image prompt (Chinese or English)", "en": "Image prompt (Chinese or English)" }, "type": "string", "required": true },
+        { "name": "model", "description": { "zh": "Model name (optional; falls back to MINIMAX_IMAGE_MODEL, then image-01)", "en": "Model name (optional; falls back to MINIMAX_IMAGE_MODEL, then image-01)" }, "type": "string", "required": false },
+        { "name": "aspect_ratio", "description": { "zh": "Aspect ratio. Supported: 1:1, 16:9, 4:3, 3:2, 2:3, 3:4, 9:16, 21:9. 21:9 is only supported by image-01.", "en": "Aspect ratio. Supported: 1:1, 16:9, 4:3, 3:2, 2:3, 3:4, 9:16, 21:9. 21:9 is only supported by image-01." }, "type": "string", "required": false },
+        { "name": "width", "description": { "zh": "Output width (optional; image-01 only; must be provided together with height, range 512-2048 and multiple of 8)", "en": "Output width (optional; image-01 only; must be provided together with height, range 512-2048 and multiple of 8)" }, "type": "number", "required": false },
+        { "name": "height", "description": { "zh": "Output height (optional; image-01 only; must be provided together with width, range 512-2048 and multiple of 8)", "en": "Output height (optional; image-01 only; must be provided together with width, range 512-2048 and multiple of 8)" }, "type": "number", "required": false },
+        { "name": "n", "description": { "zh": "Number of images to generate, range 1-9, default 1", "en": "Number of images to generate, range 1-9, default 1" }, "type": "number", "required": false },
+        { "name": "response_format", "description": { "zh": "Response format: url or base64. Defaults to base64 for direct local saving.", "en": "Response format: url or base64. Defaults to base64 for direct local saving." }, "type": "string", "required": false },
+        { "name": "prompt_optimizer", "description": { "zh": "Enable prompt optimizer (optional)", "en": "Enable prompt optimizer (optional)" }, "type": "boolean", "required": false },
+        { "name": "aigc_watermark", "description": { "zh": "Add AIGC watermark (optional)", "en": "Add AIGC watermark (optional)" }, "type": "boolean", "required": false },
+        { "name": "seed", "description": { "zh": "Seed (optional)", "en": "Seed (optional)" }, "type": "number", "required": false },
+        { "name": "image_urls", "description": { "zh": "Reference image public URL list (optional; for reference-image generation). Accepts string array, JSON string, or comma-separated string.", "en": "Reference image public URL list (optional; for reference-image generation). Accepts string array, JSON string, or comma-separated string." }, "type": "array", "required": false },
+        { "name": "image_paths", "description": { "zh": "Reference local image path list (optional; local images are uploaded first before calling MiniMax). Accepts string array, JSON string, or comma-separated string.", "en": "Reference local image path list (optional; local images are uploaded first before calling MiniMax). Accepts string array, JSON string, or comma-separated string." }, "type": "array", "required": false },
+        { "name": "file_name", "description": { "zh": "Custom local output file name without extension", "en": "Custom local output file name without extension" }, "type": "string", "required": false },
+        { "name": "api_base_url", "description": { "zh": "Custom MiniMax API base URL (optional)", "en": "Custom MiniMax API base URL (optional)" }, "type": "string", "required": false }
       ]
     }
   ]
